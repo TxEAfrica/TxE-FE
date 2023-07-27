@@ -14,19 +14,22 @@ const Navbar = () => {
       <div>
         <img src={TxELogo} alt="" />
       </div>
-      <div className='relative'>
+      <div className='relative flex '>
         <ul className={`hidden md:flex font-bold space-x-20 ${showMenu ? 'md:hidden' : ''}`}>
-          <li>About</li>
-          <li>Achievements</li>
-          <li>Speakers</li>
-          <li>EventSchedule</li>
+          <li className='p-2'>About</li>
+          <li className='p-2'>Achievements</li>
+          <li className='p-2'>Speakers</li>
+          <li className='p-2'>EventSchedule</li>
         </ul>
         {/* small devices */}
         {!showMenu && (
-            <Icon.BarMenu
+            <div className='p-3'
+            onClick={toggleMenu}>
+              <Icon.BarMenu
             className='md:hidden text-2xl font-semibold cursor-pointer'
-            onClick={toggleMenu}
+            
           />
+            </div>
         )}
         {showMenu && (
           <div

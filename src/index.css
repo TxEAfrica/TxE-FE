@@ -76,3 +76,16 @@
     transform: translateX(-150%);
   }
 }
+
+.list-circle li::before {
+  position: absolute;
+  left: -5px;
+  content: '';
+  display: inline-block;
+  width: 0.75em; /* Adjust the size of the circle here */
+  height: 0.75em; /* Adjust the size of the circle here */
+  border: 2px solid #333;
+  background-color: white; /* Adjust the color of the circle here */
+  border-radius: 50%;
+  margin-right: 0.5em; /* Add some spacing between the circle and the list item text */
+}
