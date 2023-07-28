@@ -9,8 +9,9 @@ import PhotoSpeaks from "./sections/PhotoSpeaks";
 import ImageSlider from "./sections/Speakers/ImageSlider";
 import Sponsors from "./sections/Sponsors";
 import Testimonials from "./sections/Testimonials/Testimonials";
-import CountUpAnimation from "./sections/Counter/CountUpAnimation"
+import CountUpAnimation from "./sections/counter/CountUpAnimation"
 import image1 from '../assets/Speaker-1.svg'
+import Footer from "./sections/Footer";
 
 const Home = () => {
 
@@ -54,6 +55,7 @@ const Home = () => {
                 <Testimonials />
                 </div>
             </div>
+            <Footer />
         </>
      );
 }

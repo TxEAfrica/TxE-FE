@@ -24,7 +24,7 @@ const ImageSlider = ({ images, activeIndex, setActiveIndex }) => {
   };
 
   return (
-    <div className='main'>
+    <div id='speakers' className='main'>
       <div className='title'>
         <h1 className="slider-title">speakers</h1>
         <div className="arrows">
@@ -37,7 +37,7 @@ const ImageSlider = ({ images, activeIndex, setActiveIndex }) => {
           <div key={index} className={`image-card ${index === activeIndex ? 'active' : ''}`}>
             <img
               src={image.url} // Use the image URL from the images array
-              alt={`Image ${index + 1}`}
+              alt=""
               className="image"
               onClick={() => handleImageClick(index)}
             />

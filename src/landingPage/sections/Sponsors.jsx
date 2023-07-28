@@ -10,17 +10,17 @@ const Sponsors = () => {
     const images = [airtel, rite, veemost, xend, Williams, buildspace, spaceInAfrica];
   
     return (
-      <div className='flex flex-col justify-center items-center p-6 bg-white shadow-sm rounded-md md:w-3/4 overflow-hidden'>
+      <div className='flex flex-col justify-center items-center p-6 bg-white shadow-sm rounded-md lg:w-3/4 overflow-hidden'>
         <h1 className='text-lg font-semibold'>
           <i>Proudly Sponsored By</i>
         </h1>
         <div className='slide-container'>
           <div className='slide-wrapper'>
             {images.map((src, index) => (
-              <img key={index} src={src} className='mx-8 md:mx-16' alt={`Image ${index}`} />
+              <img key={index} src={src} className='mx-8 md:mx-16' alt="" />
             ))}
             {images.map((src, index) => (
-              <img key={index + images.length} src={src} className='mx-8 md:mx-16' alt={`Image ${index}`} />
+              <img key={index + images.length} src={src} className='mx-8 md:mx-16' alt="" />
             ))}
           </div>
         </div>
