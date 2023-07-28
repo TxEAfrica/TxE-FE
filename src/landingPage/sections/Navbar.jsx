@@ -12,14 +12,14 @@ const Navbar = () => {
   return (
     <div className='flex justify-center items-center space-x-44 p-4 bg-white sticky top-0 z-50'>
       <div>
-        <img src={TxELogo} alt="" />
+        <img src={TxELogo} className="w-24" alt="" />
       </div>
       <div className='relative flex '>
         <ul className={`hidden md:flex font-bold space-x-20 ${showMenu ? 'md:hidden' : ''}`}>
           <li className='p-2'>About</li>
           <li className='p-2'>Achievements</li>
           <li className='p-2'>Speakers</li>
-          <li className='p-2'>EventSchedule</li>
+          <li className='p-2'>Event Schedule</li>
         </ul>
         {/* small devices */}
         {!showMenu && (
@@ -41,7 +41,7 @@ const Navbar = () => {
               <li>About</li>
               <li>Achievements</li>
               <li>Speakers</li>
-              <li>EventSchedule</li>
+              <li>Event Schedule</li>
             </ul>
             <Icon.CancelMenu
             className='md:hidden text-2xl mt-4 font-semibold cursor-pointer'

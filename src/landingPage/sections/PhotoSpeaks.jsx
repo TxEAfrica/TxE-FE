@@ -13,11 +13,11 @@ const PhotoSpeaks = () => {
       <div className="text-3xl text-center font-bold mb-3 md:mb-0">
         Photo Speaks
       </div>
-      <div className="text-lg font-semibold mb-10 mt-3 text-center flex flex-col justify-center items-center">
+      <div className="text-lg mb-10 mt-3 text-center flex flex-col justify-center items-center">
         TXE summit 2022
         <div className="flex space-x-2 mt-2">
-          <div className="w-14 h-2 rounded-full bg-orange-500"></div>
-          <div className="w-14 h-2 rounded-full bg-black"></div>
+          <div className="w-10 h-2 rounded-full bg-orange-500"></div>
+          <div className="w-10 h-2 rounded-full bg-black"></div>
         </div>
       </div>
       <div className="grid grid-cols-2 gap-2 px-8 md:px-20">

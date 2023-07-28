@@ -5,32 +5,32 @@ const EventSchedule = () => {
         <div>
             <div className="md:flex text-center md:text-start items-center md:justify-between px-8 md:px-20">
                 <div className="md:w-3/4">
-                    <h1 className="text-3xl font-bold mb-3 md:mb-0">
+                    <h1 className="text-3xl font-bold mb-4 md:mb-0">
                         Event Schedule
                     </h1>
-                    <p className="md:w-1/2">
+                    <p className="md:w-1/2 mt-4">
                     The Enugu TxE Summit 2023 will be a two day event each day 
                     focusing on a different theme.
                     </p>
                 </div>
                 <div>
-                    <div className='text-lg font-semibold mt-3 flex flex-col justify-center items-center'>
+                    <div className='text-lg font-semibold mt-5'>
                     September 28th & 29th, 2023
                     <div className='flex space-x-2 mt-2'>
-                    <div className='w-14 h-2 rounded-full bg-orange-500'></div>
-                    <div className='w-14 h-2 rounded-full bg-black'></div>
+                    <div className='w-10 h-2 rounded-full bg-orange-500'></div>
+                    <div className='w-10 h-2 rounded-full bg-black'></div>
                     </div>
                     </div>
                 </div>
             </div>
             
             <div className="flex mt-10 relative">
-                <div className="absolute md:relative">
-                    <img src={TxELogoBg} alt="" />
+                <div className="absolute md:relative mr-10 my-auto">
+                    <img src={TxELogoBg}  alt="logo" />
                 </div>
                 <div className="px-8 md:px-0 w-1/2 md:w-full">
                     <h1 className="text-orange-500 mb-5 text-2xl">
-                        _Day One
+                        _day one
                     </h1>
                     <div>
                         <ul className="space-y-10 md:w-4/5">
@@ -38,7 +38,7 @@ const EventSchedule = () => {
                                 <h1 className="md:text-3xl font-bold">
                                 Enterprenuership 
                                 </h1>
-                                <p className="text-sm md:text-lg">
+                                <p className="text-sm md:text-lg w-2/3">
                                 A 1-day interactive workshop and fireside 
                                 chat with leading experts from leading tech 
                                 companies including Google
@@ -48,7 +48,7 @@ const EventSchedule = () => {
                                 <h1 className="font-bold">
                                 Idea Pitch Session 
                                 </h1>
-                                <p className="text-sm md:text-lg">
+                                <p className="text-sm md:text-lg w-2/3">
                                 Innovative businesses will be given an 
                                 opportunity to pitch their ideas and businesss 
                                 solutions to a panel of judges and recieve 
@@ -59,7 +59,7 @@ const EventSchedule = () => {
                                 <h1 className="font-bold">
                                 Enterprenuership 
                                 </h1>
-                                <p className="text-sm md:text-lg">
+                                <p className="text-sm md:text-lg w-2/3">
                                 A 1-day interactive workshop and fireside 
                                 chat with leading experts from leading tech 
                                 companies including Google
@@ -69,7 +69,7 @@ const EventSchedule = () => {
                                 <h1 className="font-bold">
                                 Grants and Support for Startups 
                                 </h1>
-                                <p className="text-sm md:text-lg">
+                                <p className="text-sm md:text-lg w-2/3">
                                 Innovative businesses will stand a chance to 
                                 be awarded seed fund grants to encourage their 
                                 ventures.
@@ -81,11 +81,11 @@ const EventSchedule = () => {
 
                 <div>
                     <h1 className="text-orange-500 mb-5 text-2xl">
-                        _Day Two
+                        _day two
                     </h1>
                     <div className="relative">
-                        <ul className="space-y-10 list-circle md:w-4/5">
-                            <li className="space-y-2 border-l-2 border-orange-500 px-4">
+                        <ul className="space-y-10 list-circle md:w-4/5 border-l-2 border-orange-500">
+                            <li className="space-y-2  px-4">
                                 <h1 className="md:text-3xl font-bold">
                                 Tech Skill Boost 
                                 </h1>
@@ -95,7 +95,7 @@ const EventSchedule = () => {
                                 including Google.
                                 </p>
                             </li>
-                            <li className="space-y-2 border-l-2 border-orange-500 px-4">
+                            <li className="space-y-2 px-4">
                                 <h1 className="font-bold">
                                 In-demand skills 
                                 </h1>
@@ -103,7 +103,7 @@ const EventSchedule = () => {
                                 Learn which skills are most sort after
                                 </p>
                             </li>
-                            <li className="space-y-2 border-l-2 border-orange-500 px-4">
+                            <li className="space-y-2 px-4">
                                 <h1 className="font-bold">
                                 Learning opportunities & resources 
                                 </h1>
@@ -111,7 +111,7 @@ const EventSchedule = () => {
                                 How and where to learn those skills
                                 </p>
                             </li>
-                            <li className="space-y-2 border-l-2 border-orange-500 px-4">
+                            <li className="space-y-2 px-4">
                                 <h1 className="font-bold">
                                 Securing employment 
                                 </h1>
@@ -121,7 +121,7 @@ const EventSchedule = () => {
                                 dollars
                                 </p>
                             </li>
-                            <li className="space-y-2 border-l-2 border-orange-500 px-4">
+                            <li className="space-y-2 px-4">
                                 <h1 className="font-bold">
                                 Q&A with Top Tech Talents 
                                 </h1>
@@ -130,7 +130,7 @@ const EventSchedule = () => {
                                 get feedback from them directly
                                 </p>
                             </li>
-                            <li className="space-y-2 border-l-2 border-orange-500 px-4">
+                            <li className="space-y-2 px-4">
                                 <h1 className="font-bold">
                                 Scholarships & Devices 
                                 </h1>
