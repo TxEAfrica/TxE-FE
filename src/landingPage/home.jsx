@@ -11,6 +11,7 @@ import Sponsors from "./sections/Sponsors";
 import Testimonials from "./sections/Testimonials/Testimonials";
 import CountUpAnimation from "./sections/Counter/CountUpAnimation"
 import image1 from '../assets/Speaker-1.svg'
+import Footer from "./sections/Footer";
 
 const Home = () => {
 
@@ -54,6 +55,7 @@ const Home = () => {
                 <Testimonials />
                 </div>
             </div>
+            <Footer />
         </>
      );
 }

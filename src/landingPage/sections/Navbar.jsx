@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Icon } from '../../icons/Icons';
 import TxELogo from '../../assets/txeLogo.svg';
+import ScrollToContainerLink from '../scroll/ScrollToContainerLink';
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -10,23 +11,31 @@ const Navbar = () => {
   };
 
   return (
-    <div className='flex justify-center items-center space-x-44 p-4 bg-white sticky top-0 z-50'>
+    <div className=' flex justify-between lg:justify-center items-center space-x-44 py-4 px-4 md:px-8 lg:px-4 bg-white sticky top-0 z-50'>
       <div>
         <img src={TxELogo} className="w-24" alt="" />
       </div>
       <div className='relative flex '>
-        <ul className={`hidden md:flex font-bold space-x-20 ${showMenu ? 'md:hidden' : ''}`}>
-          <li className='p-2'>About</li>
-          <li className='p-2'>Achievements</li>
-          <li className='p-2'>Speakers</li>
-          <li className='p-2'>Event Schedule</li>
+        <ul className={`hidden lg:flex font-bold space-x-20 ${showMenu ? 'lg:hidden' : ''}`}>
+        <ScrollToContainerLink to={'about'}>
+          <li className='p-2 cursor-pointer'>About</li>
+          </ScrollToContainerLink>
+          <ScrollToContainerLink to={'achievements'}>
+          <li className='p-2 cursor-pointer'>Achievements</li>
+          </ScrollToContainerLink>
+          <ScrollToContainerLink to={'speakers'}>
+          <li className='p-2 cursor-pointer'>Speakers</li>
+          </ScrollToContainerLink>
+          <ScrollToContainerLink to={'event-schedule'}>
+          <li className='p-2 cursor-pointer'>Event Schedule</li>
+          </ScrollToContainerLink>
         </ul>
         {/* small devices */}
         {!showMenu && (
             <div className='p-3'
             onClick={toggleMenu}>
               <Icon.BarMenu
-            className='md:hidden text-2xl font-semibold cursor-pointer'
+            className='lg:hidden text-2xl font-semibold cursor-pointer'
             
           />
             </div>
@@ -44,7 +53,7 @@ const Navbar = () => {
               <li>Event Schedule</li>
             </ul>
             <Icon.CancelMenu
-            className='md:hidden text-2xl mt-4 font-semibold cursor-pointer'
+            className='lg:hidden text-2xl mt-4 font-semibold cursor-pointer'
           />
             <div className='absolute h-full justify-center items-center w-full'>
             <img src={TxELogo} className='absolute bottom-10 w-3/5 animate-bounce' alt="" />
