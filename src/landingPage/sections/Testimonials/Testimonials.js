@@ -21,12 +21,18 @@ const Testimonials = () => {
   };
 
   return (
-    <div className='container'>
+    <div id='testimonials' className='container'>
       <div className='carousel'>
 
       <div className='heading'>
-      <h1>Past attendees testimonials</h1>
-      <p>TxE Summit 2022</p>
+      <h1 className='text-3xl font-bold'>Past attendees testimonials</h1>
+      <div className='text-lg mt-1 flex flex-col justify-center items-center'>
+                TxE summit 2023
+                <div className='flex space-x-2 mt-2'>
+                <div className='w-10 h-2 rounded-full bg-orange-500'></div>
+                <div className='w-10 h-2 rounded-full bg-black'></div>
+                </div>
+            </div>
       </div>  
 
       <div className='indicators'>
