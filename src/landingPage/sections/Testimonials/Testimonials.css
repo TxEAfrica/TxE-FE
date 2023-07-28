@@ -263,6 +263,10 @@
   .carousel {
     height: auto;
   }
+  .test-1{
+    width: 200px;
+    margin-top: 10px;
+  }
 
   .slider {
     height: auto;
@@ -274,7 +278,7 @@
   }
 
   .quote {
-    max-width: 400;
+    max-width: 400px;
   }
 
   .control .arrow {
@@ -286,8 +290,12 @@
   .carousel {
     height: fit-content;
   }
+  .test-1{
+    width: 200px;
+    margin-top: 10px;
+  }
   .quote{
-    max-width: 300;
+    max-width: 350px;
     text-align: center;
     padding: 10px;
     display: flex;
@@ -312,6 +320,10 @@
 @media screen and (max-width: 360px) {
   .carousel {
     height: fit-content;
+  }
+  .test-1{
+    width: 200px;
+    margin-top: 50px;
   }
   .quote{
     max-width: 150;
