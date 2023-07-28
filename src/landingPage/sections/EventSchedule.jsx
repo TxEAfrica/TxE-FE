@@ -2,13 +2,13 @@ import TxELogoBg from "../../assets/txeLogoBg.svg"
 
 const EventSchedule = () => {
     return ( 
-        <div>
+        <div id="event-schedule">
             <div className="md:flex text-center md:text-start items-center md:justify-between px-8 md:px-20">
                 <div className="md:w-3/4">
                     <h1 className="text-3xl font-bold mb-4 md:mb-0">
                         Event Schedule
                     </h1>
-                    <p className="md:w-1/2 mt-4">
+                    <p className="md:w-2/3 lg:w-1/2 mt-4">
                     The Enugu TxE Summit 2023 will be a two day event each day 
                     focusing on a different theme.
                     </p>
@@ -16,7 +16,7 @@ const EventSchedule = () => {
                 <div>
                     <div className='text-lg font-semibold mt-5'>
                     September 28th & 29th, 2023
-                    <div className='flex space-x-2 mt-2'>
+                    <div className='flex space-x-2 mt-2 flex justify-center items-center lg:justify-start'>
                     <div className='w-10 h-2 rounded-full bg-orange-500'></div>
                     <div className='w-10 h-2 rounded-full bg-black'></div>
                     </div>
@@ -38,7 +38,7 @@ const EventSchedule = () => {
                                 <h1 className="md:text-3xl font-bold">
                                 Enterprenuership 
                                 </h1>
-                                <p className="text-sm md:text-lg w-2/3">
+                                <p className="text-sm md:text-lg lg:w-2/3">
                                 A 1-day interactive workshop and fireside 
                                 chat with leading experts from leading tech 
                                 companies including Google
@@ -48,7 +48,7 @@ const EventSchedule = () => {
                                 <h1 className="font-bold">
                                 Idea Pitch Session 
                                 </h1>
-                                <p className="text-sm md:text-lg w-2/3">
+                                <p className="text-sm md:text-lg lg:w-2/3">
                                 Innovative businesses will be given an 
                                 opportunity to pitch their ideas and businesss 
                                 solutions to a panel of judges and recieve 
@@ -59,7 +59,7 @@ const EventSchedule = () => {
                                 <h1 className="font-bold">
                                 Enterprenuership 
                                 </h1>
-                                <p className="text-sm md:text-lg w-2/3">
+                                <p className="text-sm md:text-lg lg:w-2/3">
                                 A 1-day interactive workshop and fireside 
                                 chat with leading experts from leading tech 
                                 companies including Google
@@ -69,7 +69,7 @@ const EventSchedule = () => {
                                 <h1 className="font-bold">
                                 Grants and Support for Startups 
                                 </h1>
-                                <p className="text-sm md:text-lg w-2/3">
+                                <p className="text-sm md:text-lg lg:w-2/3">
                                 Innovative businesses will stand a chance to 
                                 be awarded seed fund grants to encourage their 
                                 ventures.
