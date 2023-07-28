@@ -1,6 +1,11 @@
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaArrowRight, FaInstagram, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
 
 export const Icon = {
     "BarMenu": FaBars,
-    "CancelMenu": FaTimes
+    "CancelMenu": FaTimes,
+    "Arrow": FaArrowRight,
+    "Instagram": FaInstagram,
+    "LinkedIn": FaLinkedin,
+    "Twitter": FaTwitter,
+    "Email": FaEnvelope
 }
