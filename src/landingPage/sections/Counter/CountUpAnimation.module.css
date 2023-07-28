@@ -1,6 +1,6 @@
 .counterUp {
     width: 100%;
-    background-color: #EBEAEA;
+    background-color: #F6F4F5;
     color: black;
     padding: 50px 80px;
     display: flex;
@@ -12,19 +12,19 @@
   .countItem {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     color: #3B3A3A;
   }
   
   .countItem p {
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 700;
     font-family: 'Alata', sans-serif;
     color: #3B3A3A;
   }
   
   .countItem h1 {
-    font-size: 70px;
+    font-size: 40px;
     font-family: 'Plus Jakarta Sans', sans-serif;
   }
   
