@@ -46,7 +46,7 @@ const Navbar = () => {
             onClick={toggleMenu}
             style={{ opacity: 0.95, transition: 'opacity 1s ease' }}
           >
-            <ul className="flex flex-col font-bold mt-16 p-4 space-y-6">
+            <ul className="w-full h-fit flex flex-col font-bold mt-16 p-4 space-y-6 z-50" onClick={()=>setShowMenu(!showMenu)}>
             <ScrollToContainerLink to={'about'}>
               <li className='p-2 cursor-pointer'>About</li>
               </ScrollToContainerLink>
