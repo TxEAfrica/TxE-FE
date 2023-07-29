@@ -1,0 +1,11 @@
+.formbutton{
+    width: 100%;
+    background: #FF6F43;
+    color: #FFF;
+    padding: 15px 25px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+}
