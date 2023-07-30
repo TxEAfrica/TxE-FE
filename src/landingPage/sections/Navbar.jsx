@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import { Icon } from '../../icons/Icons';
 import TxELogo from '../../assets/txeLogo.svg';
 import ScrollToContainerLink from '../scroll/ScrollToContainerLink';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+  const navigate = useNavigate()
+  const location = useLocation()
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => {
@@ -12,7 +15,7 @@ const Navbar = () => {
 
   return (
     <div className=' flex justify-between lg:justify-center items-center space-x-44 py-4 px-4 md:px-8 lg:px-4 bg-white sticky top-0 z-50'>
-      <div>
+      <div onClick={()=>location.pathname!=='/'&&navigate('/')}>
         <img src={TxELogo} className="w-24" alt="" />
       </div>
       <div className='relative flex '>

@@ -4,7 +4,7 @@ import InputField from './components/InputField/InputField';
 import InputSelect from './components/InputSelect/InputSelect';
 import InputOption from './components/InputOption/InputOption';
 import decor from '../../assets/decor.svg';
-import RegButton from './components/Buttons/RegButton';
+import FormBtn from './components/Buttons/FormButton';
 
 const EventRegForm = () => {
     const [firstName, setFirstName] = useState('');
@@ -216,7 +216,7 @@ const EventRegForm = () => {
     
 
         <div>
-            <RegButton  />
+            <FormBtn btnFor={'Register'} />
         </div>
 
 

@@ -1,18 +1,19 @@
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from "./landingPage/home";
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import EventRegForm from './registrationPage/eventregistration/EventRegForm'
+import EventRegForm from './registrationPage/eventregistration/EventRegForm';
+import TechSupportApplication from './applications/category/TechSupportApplication';
 
 const App = () => {
-  return ( 
-    <BrowserRouter>
-      <div>
-        <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/register" element={<EventRegForm />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
-   );
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/register" element={<EventRegForm />} />
+                <Route path="/techsupport" element={<TechSupportApplication />} />
+            </Routes>
+        </BrowserRouter>
+    );
 }
- 
+
 export default App;

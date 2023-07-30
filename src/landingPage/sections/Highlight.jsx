@@ -2,8 +2,10 @@ import { Icon } from '../../icons/Icons'
 import win from '../../assets/txe-win1.png'
 import scholarship from '../../assets/scholarship.png'
 import win1 from '../../assets/txe-win2.png'
+import { useNavigate } from 'react-router-dom'
 
 const Highlight = () => {
+    const navigate = useNavigate()
     return ( 
         <div className='px-8 lg:px-20 py-10 bg-orange-50'>
             <div className='flex flex-col justify-center items-center md:mb-20'>
@@ -32,7 +34,7 @@ const Highlight = () => {
                 Lucky participants will be going home with valuable 
                 scholarships from our incredible tech event! 🎉🏆
                 </p>
-                <div className="text-orange-500 flex">
+                <div className="text-orange-500 flex cursor-pointer">
                     Apply <Icon.Arrow className='mx-2 -rotate-45 my-auto' />
                 </div>
             </div>
@@ -49,7 +51,7 @@ const Highlight = () => {
                 Lucky participants will be going home with valuable 
                 scholarships from our incredible tech event! 🎉🏆
                 </p>
-                <div className='flex'>
+                <div className='flex cursor-pointer' onClick={()=>navigate('/techsupport')}>
                     Apply <Icon.Arrow className='mx-2 -rotate-45 my-auto' />
                 </div>
             </div>
@@ -66,7 +68,7 @@ const Highlight = () => {
                 Lucky participants will be going home with valuable 
                 scholarships from our incredible tech event! 🎉🏆
                 </p>
-                <div className="text-orange-500 flex">
+                <div className="text-orange-500 flex cursor-pointer" onClick={()=>navigate('/techsupport')}>
                     Apply <Icon.Arrow className='mx-2 -rotate-45 my-auto' />
                 </div>
             </div>
