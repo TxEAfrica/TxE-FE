@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect} from 'react';
 import EventRegCSS from './EventRegForm.module.css';
 import InputField from './components/InputField/InputField';
 import InputSelect from './components/InputSelect/InputSelect';
@@ -10,18 +10,55 @@ const EventRegForm = () => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [gender, setGender] = useState('');
+    const [country, setCountry] = useState('');
+    const [state, setState] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [email, setEmail] = useState('');
     const [bestDescription, setBestDescription] = useState('');
     const [trackInterest, setTrackInterest] = useState('');
+    const [attended, setAttended] = useState('');
+    const [joiningMode, setJoiningMode] = useState('');
+
+    const [countryOptions, setCountryOptions] = useState([]);
+
+
+    useEffect(() => {
+      // Function to fetch country data from API
+      const fetchCountries = async () => {
+        try {
+          // Replace 'YOUR_COUNTRY_API_ENDPOINT' with the actual API endpoint to fetch countries
+          const response = await fetch('https://restcountries.com/v3.1/all');
+          const data = await response.json();
+          // Assuming the API response is an array of objects with 'label' and 'value' properties
+          // Modify the 'label' and 'value' properties according to your API response structure
+          const countries = data.map(country => ({
+            label: country.name.common, // Modify this according to your API response structure
+            value: country.name.common, // Modify this according to your API response structure
+          }));
+          // Prepend the default option at the beginning of the array
+          const defaultOption = { label: 'Select your country', value: '' };
+          countries.sort((a, b) => a.label.localeCompare(b.label));
+          setCountryOptions([defaultOption, ...countries]);
+        } catch (error) {
+          // Handle errors if any
+          console.error('Error fetching country data:', error);
+        }
+      };
+  
+      fetchCountries();
+    }, []);
 
     const EventReg = {
         firstName,
         lastName,
+        country,
+        state,
         gender,
         phoneNumber,
         email,
         bestDescription,
+        attended,
+        joiningMode,
         trackInterest,
     };
 
@@ -35,9 +72,18 @@ const EventRegForm = () => {
     // Radio button options for "Which of the following best describes you?"
     const bestDescriptionOptions = [
       { label: 'Student', value: 'student' },
-      { label: 'Undergraduate', value: 'undergraduate' },
-      { label: 'BSc', value: 'bachelor' },
-      { label: 'PhD', value: 'doctorate' },
+      { label: 'Developer', value: 'developer' },
+      { label: 'Entreprenuer', value: 'entreprenuer' },
+      { label: 'Others', value: 'others' },
+    ];
+    // Radio button options for "Did you attend last year?"
+    const attendedOptions = [
+      { label: 'Yes', value: 'yes' },
+      { label: 'No', value: 'no' },
+    ];
+    const joiningModeOptions = [
+      { label: 'Virtual', value: 'virtual' },
+      { label: 'Physical', value: 'physical' },
     ];
   
     // Radio button options for "Which track are you interested in?"
@@ -68,8 +114,9 @@ const EventRegForm = () => {
       </div>
 
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className={EventRegCSS.smallinputholder}>
             <InputField
+                // className={"className"}
                 labelText="First Name"
                 htmlFor="firstName" // Pass the htmlFor prop for label element
                 inputId="firstName" // Pass the inputId prop for input element
@@ -87,7 +134,8 @@ const EventRegForm = () => {
             />
         </div>
         
-        <div>
+        
+        <div className={EventRegCSS.smallinputholder}>
             <InputSelect
                 labelText="Gender"
                 htmlFor="gender" // Pass the htmlFor prop for label element
@@ -107,6 +155,25 @@ const EventRegForm = () => {
                 onChange={(e) => setPhoneNumber(e.target.value)}
             />
         </div>
+        <div className={EventRegCSS.smallinputholder}>
+            <InputSelect
+                labelText="Country"
+                htmlFor="country" // Pass the htmlFor prop for label element
+                selectId="country" // Pass the selectId prop for select element
+                value={country}
+                onChange={(e) => setCountry(e.target.value)} // Pass the handleGenderChange function
+                options={countryOptions} // Pass the options array for select element
+              />
+
+            <InputField
+                labelText="State"
+                htmlFor="state" // Pass the htmlFor prop for label element
+                inputId="state" // Pass the inputId prop for input element
+                type="text" // Pass the type prop for input element
+                value={state}
+                onChange={(e) => setState(e.target.value)}
+            />
+        </div>
 
         <InputField
             labelText="Email"
@@ -123,6 +190,20 @@ const EventRegForm = () => {
         options={bestDescriptionOptions}
         initialSelection={bestDescription}
         updatedSelection={setBestDescription}
+        />
+
+        <InputOption
+        descriptionLabelText="Did you attend TxE 2022?"
+        options={attendedOptions}
+        initialSelection={attended}
+        updatedSelection={setAttended}
+        />
+
+        <InputOption
+        descriptionLabelText="How will you be joining us this year?"
+        options={joiningModeOptions}
+        initialSelection={joiningMode}
+        updatedSelection={setJoiningMode}
         />
 
         <InputOption

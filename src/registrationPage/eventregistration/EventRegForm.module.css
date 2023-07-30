@@ -53,6 +53,36 @@ form{
     margin-top: 30px;
 }
 
+.smallinputholder{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.inputholder{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+.inputholder input{
+    border: none;
+    outline:none;
+    padding: 10px;
+    height: 50px;
+    border-radius: 6px;
+}
+.inputholder label{
+    font-size: 16px;
+    font-weight: 500;
+    color: #586166;
+}
+.inputholder input::placeholder{
+    color: #8D9396;
+}
 
 .inputholder select{
     border: none;
@@ -60,7 +90,7 @@ form{
     padding: 10px;
     height: 50px;
     border-radius: 6px;
-    /* width: 400px; */
+    width: 100%;
 }
 .inputholder option{
     color: #8D9396;
@@ -142,33 +172,3 @@ form{
 
 
 
-/* .smallinputholder{
-    display: flex;
-    gap: 20px;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    
-}
-
-.inputholder{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    width: 100%;
-}
-.inputholder input{
-    border: none;
-    outline:none;
-    padding: 10px;
-    height: 50px;
-    border-radius: 6px;
-}
-.inputholder label{
-    font-size: 16px;
-    font-weight: 500;
-    color: #586166;
-}
-.inputholder input::placeholder{
-    color: #8D9396;
-} */
