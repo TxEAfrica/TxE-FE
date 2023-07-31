@@ -66,11 +66,11 @@ const ApplyFor = ({ category, applicantMessage }) => {
           id='top'
           className="relative bg-orange-50 h-fit flex flex-col justify-center items-center mx-auto relative" // Add 'relative' positioning
         >
-          <FormVector position={'left-10 top-20'} />
-          <FormVector position={'top-10'} />
-          <FormVector position={'right-10 top-20'} />
-          <FormVector position={'left-10'} />
-          <FormVector position={'right-10'} />
+          <FormVector position={'left-10 top-60'} />
+          <FormVector position={'top-3'} />
+          <FormVector position={'right-10 top-60'} />
+          {/* <FormVector position={'left-10'} /> */}
+          {/* <FormVector position={'right-10'} /> */}
           <div className={`text-center w-1/2 ${showUI&&'-mb-56'} mt-20 space-y-3`}>
             <h1 className="text-5xl text-orange-500 font-semibold">
               Apply For {category}
@@ -85,7 +85,8 @@ const ApplyFor = ({ category, applicantMessage }) => {
                 {
                     showUI?(
                         <form method="POST" onSubmit={handleValidation}>
-                            <InputField 
+                            <InputField
+                            placeholder={"Verify Email"} 
                             htmlFor={'email'} 
                             labelText={'Email'}
                             type={'email'}

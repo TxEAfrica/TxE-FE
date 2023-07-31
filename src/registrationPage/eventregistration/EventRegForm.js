@@ -5,8 +5,13 @@ import InputSelect from './components/InputSelect/InputSelect';
 import InputOption from './components/InputOption/InputOption';
 import decor from '../../assets/decor.svg';
 import FormBtn from './components/Buttons/FormButton';
+import Navbar from '../../landingPage/sections/Navbar';
+import Footer from '../../landingPage/sections/Footer';
+import FormVector from '../../applications/FormVector';
+
 
 const EventRegForm = () => {
+
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [gender, setGender] = useState('');
@@ -26,21 +31,20 @@ const EventRegForm = () => {
       // Function to fetch country data from API
       const fetchCountries = async () => {
         try {
-          // Replace 'YOUR_COUNTRY_API_ENDPOINT' with the actual API endpoint to fetch countries
+
           const response = await fetch('https://restcountries.com/v3.1/all');
           const data = await response.json();
-          // Assuming the API response is an array of objects with 'label' and 'value' properties
-          // Modify the 'label' and 'value' properties according to your API response structure
+
           const countries = data.map(country => ({
-            label: country.name.common, // Modify this according to your API response structure
-            value: country.name.common, // Modify this according to your API response structure
+            label: country.name.common, 
+            value: country.name.common, 
           }));
-          // Prepend the default option at the beginning of the array
+
           const defaultOption = { label: 'Select your country', value: '' };
           countries.sort((a, b) => a.label.localeCompare(b.label));
           setCountryOptions([defaultOption, ...countries]);
         } catch (error) {
-          // Handle errors if any
+
           console.error('Error fetching country data:', error);
         }
       };
@@ -62,11 +66,45 @@ const EventRegForm = () => {
         trackInterest,
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+  
+      // Prepare the data object to be sent to the API
+      const data = {
+        firstName,
+        lastName,
+        country,
+        state,
+        gender,
+        phoneNumber,
+        email,
+        bestDescription,
+        attended,
+        joiningMode,
+        trackInterest,
+      };
+  
+      // try {
+      //   const response = await fetch('https://txe-africa.onrender.com/api/v1/register', {
+      //     method: 'POST',
+      //     headers: {
+      //       'Content-Type': 'application/json',
+      //     },
+      //     body: JSON.stringify(data),
+      //   });
+  
+      //   if (response.ok) {
+      //     console.log('Form data submitted successfully!');
 
-        console.log(EventReg) 
-    }
+      //   } else {
+      //     console.log('Failed to submit form data');
+      //   }
+      // } catch (error) {
+      //   console.log('Error submitting form data:', error);
+      // }
+
+      console.log(data)
+    };
       
   
     // Radio button options for "Which of the following best describes you?"
@@ -95,17 +133,27 @@ const EventRegForm = () => {
     // Dropdown button options for "Gender"
       const genderOptions = [
         { label: 'Select your gender', value: '' },
-        { label: 'Male', value: 'male' },
-        { label: 'Female', value: 'female' },
-        { label: 'Other', value: 'other' },
+        { label: 'Male', value: 'Male' },
+        { label: 'Female', value: 'Female' },
+        { label: 'Other', value: 'Other' },
       ];
 
+      
+
   return (
+
+    <div>
+    <Navbar />
     <div className={EventRegCSS.main}>
 
-      <img src={decor} alt='' className={EventRegCSS.decor1} />
-      <img src={decor} alt='' className={EventRegCSS.decor2} />
-      <img src={decor} alt='' className={EventRegCSS.decor3} />
+          <FormVector position={'left-10 top-100'} />
+          <FormVector position={'left-10 bottom-100'} />
+          <FormVector position={'left-1 top-10'} />
+          <FormVector position={'top-3'} />
+          <FormVector position={'bottom-3'} />
+          <FormVector position={'right-10 top-100'} />
+          <FormVector position={'right-10 bottom-100'} />
+          <FormVector position={'right-1 top-10'} />
 
       <div className={EventRegCSS.formtitle}>
         <h1>Register Now!</h1>
@@ -117,6 +165,7 @@ const EventRegForm = () => {
         <div className={EventRegCSS.smallinputholder}>
             <InputField
                 // className={"className"}
+                placeholder={"Enter your first name"}
                 labelText="First Name"
                 htmlFor="firstName" // Pass the htmlFor prop for label element
                 inputId="firstName" // Pass the inputId prop for input element
@@ -125,6 +174,7 @@ const EventRegForm = () => {
                 onChange={(e) => setFirstName(e.target.value)}
             />
             <InputField
+                placeholder={"Enter your last name"}
                 labelText="Last Name"
                 htmlFor="lastName" // Pass the htmlFor prop for label element
                 inputId="lastName" // Pass the inputId prop for input element
@@ -137,17 +187,19 @@ const EventRegForm = () => {
         
         <div className={EventRegCSS.smallinputholder}>
             <InputSelect
-                labelText="Gender"
-                htmlFor="gender" // Pass the htmlFor prop for label element
-                selectId="gender" // Pass the selectId prop for select element
-                value={gender}
-                onChange={(e) => setGender(e.target.value)} // Pass the handleGenderChange function
-                options={genderOptions} // Pass the options array for select element
-                />
+              labelText={"Gender"}
+              htmlFor={"gender"}
+              selectId="gender"
+              value={gender} // Make sure 'gender' is defined and contains a valid value
+              // onChange={(selectedOption) => setGender(selectedOption.value)}
+              onChange={(e) => setGender(e.target.value)}
+              options={genderOptions}
+            />
 
             
             <InputField
                 labelText="Phone Number"
+                placeholder={"Enter your phone number"}
                 htmlFor="phoneNumber" // Pass the htmlFor prop for label element
                 inputId="phoneNumber" // Pass the inputId prop for input element
                 type="text" // Pass the type prop for input element
@@ -161,12 +213,14 @@ const EventRegForm = () => {
                 htmlFor="country" // Pass the htmlFor prop for label element
                 selectId="country" // Pass the selectId prop for select element
                 value={country}
-                onChange={(e) => setCountry(e.target.value)} // Pass the handleGenderChange function
+                // onChange={(selectedOption) => setCountry(selectedOption.value)} // Pass the handleGenderChange function
+                onChange={(e) => setCountry(e.target.value)}
                 options={countryOptions} // Pass the options array for select element
               />
 
             <InputField
                 labelText="State"
+                placeholder={"Enter your state"}
                 htmlFor="state" // Pass the htmlFor prop for label element
                 inputId="state" // Pass the inputId prop for input element
                 type="text" // Pass the type prop for input element
@@ -177,6 +231,7 @@ const EventRegForm = () => {
 
         <InputField
             labelText="Email"
+            placeholder={"Enter your email address"}
             htmlFor="email" // Pass the htmlFor prop for label element
             inputId="email" // Pass the inputId prop for input element
             type="email" // Pass the type prop for input element
@@ -221,6 +276,9 @@ const EventRegForm = () => {
 
 
       </form>
+    </div>
+    <div className="bg-gray-200 h-36 w-full"></div>
+    <Footer />
     </div>
   );
 };
