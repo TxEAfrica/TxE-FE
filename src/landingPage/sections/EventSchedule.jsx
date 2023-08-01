@@ -28,7 +28,7 @@ const EventSchedule = () => {
                 <div className="absolute md:relative mr-10 my-auto">
                     <img src={TxELogoBg}  alt="logo" />
                 </div>
-                <div className="px-8 md:px-0 w-1/2 md:w-full">
+                <div className="px-8 md:px-20 w-1/3 md:w-full">
                     <h1 className="text-orange-500 mb-5 text-2xl">
                         _day one
                     </h1>

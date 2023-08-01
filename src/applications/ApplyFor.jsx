@@ -24,6 +24,7 @@ const ApplyFor = ({ category, applicantMessage }) => {
     const [pictureEvidence, setPictureEvidence] = useState('')
     const [showUp4Intvw, setShowUp4Intvw] = useState('')
     const [aboutYou, setAboutYou] = useState('')
+    // impliment validation here
     const handleValidation = (e)=>{
         e.preventDefault()
       }
@@ -71,17 +72,19 @@ const ApplyFor = ({ category, applicantMessage }) => {
           <FormVector position={'right-10 top-20'} />
           <FormVector position={'left-10'} />
           <FormVector position={'right-10'} />
+
           <div className={`text-center w-1/2 ${showUI&&'-mb-56'} mt-20 space-y-3`}>
-            <h1 className="text-5xl text-orange-500 font-semibold">
-              Apply For {category}
-            </h1>
-            <p>
-                        Need it? Go for it!
+                    <h1 
+                      className="text-5xl text-orange-500 font-semibold">
+                      Apply For {category}
+                    </h1>
+                    <p>
+                      Need it? Go for it!
                     </p>
                     <h3 className="text-xl font-semibold">
                         {applicantMessage}
                     </h3>
-                </div>
+          </div>
                 {
                     showUI?(
                         <form method="POST" onSubmit={handleValidation}>
