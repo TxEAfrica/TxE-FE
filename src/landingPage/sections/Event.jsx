@@ -1,8 +1,10 @@
 import BtnPrimary from "../buttons/BtnPrimary";
 import BtnSecondary from "../buttons/BtnSecondary";
 import event from '../../assets/summit.png'
+import { useNavigate } from "react-router-dom";
 
 const Event = () => {
+    const navigate = useNavigate()
     return ( 
         <div id="about" className="px-8 lg:px-20 flex flex-col-reverse lg:flex lg:flex-row">
             <div className="space-y-5">
@@ -25,8 +27,12 @@ const Event = () => {
                 </p>
 
                 <div className="lg:w-3/4 space-y-5 md:space-y-0 lg:space-y-0 md:space-x-5 md:flex">
-                    <BtnSecondary btnName={'Partner With Us'} />
-                    <BtnPrimary btnName={'Register'} />
+                    <div className="cursor-pointer h-fit w-full">
+                        <BtnSecondary btnName={'Partner With Us'} />
+                    </div>
+                    <div className="cursor-pointer w-full h-fit" onClick={()=>navigate('/register')}>
+                        <BtnPrimary btnName={'Register'} />
+                    </div>
                 </div>
             </div>
 

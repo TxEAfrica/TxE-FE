@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import BtnPrimary from "../buttons/BtnPrimary";
 import BtnSecondary from "../buttons/BtnSecondary";
 
 const Banner = () => {
+    const navigate = useNavigate()
     return ( 
         <div id="top" className="md:bg-banner bg-cover bg-no-repeat h-screen relative w-full overflow-hidden">
             <div className="gradient-overlay"></div>
@@ -13,8 +15,12 @@ const Banner = () => {
                     Great Innovative Ideas Unleashed
                 </p>
                 <div className="md:flex space-y-5 md:space-y-0 md:space-x-5 w-full md:w-1/2 p-8">
-                    <BtnSecondary btnName={'Partner With Us'} />
-                    <BtnPrimary btnName={'Register'} />
+                    <div className="cursor-pointer h-fit w-full">
+                        <BtnSecondary btnName={'Partner With Us'} />
+                    </div>
+                    <div className="cursor-pointer w-full h-fit" onClick={()=>navigate('/register')}>
+                        <BtnPrimary btnName={'Register'} />
+                    </div>
                 </div>
             </div>
         </div>
