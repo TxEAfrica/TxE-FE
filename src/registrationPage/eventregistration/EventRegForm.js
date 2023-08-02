@@ -132,15 +132,17 @@ const EventRegForm = () => {
           body: JSON.stringify(EventRegistration),
         });
   
+        console.log(EventRegistration)
+
         if (response.ok) {
-          console.log('Form data submitted successfully!');
+          // console.log('Form data submitted successfully!');
           setShowSuccessModal(true);
         } else {
-          console.log('Failed to submit form data');
+          // console.log('Failed to submit form data');
           setShowFailedModal(true);
         }
       } catch (error) {
-        console.error('Error submitting form data:', error);
+        // console.error('Error submitting form data:', error);
         setShowFailedModal(true);
       }
 

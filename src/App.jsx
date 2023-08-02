@@ -16,7 +16,7 @@ const App = () => {
                 <Route path="/techsupport" element={<TechSupportApplication />} />
                 <Route path="/grant" element={<ApplyForGrant />} />
                 {/* <Route path='/modal' element ={<SuccessModal />} /> */}
-                {/* <Route path='/modal' element ={<FailedModal />} /> */}
+                <Route path='/modal' element ={<FailedModal />} />
             </Routes>
         </BrowserRouter>
     );

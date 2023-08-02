@@ -36,7 +36,7 @@ const EmailVerification = ({ onSuccess, onUserData }) => {
 
         if (onSuccess) {
           onSuccess();
-          console.log(data)
+          // console.log(data)
         }
       } else {
         setIsEmailVerified(false);
