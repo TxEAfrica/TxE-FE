@@ -99,19 +99,19 @@ const EventRegForm = () => {
           
         });
   
-        console.log(EventRegistration)
+        // console.log(EventRegistration)
 
         if (response.ok) {
-          console.log('Form data submitted successfully!');
+          // console.log('Form data submitted successfully!');
           setShowSuccessModal(true);
           // Optionally, you can do something after a successful form submission, like showing a success message or redirecting the user to another page.
         } else {
-          console.log('Failed to submit form data');
+          // console.log('Failed to submit form data');
           setShowFailedModal(true);
           // Optionally, you can handle the error or show an error message to the user if the form submission was not successful.
         }
       } catch (error) {
-        console.error('Error submitting form data:', error);
+        // console.error('Error submitting form data:', error);
         setShowFailedModal(true);
         // Optionally, you can handle the error or show an error message to the user if there was an error while submitting the form.
       }

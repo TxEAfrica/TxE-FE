@@ -142,9 +142,9 @@ const ApplyForGrant = ({ initialUserData }) => {
         },
         body: JSON.stringify(formData),
       });
-      console.log(response)
+      // console.log(response)
   
-      console.log(formData);
+      // console.log(formData);
   
       if (response.status === 200) {
         setShowSuccessModal(true);
