@@ -3,8 +3,7 @@ import { BsCloudUpload } from 'react-icons/bs'; // Cloud icon from react-icons/b
 import { useDropzone } from 'react-dropzone';
 
 const ImageUploader = ({ onImageChange }) => {
-  const [image, setImage] = useState(null);
-  console.log(image)
+  const [image, setImage] = useState('');
 
   const onDrop = (acceptedFiles) => {
     const file = acceptedFiles[0];
@@ -35,7 +34,7 @@ const ImageUploader = ({ onImageChange }) => {
       </div>
       {image && (
         <div className="">
-          <img src={image} alt="Uploaded" className="w-36 mx-auto rounded-md" />
+          <img src={image} alt="Uploaded" loading='lazy' className="w-36 mx-auto rounded-md" />
         </div>
       )}
     </div>

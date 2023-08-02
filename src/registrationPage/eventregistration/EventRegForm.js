@@ -116,7 +116,7 @@ const EventRegForm = () => {
         // Optionally, you can handle the error or show an error message to the user if there was an error while submitting the form.
       }
 
-      
+      // console.log(data)
     };
 
 

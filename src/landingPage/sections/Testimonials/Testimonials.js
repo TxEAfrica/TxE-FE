@@ -50,14 +50,26 @@ const Testimonials = () => {
         <div className='slider' style={{ transform: `translateX(-${(currentSlide * 100) / totalSlides}%)` }}>
           <section>
             <div>
-                <img className='test-1' src={test1} alt="test-1"/>
+                <img className='test-1' src={test1} loading='lazy' alt="test-1"/>
             </div>
             <div className='quote'>
-                <img className='q1' src={q1} alt='' />
+                <img className='q1' src={q1} loading='lazy' alt='' />
                 <h3>How TXE Africa caused a shift in my tech career</h3>
                 <p>I was privileged to be among those awarded scholarship to learn any tech skill of my choice under Learnable internship, after completing the internship I got a job with one of the tech startups in Lagos to work remotely from  Enugu State.</p>
                 <small>Vivian Nnoka, <span>Frontend Developer.</span></small>
-                <img className='q2' src={q2} alt='' />
+                <img className='q2' src={q2} loading='lazy' alt='' />
+            </div>
+          </section>
+          <section>
+            <div>
+                <img className='test-1' src={test1} loading='lazy' alt="test-1"/>
+            </div>
+            <div className='quote'>
+                <img className='q1' src={q1} loading='lazy' alt='' />
+                <h3>How TXE Africa caused a shift in my tech career</h3>
+                <p>I was privileged to be among those awarded scholarship to learn any tech skill of my choice under Learnable internship, after completing the internship I got a job with one of the tech startups in Lagos to work remotely from  Enugu State.</p>
+                <small>Vivian Nnoka, <span>Frontend Developer.</span></small>
+                <img className='q2' src={q2} loading='lazy' alt='' />
             </div>
           </section>
           <section>
@@ -65,11 +77,11 @@ const Testimonials = () => {
                 <img className='test-1' src={test1} alt="test-1"/>
             </div>
             <div className='quote'>
-                <img className='q1' src={q1} alt='' />
+                <img className='q1' src={q1}  loading='lazy' alt='' />
                 <h3>How TXE Africa caused a shift in my tech career</h3>
                 <p>I was privileged to be among those awarded scholarship to learn any tech skill of my choice under Learnable internship, after completing the internship I got a job with one of the tech startups in Lagos to work remotely from  Enugu State.</p>
                 <small>Vivian Nnoka, <span>Frontend Developer.</span></small>
-                <img className='q2' src={q2} alt='' />
+                <img className='q2' src={q2} loading='lazy' alt='' />
             </div>
           </section>
           <section>
@@ -77,23 +89,11 @@ const Testimonials = () => {
                 <img className='test-1' src={test1} alt="test-1"/>
             </div>
             <div className='quote'>
-                <img className='q1' src={q1} alt='' />
+                <img className='q1' src={q1} loading='lazy' alt='' />
                 <h3>How TXE Africa caused a shift in my tech career</h3>
                 <p>I was privileged to be among those awarded scholarship to learn any tech skill of my choice under Learnable internship, after completing the internship I got a job with one of the tech startups in Lagos to work remotely from  Enugu State.</p>
                 <small>Vivian Nnoka, <span>Frontend Developer.</span></small>
-                <img className='q2' src={q2} alt='' />
-            </div>
-          </section>
-          <section>
-            <div>
-                <img className='test-1' src={test1} alt="test-1"/>
-            </div>
-            <div className='quote'>
-                <img className='q1' src={q1} alt='' />
-                <h3>How TXE Africa caused a shift in my tech career</h3>
-                <p>I was privileged to be among those awarded scholarship to learn any tech skill of my choice under Learnable internship, after completing the internship I got a job with one of the tech startups in Lagos to work remotely from  Enugu State.</p>
-                <small>Vivian Nnoka, <span>Frontend Developer.</span></small>
-                <img className='q2' src={q2} alt='' />
+                <img className='q2' src={q2} loading='lazy' alt='' />
             </div>
           </section>
           
@@ -102,8 +102,8 @@ const Testimonials = () => {
           {/* <span className='arrow left' onClick={prevSlide}>
             Left
           </span> */}
-          <img className='arrow left' onClick={prevSlide} src={arrowleft} alt='' />
-          <img className='arrow right' onClick={nextSlide} src={arrowright} alt='' />
+          <img className='arrow left' onClick={prevSlide} src={arrowleft} loading='lazy' alt='' />
+          <img className='arrow right' onClick={nextSlide} src={arrowright} loading='lazy' alt='' />
           {/* <span className='arrow right' onClick={nextSlide}>
             Right
           </span> */}

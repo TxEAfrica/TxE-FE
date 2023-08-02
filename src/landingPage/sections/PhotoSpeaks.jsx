@@ -36,25 +36,25 @@ const PhotoSpeaks = () => {
           className="aspect-w-3 aspect-h-2 rounded-md overflow-hidden cursor-pointer"
           onClick={() => handleImageClick(photo1)}
         >
-          <img src={photo1} alt="" className="object-cover w-full h-full" />
+          <img src={photo1} alt="" loading='lazy' className="object-cover w-full h-full" />
         </div>
         <div
           className="aspect-w-3 aspect-h-2 rounded-md overflow-hidden cursor-pointer"
           onClick={() => handleImageClick(photo2)}
         >
-          <img src={photo2} alt="" className="object-cover w-full h-full" />
+          <img src={photo2} alt="" loading='lazy' className="object-cover w-full h-full" />
         </div>
         <div
           className="aspect-w-3 aspect-h-2 rounded-md overflow-hidden cursor-pointer"
           onClick={() => handleImageClick(photo3)}
         >
-          <img src={photo3} alt="" className="object-cover w-full h-full" />
+          <img src={photo3} alt="" loading='lazy' className="object-cover w-full h-full" />
         </div>
         <div
           className="aspect-w-3 aspect-h-2 rounded-md overflow-hidden cursor-pointer"
           onClick={() => handleImageClick(photo4)}
         >
-          <img src={photo4} alt="" className="object-cover w-full h-full" />
+          <img src={photo4} alt="" loading='lazy' className="object-cover w-full h-full" />
         </div>
       </div>
 
@@ -63,19 +63,19 @@ const PhotoSpeaks = () => {
           className="aspect-w-3 aspect-h-2 rounded-md overflow-hidden cursor-pointer"
           onClick={() => handleImageClick(photo5)}
         >
-          <img src={photo5} alt="" className="object-cover w-full h-full" />
+          <img src={photo5} alt="" loading='lazy' className="object-cover w-full h-full" />
         </div>
         <div
           className="aspect-w-3 aspect-h-2 rounded-md overflow-hidden cursor-pointer"
           onClick={() => handleImageClick(photo6)}
         >
-          <img src={photo6} alt="" className="object-cover w-full h-full" />
+          <img src={photo6} alt="" loading='lazy' className="object-cover w-full h-full" />
         </div>
         <div
           className="aspect-w-3 aspect-h-2 rounded-md overflow-hidden cursor-pointer"
           onClick={() => handleImageClick(photo7)}
         >
-          <img src={photo7} alt="" className="object-cover w-full h-full" />
+          <img src={photo7} alt="" loading='lazy' className="object-cover w-full h-full" />
         </div>
       </div>
 
@@ -87,7 +87,7 @@ const PhotoSpeaks = () => {
         ariaHideApp={false}
       >
         {selectedImage && (
-          <img src={selectedImage} alt="" className="w-full h-full object-contain" />
+          <img src={selectedImage} alt="" loading='lazy' className="w-full h-full object-contain" />
         )}
       </Modal>
     </div>
