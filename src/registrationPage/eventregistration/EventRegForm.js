@@ -89,7 +89,7 @@ const EventRegForm = () => {
     
         return false; // Email does not exist
       } catch (error) {
-        console.error('Error checking email availability:', error);
+        console.log('Error checking email availability:', error);
         return false;
       }
     };
