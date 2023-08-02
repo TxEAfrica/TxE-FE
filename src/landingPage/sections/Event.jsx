@@ -31,7 +31,7 @@ const Event = () => {
             </div>
 
             <div className="h-full mb-5">
-                <img src={event} className="h-full" alt="" />
+                <img src={event} loading='lazy' className="h-full object-cover" alt="" />
             </div>
         </div>
      );

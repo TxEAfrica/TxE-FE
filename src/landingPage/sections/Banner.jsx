@@ -3,7 +3,7 @@ import BtnSecondary from "../buttons/BtnSecondary";
 
 const Banner = () => {
     return ( 
-        <div id="banner" className="md:bg-banner bg-cover bg-no-repeat h-screen relative w-full overflow-hidden">
+        <div id="top" className="md:bg-banner bg-cover bg-no-repeat h-screen relative w-full overflow-hidden">
             <div className="gradient-overlay"></div>
             <div className="content-container md:text-white flex flex-col items-center md:justify-center text-center">
                 <h1 className="text-4xl md:text-6xl font-bold w-5/6 mt-16 md:mt-0 mb-5">

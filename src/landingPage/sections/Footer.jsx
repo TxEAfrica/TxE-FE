@@ -53,7 +53,7 @@ const Footer = () => {
                     </div>
                 </div>
                 
-                <ScrollToContainerLink to={'banner'}>
+                <ScrollToContainerLink to={'top'}>
                     <div className="absolute right-10 top-10 bottom-0 h-fit text-2xl p-2">
                         <Icon.Arrow className="-rotate-90" />
                     </div>
