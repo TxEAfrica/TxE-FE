@@ -2,11 +2,16 @@ import { useState } from "react";
 import InputOption from "../../../registrationPage/eventregistration/components/InputOption/InputOption";
 import ImageUploader from '../validated-applicants/uploader/ImageUploader'
 
-const LaptopRegistrants = () => {
-    const [hasLaptop, setHasLaptop] = useState('')
-    const [comeForInterview, setComeForInterview] = useState('')
-    const [onImageChange, setImageChange] = useState('')
-    console.log('imeje',onImageChange)
+const LaptopRegistrants = ({
+    setHaveLaptop,
+    haveLaptop,
+    whyLaptop,
+    showUp4Intvw,
+    setShowUp4Intvw,
+    setWhyNotShowUp4Intvw,
+    setImageChange,
+    setAboutYou
+}) => {
     return ( 
         <>
            <div className=" space-y-8 text-gray-600">
@@ -15,8 +20,8 @@ const LaptopRegistrants = () => {
                     descriptionLabelText={'Do you have a Laptop?'} 
                     options={[{label:'Yes', value:'Yes'},
                             {label: 'No', value: 'No'}]}
-                    initialSelection={hasLaptop}
-                    updatedSelection={setHasLaptop}
+                    initialSelection={haveLaptop}
+                    updatedSelection={setHaveLaptop}
                 />
                 </div>
           <div>
@@ -27,6 +32,7 @@ const LaptopRegistrants = () => {
                     rows='5' 
                     className="focus:outline-none focus:border-orange-300 p-2 w-full"
                     placeholder="Write here.." 
+                    onChange={(e)=>whyLaptop(e.target.value)}
                     required
                 />
                 </div>
@@ -44,8 +50,8 @@ const LaptopRegistrants = () => {
                     descriptionLabelText={'Would you show up for an interview if called?'} 
                     options={[{label:'Yes', value:'Yes'},
                             {label: 'No', value: 'No'}]}
-                    initialSelection={comeForInterview}
-                    updatedSelection={setComeForInterview}
+                    initialSelection={showUp4Intvw}
+                    updatedSelection={setShowUp4Intvw}
                 />
                 </div>
                 <div>
@@ -56,6 +62,7 @@ const LaptopRegistrants = () => {
                         rows='5' 
                         className="focus:outline-none focus:border-orange-300 p-2 w-full"
                         placeholder="Write here.." 
+                        onChange={(e)=>setWhyNotShowUp4Intvw(e.target.value)}
                         required
                     />
                     </div>
@@ -69,6 +76,7 @@ const LaptopRegistrants = () => {
                         rows='5' 
                         className="focus:outline-none focus:border-orange-300 p-2 w-full"
                         placeholder="Write here.."
+                        onChange={(e)=>setAboutYou(e.target.value)}
                     />
                     </div>
                     </label>

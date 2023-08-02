@@ -143,6 +143,8 @@ const EventRegForm = () => {
         console.error('Error submitting form data:', error);
         setShowFailedModal(true);
       }
+
+      
     };
 
 
