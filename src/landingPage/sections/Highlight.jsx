@@ -34,7 +34,7 @@ const Highlight = () => {
                 Lucky participants will be going home with valuable 
                 scholarships from our incredible tech event! 🎉🏆
                 </p>
-                <div className="text-orange-500 flex cursor-pointer">
+                <div className="text-orange-500 flex cursor-pointer" onClick={()=>navigate('/grant')}>
                     Apply <Icon.Arrow className='mx-2 -rotate-45 my-auto' />
                 </div>
             </div>
