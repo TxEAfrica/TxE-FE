@@ -1,7 +1,7 @@
 import React from 'react';
 import InputCSS from '../InputCSS.module.css';
 
-function InputField({labelText, htmlFor, inputId, type, value, onChange, placeholder }) {
+function InputField({labelText, htmlFor, inputId, type, value, onChange, placeholder, disable }) {
   return (
         <div className={InputCSS.inputholder}>
         <label htmlFor={htmlFor}>
@@ -13,6 +13,7 @@ function InputField({labelText, htmlFor, inputId, type, value, onChange, placeho
             placeholder={placeholder}
             value={value}
             onChange={onChange}
+            disabled={disable}
             required
         />
     </div>
