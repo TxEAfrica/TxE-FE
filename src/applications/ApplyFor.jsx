@@ -4,12 +4,18 @@ import InputField from "../registrationPage/eventregistration/components/InputFi
 import Footer from '../landingPage/sections/Footer'
 import FormVector from "./FormVector";
 import LaptopRegistrants from "./category/validated-applicants/LaptopRegistrants";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ScholarshipRegistrants from "./category/validated-applicants/ScholarshipRegistrants";
 import TechSupport from "./tech-support/TechSupport";
 
 const ApplyFor = ({ category, applicantMessage }) => {
-    const [showUI, setShowUI] = useState(false);
+
+  const [isLoading, setIsLoading] = useState(false)
+  const [data, setData] = useState('')
+  const [error, setError] = useState('')
+
+    const [showUI, setShowUI] = useState(true);
+
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
@@ -19,46 +25,114 @@ const ApplyFor = ({ category, applicantMessage }) => {
     const [track, setTrack] = useState('')
     const [sixMonthsAvlb, setSixMonthsAvlb] = useState('')
     const [haveLaptop, setHaveLaptop] = useState('')
+    const [whyParticipate, setWhyParticipate] = useState('')
+    const [hasParticipate, setHasParticipate] = useState('')
     const [validEmail, setValidEmail] = useState('')
     const [whyLaptop, setWhyLaptop] = useState('')
     const [pictureEvidence, setPictureEvidence] = useState('')
     const [showUp4Intvw, setShowUp4Intvw] = useState('')
+    const [whyNotShowUp4Intvw, setWhyNotShowUp4Intvw] = useState('')
     const [aboutYou, setAboutYou] = useState('')
     // impliment validation here
+    const handleValidEmail = (e)=>{
+      setValidEmail(e.target.value);
+    }
     const handleValidation = (e)=>{
         e.preventDefault()
+        console.log(validEmail)
+        fetchValidEmail()
       }
+      const fetchValidEmail = async ()=>{
+        try {
+          const response = await fetch(`https://txe-africa.onrender.com/api/v1/${validEmail}`);
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+  
+          const responseData = await response.json();
+          console.log(responseData)
+          setData(responseData);
+        } catch (err) {
+          // console.log(schApplicantData)
+          console.log(err)
+          setError(err);
+        } finally {
+          setIsLoading(false);
+        }
+      }
+    // console.log(firstName)
     const handleTechSupportForm = (e)=>{
         e.preventDefault()
-
-        const ScholarShipApplicantData = {
-          firstName:'',
-          lastName: '',
-          email:'',
-          gender:'',
-          phoneNumber:'',
-          supportInterest:'',
-          track:'',
-          sixMonthsAvlb:'',
-          haveLaptop:''
-
+        const schApplicantData =  {
+          "firstName":firstName,
+          "lastName":lastName,
+          "gender":gender,
+          "phoneNumber":phoneNumber,
+          "email":email,
+          "country":"Zimbabwe",
+          "state":"Lakare",
+          "supportInterest":supportInterest,
+          "track":track,
+          "sixMonthsAvailable":sixMonthsAvlb,
+          "haveALaptop":haveLaptop,
+          "whyParticipateInScholarship":whyParticipate,
+          "didParticipateInFirstScholarship":hasParticipate,
+          "whyLaptop":whyLaptop,
+          "pictureEvidence":pictureEvidence,
+          "showUpForInterview":showUp4Intvw,
+          "whyNotShowUpForInterview":whyNotShowUp4Intvw,
+          "aboutYou":aboutYou
         }
-        const LaptopApplicantData = {
-          firstName:'',
-          lastName: '',
-          email:'',
-          gender:'',
-          phoneNumber:'',
-          supportInterest:'',
-          whyLaptop:'',
-          pictureEvidence:'',
-          showUp4Intvw:'',
-          whyNotShowUp4Intvw:'',
-          aboutYou:''
-        }
-        //category === category && fetch
 
-    }
+        const laptpApplicantData = {
+          "firstName":firstName,
+          "lastName":lastName,
+          "gender":"male",
+          "phoneNumber":phoneNumber,
+          "email":email,
+          "country":"Zimbabwe",
+          "state":"Lakare",
+          "supportInterest":supportInterest,
+          "track":track,
+          "sixMonthsAvailable":sixMonthsAvlb,
+          "haveALaptop":haveLaptop,
+          "whyParticipateInScholarship":whyParticipate,
+          "didParticipateInFirstScholarship":hasParticipate,
+          "whyLaptop":whyLaptop,
+          "pictureEvidence":pictureEvidence,
+          "showUpForInterview":showUp4Intvw,
+          "whyNotShowUpForInterview":whyNotShowUp4Intvw,
+          "aboutYou":aboutYou
+        }
+
+        console.log(schApplicantData)
+        fetchTechSupportData(schApplicantData)
+      }
+          const fetchTechSupportData = async (schApplicantData)=>{
+            try {
+              const response = await fetch('https://txe-africa.onrender.com/api/v1/register/tech', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body:JSON.stringify(schApplicantData)
+              });
+      
+              if (!response.ok) {
+                throw new Error('Network response was not ok');
+              }
+      
+              const responseData = await response.json();
+              console.log(responseData)
+              setData(responseData);
+            } catch (err) {
+              // console.log(schApplicantData)
+              console.log(err)
+              setError(err);
+            } finally {
+              setIsLoading(false);
+            }
+          } 
   
     return (
       <>
@@ -86,20 +160,20 @@ const ApplyFor = ({ category, applicantMessage }) => {
           </div>
                 {
                     showUI?(
-                        <form method="POST" onSubmit={handleValidation}>
+                        <form method="POST" onSubmit={handleValidation} className="mt-56 mb-10">
                             <InputField
                             placeholder={"Verify Email"} 
                             htmlFor={'email'} 
                             labelText={'Email'}
                             type={'email'}
-                            onChange={(e)=>setValidEmail(e.target.vaue)} 
+                            onChange={handleValidEmail} 
                             />
-                            <div className="w-1/4 mx-auto">
+                            <div className="w-full mx-auto">
                             <FormBtn btnFor={'Next'} />
                             </div>
                         </form>
                     ):(
-                    <form action="" 
+                    <form action="api/v1/register/tech" 
                       method="POST"
                       onSubmit={handleTechSupportForm} 
                       className="mb-10 text-gray-600 mt-10">
@@ -109,15 +183,27 @@ const ApplyFor = ({ category, applicantMessage }) => {
                           firstName={setFirstName}
                           lastName={setLastName}
                           email={setEmail}
-                          gender={setGender}
+                          setGender={setGender}
                           phoneNumber={setPhoneNumber}
+                          setImageChange={setPictureEvidence}
                        />
 
                       {/* to be conditionally rendered */}
                         {
                           supportInterest.toLocaleLowerCase() === 'scholarship'?(
                       <>
-                        <ScholarshipRegistrants />
+                        <ScholarshipRegistrants
+                          whyParticipate={whyParticipate}
+                          setWhyParticipate={setWhyParticipate}
+                          setHasParticipate={setHasParticipate}
+                          hasParticipate={hasParticipate}
+                          track={track}
+                          setTrack={setTrack}
+                          sixMonthsAvlb={sixMonthsAvlb}
+                          setSixMonthsAvlb={setSixMonthsAvlb}
+                          haveLaptop={haveLaptop} 
+                          setHaveLaptop={setHaveLaptop}
+                        />
                         <FormBtn btnFor={'Submit'} />
                       </>
                           ):supportInterest.toLocaleLowerCase() === 'laptop'?(
@@ -125,8 +211,13 @@ const ApplyFor = ({ category, applicantMessage }) => {
                         <LaptopRegistrants
                           whyLaptop={setWhyLaptop}
                           pictureEvidence={setPictureEvidence}
-                          showUp4Intvw={setShowUp4Intvw}
-                          aboutYou={setAboutYou}
+                          setShowUp4Intvw={setShowUp4Intvw}
+                          showUp4Intvw={showUp4Intvw}
+                          setWhyNotShowUp4Intvw={setWhyNotShowUp4Intvw}
+                          setAboutYou={setAboutYou}
+                          haveLaptop={haveLaptop} 
+                          setHaveLaptop={setHaveLaptop}
+                          setImageChange={setPictureEvidence}
                         />
                         <FormBtn btnFor={'Submit'} />
                       </>

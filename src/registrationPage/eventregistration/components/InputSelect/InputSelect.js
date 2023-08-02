@@ -1,6 +1,6 @@
 import React from 'react';
 import InputCSS from '../InputCSS.module.css'
-import Select from 'react-select';
+// import Select from 'react-select';
 
 
 

@@ -103,7 +103,7 @@ const EventRegForm = () => {
       //   console.log('Error submitting form data:', error);
       // }
 
-      console.log(data)
+      // console.log(data)
     };
       
   

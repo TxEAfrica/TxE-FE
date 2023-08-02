@@ -17,10 +17,10 @@ const Sponsors = () => {
         <div className='slide-container'>
           <div className='slide-wrapper'>
             {images.map((src, index) => (
-              <img key={index} src={src} className='mx-8 md:mx-16' alt="" />
+              <img key={index} src={src} loading='lazy' className='mx-8 md:mx-16' alt="" />
             ))}
             {images.map((src, index) => (
-              <img key={index + images.length} src={src} className='mx-8 md:mx-16' alt="" />
+              <img key={index + images.length} src={src} loading='lazy' className='mx-8 md:mx-16' alt="" />
             ))}
           </div>
         </div>
