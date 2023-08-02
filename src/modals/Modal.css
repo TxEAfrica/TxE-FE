@@ -217,6 +217,14 @@
     flex-direction: column;
     gap: 10px;
   }
+  .modall {
+    min-width: 85%;
+    height: 60vh;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
   .modal-content {
     display: flex;
     flex-direction: column;
