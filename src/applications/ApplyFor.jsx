@@ -7,11 +7,13 @@ import LaptopRegistrants from "./category/validated-applicants/LaptopRegistrants
 import { useEffect, useState } from "react";
 import ScholarshipRegistrants from "./category/validated-applicants/ScholarshipRegistrants";
 import TechSupport from "./tech-support/TechSupport";
+import FailedModal from "../modals/FailedModal";
 
 const ApplyFor = ({ category, applicantMessage }) => {
 
   const [isLoading, setIsLoading] = useState(false)
   const [data, setData] = useState('')
+  const [verifiedData, setVerifiedData] = useState('')
   const [error, setError] = useState('')
 
     const [showUI, setShowUI] = useState(true);
@@ -39,22 +41,28 @@ const ApplyFor = ({ category, applicantMessage }) => {
     }
     const handleValidation = (e)=>{
         e.preventDefault()
-        console.log(validEmail)
+      setIsLoading(true)
+        // console.log(validEmail)
         fetchValidEmail()
       }
       const fetchValidEmail = async ()=>{
         try {
           const response = await fetch(`https://txe-africa.onrender.com/api/v1/${validEmail}`);
           if (!response.ok) {
+            setIsLoading(false)
             throw new Error('Network response was not ok');
           }
   
           const responseData = await response.json();
+          const dataObj = responseData;
           console.log(responseData)
-          setData(responseData);
+          setVerifiedData(responseData);
+          if(verifiedData.data.trackInterest==="entrepreneurship"){
+            setShowUI(false)
+          }
         } catch (err) {
           // console.log(schApplicantData)
-          console.log(err)
+          // console.log(err)
           setError(err);
         } finally {
           setIsLoading(false);
@@ -63,12 +71,14 @@ const ApplyFor = ({ category, applicantMessage }) => {
     // console.log(firstName)
     const handleTechSupportForm = (e)=>{
         e.preventDefault()
+        setIsLoading(true);
+
         const schApplicantData =  {
           "firstName":firstName,
           "lastName":lastName,
           "gender":gender,
           "phoneNumber":phoneNumber,
-          "email":email,
+          "email":verifiedData.data.email,
           "country":"Zimbabwe",
           "state":"Lakare",
           "supportInterest":supportInterest,
@@ -89,7 +99,7 @@ const ApplyFor = ({ category, applicantMessage }) => {
           "lastName":lastName,
           "gender":"male",
           "phoneNumber":phoneNumber,
-          "email":email,
+          "email":verifiedData.data.email,
           "country":"Zimbabwe",
           "state":"Lakare",
           "supportInterest":supportInterest,
@@ -99,43 +109,61 @@ const ApplyFor = ({ category, applicantMessage }) => {
           "whyParticipateInScholarship":whyParticipate,
           "didParticipateInFirstScholarship":hasParticipate,
           "whyLaptop":whyLaptop,
-          "pictureEvidence":pictureEvidence,
+          "pictureEvidence":"pictureEvidence",
           "showUpForInterview":showUp4Intvw,
           "whyNotShowUpForInterview":whyNotShowUp4Intvw,
           "aboutYou":aboutYou
         }
 
-        console.log(schApplicantData)
-        fetchTechSupportData(schApplicantData)
+        // console.log(schApplicantData)
+        fetchTechSupportData(
+          schApplicantData.aboutYou===''?laptpApplicantData:schApplicantData
+          )
       }
-          const fetchTechSupportData = async (schApplicantData)=>{
+          const fetchTechSupportData = async (value)=>{
             try {
               const response = await fetch('https://txe-africa.onrender.com/api/v1/register/tech', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
                 },
-                body:JSON.stringify(schApplicantData)
+                body:JSON.stringify(value)
               });
       
               if (!response.ok) {
+                setIsLoading(false)
+                // console.log(value)
                 throw new Error('Network response was not ok');
               }
       
               const responseData = await response.json();
-              console.log(responseData)
+              // console.log(responseData)
               setData(responseData);
             } catch (err) {
               // console.log(schApplicantData)
-              console.log(err)
+              // console.log(err)
               setError(err);
             } finally {
               setIsLoading(false);
             }
           } 
   
+    // console.log(verifiedData.data.email)
     return (
-      <>
+      verifiedData.status==='fail'?(
+        <div onClick={()=>setVerifiedData('')}>
+          <FailedModal 
+            message={verifiedData.message} 
+            secondMessage={'Please register to proceed!'} />
+        </div>
+      ):verifiedData!==''&&verifiedData.data.trackInterest==="entrepreneurship"?(
+        <div onClick={()=>setVerifiedData('')}>
+          <FailedModal 
+            message={data.message} 
+            secondMessage={'Please make sure you have registered for tech!'} />
+        </div>
+      ):(
+        <>
             <Navbar />
             <div
           id='top'
@@ -146,9 +174,9 @@ const ApplyFor = ({ category, applicantMessage }) => {
           <FormVector position={'right-10 top-60'} />
           {/* <FormVector position={'left-10'} /> */}
           {/* <FormVector position={'right-10'} /> */}
-          <div className={`text-center w-1/2 ${showUI&&'-mb-56'} mt-20 space-y-3`}>
+          <div className={`text-center ${showUI&&'-mb-56'} mt-20 space-y-3 z-20`}>
                     <h1 
-                      className="text-5xl text-orange-500 font-semibold">
+                      className="text-5xl text-orange-500 font-semibold w-full">
                       Apply For {category}
                     </h1>
                     <p>
@@ -160,18 +188,20 @@ const ApplyFor = ({ category, applicantMessage }) => {
           </div>
                 {
                     showUI?(
+                      <div className="w-full z-30">
                         <form method="POST" onSubmit={handleValidation} className="mt-56 mb-10">
                             <InputField
                             placeholder={"Verify Email"} 
                             htmlFor={'email'} 
                             labelText={'Email'}
                             type={'email'}
-                            onChange={handleValidEmail} 
+                            onChange={handleValidEmail}
                             />
                             <div className="w-full mx-auto">
-                            <FormBtn btnFor={'Next'} />
+                            <FormBtn btnFor={`${isLoading?'Please wait...':'Next'}`} isLoading={isLoading} />
                             </div>
                         </form>
+                        </div>
                     ):(
                     <form action="api/v1/register/tech" 
                       method="POST"
@@ -182,7 +212,7 @@ const ApplyFor = ({ category, applicantMessage }) => {
                           setSupportInterest={setSupportInterest}
                           firstName={setFirstName}
                           lastName={setLastName}
-                          email={setEmail}
+                          email={verifiedData!==''&&verifiedData.data.email}
                           setGender={setGender}
                           phoneNumber={setPhoneNumber}
                           setImageChange={setPictureEvidence}
@@ -204,7 +234,9 @@ const ApplyFor = ({ category, applicantMessage }) => {
                           haveLaptop={haveLaptop} 
                           setHaveLaptop={setHaveLaptop}
                         />
-                        <FormBtn btnFor={'Submit'} />
+                        <FormBtn 
+                          btnFor={`${isLoading?'Loading...':'Submit'}`} 
+                          isLoading={isLoading} />
                       </>
                           ):supportInterest.toLocaleLowerCase() === 'laptop'?(
                       <>
@@ -219,7 +251,9 @@ const ApplyFor = ({ category, applicantMessage }) => {
                           setHaveLaptop={setHaveLaptop}
                           setImageChange={setPictureEvidence}
                         />
-                        <FormBtn btnFor={'Submit'} />
+                        <FormBtn 
+                          btnFor={`${isLoading?'Loading...':'Submit'}`} 
+                          isLoading={isLoading} />
                       </>
                           ):''
                         }
@@ -227,9 +261,10 @@ const ApplyFor = ({ category, applicantMessage }) => {
                     )
                 }
             </div>
-            <div className="bg-gray-200 h-36 w-full"></div>
+            <div className="bg-gray-200 h-32 w-full"></div>
             <Footer />
       </>
+      )
     );
   };
   

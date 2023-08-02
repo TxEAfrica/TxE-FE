@@ -10,6 +10,7 @@ const TechSupport = ({
   email,
   setGender,
   phoneNumber}) => {
+    // console.log(email)
     return ( 
         <>
              <div className="flex justify-between space-x-3">
@@ -34,9 +35,9 @@ const TechSupport = ({
                       <div>
                        <InputField
                           labelText={'Email address'}
-                          htmlFor={'email'}
                           type={'email'}
-                          onChange={(e)=>email(e.target.value)}
+                          value={email}
+                          disable={true}
                         />
                        </div>
                        <div className="flex justify-between space-x-3">

@@ -70,10 +70,45 @@ const EventRegForm = () => {
         trackInterest,
     };
 
+    const checkEmailAvailability = async () => {
+      try {
+        const response = await fetch('https://txe-africa.onrender.com/api/v1/register/event', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email }),
+        });
+    
+        const data = await response.json();
+    
+        // Check if the API response indicates that the email already exists
+        if (data.status === 'fail' && data.message === 'email already exist') {
+          return true; // Email already exists
+        }
+    
+        return false; // Email does not exist
+      } catch (error) {
+        // console.log('Error checking email availability:', error);
+        return false;
+      }
+    };
+    
+
     const handleSubmit = async (e) => {
       e.preventDefault();
   
       try {
+        // Check if the email exists in the database
+        const emailExists = await checkEmailAvailability();
+  
+        if (emailExists) {
+          setShowFailedModal(true);
+          // console.log('Email already exists in the database.');
+          // Show appropriate message or handle as per your requirement
+          return;
+        }
+  
         // Prepare the data to be sent in the POST request
         const EventRegistration = {
           firstName,
@@ -93,30 +128,25 @@ const EventRegForm = () => {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            
           },
           body: JSON.stringify(EventRegistration),
-          
         });
   
-        console.log(EventRegistration)
+        // console.log(EventRegistration)
 
         if (response.ok) {
-          console.log('Form data submitted successfully!');
+          // console.log('Form data submitted successfully!');
           setShowSuccessModal(true);
-          // Optionally, you can do something after a successful form submission, like showing a success message or redirecting the user to another page.
         } else {
-          console.log('Failed to submit form data');
+          // console.log('Failed to submit form data');
           setShowFailedModal(true);
-          // Optionally, you can handle the error or show an error message to the user if the form submission was not successful.
         }
       } catch (error) {
-        console.error('Error submitting form data:', error);
+        // console.error('Error submitting form data:', error);
         setShowFailedModal(true);
-        // Optionally, you can handle the error or show an error message to the user if there was an error while submitting the form.
       }
 
-      // console.log(data)
+      
     };
 
 
@@ -161,14 +191,18 @@ const EventRegForm = () => {
     <Navbar />
     <div className={EventRegCSS.main}>
 
+      <div className={EventRegCSS.decor}>
           <FormVector position={'left-10 top-100'} />
           <FormVector position={'left-10 bottom-100'} />
-          <FormVector position={'left-1 top-10'} />
-          <FormVector position={'top-3'} />
-          <FormVector position={'bottom-3'} />
+          <FormVector position={'left-20 top-40'} />
+          <FormVector position={'top-6'} />
+          {/* <FormVector position={'bottom-3'} /> */}
           <FormVector position={'right-10 top-100'} />
           <FormVector position={'right-10 bottom-100'} />
-          <FormVector position={'right-1 top-10'} />
+          <FormVector position={'right-20 top-10'} />
+      </div>
+
+         
 
       <div className={EventRegCSS.formtitle}>
         <h1>Register Now!</h1>
@@ -182,18 +216,18 @@ const EventRegForm = () => {
                 // className={"className"}
                 placeholder={"Enter your first name"}
                 labelText="First Name"
-                htmlFor="firstName" // Pass the htmlFor prop for label element
-                inputId="firstName" // Pass the inputId prop for input element
-                type="text" // Pass the type prop for input element
+                htmlFor="firstName" 
+                inputId="firstName" 
+                type="text" 
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
             />
             <InputField
                 placeholder={"Enter your last name"}
                 labelText="Last Name"
-                htmlFor="lastName" // Pass the htmlFor prop for label element
-                inputId="lastName" // Pass the inputId prop for input element
-                type="text" // Pass the type prop for input element
+                htmlFor="lastName" 
+                inputId="lastName" 
+                type="text" 
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
             />
@@ -205,7 +239,7 @@ const EventRegForm = () => {
               labelText={"Gender"}
               htmlFor={"gender"}
               selectId="gender"
-              value={gender} // Make sure 'gender' is defined and contains a valid value
+              value={gender}
               // onChange={(selectedOption) => setGender(selectedOption.value)}
               onChange={(e) => setGender(e.target.value)}
               options={genderOptions}
@@ -215,9 +249,9 @@ const EventRegForm = () => {
             <InputField
                 labelText="Phone Number"
                 placeholder={"Enter your phone number"}
-                htmlFor="phoneNumber" // Pass the htmlFor prop for label element
-                inputId="phoneNumber" // Pass the inputId prop for input element
-                type="text" // Pass the type prop for input element
+                htmlFor="phoneNumber" 
+                inputId="phoneNumber" 
+                type="text" 
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
             />
@@ -225,20 +259,20 @@ const EventRegForm = () => {
         <div className={EventRegCSS.smallinputholder}>
             <InputSelect
                 labelText="Country"
-                htmlFor="country" // Pass the htmlFor prop for label element
-                selectId="country" // Pass the selectId prop for select element
+                htmlFor="country" 
+                selectId="country" 
                 value={country}
                 // onChange={(selectedOption) => setCountry(selectedOption.value)} // Pass the handleGenderChange function
                 onChange={(e) => setCountry(e.target.value)}
-                options={countryOptions} // Pass the options array for select element
+                options={countryOptions} 
               />
 
             <InputField
                 labelText="State"
                 placeholder={"Enter your state"}
-                htmlFor="state" // Pass the htmlFor prop for label element
-                inputId="state" // Pass the inputId prop for input element
-                type="text" // Pass the type prop for input element
+                htmlFor="state" 
+                inputId="state" 
+                type="text" 
                 value={state}
                 onChange={(e) => setState(e.target.value)}
             />
@@ -247,9 +281,9 @@ const EventRegForm = () => {
         <InputField
             labelText="Email"
             placeholder={"Enter your email address"}
-            htmlFor="email" // Pass the htmlFor prop for label element
-            inputId="email" // Pass the inputId prop for input element
-            type="email" // Pass the type prop for input element
+            htmlFor="email" 
+            inputId="email" 
+            type="email" 
             value={email}
             onChange={(e) => setEmail(e.target.value)}
         />
@@ -299,7 +333,9 @@ const EventRegForm = () => {
     {showSuccessModal && (
       <SuccessModal
         onClose={() => setShowSuccessModal(false)}
-        message={"You have successfully registered for"} 
+        message={"You have successfully registered for"}
+        thirdMessage={"TxE Summit 2023"}
+        btnFor={"Back to Homepage"}
         />
     )}
     {showFailedModal && (

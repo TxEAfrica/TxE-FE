@@ -20,6 +20,8 @@ const EmailVerification = ({ onSuccess, onUserData }) => {
     e.preventDefault();
 
     try {
+
+
       const response = await fetch(`https://txe-africa.onrender.com/api/v1/${email}`);
 
       if (response.ok) {
@@ -34,7 +36,7 @@ const EmailVerification = ({ onSuccess, onUserData }) => {
 
         if (onSuccess) {
           onSuccess();
-          console.log(data)
+          // console.log(data)
         }
       } else {
         setIsEmailVerified(false);
@@ -65,14 +67,14 @@ const EmailVerification = ({ onSuccess, onUserData }) => {
           <FormBtn btnFor={"Next"} onClick={handleVerifyEmail} />
         </div>
       </form>
-        {verificationFailed && 
+        {/* {verificationFailed && 
         <div>
           <FailedModal
             onClose={() => setShowFailedModal(false)}
             message={"You need to register for the event"}
             secondMessage={"Then you can come back and apply for a Grant"}  
           />
-        </div>}
+        </div>} */}
 
     </div>
   );

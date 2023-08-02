@@ -99,10 +99,11 @@ form{
     height: 50px;
     border-radius: 6px;
     width: 100%;
+    background: #FFF;
 }
 .inputholder option{
     color: #8D9396;
-    background: #FF6F43;
+    /* background: #FF6F43; */
 }
 
 .inputholder textarea{
