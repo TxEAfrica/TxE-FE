@@ -2,10 +2,10 @@ import React from 'react'
 import ButtonsCSS from './ButtonsCSS.module.css'
 
 
-const FormBtn = ({btnFor}) => {
+const FormBtn = ({btnFor, onClick}) => {
   return (
     <>
-      <button className={ButtonsCSS.formbutton} type='submit'>{btnFor}</button>
+      <button onClick={onClick} className={ButtonsCSS.formbutton} type='submit'>{btnFor}</button>
     </>
   )
 }

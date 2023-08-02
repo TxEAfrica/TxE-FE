@@ -22,7 +22,7 @@ const ApplyFor = ({ category, applicantMessage }) => {
     const [validEmail, setValidEmail] = useState('')
     const [whyLaptop, setWhyLaptop] = useState('')
     const [pictureEvidence, setPictureEvidence] = useState('')
-    const [showUp4Intvw, setShowUp4Intvw] = useState('')
+    const [showUp4Interview, setShowUp4Interview] = useState('')
     const [aboutYou, setAboutYou] = useState('')
     const handleValidation = (e)=>{
         e.preventDefault()
@@ -51,7 +51,7 @@ const ApplyFor = ({ category, applicantMessage }) => {
           supportInterest:'',
           whyLaptop:'',
           pictureEvidence:'',
-          showUp4Intvw:'',
+          showUp4Interview:'',
           whyNotShowUp4Intvw:'',
           aboutYou:''
         }
@@ -123,7 +123,7 @@ const ApplyFor = ({ category, applicantMessage }) => {
                         <LaptopRegistrants
                           whyLaptop={setWhyLaptop}
                           pictureEvidence={setPictureEvidence}
-                          showUp4Intvw={setShowUp4Intvw}
+                          showUp4Intvw={setShowUp4Interview}
                           aboutYou={setAboutYou}
                         />
                         <FormBtn btnFor={'Submit'} />

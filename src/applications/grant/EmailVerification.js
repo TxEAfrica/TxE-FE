@@ -4,15 +4,47 @@ import InputField from '../../registrationPage/eventregistration/components/Inpu
 import FormBtn from '../../registrationPage/eventregistration/components/Buttons/FormButton';
 // import ButtonsCSS from './components/Buttons/ButtonsCSS.module.css'
 import ApplyForGrantCSS from '../grant/ApplyForGrant.module.css'
+import FailedModal from '../../modals/FailedModal'
+import SuccessModal from '../../modals/SuccessModal';
 
-const EmailVerification = ({ onSuccess }) => {
+const EmailVerification = ({ onSuccess, onUserData }) => {
   const [email, setEmail] = useState('');
+  const [isEmailVerified, setIsEmailVerified] = useState(false);
   const [verificationFailed, setVerificationFailed] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [showFailedModal, setShowFailedModal] = useState(false);
 
-  const handleVerifyEmail = () => {
-    // Call the email verification API using axios
-    // If successful, call onSuccess() to proceed to the next section
-    // If verification fails, setVerificationFailed(true)
+  const [userData, setUserData] = useState([])
+
+  const handleVerifyEmail = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch(`https://txe-africa.onrender.com/api/v1/${email}`);
+
+      if (response.ok) {
+        setIsEmailVerified(true);
+        setVerificationFailed(false);
+        const data = await response.json();
+
+        // Pass the data to the parent component using the onUserData callback
+        if (onUserData) {
+          onUserData(data);
+        }
+
+        if (onSuccess) {
+          onSuccess();
+          console.log(data)
+        }
+      } else {
+        setIsEmailVerified(false);
+        setVerificationFailed(true);
+      }
+    } catch (error) {
+      console.error('Error verifying email:', error);
+      setIsEmailVerified(false);
+      setVerificationFailed(true);
+    }
   };
 
   return (
@@ -22,18 +54,25 @@ const EmailVerification = ({ onSuccess }) => {
         <InputField
             labelText="Email Address"
             placeholder={"Verify email address"}
-            htmlFor="email" // Pass the htmlFor prop for label element
-            inputId="email" // Pass the inputId prop for input element
-            type="text" // Pass the type prop for input element
+            htmlFor="email" 
+            inputId="email" 
+            type="email" 
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
               
         <div>
-          <FormBtn btnFor={"Next"} />
+          <FormBtn btnFor={"Next"} onClick={handleVerifyEmail} />
         </div>
-        {verificationFailed && <div>Failed to verify email. Please try again.</div>}
       </form>
+        {verificationFailed && 
+        <div>
+          <FailedModal
+            onClose={() => setShowFailedModal(false)}
+            message={"You need to register for the event"}
+            secondMessage={"Then you can come back and apply for a Grant"}  
+          />
+        </div>}
 
     </div>
   );
