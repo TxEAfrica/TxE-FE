@@ -26,9 +26,9 @@ const EventSchedule = () => {
             
             <div className="flex mt-10 relative">
                 <div className="absolute md:relative mr-10 my-auto">
-                    <img src={TxELogoBg}  alt="logo" />
+                    <img src={TxELogoBg} loading='lazy'  alt="logo" />
                 </div>
-                <div className="px-8 md:px-0 w-1/2 md:w-full">
+                <div className="px-8 md:px-20 w-1/2 lg:w-2/3 md:w-full">
                     <h1 className="text-orange-500 mb-5 text-2xl">
                         _day one
                     </h1>
@@ -38,7 +38,7 @@ const EventSchedule = () => {
                                 <h1 className="md:text-3xl font-bold">
                                 Enterprenuership 
                                 </h1>
-                                <p className="text-sm md:text-lg lg:w-2/3">
+                                <p className="text-sm md:text-lg lg:w-full">
                                 A 1-day interactive workshop and fireside 
                                 chat with leading experts from leading tech 
                                 companies including Google
@@ -48,7 +48,7 @@ const EventSchedule = () => {
                                 <h1 className="font-bold">
                                 Idea Pitch Session 
                                 </h1>
-                                <p className="text-sm md:text-lg lg:w-2/3">
+                                <p className="text-sm md:text-lg lg:w-full">
                                 Innovative businesses will be given an 
                                 opportunity to pitch their ideas and businesss 
                                 solutions to a panel of judges and recieve 
@@ -59,7 +59,7 @@ const EventSchedule = () => {
                                 <h1 className="font-bold">
                                 Enterprenuership 
                                 </h1>
-                                <p className="text-sm md:text-lg lg:w-2/3">
+                                <p className="text-sm md:text-lg lg:w-full">
                                 A 1-day interactive workshop and fireside 
                                 chat with leading experts from leading tech 
                                 companies including Google
@@ -69,7 +69,7 @@ const EventSchedule = () => {
                                 <h1 className="font-bold">
                                 Grants and Support for Startups 
                                 </h1>
-                                <p className="text-sm md:text-lg lg:w-2/3">
+                                <p className="text-sm md:text-lg lg:w-full">
                                 Innovative businesses will stand a chance to 
                                 be awarded seed fund grants to encourage their 
                                 ventures.
@@ -84,7 +84,7 @@ const EventSchedule = () => {
                         _day two
                     </h1>
                     <div className="relative">
-                        <ul className="space-y-10 list-circle md:w-4/5 border-l-2 border-orange-500">
+                        <ul className="space-y-10 lg:px-24 list-circle md:w-full border-l-2 border-orange-500">
                             <li className="space-y-2  px-4">
                                 <h1 className="md:text-3xl font-bold">
                                 Tech Skill Boost 

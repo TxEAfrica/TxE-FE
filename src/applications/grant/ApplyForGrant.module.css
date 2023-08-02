@@ -7,9 +7,9 @@
 }
 
 .main{
-    padding: 100px 0;
+    /* padding: 100px 0; */
     position: relative;
-    background-color: #FFF6F3;
+    background-color: #FFF7ED;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -17,6 +17,36 @@
     justify-content: center;
     align-items: center;
     height: fit-content;
+    margin-top: 60px;
+}
+.mainn{
+    padding: 20px 0;
+    position: relative;
+    background-color: #FFF7ED;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    margin-top: -30px;
+}
+.heading{
+    height: fit-content;
+    min-height: 100vh;
+}
+
+.title{
+    width: 100%;
+    /* margin-bottom: 40px; */
+    margin-top: -40px;
+}
+.title h1{
+    font-size: 40px;
+}
+.title h3{
+    font-weight: 500;
 }
 .required{
     color: #FF6F43;
@@ -25,9 +55,9 @@
     width: 50px;
     position: absolute;
 }
-form{
+.main form{
     margin: auto;
-    width: 60%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -61,20 +91,25 @@ form{
     align-items: center;
     
 }
-
 .inputholder{
     display: flex;
     flex-direction: column;
     gap: 5px;
     width: 100%;
 }
+.inputt{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
 .inputholder input{
-    /* border: .1px solid #8D9396; */
+    border: none;
     outline:none;
     padding: 10px;
     height: 50px;
     border-radius: 6px;
-    font-size: 14px;
 }
 .inputholder label{
     font-size: 16px;
@@ -83,49 +118,26 @@ form{
 }
 .inputholder input::placeholder{
     color: #8D9396;
-    font-size: 14px;
-} 
-
-.nontext{
-  background-color: #f1f1f1;
 }
 
 .inputholder select{
-    font-size: 14px;
-    color: #8D9396;
     border: none;
     outline:none;
     padding: 10px;
     height: 50px;
     border-radius: 6px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 .inputholder option{
     color: #8D9396;
     background: #FF6F43;
 }
-
-.inputholder textarea{
-    /* border: 1px solid #8D9396; */
-    outline:none;
-    padding: 10px;
-    height: 120px;
-    border-radius: 6px;
-    font-size: 14px;
-}
-.inputholder textarea::placeholder{
-   font-size: 14px;
-}
 .labelholder{
     display: flex;
     flex-direction: column;
     gap: 5px;
-}
-.labelholder p{
-    color: #586166;
-    font-weight: 500;
-    font-size: 16px;
-
 }
 .labelholder > label{
     background: #FFF;
@@ -191,6 +203,13 @@ form{
 }
 
 
+
+
+
+
+
+
+
 /* Larger Laptops and Desktops (1025px and above) */
 @media screen and (min-width: 1025px) {
     .main {
@@ -219,7 +238,6 @@ form{
     .formtitle h1 {
       font-size: 35px;
     }
-    
   }
   
   /* Mobile Devices (up to 768px) */
@@ -247,35 +265,27 @@ form{
     }
     
     .inputholder input,
-    .inputholder select
-     {
-      font-size: 14px;
-      height: 40px;
-    }
-    .inputholder textarea{
-        font-size: 14px;
-        height: 80px;
+    .inputholder select,
+    .inputholder textarea {
+      font-size: 16px;
     }
     
     .labelholder label {
       height: 40px;
-      font-size: 14px;
-    }
-    .labelholder label:hover{
-        border: 3px solid #ffe3db;
-        font-size: 14px;
+      font-size: 13px;
     }
   }
 
-  /* Mobile Devices (up to 480px) */
-@media screen and (max-width: 480px) {
+    
+  /* Mobile Devices (up to 576px) */
+@media screen and (max-width: 576px) {
     .main {
       padding: 20px 10px;
       gap: 15px;
     }
     
     form {
-      width: 90%;
+      width: 95%;
     }
     
     .formtitle h1 {
@@ -290,24 +300,58 @@ form{
         align-items: center;
         
     }
+    
     .inputholder input,
-    .inputholder select
-     {
-      font-size: 14px;
-      height: 40px;
-    }
-    .inputholder textarea{
-        font-size: 14px;
-        height: 80px;
+    .inputholder select,
+    .inputholder textarea {
+      font-size: 12px;
+      height: 36px;
     }
     
     .labelholder label {
-      height: 40px;
-      font-size: 14px;
+      height: 32px;
+      font-size: 11px;
     }
-    .labelholder label:hover{
-        border: 3px solid #ffe3db;
-        font-size: 14px;
+    
+    .formbutton {
+      font-size: 13px;
+      padding: 10px 18px;
+    }
+  }
+  /* Mobile Devices (up to 480px) */
+@media screen and (max-width: 480px) {
+    .main {
+      padding: 20px 10px;
+      gap: 15px;
+    }
+    
+    form {
+      width: 95%;
+    }
+    
+    .formtitle h1 {
+      font-size: 22px;
+    }
+    .smallinputholder{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+    
+    .inputholder input,
+    .inputholder select,
+    .inputholder textarea {
+      font-size: 12px;
+      height: 36px;
+    }
+    
+    .labelholder label {
+      height: 32px;
+      font-size: 11px;
     }
     
     .formbutton {
@@ -324,7 +368,7 @@ form{
     }
     
     form {
-      width: 90%;
+      width: 95%;
     }
     
     .formtitle h1 {
@@ -341,23 +385,15 @@ form{
     }
     
     .inputholder input,
-    .inputholder select
-     {
-      font-size: 14px;
+    .inputholder select,
+    .inputholder textarea {
+      font-size: 10px;
       height: 40px;
-    }
-    .inputholder textarea{
-        font-size: 14px;
-        height: 80px;
     }
     
     .labelholder label {
       height: 40px;
-      font-size: 14px;
-    }
-    .labelholder label:hover{
-        border: 3px solid #ffe3db;
-        font-size: 14px;
+      font-size: 10px;
     }
     
     .formbutton {
@@ -370,10 +406,8 @@ form{
   
   /* You can add any other responsive styles here */
   
+  /* Additional Styles for All Screen Sizes */
   
-
-
-
-
-
-
+  /* You can add any other responsive styles here */
+  
+  

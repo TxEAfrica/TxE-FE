@@ -25,7 +25,7 @@ const Highlight = () => {
             <div className='py-8 flex flex-col justify-center items-center'>
             <div className="bg-green-200 px-4 py-8 rounded-md h-fit  space-y-4 flex flex-col justify-center items-center text-center lg:text-left lg:justify-start lg:items-start">
                 <div className='w-fit h-fit rounded-md overflow-none'>
-                <img src={win} alt="" />
+                <img src={win} alt="" loading='lazy' />
                 </div>
                 <h1 className='text-3xl font-bold'>
                     Business Grant
@@ -42,7 +42,7 @@ const Highlight = () => {
 
             <div className="bg-orange-200 px-4 py-8 rounded-md border-4 border-black space-y-4 flex flex-col justify-center items-center text-center lg:text-left lg:justify-start lg:items-start">
                 <div className='w-fit h-fit rounded-md overflow-none'>
-                <img src={win1} alt="" />
+                <img src={win1} alt="" loading='lazy' />
                 </div>
                 <h1 className='text-3xl font-bold'>
                     Free Laptops
@@ -59,7 +59,7 @@ const Highlight = () => {
             <div className='py-8 flex flex-col justify-center items-center'>
             <div className="bg-purple-200 h-fit px-4 py-8 rounded-md space-y-4 flex flex-col justify-center items-center text-center lg:text-left lg:justify-start lg:items-start">
                 <div className='w-fit h-fit rounded-md overflow-none'>
-                <img src={scholarship} alt="" />
+                <img src={scholarship} alt="" loading='lazy' />
                 </div>
                 <h1 className='text-3xl font-bold'>
                     Tech Scholarships

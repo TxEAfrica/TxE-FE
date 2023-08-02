@@ -28,8 +28,8 @@ const ImageSlider = ({ images, activeIndex, setActiveIndex }) => {
       <div className='title'>
         <h1 className="slider-title">speakers</h1>
         <div className="arrows">
-          <img src={leftarrow} className='left-arrow' onClick={handlePrev} alt='' />
-          <img src={rightarrow} className='right-arrow' onClick={handleNext} alt='' />
+          <img src={leftarrow} loading='lazy' className='left-arrow' onClick={handlePrev} alt='' />
+          <img src={rightarrow} loading='lazy' className='right-arrow' onClick={handleNext} alt='' />
         </div>
       </div>
       <div className="slider-container" {...handlers}>
@@ -38,6 +38,7 @@ const ImageSlider = ({ images, activeIndex, setActiveIndex }) => {
             <img
               src={image.url} // Use the image URL from the images array
               alt=""
+              loading='lazy'
               className="image"
               onClick={() => handleImageClick(index)}
             />
@@ -47,7 +48,7 @@ const ImageSlider = ({ images, activeIndex, setActiveIndex }) => {
                   <p>{image.designation}</p>
                   <h3>{image.name}</h3>
                 </div>
-                <img className='linkedin' src={linkedin} alt='linkedin-logo' />
+                <img className='linkedin' src={linkedin} loading='lazy'  alt='linkedin-logo' />
               </div>
             )}
           </div>

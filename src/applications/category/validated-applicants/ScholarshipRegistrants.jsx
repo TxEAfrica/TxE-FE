@@ -1,11 +1,17 @@
 import { useState } from "react";
 import InputOption from "../../../registrationPage/eventregistration/components/InputOption/InputOption";
 
-const ScholarshipRegistrants = () => {
-    const [hasAttended, setHasAttended] = useState('')
-    const [track, setTrack] = useState('')
-    const [availableFor6Months, setAvailableFor6Months] = useState('')
-    const [hasLaptop, setHasLaptop] = useState('')
+const ScholarshipRegistrants = ({
+    setWhyParticipate,
+    setTrack,
+    track,
+    setSixMonthsAvlb,
+    sixMonthsAvlb,
+    setHaveLaptop,
+    haveLaptop,
+    setHasParticipate,
+    hasParticipate
+}) => {
     return ( 
         <>
             <div>
@@ -16,6 +22,7 @@ const ScholarshipRegistrants = () => {
                     rows='5' 
                     className="focus:outline-orange-200 focus:border-orange-300 p-2 w-full"
                     placeholder="Write here.." 
+                    onChange={(e)=>setWhyParticipate(e.target.value)}
                     required 
                 />
                 </div>
@@ -27,8 +34,8 @@ const ScholarshipRegistrants = () => {
                     descriptionLabelText={'Did you participate in the first scholarship programme?'} 
                     options={[{label:'Yes', value:'Yes'},
                             {label: 'No', value: 'No'}]}
-                    initialSelection={hasAttended}
-                    updatedSelection={setHasAttended}
+                    initialSelection={hasParticipate}
+                    updatedSelection={setHasParticipate}
                 />
          </div>
 
@@ -37,7 +44,7 @@ const ScholarshipRegistrants = () => {
                     descriptionLabelText={'Which track are you interested in?'} 
                     options={
                             [
-                                {label:'Frontend', value:'Fronted'},
+                                {label:'Frontend', value:'frontend'},
                                 {label: 'Backend', value: 'Backend'},
                                 {label: 'Product Design', value: 'Product Design'},
                                 {label: 'Others', value: 'Others'},
@@ -59,8 +66,8 @@ const ScholarshipRegistrants = () => {
                     descriptionLabelText={'Are you available for the period of 6 months?'} 
                     options={[{label:'Yes', value:'Yes'},
                             {label: 'No', value: 'No'}]}
-                    initialSelection={availableFor6Months}
-                    updatedSelection={setAvailableFor6Months}
+                    initialSelection={sixMonthsAvlb}
+                    updatedSelection={setSixMonthsAvlb}
                 />
          </div>
 
@@ -69,8 +76,8 @@ const ScholarshipRegistrants = () => {
                     descriptionLabelText={'Do you have a Laptop?'} 
                     options={[{label:'Yes', value:'Yes'},
                             {label: 'No', value: 'No'}]}
-                    initialSelection={hasLaptop}
-                    updatedSelection={setHasLaptop}
+                    initialSelection={haveLaptop}
+                    updatedSelection={setHaveLaptop}
                 />
         </div>
         </>

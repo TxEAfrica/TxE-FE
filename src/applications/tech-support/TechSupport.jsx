@@ -2,7 +2,14 @@ import InputField from "../../registrationPage/eventregistration/components/Inpu
 import InputOption from "../../registrationPage/eventregistration/components/InputOption/InputOption";
 import InputSelect from "../../registrationPage/eventregistration/components/InputSelect/InputSelect";
 
-const TechSupport = ({supportInterest, setSupportInterest}) => {
+const TechSupport = ({
+  supportInterest, 
+  setSupportInterest, 
+  firstName,
+  lastName,
+  email,
+  setGender,
+  phoneNumber}) => {
     return ( 
         <>
              <div className="flex justify-between space-x-3">
@@ -11,7 +18,7 @@ const TechSupport = ({supportInterest, setSupportInterest}) => {
                           labelText={'First Name'}
                           htmlFor={'firstname'}
                           type={'text'}
-                          onChange={'handleFirstName'}
+                          onChange={(e)=>firstName(e.target.value)}
                         />
                        </div>
 
@@ -20,7 +27,7 @@ const TechSupport = ({supportInterest, setSupportInterest}) => {
                           labelText={'Last Name'}
                           htmlFor={'lastname'}
                           type={'text'}
-                          onChange={'handleLastName'}
+                          onChange={(e)=>lastName(e.target.value)}
                         />
                         </div>
                       </div>
@@ -29,7 +36,7 @@ const TechSupport = ({supportInterest, setSupportInterest}) => {
                           labelText={'Email address'}
                           htmlFor={'email'}
                           type={'email'}
-                          onChange={'handleFirstName'}
+                          onChange={(e)=>email(e.target.value)}
                         />
                        </div>
                        <div className="flex justify-between space-x-3">
@@ -37,10 +44,11 @@ const TechSupport = ({supportInterest, setSupportInterest}) => {
                           <InputSelect 
                               labelText={'Gender'} 
                               htmlFor={'gender'}
-                              options={[{label:'Male', value:'Male'},
+                              options={[{label:'Gender', value:'Gender'},
+                                      {label:'Male', value:'Male'},
                                       {label: 'Female', value: 'Female'},
                                       {label: 'Other', value: 'Other'}]}
-                              onChange={'handleGender'}
+                              onChange={(e)=>setGender(e.target.value)}
                           />
                        </div>
 
@@ -49,7 +57,7 @@ const TechSupport = ({supportInterest, setSupportInterest}) => {
                           labelText={'Phone Number'}
                           htmlFor={'phoneNumber'}
                           type={'tel'}
-                          onChange={'handleLastName'}
+                          onChange={(e)=>phoneNumber(e.target.value)}
                         />
                         </div>
                       </div>
