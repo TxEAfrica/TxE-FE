@@ -8,6 +8,8 @@ import FormBtn from './components/Buttons/FormButton';
 import Navbar from '../../landingPage/sections/Navbar';
 import Footer from '../../landingPage/sections/Footer';
 import FormVector from '../../applications/FormVector';
+import SuccessModal from '../../modals/SuccessModal';
+import FailedModal from '../../modals/FailedModal'
 
 
 const EventRegForm = () => {
@@ -21,8 +23,10 @@ const EventRegForm = () => {
     const [email, setEmail] = useState('');
     const [bestDescription, setBestDescription] = useState('');
     const [trackInterest, setTrackInterest] = useState('');
-    const [attended, setAttended] = useState('');
+    const [attended2022, setAttended2022] = useState('');
     const [joiningMode, setJoiningMode] = useState('');
+    const [showSuccessModal, setShowSuccessModal] = useState(false);
+    const [showFailedModal, setShowFailedModal] = useState(false);
 
     const [countryOptions, setCountryOptions] = useState([]);
 
@@ -61,7 +65,7 @@ const EventRegForm = () => {
         phoneNumber,
         email,
         bestDescription,
-        attended,
+        attended2022,
         joiningMode,
         trackInterest,
     };
@@ -69,62 +73,73 @@ const EventRegForm = () => {
     const handleSubmit = async (e) => {
       e.preventDefault();
   
-      // Prepare the data object to be sent to the API
-      const data = {
-        firstName,
-        lastName,
-        country,
-        state,
-        gender,
-        phoneNumber,
-        email,
-        bestDescription,
-        attended,
-        joiningMode,
-        trackInterest,
-      };
+      try {
+        // Prepare the data to be sent in the POST request
+        const EventRegistration = {
+          firstName,
+          lastName,
+          country,
+          state,
+          gender,
+          phoneNumber,
+          email,
+          bestDescription,
+          attended2022,
+          joiningMode,
+          trackInterest,
+        };
   
-      // try {
-      //   const response = await fetch('https://txe-africa.onrender.com/api/v1/register', {
-      //     method: 'POST',
-      //     headers: {
-      //       'Content-Type': 'application/json',
-      //     },
-      //     body: JSON.stringify(data),
-      //   });
+        const response = await fetch('https://txe-africa.onrender.com/api/v1/register/event', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            
+          },
+          body: JSON.stringify(EventRegistration),
+          
+        });
   
-      //   if (response.ok) {
-      //     console.log('Form data submitted successfully!');
+        console.log(EventRegistration)
 
-      //   } else {
-      //     console.log('Failed to submit form data');
-      //   }
-      // } catch (error) {
-      //   console.log('Error submitting form data:', error);
-      // }
+        if (response.ok) {
+          console.log('Form data submitted successfully!');
+          setShowSuccessModal(true);
+          // Optionally, you can do something after a successful form submission, like showing a success message or redirecting the user to another page.
+        } else {
+          console.log('Failed to submit form data');
+          setShowFailedModal(true);
+          // Optionally, you can handle the error or show an error message to the user if the form submission was not successful.
+        }
+      } catch (error) {
+        console.error('Error submitting form data:', error);
+        setShowFailedModal(true);
+        // Optionally, you can handle the error or show an error message to the user if there was an error while submitting the form.
+      }
 
       // console.log(data)
     };
+
+
       
   
     // Radio button options for "Which of the following best describes you?"
     const bestDescriptionOptions = [
       { label: 'Student', value: 'student' },
       { label: 'Developer', value: 'developer' },
-      { label: 'Entreprenuer', value: 'entreprenuer' },
+      { label: 'Entrepreneur', value: 'entrepreneur' },
       { label: 'Others', value: 'others' },
     ];
     // Radio button options for "Did you attend last year?"
     const attendedOptions = [
-      { label: 'Yes', value: 'yes' },
-      { label: 'No', value: 'no' },
+      { label: 'Yes', value: 'Yes' },
+      { label: 'No', value: 'No' },
     ];
     const joiningModeOptions = [
-      { label: 'Virtual', value: 'virtual' },
-      { label: 'Physical', value: 'physical' },
+      { label: 'Virtual', value: 'Virtual' },
+      { label: 'Physical', value: 'Physical' },
     ];
   
-    // Radio button options for "Which track are you interested in?"
+    // Radio button options for "Which trackInterest are you interested in?"
     const trackInterestOptions = [
       { label: 'Entrepreneurship', value: 'entrepreneurship' },
       { label: 'Technology', value: 'technology' },
@@ -133,8 +148,8 @@ const EventRegForm = () => {
     // Dropdown button options for "Gender"
       const genderOptions = [
         { label: 'Select your gender', value: '' },
-        { label: 'Male', value: 'Male' },
-        { label: 'Female', value: 'Female' },
+        { label: 'Male', value: 'male' },
+        { label: 'Female', value: 'female' },
         { label: 'Other', value: 'Other' },
       ];
 
@@ -250,8 +265,8 @@ const EventRegForm = () => {
         <InputOption
         descriptionLabelText="Did you attend TxE 2022?"
         options={attendedOptions}
-        initialSelection={attended}
-        updatedSelection={setAttended}
+        initialSelection={attended2022}
+        updatedSelection={setAttended2022}
         />
 
         <InputOption
@@ -262,7 +277,7 @@ const EventRegForm = () => {
         />
 
         <InputOption
-        descriptionLabelText="Which track are you interested in?"
+        descriptionLabelText="Which trackInterest are you interested in?"
         options={trackInterestOptions}
         initialSelection={trackInterest}
         updatedSelection={setTrackInterest}
@@ -279,6 +294,21 @@ const EventRegForm = () => {
     </div>
     <div className="bg-gray-200 h-36 w-full"></div>
     <Footer />
+
+
+    {showSuccessModal && (
+      <SuccessModal
+        onClose={() => setShowSuccessModal(false)}
+        message={"You have successfully registered for"} 
+        />
+    )}
+    {showFailedModal && (
+      <FailedModal
+        onClose={() => setShowFailedModal(false)}
+        message={"Looks like you have already registered for this event"}
+        secondMessage={"Check your email for your ticket."}
+         />
+    )}
     </div>
   );
 };

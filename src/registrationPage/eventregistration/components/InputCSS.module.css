@@ -86,6 +86,10 @@ form{
     font-size: 14px;
 } 
 
+.nontext{
+  background-color: #f1f1f1;
+}
+
 .inputholder select{
     font-size: 14px;
     color: #8D9396;

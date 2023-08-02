@@ -25,9 +25,9 @@
     width: 50px;
     position: absolute;
 }
-form{
+.main form{
     margin: auto;
-    width: 60%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     gap: 20px;
