@@ -7,7 +7,6 @@ import InputFieldNon from '../../registrationPage/eventregistration/components/I
 import TextArea from '../../registrationPage/eventregistration/components/TextArea/TextArea';
 import FormBtn from '../../registrationPage/eventregistration/components/Buttons/FormButton';
 import FormVector from '../FormVector';
-import ApplyFor from '../ApplyFor';
 import Navbar from '../../landingPage/sections/Navbar';
 import Footer from '../../landingPage/sections/Footer';
 import ApplyForGrantCSS from '../grant/ApplyForGrant.module.css'
@@ -26,8 +25,7 @@ const ApplyForGrant = ({ initialUserData }) => {
     phoneNumber,
     country,
     state,
-    gender,
-    // ... other fields from userData
+    gender
   } = userData || {};
 
   const [isEmailVerified, setIsEmailVerified] = useState(false);
@@ -150,11 +148,12 @@ const ApplyForGrant = ({ initialUserData }) => {
         setShowSuccessModal(true);
       } else if (response.status === 403) {
         setShowFailedModal(true);
-        setFailedModalMessage("Custom message for 403 status");
+        setFailedModalMessage("You have already registered for a Grant before");
+        setFailedSecondModalMessage("Keep an eye out for our email!");
       } else if (response.status === 400) {
         setShowFailedModal(true);
         setFailedModalMessage("You didn't register for Entrepreneurship");
-        setFailedSecondModalMessage("This grant is only available for Entrepreneurship applicants");
+        setFailedSecondModalMessage("This grant is only available for Entrepreneurship applicants!");
       } else {
         setShowFailedModal(true);
         setFailedModalMessage("Default message for other statuses");

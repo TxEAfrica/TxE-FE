@@ -19,7 +19,7 @@ const FailedModal = ({ onClose , message, secondMessage }) => {
     };
 
     const defaultOptions = {
-        loop: true,
+        loop: false,
         autoplay: true,
         animationData: animationData, // This is the imported animation data
         rendererSettings: {

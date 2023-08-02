@@ -180,6 +180,9 @@
     .formtitle h1 {
       font-size: 45px;
     }
+    .decor{
+      display: none;
+    }
   }
   
   /* Tablets and Small Laptops (769px - 1024px) */
