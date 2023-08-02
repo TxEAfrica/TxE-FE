@@ -137,7 +137,7 @@ const ApplyFor = ({ category, applicantMessage }) => {
               }
       
               const responseData = await response.json();
-              console.log(responseData)
+              // console.log(responseData)
               setData(responseData);
             } catch (err) {
               // console.log(schApplicantData)

@@ -89,7 +89,7 @@ const EventRegForm = () => {
     
         return false; // Email does not exist
       } catch (error) {
-        console.log('Error checking email availability:', error);
+        // console.log('Error checking email availability:', error);
         return false;
       }
     };
@@ -104,7 +104,7 @@ const EventRegForm = () => {
   
         if (emailExists) {
           setShowFailedModal(true);
-          console.log('Email already exists in the database.');
+          // console.log('Email already exists in the database.');
           // Show appropriate message or handle as per your requirement
           return;
         }
@@ -132,7 +132,7 @@ const EventRegForm = () => {
           body: JSON.stringify(EventRegistration),
         });
   
-        console.log(EventRegistration)
+        // console.log(EventRegistration)
 
         if (response.ok) {
           // console.log('Form data submitted successfully!');

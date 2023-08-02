@@ -98,7 +98,7 @@ const ApplyForGrant = ({ initialUserData }) => {
       setShowNextForm(false);
     }
 
-    console.log("showNextForm:", showNextForm);
+    // console.log("showNextForm:", showNextForm);
   };
   
 
