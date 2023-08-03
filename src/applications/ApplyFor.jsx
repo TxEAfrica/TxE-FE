@@ -57,8 +57,10 @@ const ApplyFor = ({ category, applicantMessage }) => {
           const dataObj = responseData;
           console.log(responseData)
           setVerifiedData(responseData);
-          if(verifiedData.data.trackInterest==="entrepreneurship"){
+          if(dataObj.data.trackInterest==="technology"){
             setShowUI(false)
+          }else{
+            setShowUI(true)
           }
         } catch (err) {
           // console.log(schApplicantData)
@@ -137,7 +139,7 @@ const ApplyFor = ({ category, applicantMessage }) => {
               }
       
               const responseData = await response.json();
-              console.log(responseData)
+              // console.log(responseData)
               setData(responseData);
             } catch (err) {
               // console.log(schApplicantData)

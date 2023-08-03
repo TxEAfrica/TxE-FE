@@ -2,7 +2,7 @@
     width: 100%; /* Remove fixed width */
     background: #FF6F43;
     color: #FFF;
-    padding: auto; /* Adjust padding for better scaling */
+    padding: 12px 20px; /* Adjust padding for better scaling */
     border: none;
     outline: none;
     border-radius: 10px;
@@ -31,7 +31,7 @@
         color: #FFF;
         padding: 6px 10px; /* Adjust padding for better scaling */
         border-radius: 5px;
-        font-size: 14px;
+        font-size: 12px;
         transition: all .4s ease;
     }
     .formbutton:hover{

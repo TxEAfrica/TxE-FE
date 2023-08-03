@@ -10,7 +10,7 @@ const TechSupport = ({
   email,
   setGender,
   phoneNumber}) => {
-    console.log(email)
+    // console.log(email)
     return ( 
         <>
              <div className="flex justify-between space-x-3">
