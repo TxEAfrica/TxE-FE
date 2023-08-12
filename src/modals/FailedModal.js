@@ -1,7 +1,7 @@
 import React from "react";
 import animationData from "../assets/Attention Mark.json";
 import Lottie from "react-lottie";
-import "./Modal.css";
+import "./Modals.css";
 import FormBtn from "../registrationPage/eventregistration/components/Buttons/FormButton";
 import { NavLink } from "react-router-dom";
 import arrowlink1 from "../assets/link-arrow-1.svg";

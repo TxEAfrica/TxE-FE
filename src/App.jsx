@@ -4,12 +4,10 @@ import Home from "./landingPage/home";
 import EventRegForm from "./registrationPage/eventregistration/EventRegForm";
 import TechSupportApplication from "./applications/category/TechSupportApplication";
 import ApplyForGrant from "./applications/grant/ApplyForGrant";
-import FailedModal from "./modals/FailedModal";
-import SuccessModal from "./modals/SuccessModal";
 
 const App = () => {
 	return (
-		<BrowserRouter forceRefresh={true}>
+		<BrowserRouter>
 			<Routes>
 				<Route
 					path="/"
@@ -26,11 +24,6 @@ const App = () => {
 				<Route
 					path="/grant"
 					element={<ApplyForGrant />}
-				/>
-				{/* <Route path='/modal' element ={<SuccessModal />} /> */}
-				<Route
-					path="/modal"
-					element={<FailedModal />}
 				/>
 			</Routes>
 		</BrowserRouter>

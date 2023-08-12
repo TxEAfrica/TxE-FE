@@ -10,7 +10,7 @@ import FormVector from "../FormVector";
 import Navbar from "../../landingPage/sections/Navbar";
 import Footer from "../../landingPage/sections/Footer";
 import ApplyForGrantCSS from "../grant/ApplyForGrant.module.css";
-import SuccessModal from "../../modals/SuccessModal";
+import GrantSuccess from "../../modals/GrantSuccess";
 import FailedModal from "../../modals/FailedModal";
 
 const ApplyForGrant = () => {
@@ -25,6 +25,7 @@ const ApplyForGrant = () => {
 	const [videoLink, setVideoLink] = useState("");
 	const [whyNotRegistered, setWhyNotRegistered] = useState("");
 	const [errorMessage, setErrorMessage] = useState("");
+	const [showGrantSuccess, setShowGrantSuccess] = useState(false);
 	const [showSuccessModal, setShowSuccessModal] = useState(false);
 	const [showFailedModal, setShowFailedModal] = useState(false);
 	const [failedModalMessage, setFailedModalMessage] = useState("");
@@ -125,7 +126,7 @@ const ApplyForGrant = () => {
 			// console.log(formData);
 
 			if (response.status === 200) {
-				setShowSuccessModal(true);
+				setShowGrantSuccess(true);
 			}
 		} catch (error) {
 			console.error("Error submitting grant form:", error);
@@ -173,25 +174,25 @@ const ApplyForGrant = () => {
 							<div className={ApplyForGrantCSS.smallinputholder}>
 								<InputFieldNon
 									labelText="First Name"
-									htmlFor="firstName" // Pass the htmlFor prop for label element
-									inputId="firstName" // Pass the inputId prop for input element
-									type="firstName" // Pass the type prop for input element
+									htmlFor="firstName" //
+									inputId="firstName" //
+									type="firstName"
 									value={userData.data.firstName || ""}
 								/>
 								<InputFieldNon
 									labelText="Last Name"
-									htmlFor="lastName" // Pass the htmlFor prop for label element
-									inputId="lastName" // Pass the inputId prop for input element
-									type="lastName" // Pass the type prop for input element
+									htmlFor="lastName" //
+									inputId="lastName" //
+									type="lastName"
 									value={userData.data.lastName || ""}
 								/>
 							</div>
 
 							<InputFieldNon
 								labelText="Email address"
-								htmlFor="email" // Pass the htmlFor prop for label element
-								inputId="email" // Pass the inputId prop for input element
-								type="email" // Pass the type prop for input element
+								htmlFor="email" //
+								inputId="email" //
+								type="email"
 								value={userData.data.email || ""}
 								// onChange={(e) => setEmail(e.target.value)}
 							/>
@@ -199,16 +200,16 @@ const ApplyForGrant = () => {
 							<div className={ApplyForGrantCSS.smallinputholder}>
 								<InputFieldNon
 									labelText="Gender"
-									htmlFor="gender" // Pass the htmlFor prop for label element
-									inputId="gender" // Pass the inputId prop for input element
-									type="gender" // Pass the type prop for input element
+									htmlFor="gender" //
+									inputId="gender" //
+									type="gender"
 									value={userData.data.gender || ""}
 								/>
 								<InputFieldNon
 									labelText="Phone Number"
-									htmlFor="phoneNumber" // Pass the htmlFor prop for label element
-									inputId="phoneNumber" // Pass the inputId prop for input element
-									type="phoneNumber" // Pass the type prop for input element
+									htmlFor="phoneNumber" //
+									inputId="phoneNumber" //
+									type="phoneNumber"
 									value={userData.data.phoneNumber || ""}
 								/>
 							</div>
@@ -216,16 +217,16 @@ const ApplyForGrant = () => {
 							<div className={ApplyForGrantCSS.smallinputholder}>
 								<InputFieldNon
 									labelText="Country"
-									htmlFor="country" // Pass the htmlFor prop for label element
-									inputId="country" // Pass the inputId prop for input element
-									type="country" // Pass the type prop for input element
+									htmlFor="country" //
+									inputId="country" //
+									type="country"
 									value={userData.data.country || ""}
 								/>
 								<InputFieldNon
 									labelText="State"
-									htmlFor="state" // Pass the htmlFor prop for label element
-									inputId="state" // Pass the inputId prop for input element
-									type="state" // Pass the type prop for input element
+									htmlFor="state" //
+									inputId="state" //
+									type="state"
 									value={userData.data.state || ""}
 								/>
 							</div>
@@ -235,27 +236,27 @@ const ApplyForGrant = () => {
 							<InputField
 								labelText="Business Name"
 								placeholder={"Enter Business Name"}
-								htmlFor="businessName" // Pass the htmlFor prop for label element
-								inputId="businessName" // Pass the inputId prop for input element
-								type="businessName" // Pass the type prop for input element
+								htmlFor="businessName" //
+								inputId="businessName" //
+								type="businessName"
 								value={businessName}
 								onChange={(e) => setBusinessName(e.target.value)}
 							/>
 							<InputField
 								labelText="Business Location"
 								placeholder={"Enter Business Location"}
-								htmlFor="businessLocation" // Pass the htmlFor prop for label element
-								inputId="businessLocation" // Pass the inputId prop for input element
-								type="businessLocation" // Pass the type prop for input element
+								htmlFor="businessLocation" //
+								inputId="businessLocation" //
+								type="businessLocation"
 								value={businessLocation}
 								onChange={(e) => setBusinessLocation(e.target.value)}
 							/>
 							<InputField
 								labelText="How many month has your business been in operation?"
 								placeholder={"Enter here"}
-								htmlFor="operationMonths" // Pass the htmlFor prop for label element
-								inputId="operationMonths" // Pass the inputId prop for input element
-								type="operationMonths" // Pass the type prop for input element
+								htmlFor="operationMonths" //
+								inputId="operationMonths" //
+								type="operationMonths"
 								value={operationMonths}
 								onChange={(e) => setOperationMonths(e.target.value)}
 							/>
@@ -372,8 +373,8 @@ const ApplyForGrant = () => {
 			<div className="bg-gray-200 h-36 w-full"></div>
 
 			<Footer />
-			{showSuccessModal && (
-				<SuccessModal
+			{showGrantSuccess && (
+				<GrantSuccess
 					onClose={() => setShowSuccessModal(false)}
 					message={"You have successfully applied for a grant"}
 					secondMessage={"Keep an eye out for our mail"}

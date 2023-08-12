@@ -8,8 +8,9 @@ import FormBtn from "./components/Buttons/FormButton";
 import Navbar from "../../landingPage/sections/Navbar";
 import Footer from "../../landingPage/sections/Footer";
 import FormVector from "../../applications/FormVector";
-import SuccessModal from "../../modals/SuccessModal";
 import FailedModal from "../../modals/FailedModal";
+import RegSuccess from "../../modals/RegSuccess";
+import { AlreadyRegistered } from "../../modals/AlreadyRegistered";
 
 const EventRegForm = () => {
 	const [firstName, setFirstName] = useState("");
@@ -23,8 +24,13 @@ const EventRegForm = () => {
 	const [trackInterest, setTrackInterest] = useState("");
 	const [attended2022, setAttended2022] = useState("");
 	const [joiningMode, setJoiningMode] = useState("");
-	const [showSuccessModal, setShowSuccessModal] = useState(false);
+	// const [showSuccessModal, setShowSuccessModal] = useState(false);
+	const [showRegSuccess, setShowRegSuccess] = useState(false);
+	const [showAlreadyRegistered, setShowAlreadyRegistered] = useState(false);
 	const [showFailedModal, setShowFailedModal] = useState(false);
+	const [showFailedModalMessage, setShowFailedModalMessage] = useState("");
+	const [showFailedModalSecondMessage, setShowFailedModalSecondMessage] =
+		useState("");
 
 	const [countryOptions, setCountryOptions] = useState([]);
 
@@ -65,6 +71,16 @@ const EventRegForm = () => {
 		trackInterest,
 	};
 
+	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+	const handleVerifyEmail = (e) => {
+		e.preventDefault();
+		if (!emailRegex.test(email)) {
+			setShowFailedModalMessage("Please enter a valid email address");
+			return;
+		}
+	};
+
 	const checkEmailAvailability = async () => {
 		try {
 			const response = await fetch(
@@ -96,13 +112,12 @@ const EventRegForm = () => {
 		e.preventDefault();
 
 		try {
+			handleSubmit();
 			// Check if the email exists in the database
 			const emailExists = await checkEmailAvailability();
 
 			if (emailExists) {
-				setShowFailedModal(true);
-				console.log("Email already exists in the database.");
-				// Show appropriate message or handle as per your requirement
+				setShowAlreadyRegistered(true);
 				return;
 			}
 
@@ -136,7 +151,7 @@ const EventRegForm = () => {
 
 			if (response.ok) {
 				// console.log('Form data submitted successfully!');
-				setShowSuccessModal(true);
+				setShowRegSuccess(true);
 			} else {
 				// console.log('Failed to submit form data');
 				setShowFailedModal(true);
@@ -144,6 +159,7 @@ const EventRegForm = () => {
 		} catch (error) {
 			// console.error('Error submitting form data:', error);
 			setShowFailedModal(true);
+			setShowFailedModalMessage("Error connecting to server");
 		}
 	};
 
@@ -297,7 +313,7 @@ const EventRegForm = () => {
 					/>
 
 					<InputOption
-						descriptionLabelText="Which trackInterest are you interested in?"
+						descriptionLabelText="Which track are you interested in?"
 						options={trackInterestOptions}
 						initialSelection={trackInterest}
 						updatedSelection={setTrackInterest}
@@ -311,19 +327,13 @@ const EventRegForm = () => {
 			<div className="bg-gray-200 h-36 w-full"></div>
 			<Footer />
 
-			{showSuccessModal && (
-				<SuccessModal
-					onClose={() => setShowSuccessModal(false)}
-					message={"You have successfully registered for"}
-					thirdMessage={"TxE Summit 2023"}
-					btnFor={"Back to Homepage"}
-				/>
-			)}
+			{showRegSuccess && <RegSuccess />}
+			{showAlreadyRegistered && <AlreadyRegistered />}
 			{showFailedModal && (
 				<FailedModal
 					onClose={() => setShowFailedModal(false)}
-					message={"Looks like you have already registered for this event"}
-					secondMessage={"Check your email for your ticket."}
+					message={showFailedModalMessage}
+					secondMessage={showFailedModalSecondMessage}
 				/>
 			)}
 		</div>
