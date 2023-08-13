@@ -90,7 +90,7 @@ const EmailVerification = ({ onSuccess, onUserData }) => {
 				/>
 
 				{loading ? (
-					<button className="btn2">Please wait...</button>
+					<button className="btn3">Please wait...</button>
 				) : (
 					<FormBtn
 						btnFor="Next"
