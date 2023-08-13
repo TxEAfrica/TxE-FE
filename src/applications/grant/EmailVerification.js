@@ -4,15 +4,22 @@ import InputField from "../../registrationPage/eventregistration/components/Inpu
 import FormBtn from "../../registrationPage/eventregistration/components/Buttons/FormButton";
 import ApplyForGrantCSS from "../grant/ApplyForGrant.module.css";
 import FailedModal from "../../modals/FailedModal";
+import { GrantIneligible } from "../../modals/GrantIneligible";
 import { useNavigate, Navigate } from "react-router-dom";
+import { NotRegistered } from "../../modals/NotRegistered";
+import { InvalidEmail } from "../../modals/InvalidEmail";
+import { NetworkError } from "../../modals/NetworkError";
 
 const EmailVerification = ({ onSuccess, onUserData }) => {
 	const [email, setEmail] = useState("");
 	const [verificationFailed, setVerificationFailed] = useState(false);
+	const [showGrantIneligible, setShowGrantIneligible] = useState(false);
+	const [showNotRegistered, setShowNotRegistered] = useState(false);
+	const [showInvalidEmail, setShowInvalidEmail] = useState(false);
+	const [showNetworkError, setShowNetworkError] = useState(false);
+	const [loading, setLoading] = useState(false);
 	const [showFailedModal, setShowFailedModal] = useState(false);
-	const [failedModalMessage, setFailedModalMessage] = useState("");
-	const [failedSecondModalMessage, setFailedSecondModalMessage] = useState("");
-	const { buttonMessage, setButtonMessage } = useState("");
+
 	// const { handleNavigate, setHandleNavigate } = useState({});
 
 	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -21,36 +28,51 @@ const EmailVerification = ({ onSuccess, onUserData }) => {
 		e.preventDefault();
 		if (!emailRegex.test(email)) {
 			setVerificationFailed(true);
-			setFailedModalMessage("Please enter a valid email address");
+			setShowInvalidEmail(true);
 			return;
 		}
+		setLoading(true);
 
 		fetch(`https://txe-africa.onrender.com/api/v1/${email}`)
 			.then((response) => {
 				return response.json();
 			})
 			.then((data) => {
-				if (data && data.data.trackInterest === "entrepreneurship") {
-					setVerificationFailed(false);
-					onSuccess(data, true); // Pass the user data and verification status back to the parent component
+				setLoading(false);
+				console.log("API Response Data:", data);
+				if (!data || !data.data) {
+					setShowNotRegistered(true);
 				} else {
-					setVerificationFailed(true);
-					setFailedModalMessage("You are ineligible to apply for a Grant");
-					setFailedSecondModalMessage(
-						"This grant is only available to Entrepreneur Applicants"
-					);
-					setButtonMessage("Click here to apply for Tech Support");
-					// setHandleNavigate(() => Navigate("/"));
-					onSuccess(null, false); // Pass null as user data and verification status back to the parent component
+					const trackInterest = data.data.trackInterest;
+
+					if (trackInterest === "entrepreneurship") {
+						setVerificationFailed(false);
+						onSuccess(data, true);
+					} else if (trackInterest === "technology") {
+						setVerificationFailed(true);
+						setShowGrantIneligible(true);
+					} else {
+						setVerificationFailed(true);
+						setShowNetworkError(true);
+						// Handle other cases here
+					}
 				}
 			})
 			.catch((error) => {
-				setVerificationFailed(true);
-				// setFailedModalMessage("You have not registered for the event");
-				// setFailedSecondModalMessage(
-				// 	"Kindly Register for TxE Summit 2023"
-				// );
-				onSuccess(null, false); // Pass null as user data and verification status back to the parent component
+				setLoading(false);
+				console.log("API Fetch Error:", error);
+
+				// Check if the error is network-related
+				if (
+					error instanceof TypeError &&
+					error.message.includes("Failed to fetch")
+				) {
+					// Show the NetworkError modal
+					setShowNetworkError(true);
+				} else {
+					// Handle other types of errors here
+					onSuccess(null, false);
+				}
 			});
 	};
 
@@ -67,22 +89,34 @@ const EmailVerification = ({ onSuccess, onUserData }) => {
 					onChange={(e) => setEmail(e.target.value)}
 				/>
 
-				<div>
+				{loading ? (
+					<button className="btn2">Please wait...</button>
+				) : (
 					<FormBtn
 						btnFor="Next"
 						onClick={handleVerifyEmail}
 					/>
-				</div>
+				)}
 			</form>
 
-			{verificationFailed && (
+			{showGrantIneligible && (
 				<div>
-					<FailedModal
-						onClose={() => window.location.reload()}
-						message={failedModalMessage}
-						secondMessage={failedSecondModalMessage}
-						btnFor={buttonMessage}
-					/>
+					<GrantIneligible onClose={() => setShowGrantIneligible(false)} />
+				</div>
+			)}
+			{showNotRegistered && (
+				<div>
+					<NotRegistered onClose={() => setShowNotRegistered(false)} />
+				</div>
+			)}
+			{showInvalidEmail && (
+				<div>
+					<InvalidEmail onClose={() => setShowInvalidEmail(false)} />
+				</div>
+			)}
+			{showNetworkError && (
+				<div>
+					<NetworkError onClose={() => setShowNetworkError(false)} />
 				</div>
 			)}
 		</div>

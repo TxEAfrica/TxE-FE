@@ -6,10 +6,7 @@ import linkarrow2 from "../assets/link-arrow2.svg";
 import close from "../assets/close.svg";
 import { NavLink } from "react-router-dom";
 
-export const GrantIneligible = ({ onClose }) => {
-	const handleNavigate = () => {
-		window.location.href = "/techsupport";
-	};
+export const NetworkError = ({ onClose }) => {
 	return (
 		<div className="modal-overlay">
 			<div className="modal">
@@ -68,20 +65,17 @@ export const GrantIneligible = ({ onClose }) => {
 						</svg>
 					</div>
 					<div className="modal-message">
-						<h2>Hello there!</h2>
-						<small>Only available for Entreprenuership Applicants</small>
-						<p>
-							You are not eligible for the business grant, as you already
-							registered for the tech track.
-						</p>
+						<h2>Oops!</h2>
+						<p>Error connecting to server</p>
+						<small>Please check your internet connection</small>
 					</div>
 				</div>
 
 				<div className="modal-cta">
 					<button
-						onClick={handleNavigate}
+						onClick={onClose}
 						className="btn2">
-						Register for Tech Support
+						Close
 					</button>
 				</div>
 			</div>

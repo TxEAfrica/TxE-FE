@@ -6,9 +6,11 @@ import linkarrow2 from "../assets/link-arrow2.svg";
 import close from "../assets/close.svg";
 import { NavLink } from "react-router-dom";
 
-export const NotRegistered = () => {
+export const NotRegistered = ({ onClose }) => {
 	return (
-		<div className="modal-overlay">
+		<div
+			className="modal-overlay"
+			onClick={onClose}>
 			<div className="modal">
 				<div className="modal-header">
 					<div className="info">
@@ -18,7 +20,7 @@ export const NotRegistered = () => {
 						/>
 						<p>Information</p>
 					</div>
-					<span>
+					<span onClick={onClose}>
 						<img
 							src={close}
 							alt=""
@@ -63,7 +65,11 @@ export const NotRegistered = () => {
 				</div>
 
 				<div className="modal-cta">
-					<button className="btn1">Close</button>
+					<button
+						className="btn1"
+						onClick={onClose}>
+						Close
+					</button>
 					<button className="btn2">Register</button>
 				</div>
 			</div>

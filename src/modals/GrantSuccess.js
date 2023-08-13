@@ -35,7 +35,7 @@ const GrantSuccess = () => {
 							/>
 						</span>
 					</div>
-					{/* ... rest of the modal content */}
+
 					<div className="modal-content">
 						<div className="success-animation">
 							<svg
@@ -75,7 +75,7 @@ const GrantSuccess = () => {
 							</svg>
 						</div>
 						<div className="modal-message">
-							<h2>Congratulations</h2>
+							<h2>Congratulations!</h2>
 							<p>You have successfully submitted your Grant application.</p>
 							<small>Keep an eye out for our email.</small>
 						</div>

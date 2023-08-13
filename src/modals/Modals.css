@@ -9,6 +9,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	z-index: 1000;
 }
 
 /* Styling for the modal container */
@@ -34,14 +35,23 @@
 }
 .modal-header span img {
 	width: 20px;
+	display: flex;
+	position: relative;
 	cursor: pointer;
 }
 .modal-header .info {
+	position: relative;
 	display: flex;
 	align-items: center;
 	gap: 5px;
 }
+.info p {
+	color: #000;
+	font-size: 14px;
+}
 .modal-header .info img {
+	display: flex;
+	position: relative;
 	width: 40px;
 }
 
@@ -52,7 +62,23 @@
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
-	color: #fff;
+	color: #000;
+}
+.modal-message h2 {
+	font-size: 40px;
+	font-weight: 700;
+}
+.modal-message small {
+	font-style: italic !important ;
+	color: #ff6f43;
+	font-size: 14px;
+}
+.modal-message p {
+	font-family: "Neue Helvetica", "Plus Sans Jakarta";
+	color: #555;
+	font-size: 16px;
+	letter-spacing: -0.5px;
+	font-weight: 500;
 }
 
 /* Styling for the success animation */
@@ -112,20 +138,21 @@
 .btn1 {
 	width: 100%;
 	background-color: transparent;
-	border: 1px solid #ff6f43;
-	color: #fff;
+	border: 1px solid #000;
+	color: #000;
 	padding: 10px 20px;
 	border-radius: 5px;
 	cursor: pointer;
 }
 
-.btn1:hover {
-	background-color: #0056b3;
+/* .btn1:hover {
+	background-color: #000;
+	color: #fff;
 	border: none;
-}
+} */
 .btn2 {
 	width: 100%;
-	background-color: #ff6f43;
+	background-color: #000;
 	color: #fff;
 	border: none;
 	padding: 10px 20px;
