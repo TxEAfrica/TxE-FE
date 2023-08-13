@@ -6,7 +6,10 @@ import linkarrow2 from "../assets/link-arrow2.svg";
 import close from "../assets/close.svg";
 import { NavLink } from "react-router-dom";
 
-export const NetworkError = ({ onClose }) => {
+export const NetworkError = () => {
+	const handleRefresh = () => {
+		window.location.reload(); // Refresh the page
+	};
 	return (
 		<div className="modal-overlay">
 			<div className="modal">
@@ -18,7 +21,7 @@ export const NetworkError = ({ onClose }) => {
 						/>
 						<p>Information</p>
 					</div>
-					<span onClick={onClose}>
+					<span onClick={handleRefresh}>
 						<img
 							src={close}
 							alt=""
@@ -73,7 +76,7 @@ export const NetworkError = ({ onClose }) => {
 
 				<div className="modal-cta">
 					<button
-						onClick={onClose}
+						onClick={handleRefresh}
 						className="btn2">
 						Close
 					</button>
