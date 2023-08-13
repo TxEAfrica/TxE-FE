@@ -1,5 +1,5 @@
 return (
-      <div>
+<div>
 
         <Navbar />
 
@@ -14,7 +14,7 @@ return (
               {/* <FormVector position={'left-10'} /> */}
               {/* <FormVector position={'right-10'} /> */}
             </div>
-            
+
             <div className={`text-center w-1/2 mt-20 space-y-3 ${ApplyForGrantCSS.title}`}>
               <h1 className="text-5xl text-orange-500 font-semibold">
                 Apply For {"Grant"}
@@ -25,7 +25,7 @@ return (
               </h3>
             </div>
 
-              
+
             <div className={ApplyForGrantCSS.main}>
             {/* Show the form content only if the email is verified */}
             {isEmailVerified ? (
@@ -50,7 +50,7 @@ return (
                     // onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
-              
+
               <InputFieldNon
                   labelText="Email address"
                   htmlFor="email" // Pass the htmlFor prop for label element
@@ -131,14 +131,14 @@ return (
               {/* Radio buttons for "Is your business registered?" */}
               <div>
                 <label>
-                  
+
                   <InputOption
                     descriptionLabelText="Is your business registered?"
                     options={[{label:"Yes", value:'yes'},{label:"No", value: 'no'}]}
                     initialSelection={isBusinessRegistered}
                     updatedSelection={setIsBusinessRegistered}
                   />
-        
+
                 </label>
               </div>
 
@@ -146,7 +146,7 @@ return (
               {isBusinessRegistered && (
               <div>
               {/* Common input field for both "Yes" and "No" choices */}
-            
+
 
               {/* Input fields for "Yes" choice */}
               {isBusinessRegistered === 'yes' && (
@@ -169,7 +169,7 @@ return (
                       type="text" // Pass the type prop for input element
                       value={whyNeedGrant}
                       onChange={(e) => setWhyNeedGrant(e.target.value)}
-                    /> 
+                    />
 
                     <InputField
                       labelText="Paste a link to a 1-minute video explaining why you need a grant"
@@ -194,7 +194,7 @@ return (
                           type="text" // Pass the type prop for input element
                           value={whyNotRegistered}
                           onChange={(e) => setWhyNotRegistered(e.target.value)}
-                        /> 
+                        />
                       <TextArea
                           labelText="Why do you need a grant?"
                           placeholder={"Tell us why"}
@@ -203,7 +203,7 @@ return (
                           type="text" // Pass the type prop for input element
                           value={whyNeedGrant}
                           onChange={(e) => setWhyNeedGrant(e.target.value)}
-                        /> 
+                        />
 
                         <InputField
                           labelText="Paste a link to a 1-minute video explaining why you need a grant"
@@ -228,7 +228,7 @@ return (
               {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
 
               {/* Submit button */}
-            
+
               <FormBtn btnFor={"Submit"} />
 
             </form>
@@ -247,8 +247,8 @@ return (
        </div>
 
       </div>
-                
-        
+
+
 
         <div className="bg-gray-200 h-36 w-full"></div>
 
@@ -256,7 +256,7 @@ return (
           {showSuccessModal && (
           <SuccessModal
             onClose={() => setShowSuccessModal(false)}
-            message={"You have successfully applied for a grant"} 
+            message={"You have successfully applied for a grant"}
             thirdMessage={"Keep an eye out for our mail"}
             btnFor={"Back to Home"}
             />
@@ -269,9 +269,10 @@ return (
             />
         )}
 
-                
+
     </div>
-  );
+
+);
 };
 
 export default ApplyForGrant;

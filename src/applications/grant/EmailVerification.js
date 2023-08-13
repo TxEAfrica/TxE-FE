@@ -1,83 +1,126 @@
 // EmailVerification.js
-import React, { useState } from 'react';
-import InputField from '../../registrationPage/eventregistration/components/InputField/InputField';
-import FormBtn from '../../registrationPage/eventregistration/components/Buttons/FormButton';
-// import ButtonsCSS from './components/Buttons/ButtonsCSS.module.css'
-import ApplyForGrantCSS from '../grant/ApplyForGrant.module.css'
-import FailedModal from '../../modals/FailedModal'
-import SuccessModal from '../../modals/SuccessModal';
+import React, { useState } from "react";
+import InputField from "../../registrationPage/eventregistration/components/InputField/InputField";
+import FormBtn from "../../registrationPage/eventregistration/components/Buttons/FormButton";
+import ApplyForGrantCSS from "../grant/ApplyForGrant.module.css";
+import FailedModal from "../../modals/FailedModal";
+import { GrantIneligible } from "../../modals/GrantIneligible";
+import { useNavigate, Navigate } from "react-router-dom";
+import { NotRegistered } from "../../modals/NotRegistered";
+import { InvalidEmail } from "../../modals/InvalidEmail";
+import { NetworkError } from "../../modals/NetworkError";
 
 const EmailVerification = ({ onSuccess, onUserData }) => {
-  const [email, setEmail] = useState('');
-  const [isEmailVerified, setIsEmailVerified] = useState(false);
-  const [verificationFailed, setVerificationFailed] = useState(false);
-  const [showSuccessModal, setShowSuccessModal] = useState(false);
-  const [showFailedModal, setShowFailedModal] = useState(false);
+	const [email, setEmail] = useState("");
+	const [verificationFailed, setVerificationFailed] = useState(false);
+	const [showGrantIneligible, setShowGrantIneligible] = useState(false);
+	const [showNotRegistered, setShowNotRegistered] = useState(false);
+	const [showInvalidEmail, setShowInvalidEmail] = useState(false);
+	const [showNetworkError, setShowNetworkError] = useState(false);
+	const [loading, setLoading] = useState(false);
+	const [showFailedModal, setShowFailedModal] = useState(false);
 
-  const [userData, setUserData] = useState([])
+	// const { handleNavigate, setHandleNavigate } = useState({});
 
-  const handleVerifyEmail = async (e) => {
-    e.preventDefault();
+	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    try {
+	const handleVerifyEmail = (e) => {
+		e.preventDefault();
+		if (!emailRegex.test(email)) {
+			setVerificationFailed(true);
+			setShowInvalidEmail(true);
+			return;
+		}
+		setLoading(true);
 
+		fetch(`https://txe-africa.onrender.com/api/v1/${email}`)
+			.then((response) => {
+				return response.json();
+			})
+			.then((data) => {
+				setLoading(false);
+				console.log("API Response Data:", data);
+				if (!data || !data.data) {
+					setShowNotRegistered(true);
+				} else {
+					const trackInterest = data.data.trackInterest;
 
-      const response = await fetch(`https://txe-africa.onrender.com/api/v1/${email}`);
+					if (trackInterest === "entrepreneurship") {
+						setVerificationFailed(false);
+						onSuccess(data, true);
+					} else if (trackInterest === "technology") {
+						setVerificationFailed(true);
+						setShowGrantIneligible(true);
+					} else {
+						setVerificationFailed(true);
+						setShowNetworkError(true);
+						// Handle other cases here
+					}
+				}
+			})
+			.catch((error) => {
+				setLoading(false);
+				console.log("API Fetch Error:", error);
 
-      if (response.ok) {
-        setIsEmailVerified(true);
-        setVerificationFailed(false);
-        const data = await response.json();
+				// Check if the error is network-related
+				if (
+					error instanceof TypeError &&
+					error.message.includes("Failed to fetch")
+				) {
+					// Show the NetworkError modal
+					setShowNetworkError(true);
+				} else {
+					// Handle other types of errors here
+					onSuccess(null, false);
+				}
+			});
+	};
 
-        // Pass the data to the parent component using the onUserData callback
-        if (onUserData) {
-          onUserData(data);
-        }
+	return (
+		<div className={ApplyForGrantCSS.mainn}>
+			<form>
+				<InputField
+					labelText="Email Address"
+					placeholder="Verify email address"
+					htmlFor="email"
+					inputId="email"
+					type="email"
+					value={email}
+					onChange={(e) => setEmail(e.target.value)}
+				/>
 
-        if (onSuccess) {
-          onSuccess();
-          // console.log(data)
-        }
-      } else {
-        setIsEmailVerified(false);
-        setVerificationFailed(true);
-      }
-    } catch (error) {
-      console.error('Error verifying email:', error);
-      setIsEmailVerified(false);
-      setVerificationFailed(true);
-    }
-  };
+				{loading ? (
+					<button className="btn2">Please wait...</button>
+				) : (
+					<FormBtn
+						btnFor="Next"
+						onClick={handleVerifyEmail}
+					/>
+				)}
+			</form>
 
-  return (
-    <div className={ApplyForGrantCSS.mainn}>
-
-      <form>
-        <InputField
-            labelText="Email Address"
-            placeholder={"Verify email address"}
-            htmlFor="email" 
-            inputId="email" 
-            type="email" 
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-              
-        <div>
-          <FormBtn btnFor={"Next"} onClick={handleVerifyEmail} />
-        </div>
-      </form>
-        {/* {verificationFailed && 
-        <div>
-          <FailedModal
-            onClose={() => setShowFailedModal(false)}
-            message={"You need to register for the event"}
-            secondMessage={"Then you can come back and apply for a Grant"}  
-          />
-        </div>} */}
-
-    </div>
-  );
+			{showGrantIneligible && (
+				<div>
+					<GrantIneligible onClose={() => setShowGrantIneligible(false)} />
+				</div>
+			)}
+			{showNotRegistered && (
+				<div>
+					<NotRegistered onClose={() => setShowNotRegistered(false)} />
+				</div>
+			)}
+			{showInvalidEmail && (
+				<div>
+					<InvalidEmail onClose={() => setShowInvalidEmail(false)} />
+				</div>
+			)}
+			{showNetworkError && (
+				<div>
+					<NetworkError onClose={() => setShowNetworkError(false)} />
+				</div>
+			)}
+		</div>
+	);
 };
 
 export default EmailVerification;
