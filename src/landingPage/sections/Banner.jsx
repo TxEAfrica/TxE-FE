@@ -27,7 +27,7 @@ const Banner = () => {
 	return (
 		<div
 			id="top"
-			className="h-screen w-full overflow-hidden banner-container">
+			className="h-screen w-full overflow-hidden banner-container mx-3 mt-10 lg:mx-0 lg:mt-20">
 			<CSSTransition
 				in={true}
 				appear={true}
@@ -45,7 +45,7 @@ const Banner = () => {
 						growth and position Enugu as a leading tech hub in South East,
 						Nigeria.{" "}
 					</p>
-					<div className="banner-buttons">
+					<div className="banner-buttons space-y-5 mt-10">
 						<div className="cursor-pointer h-fit w-full">
 							<BtnSecondary btnName={"Partner With Us"} />
 						</div>
@@ -58,7 +58,7 @@ const Banner = () => {
 				</div>
 			</CSSTransition>
 
-			<div className="animation-container">
+			<div className="hidden lg:flex animation-container">
 				<CSSTransition
 					in={true}
 					appear={true}

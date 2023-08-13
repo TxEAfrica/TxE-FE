@@ -1,13 +1,13 @@
 import BtnPrimary from "../buttons/BtnPrimary";
 import BtnSecondary from "../buttons/BtnSecondary";
-import event from '../../assets/summit.png'
+import event from '../../assets/photo5.png'
 import { useNavigate } from "react-router-dom";
 
 const Event = () => {
     const navigate = useNavigate()
     return ( 
         <div id="about" className="px-8 lg:px-20 flex flex-col-reverse lg:flex lg:flex-row">
-            <div className="space-y-5">
+            <div className="space-y-4">
                 <h1  className="text-4xl font-bold lg:w-1/2">
                 Most Anticipated Event of the Year
                 </h1>
@@ -36,8 +36,13 @@ const Event = () => {
                 </div>
             </div>
 
-            <div className="h-full mb-5">
-                <img src={event} loading='lazy' className="h-full object-cover" alt="" />
+            <div className="h-full lg:w-2/3 mb-5">
+                <img
+                    src={event}
+                    loading="lazy"
+                    className="h-full lg:h-96 lg:w-full md:w-full md:h-auto rounded-sm"
+                    alt=""
+                />
             </div>
         </div>
      );

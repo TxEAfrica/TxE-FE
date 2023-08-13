@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Testimonials.css";
 import arrowleft from "../../../assets/arrow-left.svg";
 import arrowright from "../../../assets/arrow-right.svg";
+import arnold from '../../../assets/arnold.png'
 import test1 from "../../../assets/testimonial 1.svg";
 import test2 from "../../../assets/test2.svg";
 import q1 from "../../../assets/q1.svg";
@@ -53,8 +54,8 @@ const Testimonials = () => {
 					<section>
 						<div>
 							<img
-								className="test-1"
-								src={test1}
+								className="test-1 rounded-full"
+								src={arnold}
 								loading="lazy"
 								alt="test-1"
 							/>
@@ -68,13 +69,15 @@ const Testimonials = () => {
 							/>
 							<h3>How TXE Africa caused a shift in my tech career</h3>
 							<p>
-								I was privileged to be among those awarded scholarship to learn
-								any tech skill of my choice under Learnable internship, after
-								completing the internship I got a job with one of the tech
-								startups in Lagos to work remotely from Enugu State.
+							Thanks to the TxE Africa scholarship, my journey as a frontend 
+							developer took off splendidly. The comprehensive training and guidance 
+							I received were pivotal in honing my skills. Since then, I have embarked 
+							on a rewarding path, consistently securing freelancing opportunities with 
+							diverse organizations. My portfolio boasts of robust web applications, 
+							a testament to the quality and expertise fostered by TxE Africa.
 							</p>
 							<small>
-								Vivian Nnoka, <span>Frontend Developer.</span>
+								Arnold Ngowi, <span>Senior. Frontend Developer.</span>
 							</small>
 							<img
 								className="q2"

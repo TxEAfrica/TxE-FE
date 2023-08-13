@@ -7,6 +7,9 @@ import close from "../assets/close.svg";
 import { NavLink } from "react-router-dom";
 
 export const AlreadyRegistered = () => {
+	const handleRefresh = () => {
+		window.location.reload(); // Refresh the page
+	};
 	return (
 		<div className="modal-overlay">
 			<div className="modal">
@@ -18,7 +21,7 @@ export const AlreadyRegistered = () => {
 						/>
 						<p>Information</p>
 					</div>
-					<span>
+					<span onClick={handleRefresh}>
 						<img
 							src={close}
 							alt=""
@@ -49,9 +52,9 @@ export const AlreadyRegistered = () => {
 						</svg>
 					</div>
 					<div className="modal-message">
-						<h2>Hello there!</h2>
-						<p>Your application has already been received.</p>
-						<small>Please contact us if you are having any issues</small>
+						<h2>Oops!</h2>
+						<p>Looks like you have already registered for this event.</p>
+						<small>Kindly check your email for your ticket. </small>
 					</div>
 				</div>
 

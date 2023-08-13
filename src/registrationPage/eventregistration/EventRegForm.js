@@ -10,7 +10,11 @@ import Footer from "../../landingPage/sections/Footer";
 import FormVector from "../../applications/FormVector";
 import FailedModal from "../../modals/FailedModal";
 import RegSuccess from "../../modals/RegSuccess";
+import Sponsors from "../../landingPage/sections/Sponsors";
+import "../../landingPage/Landing.css";
 import { AlreadyRegistered } from "../../modals/AlreadyRegistered";
+import { InvalidEmail } from "../../modals/InvalidEmail";
+import { NetworkError } from "../../modals/NetworkError";
 
 const EventRegForm = () => {
 	const [firstName, setFirstName] = useState("");
@@ -24,13 +28,11 @@ const EventRegForm = () => {
 	const [trackInterest, setTrackInterest] = useState("");
 	const [attended2022, setAttended2022] = useState("");
 	const [joiningMode, setJoiningMode] = useState("");
-	// const [showSuccessModal, setShowSuccessModal] = useState(false);
 	const [showRegSuccess, setShowRegSuccess] = useState(false);
+	const [showNetworkError, setShowNetworkError] = useState(false);
+	const [showInvalidEmail, setShowInvalidEmail] = useState(false);
 	const [showAlreadyRegistered, setShowAlreadyRegistered] = useState(false);
-	const [showFailedModal, setShowFailedModal] = useState(false);
-	const [showFailedModalMessage, setShowFailedModalMessage] = useState("");
-	const [showFailedModalSecondMessage, setShowFailedModalSecondMessage] =
-		useState("");
+	const [loading, setLoading] = useState(false);
 
 	const [countryOptions, setCountryOptions] = useState([]);
 
@@ -46,7 +48,7 @@ const EventRegForm = () => {
 					value: country.name.common,
 				}));
 
-				const defaultOption = { label: "Select your country", value: "" };
+				const defaultOption = { label: "Select your country", value: null };
 				countries.sort((a, b) => a.label.localeCompare(b.label));
 				setCountryOptions([defaultOption, ...countries]);
 			} catch (error) {
@@ -76,7 +78,7 @@ const EventRegForm = () => {
 	const handleVerifyEmail = (e) => {
 		e.preventDefault();
 		if (!emailRegex.test(email)) {
-			setShowFailedModalMessage("Please enter a valid email address");
+			setShowInvalidEmail(true);
 			return;
 		}
 	};
@@ -110,13 +112,24 @@ const EventRegForm = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		setLoading(true);
 
 		try {
-			handleSubmit();
 			// Check if the email exists in the database
 			const emailExists = await checkEmailAvailability();
 
 			if (emailExists) {
+				// setFirstName("");
+				// setLastName("");
+				// setCountry("");
+				// setState("");
+				// setGender("");
+				// setPhoneNumber("");
+				// setEmail("");
+				// setBestDescription("");
+				// setAttended2022(false);
+				// setJoiningMode("");
+				// setTrackInterest("");
 				setShowAlreadyRegistered(true);
 				return;
 			}
@@ -151,15 +164,13 @@ const EventRegForm = () => {
 
 			if (response.ok) {
 				// console.log('Form data submitted successfully!');
+				setLoading(false);
 				setShowRegSuccess(true);
-			} else {
-				// console.log('Failed to submit form data');
-				setShowFailedModal(true);
 			}
 		} catch (error) {
 			// console.error('Error submitting form data:', error);
-			setShowFailedModal(true);
-			setShowFailedModalMessage("Error connecting to server");
+			setLoading(false);
+			setShowNetworkError(true);
 		}
 	};
 
@@ -188,7 +199,7 @@ const EventRegForm = () => {
 
 	// Dropdown button options for "Gender"
 	const genderOptions = [
-		{ label: "Select your gender", value: "" },
+		{ label: "Select your gender", value: null },
 		{ label: "Male", value: "male" },
 		{ label: "Female", value: "female" },
 		{ label: "Other", value: "Other" },
@@ -200,13 +211,13 @@ const EventRegForm = () => {
 			<div className={EventRegCSS.main}>
 				<div className={EventRegCSS.decor}>
 					<FormVector position={"left-10 top-100"} />
-					<FormVector position={"left-10 bottom-100"} />
-					<FormVector position={"left-20 top-40"} />
-					<FormVector position={"top-6"} />
+					{/* <FormVector position={"left-10 bottom-100"} /> */}
+					{/* <FormVector position={"left-20 top-40"} /> */}
+					{/* <FormVector position={"top-6"} /> */}
 					{/* <FormVector position={'bottom-3'} /> */}
 					<FormVector position={"right-10 top-100"} />
-					<FormVector position={"right-10 bottom-100"} />
-					<FormVector position={"right-20 top-10"} />
+					{/* <FormVector position={"right-10 bottom-100"} />
+					<FormVector position={"right-20 top-10"} /> */}
 				</div>
 
 				<div className={EventRegCSS.formtitle}>
@@ -320,21 +331,30 @@ const EventRegForm = () => {
 					/>
 
 					<div>
-						<FormBtn btnFor={"Register"} />
+						{loading ? (
+							<button className="btn3">Please wait...</button>
+						) : (
+							<FormBtn btnFor="Register" />
+						)}
 					</div>
 				</form>
 			</div>
-			<div className="bg-gray-200 h-36 w-full"></div>
+			<div className="bg-gray-200 h-fit w-full">
+				<Sponsors />
+			</div>
 			<Footer />
 
-			{showRegSuccess && <RegSuccess />}
-			{showAlreadyRegistered && <AlreadyRegistered />}
-			{showFailedModal && (
-				<FailedModal
-					onClose={() => setShowFailedModal(false)}
-					message={showFailedModalMessage}
-					secondMessage={showFailedModalSecondMessage}
-				/>
+			{showRegSuccess && (
+				<RegSuccess onClose={() => setShowInvalidEmail(false)} />
+			)}
+			{showAlreadyRegistered && (
+				<AlreadyRegistered onClose={() => setShowAlreadyRegistered(false)} />
+			)}
+			{showInvalidEmail && (
+				<InvalidEmail onClose={() => setShowInvalidEmail(false)} />
+			)}
+			{showNetworkError && (
+				<NetworkError onClose={() => setShowNetworkError(false)} />
 			)}
 		</div>
 	);
