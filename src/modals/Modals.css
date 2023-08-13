@@ -1,0 +1,165 @@
+/* Styling for the modal overlay */
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7); /* Darken the screen */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}
+
+/* Styling for the modal container */
+.modal {
+	background-color: #fff !important;
+	padding: 40px 40px;
+	border-radius: 15px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	width: 500px;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+/* Styling for the modal header */
+.modal-header {
+	color: #fff;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	gap: 20px;
+	justify-content: space-between;
+}
+.modal-header span img {
+	width: 20px;
+	display: flex;
+	position: relative;
+	cursor: pointer;
+}
+.modal-header .info {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+.info p {
+	color: #000;
+	font-size: 14px;
+}
+.modal-header .info img {
+	display: flex;
+	position: relative;
+	width: 40px;
+}
+
+.modal-message {
+	text-align: center;
+	width: 100%;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	color: #000;
+}
+.modal-message h2 {
+	font-size: 40px;
+	font-weight: 700;
+}
+.modal-message small {
+	font-style: italic !important ;
+	color: #ff6f43;
+	font-size: 14px;
+}
+.modal-message p {
+	font-family: "Neue Helvetica", "Plus Sans Jakarta";
+	color: #555;
+	font-size: 16px;
+	letter-spacing: -0.5px;
+	font-weight: 500;
+}
+
+/* Styling for the success animation */
+.success-animation {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+	height: 100%;
+	align-items: center;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+#cover {
+	animation: spin 10s linear infinite; /* Adjust the duration as needed */
+	transform-origin: center; /* Set the rotation origin to the center of the element */
+	width: 50%; /* Adjust as needed */
+	height: auto;
+}
+
+.modal-links {
+	display: flex;
+	gap: 20px;
+	justify-content: space-between;
+}
+.modal-links a {
+	text-decoration: none;
+}
+.link1 {
+	color: #ff6f43;
+	padding: 5px 0;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	border-bottom: 1px dashed #ff6f43;
+}
+.link2 {
+	color: #246bce;
+	padding: 5px 0;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	border-bottom: 1px dashed #246bce;
+}
+
+.modal-cta {
+	display: flex;
+	gap: 40px;
+}
+.btn1 {
+	width: 100%;
+	background-color: transparent;
+	border: 1px solid #000;
+	color: #000;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+/* .btn1:hover {
+	background-color: #000;
+	color: #fff;
+	border: none;
+} */
+.btn2 {
+	width: 100%;
+	background-color: #000;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.btn2:hover {
+	background-color: #0056b3;
+}
