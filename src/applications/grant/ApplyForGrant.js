@@ -20,7 +20,7 @@ const ApplyForGrant = () => {
 	const [businessName, setBusinessName] = useState("");
 	const [businessLocation, setBusinessLocation] = useState("");
 	const [operationMonths, setOperationMonths] = useState("");
-	const [isBusinessRegistered, setIsBusinessRegistered] = useState(""); // You might need to set a default value for this depending on your requirements
+	const [isBusinessRegistered, setIsBusinessRegistered] = useState("");
 	const [cacDocument, setCacDocument] = useState("");
 	const [whyNeedGrant, setWhyNeedGrant] = useState("");
 	const [videoLink, setVideoLink] = useState("");
@@ -28,10 +28,6 @@ const ApplyForGrant = () => {
 	const [errorMessage, setErrorMessage] = useState("");
 	const [showGrantSuccess, setShowGrantSuccess] = useState(false);
 	const [showNetworkError, setShowNetworkError] = useState(false);
-	const [showSuccessModal, setShowSuccessModal] = useState();
-	const [showFailedModal, setShowFailedModal] = useState(false);
-	const [failedModalMessage, setFailedModalMessage] = useState("");
-	const [failedSecondModalMessage, setFailedSecondModalMessage] = useState("");
 
 	const { firstName, lastName, email, phoneNumber, country, state, gender } =
 		userData || {};
@@ -131,8 +127,16 @@ const ApplyForGrant = () => {
 				setShowGrantSuccess(true);
 			}
 		} catch (error) {
-			console.error("Error submitting grant form:", error);
-			setShowNetworkError(true);
+			console.log("API Fetch Error:", error);
+
+			// Check if the error is network-related
+			if (
+				error instanceof TypeError &&
+				error.message.includes("Failed to fetch")
+			) {
+				// Show the NetworkError modal
+				setShowNetworkError(true);
+			}
 		}
 	};
 
@@ -143,8 +147,6 @@ const ApplyForGrant = () => {
 			<div
 				id="top"
 				className={`relative bg-orange-50 h-fit flex flex-col justify-center items-center mx-auto relative py-20 ${ApplyForGrantCSS.heading}`}>
-				{/* ... Rest of the code ... */}
-
 				<div className={ApplyForGrantCSS.decor}>
 					<FormVector position={"left-10 top-10"} />
 					{/* <FormVector position={'top-10'} /> */}
@@ -252,7 +254,7 @@ const ApplyForGrant = () => {
 								onChange={(e) => setBusinessLocation(e.target.value)}
 							/>
 							<InputField
-								labelText="How many month has your business been in operation?"
+								labelText="How many months has your business been in operation?"
 								placeholder={"Enter here"}
 								htmlFor="operationMonths" //
 								inputId="operationMonths" //
@@ -374,7 +376,7 @@ const ApplyForGrant = () => {
 
 			<Footer />
 			{showGrantSuccess && <GrantSuccess />}
-			{showFailedModal && (
+			{showNetworkError && (
 				<NetworkError onClose={() => setShowNetworkError(false)} />
 			)}
 		</div>
