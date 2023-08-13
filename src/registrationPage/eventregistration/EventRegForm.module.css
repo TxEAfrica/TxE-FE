@@ -100,6 +100,7 @@
 	color: #8d9396;
 	background: #ff6f43;
 }
+
 .labelholder {
 	display: flex;
 	flex-direction: column;
@@ -180,7 +181,7 @@
 		font-size: 45px;
 	}
 	.decor {
-		display: none;
+		display: block;
 	}
 }
 
