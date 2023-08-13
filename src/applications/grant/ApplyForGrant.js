@@ -12,6 +12,7 @@ import Footer from "../../landingPage/sections/Footer";
 import ApplyForGrantCSS from "../grant/ApplyForGrant.module.css";
 import GrantSuccess from "../../modals/GrantSuccess";
 import FailedModal from "../../modals/FailedModal";
+import { NetworkError } from "../../modals/NetworkError";
 
 const ApplyForGrant = () => {
 	const [isEmailVerified, setIsEmailVerified] = useState(false);
@@ -26,7 +27,8 @@ const ApplyForGrant = () => {
 	const [whyNotRegistered, setWhyNotRegistered] = useState("");
 	const [errorMessage, setErrorMessage] = useState("");
 	const [showGrantSuccess, setShowGrantSuccess] = useState(false);
-	const [showSuccessModal, setShowSuccessModal] = useState(false);
+	const [showNetworkError, setShowNetworkError] = useState(false);
+	const [showSuccessModal, setShowSuccessModal] = useState();
 	const [showFailedModal, setShowFailedModal] = useState(false);
 	const [failedModalMessage, setFailedModalMessage] = useState("");
 	const [failedSecondModalMessage, setFailedSecondModalMessage] = useState("");
@@ -123,16 +125,14 @@ const ApplyForGrant = () => {
 			);
 			// console.log(response)
 
-			// console.log(formData);
+			console.log(formData);
 
 			if (response.status === 200) {
 				setShowGrantSuccess(true);
 			}
 		} catch (error) {
 			console.error("Error submitting grant form:", error);
-			setShowFailedModal(true);
-			setFailedModalMessage("Error occurred during form submission");
-			setFailedSecondModalMessage("Please try again");
+			setShowNetworkError(true);
 		}
 	};
 
@@ -370,23 +370,12 @@ const ApplyForGrant = () => {
 				</div>
 			</div>
 
-			<div className="bg-gray-200 h-36 w-full"></div>
+			{/* <div className="bg-gray-200 h-36 w-full"></div> */}
 
 			<Footer />
-			{showGrantSuccess && (
-				<GrantSuccess
-					onClose={() => setShowSuccessModal(false)}
-					message={"You have successfully applied for a grant"}
-					secondMessage={"Keep an eye out for our mail"}
-					btnFor={"Back to Home"}
-				/>
-			)}
+			{showGrantSuccess && <GrantSuccess />}
 			{showFailedModal && (
-				<FailedModal
-					onClose={() => setShowFailedModal(false)}
-					message={failedModalMessage}
-					secondMessage={failedSecondModalMessage}
-				/>
+				<NetworkError onClose={() => setShowNetworkError(false)} />
 			)}
 		</div>
 	);
