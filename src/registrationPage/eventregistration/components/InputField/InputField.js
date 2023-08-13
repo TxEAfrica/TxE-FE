@@ -14,6 +14,7 @@ function InputField({labelText, htmlFor, inputId, type, value, onChange, placeho
             value={value}
             onChange={onChange}
             disabled={disable}
+            className='text-black'
             required
         />
     </div>

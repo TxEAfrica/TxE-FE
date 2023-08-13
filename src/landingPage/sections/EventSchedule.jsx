@@ -23,21 +23,21 @@ const EventSchedule = () => {
 				</div>
 			</div>
 
-			<div className="flex mt-10 event-container">
+			<div className="flex mt-10">
 				<div className="px-8 md:px-20 w-1/2 lg:w-2/3 md:w-full">
 					<h1 className="orange mb-5 text-2xl">_day one</h1>
 					<div>
-						<ul className="space-y-10 md:w-4/5">
+						<ul className="space-y-10 md:w-4/5 text-gray-300">
 							<li className="space-y-2">
-								<h1 className="md:text-4xl font-normal">Enterprenuership</h1>
-								<p className="md:w-2/3 lg:w-1/2 lg:w-full">
+								<h1 className="md:text-4xl font-normal font-semibold">Enterprenuership</h1>
+								<p className="md:w-2/3 lg:w-1/2">
 									A 1-day interactive workshop and fireside chat with leading
 									experts from leading tech companies including Google
 								</p>
 							</li>
 							<li className="space-y-2">
 								<h1 className="font-bold md:text-2xl">Idea Pitch Session</h1>
-								<p className="md:w-2/3 lg:w-1/2 lg:w-full">
+								<p className="md:w-2/3 lg:w-1/2">
 									Innovative businesses will be given an opportunity to pitch
 									their ideas and businesss solutions to a panel of judges and
 									recieve feedback.
@@ -52,7 +52,7 @@ const EventSchedule = () => {
 							</li>
 							<li className="space-y-2">
 								<h1 className="font-bold">Grants and Support for Startups</h1>
-								<p className="md:w-2/3 lg:w-1/2 lg:w-full">
+								<p className="md:w-2/3 lg:w-1/2">
 									Innovative businesses will stand a chance to be awarded seed
 									fund grants to encourage their ventures.
 								</p>
@@ -61,12 +61,12 @@ const EventSchedule = () => {
 					</div>
 				</div>
 
-				<div>
+				<div className="flex-1">
 					<h1 className="orange mb-5 text-2xl">_day two</h1>
 					<div className="relative">
-						<ul className="space-y-10 lg:px-12 list-circle md:w-full border-l-2 border-orange-500 event-list">
+						<ul className="space-y-10 lg:px-12 list-circle z-20 md:w-full border-l-2 border-orange-500 text-gray-300 event-list">
 							<li className="space-y-2  px-4">
-								<h1 className="md:text-4xl font-normal">Tech Skill Boost</h1>
+								<h1 className="md:text-4xl font-normal font-semibold">Tech Skill Boost</h1>
 								<p className="md:w-2/3 lg:w-full">
 									An interactive workshop and fireside chat with leading experts
 									from leading tech companies including Google.

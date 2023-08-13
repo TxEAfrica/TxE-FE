@@ -10,9 +10,9 @@ const Highlight = () => {
 	return (
 		<div
 			id="highlight"
-			className="px-8 lg:px-20 py-10 bg-orange-50">
+			className="px-3 lg:px-20 py-10 bg-orange-50">
 			<div className="flex flex-col justify-center items-center md:mb-20">
-				<h1 className="text-5xl text-white font-bold">Event Highlights</h1>
+				<h1 className="text-5xl text-white text-center lg:text-left font-bold">Event Highlights</h1>
 				<div className="text-lg text-white mt-3 flex flex-col justify-center items-center">
 					TxE Summit 2023
 					<div className="flex space-x-2 mt-2">
@@ -22,9 +22,9 @@ const Highlight = () => {
 				</div>
 			</div>
 
-			<div className="lg:flex highlight-container ">
+			<div className="lg:flex highlight-container mt-10 lg:mt-0 space-y-5 md:space-y-0 lg:space-x-5 text-gray-400 ">
 				<div className="py-8 flex flex-col justify-center items-center highlight-box">
-					<div className="px-4 py-8 rounded-md h-fit  space-y-4 flex flex-col justify-center items-start text-left lg:text-left lg:justify-start lg:items-start">
+					<div className="px-4 py-8 rounded-md h-fit  space-y-4 flex flex-col text-center">
 						<div className="w-fit h-fit rounded-md overflow-none">
 							<img
 								src={win}
@@ -38,14 +38,14 @@ const Highlight = () => {
 							from our incredible tech event! 🎉🏆
 						</p>
 						<div
-							className="text-orange-500 flex cursor-pointer"
+							className="text-orange-500 bg-orange-500 flex justify-center items-center text-center text-white rounded-md p-3 cursor-pointer"
 							onClick={() => navigate("/grant")}>
 							Apply <Icon.Arrow className="mx-2 -rotate-45 my-auto" />
 						</div>
 					</div>
 				</div>
 				<div className="py-8 flex flex-col justify-center items-center highlight-box-2">
-					<div className="px-4 py-8 rounded-md h-fit  space-y-4 flex flex-col justify-center items-center text-center lg:text-center lg:justify-center lg:items-center">
+					<div className="px-4 py-8 rounded-md h-fit  space-y-4 flex flex-col text-center">
 						<div className="w-fit h-fit rounded-md overflow-none">
 							<img
 								src={win1}
@@ -59,7 +59,7 @@ const Highlight = () => {
 							from our incredible tech event! 🎉🏆
 						</p>
 						<div
-							className="text-orange-500 flex cursor-pointer"
+							className="text-orange-500 bg-orange-500 flex justify-center items-center text-center text-white rounded-md p-3 cursor-pointer"
 							onClick={() => navigate("/techsupport")}>
 							Apply <Icon.Arrow className="mx-2 -rotate-45 my-auto" />
 						</div>
@@ -67,7 +67,7 @@ const Highlight = () => {
 				</div>
 
 				<div className="py-8 flex flex-col justify-center items-center highlight-box-3">
-					<div className="h-fit px-4 py-8 rounded-md space-y-4 flex flex-col justify-center items-end text-right lg:text-right lg:justify-end lg:items-end">
+					<div className="h-fit px-4 py-8 rounded-md space-y-4 flex flex-col justify-center text-center">
 						<div className="w-fit h-fit rounded-md overflow-none">
 							<img
 								src={scholarship}
@@ -81,7 +81,7 @@ const Highlight = () => {
 							from our incredible tech event! 🎉🏆
 						</p>
 						<div
-							className="text-orange-500 flex cursor-pointer"
+							className="text-orange-500 bg-orange-500 flex justify-center items-center text-center text-white rounded-md p-3 cursor-pointer"
 							onClick={() => navigate("/techsupport")}>
 							Apply <Icon.Arrow className="mx-2 -rotate-45 my-auto" />
 						</div>
