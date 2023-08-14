@@ -66,10 +66,10 @@ const Home = () => {
 
 	return (
 		<>
-			<div className="main-container">
+			<div className="main-container overflow-hidden">
 				<Navbar />
 				<Banner />
-				<div className=" py-2 md:mt-36 space-y-20 md:space-y-10">
+				<div className=" py-2 md:mt-36 md:space-y-10">
 					<Highlight />
 					<EventSchedule />
 					<CountUpAnimation />
