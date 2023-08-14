@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./landingPage/home";
 import EventRegForm from "./registrationPage/eventregistration/EventRegForm";
+import ApplyForTechSupport from "./applications/techSupport/ApplyForTechSupport";
 import TechSupportApplication from "./applications/category/TechSupportApplication";
 import ApplyForGrant from "./applications/grant/ApplyForGrant";
 
@@ -19,7 +20,7 @@ const App = () => {
 				/>
 				<Route
 					path="/techsupport"
-					element={<TechSupportApplication />}
+					element={<ApplyForTechSupport />}
 				/>
 				<Route
 					path="/grant"

@@ -4,6 +4,9 @@ import scholarship from "../../assets/scholarship.png";
 import win1 from "../../assets/txe-win2.png";
 import "../Landing.css";
 import { useNavigate } from "react-router-dom";
+import FormBtn from "../../registrationPage/eventregistration/components/Buttons/FormButton";
+import BtnPrimary from "../buttons/BtnPrimary";
+import BtnSecondary from "../buttons/BtnSecondary";
 
 const Highlight = () => {
 	const navigate = useNavigate();
@@ -24,7 +27,7 @@ const Highlight = () => {
 
 			<div className="lg:flex highlight-container ">
 				<div className="py-8 flex flex-col justify-center items-center highlight-box">
-					<div className="px-4 py-8 rounded-md h-fit  space-y-4 flex flex-col justify-center items-start text-left lg:text-left lg:justify-start lg:items-start">
+					<div className="px-4 py-8 rounded-md h-fit  space-y-4 flex flex-col justify-center items-center text-center lg:text-center lg:justify-center lg:items-center">
 						<div className="w-fit h-fit rounded-md overflow-none">
 							<img
 								src={win}
@@ -40,11 +43,11 @@ const Highlight = () => {
 						<div
 							className="text-orange-500 flex cursor-pointer"
 							onClick={() => navigate("/grant")}>
-							Apply <Icon.Arrow className="mx-2 -rotate-45 my-auto" />
+							<FormBtn btnFor={"Apply"} />
 						</div>
 					</div>
 				</div>
-				<div className="py-8 flex flex-col justify-center items-center highlight-box-2">
+				<div className="py-8 flex flex-col justify-center items-center highlight-box">
 					<div className="px-4 py-8 rounded-md h-fit  space-y-4 flex flex-col justify-center items-center text-center lg:text-center lg:justify-center lg:items-center">
 						<div className="w-fit h-fit rounded-md overflow-none">
 							<img
@@ -59,15 +62,15 @@ const Highlight = () => {
 							from our incredible tech event! 🎉🏆
 						</p>
 						<div
-							className="text-orange-500 flex cursor-pointer"
+							className="flex cursor-pointer"
 							onClick={() => navigate("/techsupport")}>
-							Apply <Icon.Arrow className="mx-2 -rotate-45 my-auto" />
+							<FormBtn btnFor={"Apply"} />
 						</div>
 					</div>
 				</div>
 
-				<div className="py-8 flex flex-col justify-center items-center highlight-box-3">
-					<div className="h-fit px-4 py-8 rounded-md space-y-4 flex flex-col justify-center items-end text-right lg:text-right lg:justify-end lg:items-end">
+				<div className="py-8 flex flex-col justify-center items-center highlight-box">
+					<div className="h-fit px-4 py-8 rounded-md space-y-4 flex flex-col justify-center items-center text-center lg:text-center lg:justify-center lg:items-center">
 						<div className="w-fit h-fit rounded-md overflow-none">
 							<img
 								src={scholarship}
@@ -83,7 +86,8 @@ const Highlight = () => {
 						<div
 							className="text-orange-500 flex cursor-pointer"
 							onClick={() => navigate("/techsupport")}>
-							Apply <Icon.Arrow className="mx-2 -rotate-45 my-auto" />
+							<FormBtn btnFor={"Apply"} />
+							{/* <BtnPrimary btnName={"Apply"} /> */}
 						</div>
 					</div>
 				</div>

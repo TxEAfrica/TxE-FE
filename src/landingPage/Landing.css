@@ -20,10 +20,10 @@
 .nav-btn {
 	background-color: #ff6e4a;
 	color: #fff;
-	border-radius: 10px;
-	padding: 10px 70px;
+	border-radius: 5px;
+	padding: 12px 70px;
 	font-size: 16px;
-	font-weight: 600;
+	font-weight: 500;
 }
 
 /* ------------------------banner ------------------------ */
@@ -211,29 +211,10 @@
 		-7.188503265380859px -7.188503265380859px 9.884191513061523px 0px
 			rgba(255, 255, 255, 0.25) inset;
 	backdrop-filter: blur(1.7971258163452148px);
+	transition: all 0.4s ease-in-out;
 }
-.highlight-box-2 {
-	text-align: center;
-	color: #fff;
-	border-radius: 12.054px;
-	border: 0.93px solid #f0ca6b;
-	background: rgba(255, 255, 255, 0.2);
-	box-shadow: 7.188503265380859px 7.188503265380859px 9.884191513061523px 0px
-			rgba(255, 255, 255, 0.25) inset,
-		-7.188503265380859px -7.188503265380859px 9.884191513061523px 0px
-			rgba(255, 255, 255, 0.25) inset;
-	backdrop-filter: blur(1.7971258163452148px);
-}
-.highlight-box-3 {
-	color: #fff;
-	border-radius: 12.054px;
-	border: 0.93px solid #f0ca6b;
-	background: rgba(255, 255, 255, 0.2);
-	box-shadow: 7.188503265380859px 7.188503265380859px 9.884191513061523px 0px
-			rgba(255, 255, 255, 0.25) inset,
-		-7.188503265380859px -7.188503265380859px 9.884191513061523px 0px
-			rgba(255, 255, 255, 0.25) inset;
-	backdrop-filter: blur(1.7971258163452148px);
+.highlight-box:hover {
+	transform: scale(1.1);
 }
 
 /* ----------------------------achievements----------------------------- */
@@ -260,6 +241,9 @@
 }
 .bg-orange {
 	background-color: #ff6e4a;
+}
+.border-orange {
+	border: 1px solid #ff6e4a;
 }
 .orange {
 	color: #ff6e4a;

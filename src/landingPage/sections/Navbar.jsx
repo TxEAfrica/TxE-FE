@@ -48,7 +48,7 @@ const Navbar = () => {
 					<div
 						className="p-3"
 						onClick={toggleMenu}>
-						<Icon.BarMenu className="lg:hidden text-2xl font-semibold cursor-pointer" />
+						<Icon.BarMenu className="lg:hidden text-2xl font-semibold cursor-pointer text-white" />
 					</div>
 				)}
 				{showMenu && (
@@ -83,7 +83,7 @@ const Navbar = () => {
 					</div>
 				)}
 			</div>
-			<button className="nav-btn">Register</button>
+			{/* <button className="nav-btn">Register</button> */}
 		</div>
 	);
 };
