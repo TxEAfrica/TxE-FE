@@ -43,9 +43,9 @@ const Highlight = () => {
 							from our incredible tech event! 🎉🏆
 						</p>
 						<div
-							className="text-orange-500 bg-orange-500 flex justify-center items-center text-center text-white rounded-md p-3 cursor-pointer"
+							className="text-orange-500 bg-orange flex justify-center items-center text-center text-white rounded-md w-64 py-3 cursor-pointer"
 							onClick={() => navigate("/grant")}>
-							<FormBtn btnFor={"Apply"} />
+							Apply
 						</div>
 					</div>
 				</div>
@@ -64,9 +64,9 @@ const Highlight = () => {
 							from our incredible tech event! 🎉🏆
 						</p>
 						<div
-							className="text-orange-500 bg-orange-500 flex justify-center items-center text-center text-white rounded-md p-3 cursor-pointer"
+							className="text-orange-500 bg-orange flex justify-center items-center text-center text-white rounded-md w-64 py-3 cursor-pointer"
 							onClick={() => navigate("/techsupport")}>
-							<FormBtn btnFor={"Apply"} />
+							Apply
 						</div>
 					</div>
 				</div>
@@ -86,10 +86,9 @@ const Highlight = () => {
 							from our incredible tech event! 🎉🏆
 						</p>
 						<div
-							className="text-orange-500 bg-orange-500 flex justify-center items-center text-center text-white rounded-md p-3 cursor-pointer"
+							className="text-orange-500 bg-orange flex justify-center items-center text-center text-white rounded-md w-64 py-3 cursor-pointer"
 							onClick={() => navigate("/techsupport")}>
-							<FormBtn btnFor={"Apply"} />
-							{/* <BtnPrimary btnName={"Apply"} /> */}
+							Apply
 						</div>
 					</div>
 				</div>
