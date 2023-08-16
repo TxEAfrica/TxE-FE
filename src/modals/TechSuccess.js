@@ -6,7 +6,7 @@ import linkarrow2 from "../assets/link-arrow2.svg";
 import close from "../assets/close.svg";
 import { NavLink } from "react-router-dom";
 
-export const TechSuccess = () => {
+const TechSuccess = () => {
 	const [showOverlay, setShowOverlay] = useState(true);
 
 	const handleCloseOverlay = () => {
@@ -28,7 +28,7 @@ export const TechSuccess = () => {
 							/>
 							<p>Information</p>
 						</div>
-						<span onClick={handleCloseOverlay}>
+						<span onClick={handleNavigate}>
 							<img
 								src={close}
 								alt=""
@@ -86,7 +86,7 @@ export const TechSuccess = () => {
 					<div className="modal-cta">
 						<button
 							className="btn1"
-							onClick={handleCloseOverlay}>
+							onClick={handleNavigate}>
 							Close
 						</button>
 						<button
@@ -100,3 +100,5 @@ export const TechSuccess = () => {
 		)
 	);
 };
+
+export default TechSuccess;
