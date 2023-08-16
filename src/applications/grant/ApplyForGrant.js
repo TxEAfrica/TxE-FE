@@ -98,7 +98,7 @@ const ApplyForGrant = () => {
 		};
 
 		// Combine both data sets
-		const formData = { ...readOnlyData, ...editableData };
+		const grantFormData = { ...readOnlyData, ...editableData };
 
 		// Check if all visible fields are not empty
 		if (!validateFields(editableData)) {
@@ -120,12 +120,12 @@ const ApplyForGrant = () => {
 					headers: {
 						"Content-Type": "application/json",
 					},
-					body: JSON.stringify(formData),
+					body: JSON.stringify(grantFormData),
 				}
 			);
 			// console.log(response)
 
-			console.log(formData);
+			console.log(grantFormData);
 
 			if (response.status === 200) {
 				setShowGrantSuccess(true);
@@ -147,7 +147,7 @@ const ApplyForGrant = () => {
 
 	return (
 		<div>
-			<Navbar />
+			{/* <Navbar /> */}
 
 			<div
 				id="top"
