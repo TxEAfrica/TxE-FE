@@ -214,6 +214,9 @@
 		padding: 50px 0;
 		gap: 30px;
 	}
+	.decor {
+		display: none;
+	}
 
 	form {
 		width: 80%;
@@ -247,6 +250,9 @@
 	.main {
 		padding: 20px 10px;
 		gap: 15px;
+	}
+	.decor {
+		display: none;
 	}
 
 	form {
@@ -321,6 +327,9 @@
 	.formbutton {
 		font-size: 12px;
 		padding: 8px 15px;
+	}
+	.decor {
+		display: none;
 	}
 }
 

@@ -29,7 +29,9 @@ const EventSchedule = () => {
 					<div>
 						<ul className="space-y-10 md:w-4/5 text-gray-300">
 							<li className="space-y-2">
-								<h1 className="md:text-4xl font-normal font-semibold">Enterprenuership</h1>
+								<h1 className="md:text-4xl font-normal font-semibold">
+									Enterprenuership
+								</h1>
 								<p className="md:w-2/3 lg:w-1/2">
 									A 1-day interactive workshop and fireside chat with leading
 									experts from leading tech companies including Google
@@ -64,9 +66,11 @@ const EventSchedule = () => {
 				<div className="flex-1">
 					<h1 className="orange mb-5 text-2xl">_day two</h1>
 					<div className="relative">
-						<ul className="space-y-10 lg:px-12 list-circle z-20 md:w-full border-l-2 border-orange-500 text-gray-300 event-list">
+						<ul className="space-y-10 lg:px-12 list-circle z-20 md:w-full border-l-2 border-l-orange text-gray-300 event-list">
 							<li className="space-y-2  px-4">
-								<h1 className="md:text-4xl font-normal font-semibold">Tech Skill Boost</h1>
+								<h1 className="md:text-4xl font-normal font-semibold">
+									Tech Skill Boost
+								</h1>
 								<p className="md:w-2/3 lg:w-full">
 									An interactive workshop and fireside chat with leading experts
 									from leading tech companies including Google.

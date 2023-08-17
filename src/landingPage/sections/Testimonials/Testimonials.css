@@ -165,10 +165,10 @@
 		align-items: center;
 		background: linear-gradient(
 			to right,
-			#c8c8c8 0%,
-			#c8c8c8 40%,
-			#ff6e4a 40%,
-			#ff6e4a 100%
+			#ffffff 0%,
+			#ffffff 40%,
+			#246bce 40%,
+			#246bce 100%
 		);
 	}
 	.quote {
@@ -248,10 +248,10 @@
 		align-items: center;
 		background: linear-gradient(
 			to bottom,
-			#c8c8c8 0%,
-			#c8c8c8 40%,
-			#ff6e4a 40%,
-			#ff6e4a 100%
+			#ffffff 0%,
+			#ffffff 40%,
+			#246bce 40%,
+			#246bce 100%
 		);
 	}
 	.slider {
@@ -299,8 +299,11 @@
 		height: fit-content;
 	}
 	.test-1 {
-		width: 200px;
+		width: 150px;
 		margin-top: 10px;
+	}
+	.test-image {
+		margin-bottom: 30px;
 	}
 	.quote {
 		max-width: 350px;
@@ -309,6 +312,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 10px;
+		margin-top: -10px;
 		margin-bottom: 20px;
 	}
 	.quote h3 {
@@ -317,6 +321,12 @@
 
 	.quote p {
 		font-size: 16px;
+	}
+	.quote-mark {
+		display: none;
+	}
+	.control {
+		top: 10%;
 	}
 
 	.control .arrow {

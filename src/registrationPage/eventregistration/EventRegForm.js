@@ -345,7 +345,10 @@ const EventRegForm = () => {
 			<Footer />
 
 			{showRegSuccess && (
-				<RegSuccess onClose={() => setShowInvalidEmail(false)} />
+				<RegSuccess
+					email={email}
+					onClose={() => setShowRegSuccess(false)}
+				/>
 			)}
 			{showAlreadyRegistered && (
 				<AlreadyRegistered onClose={() => setShowAlreadyRegistered(false)} />

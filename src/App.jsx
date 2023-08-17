@@ -5,6 +5,7 @@ import EventRegForm from "./registrationPage/eventregistration/EventRegForm";
 import ApplyForTechSupport from "./applications/techSupport/ApplyForTechSupport";
 import TechSupportApplication from "./applications/category/TechSupportApplication";
 import ApplyForGrant from "./applications/grant/ApplyForGrant";
+import TicketPage from "./ticketPage/TicketPage";
 
 const App = () => {
 	return (
@@ -25,6 +26,10 @@ const App = () => {
 				<Route
 					path="/grant"
 					element={<ApplyForGrant />}
+				/>
+				<Route
+					path="/ticket/:email"
+					element={<TicketPage />}
 				/>
 			</Routes>
 		</BrowserRouter>
