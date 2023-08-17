@@ -30,7 +30,10 @@ const ImageSlider = ({ images, activeIndex, setActiveIndex }) => {
 			id="speakers"
 			className="main">
 			<div className="title">
-				<h1 className="slider-title">Speakers</h1>
+				<div>
+					<h1 className="slider-title">Speakers</h1>
+					<p>TxE Summit 2023</p>
+				</div>
 				<div className="arrows">
 					<img
 						src={leftarrow}
@@ -81,7 +84,7 @@ const ImageSlider = ({ images, activeIndex, setActiveIndex }) => {
 					</div>
 				))}
 			</div>
-			<div className="footnote">
+			{/* <div className="footnote">
 				<div className="number-holder">
 					<div className="n1">
 						<h1>0</h1>
@@ -91,7 +94,7 @@ const ImageSlider = ({ images, activeIndex, setActiveIndex }) => {
 					</div>
 				</div>
 				<h2 className="slider-footnote">carefully curated Speakers</h2>
-			</div>
+			</div> */}
 		</div>
 	);
 };

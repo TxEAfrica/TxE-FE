@@ -216,7 +216,7 @@ form {
 	}
 
 	form {
-		width: 70%;
+		width: 70% !important;
 	}
 
 	.formtitle h1 {
@@ -232,7 +232,7 @@ form {
 	}
 
 	form {
-		width: 80%;
+		width: 80% !important;
 	}
 
 	.formtitle h1 {
@@ -272,10 +272,11 @@ form {
 	.main {
 		padding: 20px 10px;
 		gap: 15px;
+		width: 100%;
 	}
 
 	form {
-		width: 90%;
+		width: 90% !important;
 	}
 
 	.formtitle h1 {
@@ -310,7 +311,7 @@ form {
 
 	.formbutton {
 		font-size: 13px;
-		padding: 10px 18px;
+		padding: 8px 18px;
 	}
 }
 
@@ -322,7 +323,7 @@ form {
 	}
 
 	form {
-		width: 90%;
+		width: 90% !important;
 	}
 
 	.formtitle h1 {

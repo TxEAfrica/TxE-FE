@@ -18,11 +18,10 @@ const Navbar = () => {
 
 	return (
 		<div className="flex justify-between items-center py-4 px-4 md:px-8 lg:px-4 sticky top-0 z-50 navbar">
-			<div
-				onClick={() => location.pathname !== "/" && navigate("/")}>
+			<div onClick={() => location.pathname !== "/" && navigate("/")}>
 				<img
 					src={TxELogo}
-					className="w-32 "
+					className="w-24 "
 					alt=""
 				/>
 			</div>
@@ -86,7 +85,7 @@ const Navbar = () => {
 				)}
 			</div>
 			<div
-				className="cursor-pointer w-1/2 lg:w-1/6 h-fit"
+				className="hidden lg:flex cursor-pointer w-1/2 lg:w-1/6 h-fit"
 				onClick={() => navigate("/register")}>
 				<BtnPrimary btnName={"Register"} />
 			</div>

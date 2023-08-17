@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BsCloudUpload } from "react-icons/bs"; // Cloud icon from react-icons/bs
 import { useDropzone } from "react-dropzone";
 import ApplyForTechSupportCSS from "../../../techSupport/ApplyForTechSupport.module.css";
-import { ImageCompressor } from "image-compressor";
+// import { ImageCompressor } from "image-compressor";
 
 const ImageUploader = ({ onImageChange }) => {
 	const [image, setImage] = useState("");
@@ -10,12 +10,9 @@ const ImageUploader = ({ onImageChange }) => {
 	const onDrop = async (acceptedFiles) => {
 		const file = acceptedFiles[0];
 
-		const compressedFile = await ImageCompressor(file, {
-			quality: 0.8, // Adjust quality as needed
-		});
 		const reader = new FileReader();
 
-		reader.readAsDataURL(compressedFile);
+		reader.readAsDataURL(file);
 		reader.onloadend = () => {
 			const base64String = reader.result;
 			if (base64String.startsWith("data:image/")) {
