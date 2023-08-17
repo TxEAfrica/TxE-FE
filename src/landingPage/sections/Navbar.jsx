@@ -27,7 +27,7 @@ const Navbar = () => {
 			</div>
 			<div className="relative h-14 flex justify-between">
 				<ul
-					className={`hidden lg:flex flex-row-reverse h-full items-end font-bold ${
+					className={`hidden lg:flex flex-row-reverse h-full items-center font-bold ${
 						showMenu ? "lg:hidden" : ""
 					}`}>
 					<ScrollToContainerLink to={"testimonials"}>
