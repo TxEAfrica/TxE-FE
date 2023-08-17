@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Testimonials.css";
 import arrowleft from "../../../assets/arrow-left.svg";
 import arrowright from "../../../assets/arrow-right.svg";
-import arnold from '../../../assets/arnold.png'
+import arnold from "../../../assets/arnold.png";
 import test1 from "../../../assets/testimonial 1.svg";
 import test2 from "../../../assets/test2.svg";
 import q1 from "../../../assets/q1.svg";
@@ -30,12 +30,16 @@ const Testimonials = () => {
 				<div className="heading">
 					<h1 className="text-3xl font-bold">Past attendees testimonials</h1>
 					<p className="text-lg mt-1 flex flex-col justify-center items-center">
-						from TxE Summit 2022
+						TxE Summit 2022
 					</p>
+				</div>
+				<div className="flex space-x-2 mt-2 flex justify-center items-center lg:justify-center">
+					<div className="w-12 h-1 rounded-full bg-orange"></div>
+					<div className="w-12 h-1 rounded-full bg-orange-50"></div>
 				</div>
 
 				<div className="indicators">
-					{Array.from({ length: totalSlides }, (_, index) => (
+					{/* {Array.from({ length: totalSlides }, (_, index) => (
 						<span
 							key={index}
 							className={`indicator-dot ${
@@ -43,7 +47,7 @@ const Testimonials = () => {
 							}`}
 							onClick={() => setCurrentSlide(index)}
 						/>
-					))}
+					))} */}
 				</div>
 
 				<div
@@ -52,7 +56,7 @@ const Testimonials = () => {
 						transform: `translateX(-${(currentSlide * 100) / totalSlides}%)`,
 					}}>
 					<section>
-						<div>
+						<div className="test-image">
 							<img
 								className="test-1 rounded-full"
 								src={arnold}
@@ -62,25 +66,23 @@ const Testimonials = () => {
 						</div>
 						<div className="quote">
 							<img
-								className="q1"
+								className="quote-mark q1"
 								src={q1}
 								loading="lazy"
 								alt=""
 							/>
 							<h3>How TXE Africa caused a shift in my tech career</h3>
 							<p>
-							Thanks to the TxE Africa scholarship, my journey as a frontend 
-							developer took off splendidly. The comprehensive training and guidance 
-							I received were pivotal in honing my skills. Since then, I have embarked 
-							on a rewarding path, consistently securing freelancing opportunities with 
-							diverse organizations. My portfolio boasts of robust web applications, 
-							a testament to the quality and expertise fostered by TxE Africa.
+								The comprehensive training and guidance I received were pivotal
+								in honing my skills. My portfolio boasts of robust web
+								applications, a testament to the quality and expertise fostered
+								by TxE Africa.
 							</p>
 							<small>
 								Arnold Ngowi, <span>Senior. Frontend Developer.</span>
 							</small>
 							<img
-								className="q2"
+								className="quote-mark q2"
 								src={q2}
 								loading="lazy"
 								alt=""
@@ -88,7 +90,7 @@ const Testimonials = () => {
 						</div>
 					</section>
 					<section>
-						<div>
+						<div className="test-image">
 							<img
 								className="test-1"
 								src={test1}
@@ -98,7 +100,7 @@ const Testimonials = () => {
 						</div>
 						<div className="quote">
 							<img
-								className="q1"
+								className="quote-mark q1"
 								src={q1}
 								loading="lazy"
 								alt=""
@@ -114,7 +116,7 @@ const Testimonials = () => {
 								Vivian Nnoka, <span>Frontend Developer.</span>
 							</small>
 							<img
-								className="q2"
+								className="quote-mark q2"
 								src={q2}
 								loading="lazy"
 								alt=""
@@ -122,7 +124,7 @@ const Testimonials = () => {
 						</div>
 					</section>
 					<section>
-						<div>
+						<div className="test-image">
 							<img
 								className="test-1"
 								src={test1}
@@ -131,7 +133,7 @@ const Testimonials = () => {
 						</div>
 						<div className="quote">
 							<img
-								className="q1"
+								className="quote-mark q1"
 								src={q1}
 								loading="lazy"
 								alt=""
@@ -147,7 +149,7 @@ const Testimonials = () => {
 								Vivian Nnoka, <span>Frontend Developer.</span>
 							</small>
 							<img
-								className="q2"
+								className="quote-mark q2"
 								src={q2}
 								loading="lazy"
 								alt=""
@@ -155,7 +157,7 @@ const Testimonials = () => {
 						</div>
 					</section>
 					<section>
-						<div>
+						<div className="test-image">
 							<img
 								className="test-1"
 								src={test2}
@@ -164,7 +166,7 @@ const Testimonials = () => {
 						</div>
 						<div className="quote">
 							<img
-								className="q1"
+								className="quote-mark q1"
 								src={q1}
 								loading="lazy"
 								alt=""
@@ -180,10 +182,10 @@ const Testimonials = () => {
 								industry.
 							</p>
 							<small>
-								Seyi Peters, <span>Frontend Developer.</span>
+								Seyi Peters, <span>Sr. Frontend Developer.</span>
 							</small>
 							<img
-								className="q2"
+								className="quote-mark q2"
 								src={q2}
 								loading="lazy"
 								alt=""
@@ -192,9 +194,6 @@ const Testimonials = () => {
 					</section>
 				</div>
 				<div className="control">
-					{/* <span className='arrow left' onClick={prevSlide}>
-            Left
-          </span> */}
 					<img
 						className="arrow left"
 						onClick={prevSlide}

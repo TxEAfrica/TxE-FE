@@ -1,767 +1,745 @@
-@import url('https://fonts.googleapis.com/css2?family=Alata&family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-.main{
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    width: 100%;
-    /* border: 1px solid black; */
-    padding: 40px 80px;
+.main {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	width: 100%;
+	/* border: 1px solid black; */
+	padding: 40px 80px;
 }
-  
-.title{
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 20px;
-    align-items: center;
-    font-family: 'Alata', sans-serif;
-    color: #4F4F4F;
-    /* border: 1px solid black; */
-  }
 
-  .title h1{
-    font-size: 70px;
-    letter-spacing: -1.8px;
-    font-weight: 500;
-  }
+.title {
+	position: relative;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	gap: 20px;
+	align-items: center;
+	color: #fff;
+	/* border: 1px solid black; */
+}
 
-  .arrows{
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    /* border: 1px solid #4F4F4F; */
-  }
-  .left-arrow{
-    cursor: pointer;
-    width: 70px;
-  }
-  .right-arrow{
-    cursor: pointer;
-    width: 70px;
-  }
+.title h1 {
+	font-size: 60px;
 
+	letter-spacing: -1.8px;
+	font-weight: 700;
+}
+
+.arrows {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	/* border: 1px solid #4F4F4F; */
+}
+.left-arrow {
+	cursor: pointer;
+	width: 70px;
+}
+.right-arrow {
+	cursor: pointer;
+	width: 70px;
+}
 
 .slider-container {
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* border: 1px solid black; */
-    /* padding: 20px; */
-  }
-
-  
-  .image-card {
-    width: 10%; /* Initial width of non-active images */
-    height: 500px;
-    transition: all .4s ease;
-    cursor: pointer;
-    position: relative;
-    margin-right: 5px;
-    display: inline-block;
-    
-  }
-
-  .image-card.active{
-    width: 40%; 
-  }
-  
-  .image {
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    width: 100%;
-    /* aspect-ratio: 1/5; */
-    object-fit: cover;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    padding: 5px;
-    
-  }
-  
-  .descriptionn{
-    display: flex;
-    width: 100%;
-    gap: 20px;
-    align-items: center;
-    justify-content: space-around;
-    position: absolute;
-    bottom: 75%;
-    top: 0%;
-    /* padding: 5px; */
-    color: black;
-    opacity: 1;
-    transition: opacity .5s ease-in-out;
-  }
-  .description {
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border-radius: 0 0 10px 10px;
-   
-  }
-  .description p{
-    font-size: 12px;
-    max-width: 400px;
-    font-weight: 400;
-    font-family: 'Alata', sans-serif;
-    background: linear-gradient(231deg, #21222D 0%, #353B43 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .description h3{
-    font-size: 20px;
-    font-weight: 700;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-  }
-
-.linkedin{
-    width: 40px;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	/* border: 1px solid black; */
+	/* padding: 20px; */
 }
 
-  
-  .image-card.active .descriptionn {
-    opacity: 1;
-  }
+.image-card {
+	width: 10%; /* Initial width of non-active images */
+	height: 500px;
+	transition: all 0.4s ease;
+	cursor: pointer;
+	position: relative;
+	margin-right: 5px;
+	display: inline-block;
+}
 
-  .footnote{
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 10px;
-    align-items: flex-start;
-    color: #4F4F4F;
-    /* border: 1px solid black; */
-  }
-  .number-holder{
-    display: flex;
-    gap: 5px;
-  }
-  .n1{
-    width: 50px;
-    height: 90px;
-    border: .5px solid #FF6F43;
-    display: flex;
-    border-radius: 4px;
-    padding: 2px;
-  }
-  .n1 h1{
-    text-align: center;
-    margin: 2px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 100;
-    font-size: 80px;
-    font-family: 'Noto Sans Japanese', sans-serif;
-  }
+.image-card.active {
+	width: 40%;
+}
 
-  .footnote h2{
-    font-size: 70px;
-    letter-spacing: -1.8px;
-    font-weight: 100;
-    letter-spacing: -3px;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    
-  }
-  
+.image {
+	width: 100%;
+	height: 100%;
+	border-radius: 20px;
+	width: 100%;
+	/* aspect-ratio: 1/5; */
+	object-fit: cover;
+	transition: all 0.3s ease;
+	cursor: pointer;
+	padding: 5px;
+}
 
+.descriptionn {
+	display: flex;
+	width: 100%;
+	gap: 20px;
+	align-items: center;
+	justify-content: space-around;
+	position: absolute;
+	bottom: 75%;
+	top: 0%;
+	/* padding: 5px; */
+	color: black;
+	opacity: 1;
+	transition: opacity 0.5s ease-in;
+}
+.description {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	border-radius: 0 0 10px 10px;
+}
+.description p {
+	font-size: 12px;
+	max-width: 400px;
+	font-weight: 400;
+	font-family: "Alata", sans-serif;
+	background: linear-gradient(231deg, #21222d 0%, #353b43 100%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.description h3 {
+	font-size: 20px;
+	font-weight: 700;
+	font-family: "Plus Jakarta Sans", sans-serif;
+}
 
+.linkedin {
+	width: 40px;
+}
 
-  /* ------responsiveness--------------- */
+.image-card.descriptionn.active {
+	opacity: 1;
+}
 
-  @media screen and (max-width: 1200px) {
-    .main{
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-      width: 100%;
-      /* border: 1px solid black; */
-      padding: 20px 60px;
-  }
-    .title h1 {
-      font-size: 50px;
-    }
-    .descriptionn{
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-evenly;
-      margin-top: 20px;
-    }
-    .description{
-      display: flex;
-      width: 350px;
-      /* flex-direction: column-reverse; */
-    }
-    .description p{
-      font-size: 14px;
-    }
-    .description h3{
-      font-size: 20px;
-      font-weight: 700;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
-  
-  .linkedin{
-      width: 40px;
-  }
-  .image-card {
-    width: 8%; /* Initial width of non-active images */
-    height: 500px;
-    transition: all .4s ease;
-    cursor: pointer;
-    position: relative;
-    margin-right: 5px;
-    display: inline-block;
-    
-  }
+.footnote {
+	position: relative;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 10px;
+	align-items: flex-start;
+	color: #fff;
+}
+.number-holder {
+	display: flex;
+	gap: 5px;
+}
+.n1 {
+	width: 50px;
+	height: 90px;
+	border: 0.5px solid #ff6f43;
+	display: flex;
+	border-radius: 4px;
+	padding: 2px;
+}
+.n1 h1 {
+	text-align: center;
+	margin: 2px auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 500;
+	font-size: 80px;
+	font-family: "Noto Sans Japanese", sans-serif;
+}
 
-  .image-card.active{
-    width: 50%; 
-  }
-  
-  .image {
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    width: 100%;
-    /* aspect-ratio: 1/5; */
-    object-fit: cover;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    padding: 5px;
-    
-  }
-  .number-holder{
-    display: flex;
-    gap: 5px;
-  }
-  .n1{
-    width: 40px;
-    height: 80px;
-    border: .5px solid #FF6F43;
-    padding: 2px;
-  }
-  .n1 h1{
-    font-weight: 400;
-    font-weight: 100;
-    font-size: 60px;
-    font-family: 'Noto Sans Japanese', sans-serif;
-  }
+.footnote h2 {
+	font-size: 70px;
+	letter-spacing: -1.8px;
+	font-weight: 100;
+	letter-spacing: -3px;
+	font-family: "Plus Jakarta Sans", sans-serif;
+}
 
-  .footnote h2{
-    font-size: 50px;
-    letter-spacing: -1.8px;
-    font-weight: 100;
-    letter-spacing: -3px;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    
-  }
-  }
-  
-  @media screen and (max-width: 992px) {
-    .main{
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-      width: 100%;
-      /* border: 1px solid black; */
-      padding: 20px 50px;
-  }
-    .title h1 {
-      font-size: 40px;
-    }
-    .descriptionn{
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-around;
-      padding: 15px;
-    }
-    .description{
-      width: 300px;
-      margin-top: -10px;
-    }
-    .description p{
-      width: 100%;
-      font-size: 12px;
-      font-weight: 200;
-    }
-    .description h3{
-      width: 100%;
-      font-size: 20px;
-      font-weight: 700;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
-    .image-card {
-      width: 12%; /* Initial width of non-active images */
-      height: 500px;
-      transition: all .4s ease;
-      cursor: pointer;
-      position: relative;
-      margin-right: -5px;
-      display: inline-block;
-    }
-    .image-card.active{
-      width: 80%; 
-    }
-    
-    .image {
-      width: 100%;
-      height: 100%;
-      border-radius: 15px;
-      width: 100%;
-      object-fit: cover;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      padding: 5px;
-    }
+/* ------responsiveness--------------- */
 
-    .n1{
-      width: 30px;
-      height: 70px;
-      border: .5px solid #FF6F43;
-      padding: 2px;
-      display: flex;
-    }
-    .n1 h1{
-      font-weight: 400;
-      font-weight: 100;
-      font-size: 45px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Noto Sans Japanese', sans-serif;
-    }
-  
-    .footnote h2{
-      font-size: 40px;
-      letter-spacing: -1.8px;
-      font-weight: 100;
-      letter-spacing: -3px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      
-    }
-    .left-arrow{
-      cursor: pointer;
-      width: 60px;
-    }
-    .right-arrow{
-      cursor: pointer;
-      width: 60px;
-  
-    }
-  }
- 
-  
-  @media screen and (max-width: 768px) {
-    .main{
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-      width: 100%;
-      /* border: 1px solid black; */
-      padding: 20px 40px;
-  }
-    .title h1 {
-      font-size: 35px;
-    }
-    .descriptionn{
-      display: flex;
-      /* flex-direction: row-reverse; */
-      align-items: flex-start;
-      /* justify-content: space-between; */
-      margin-top: 30px;
-    }
-    .description {
-      width: 250px;
-      display: flex;
-      flex-direction: column-reverse;
-      align-items: flex-start;
-      border-radius: 0 0 10px 10px;
-     
-    }
+@media screen and (max-width: 1200px) {
+	.main {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		width: 100%;
+		/* border: 1px solid black; */
+		padding: 20px 60px;
+	}
+	.title h1 {
+		font-size: 50px;
+	}
+	.descriptionn {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-evenly;
+		margin-top: 20px;
+	}
+	.description {
+		display: flex;
+		width: 350px;
+		/* flex-direction: column-reverse; */
+	}
+	.description p {
+		font-size: 14px;
+	}
+	.description h3 {
+		font-size: 20px;
+		font-weight: 700;
+		font-family: "Plus Jakarta Sans", sans-serif;
+	}
 
-    .description p{
-      width: 100%;
-    }
-    .description h3{
-      width: 100%;
-      font-size: 18px;
-      font-weight: 700;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
-    .image-card {
-      width: 12%; /* Initial width of non-active images */
-      height: 450px;
-      transition: all .4s ease;
-      cursor: pointer;
-      position: relative;
-      display: inline-block;
-    }
-    .image-card.active {
-      width: 90%;
-    }
-    .image {
-      width: 100%;
-      height: 100%;
-      border-radius: 15px;
-      width: 100%;
-      /* aspect-ratio: 1/5; */
-      object-fit: cover;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      padding: 5px;
-    }
-    .left-arrow{
-      cursor: pointer;
-      width: 60px;
-    }
-    .right-arrow{
-      cursor: pointer;
-      width: 60px;
-    }
-  }
-  
-  @media screen and (max-width: 576px) {
-    .main{
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      width: 100%;
-      /* border: 1px solid black; */
-      padding: 20px 20px;
-  }
-    .title h1 {
-      font-size: 35px;
-    }
-  
-    .arrows {
-      gap: 5px;
-    }
-  
-    .left-arrow,
-    .right-arrow {
-      width: 50px;
-      cursor: pointer;
-    }
-    .slider-container {
-      /* width: 100%; */
-      position: relative;
-      overflow: hidden;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      /* border: 1px solid black; */
-      /* padding: 20px; */
-    }
+	.linkedin {
+		width: 40px;
+	}
+	.image-card {
+		width: 8%; /* Initial width of non-active images */
+		height: 500px;
+		transition: all 0.4s ease;
+		cursor: pointer;
+		position: relative;
+		margin-right: 5px;
+		display: inline-block;
+	}
 
+	.image-card.active {
+		width: 50%;
+	}
 
-  
-    .image-card {
-      width: 10%;
-      height: 400px;
-    }
-  
-    .image-card.active {
-      width: 90%;
-    }
-  
-    .image {
-      width: 100%;
-      height: 100%;
-      border-radius: 10px;
-      width: 100%;
-      object-fit: cover;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      padding: 5px;
-    }
+	.image {
+		width: 100%;
+		height: 100%;
+		border-radius: 20px;
+		width: 100%;
+		/* aspect-ratio: 1/5; */
+		object-fit: cover;
+		transition: all 0.3s ease;
+		cursor: pointer;
+		padding: 5px;
+	}
+	.number-holder {
+		display: flex;
+		gap: 5px;
+	}
+	.n1 {
+		width: 40px;
+		height: 80px;
+		border: 0.5px solid #ff6f43;
+		padding: 2px;
+	}
+	.n1 h1 {
+		font-weight: 400;
+		font-weight: 100;
+		font-size: 60px;
+		font-family: "Noto Sans Japanese", sans-serif;
+	}
 
-    .descriptionn {
-      margin-top: 12px;
-      bottom: 75%;
-      display: flex;
-      align-items: flex-start;
-    }
-    .description{
-      width: 180px;
-    }
-  
-    .description p {
-      font-size: 12px;
-      width: 100%;
-    }
-  
-    .description h3 {
-      font-size: 16px;
-      width: 100%;
-    }
-  
-    .linkedin {
-      width: 40px;
-    }
-    .footnote{
-      display: flex;
-      gap: 5px;
-    }
+	.footnote h2 {
+		font-size: 50px;
+		letter-spacing: -1.8px;
+		font-weight: 100;
+		letter-spacing: -3px;
+		font-family: "Plus Jakarta Sans", sans-serif;
+	}
+}
 
-    .n1{
-      width: 30px;
-      height: 60px;
-      border: .5px solid #FF6F43;
-      padding: 2px;
-      display: flex;
-    }
-    .n1 h1{
-      margin-top: 10px;
-      font-weight: 400;
-      font-weight: 100;
-      font-size: 40px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Noto Sans Japanese', sans-serif;
-    }
-  
-    .footnote h2{
-      font-size: 35px;
-      letter-spacing: -1.8px;
-      font-weight: 100;
-      letter-spacing: -3px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      
-    }
-  }
+@media screen and (max-width: 992px) {
+	.main {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+		width: 100%;
+		/* border: 1px solid black; */
+		padding: 20px 50px;
+	}
+	.title h1 {
+		font-size: 40px;
+	}
+	.descriptionn {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-around;
+		padding: 15px;
+	}
+	.description {
+		width: 300px;
+		margin-top: -10px;
+	}
+	.description p {
+		width: 100%;
+		font-size: 12px;
+		font-weight: 200;
+	}
+	.description h3 {
+		width: 100%;
+		font-size: 20px;
+		font-weight: 700;
+		font-family: "Plus Jakarta Sans", sans-serif;
+	}
+	.image-card {
+		width: 12%; /* Initial width of non-active images */
+		height: 500px;
+		transition: all 0.4s ease;
+		cursor: pointer;
+		position: relative;
+		margin-right: -5px;
+		display: inline-block;
+	}
+	.image-card.active {
+		width: 80%;
+	}
 
-  @media screen and (max-width: 480px) {
-    .main{
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-      width: 100%;
-      /* border: 1px solid black; */
-      padding: 20px 20px;
-      /* overflow: hidden; */
-  }
-    .title h1 {
-      font-size: 30px;
-    }
-  
-    .arrows {
-      gap: 5px;
-    }
-  
-    .left-arrow,
-    .right-arrow {
-      width: 50px;
-      cursor: pointer;
-    }
-    .slider-container {
-      width: 100%;
-      position: relative;
-      overflow: hidden;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      /* border: 1px solid black; */
-      /* padding: 20px; */
-    }
+	.image {
+		width: 100%;
+		height: 100%;
+		border-radius: 15px;
+		width: 100%;
+		object-fit: cover;
+		transition: all 0.3s ease;
+		cursor: pointer;
+		padding: 5px;
+	}
 
+	.n1 {
+		width: 30px;
+		height: 70px;
+		border: 0.5px solid #ff6f43;
+		padding: 2px;
+		display: flex;
+	}
+	.n1 h1 {
+		font-weight: 400;
+		font-weight: 100;
+		font-size: 45px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-family: "Noto Sans Japanese", sans-serif;
+	}
 
-  
-    .image-card {
-      width: 0%;
-      height: 350px;
-    }
-  
-    .image-card.active {
-      width: 100%;
-    }
-  
-    .image {
-      width: 100%;
-      height: 100%;
-      border-radius: 10px;
-      width: 100%;
-      /* aspect-ratio: 1/5; */
-      object-fit: cover;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      padding: 4px;
-    }
+	.footnote h2 {
+		font-size: 40px;
+		letter-spacing: -1.8px;
+		font-weight: 100;
+		letter-spacing: -3px;
+		font-family: "Plus Jakarta Sans", sans-serif;
+	}
+	.left-arrow {
+		cursor: pointer;
+		width: 60px;
+	}
+	.right-arrow {
+		cursor: pointer;
+		width: 60px;
+	}
+}
 
-    .descriptionn {
-      /* bottom: 75%; */
-      display: flex;
-      align-items: flex-start;
-      /* margin-top: -10px; */
-    }
-    .description{
-      width: 400px;
-      display: flex;
-      align-items: flex-start;
-      padding: 0 5px;
-    }
-  
-    .description p {
-      font-size: 10px;
-      width: 100%;
-      line-height: 12px;
-      font-weight: 100;
-    }
-  
-    .description h3 {
-      font-size: 14px;
-      width: 100%;
-    }
-  
-    .linkedin {
-      width: 30px;
-      margin-top: -10px;
-    }
-    .n1{
-      width: 25px;
-      height: 45px;
-      border: .5px solid #FF6F43;
-      padding: 2px;
-      display: flex;
-    }
-    .n1 h1{
-      margin-top: 1px;
-      font-weight: 400;
-      font-weight: 100;
-      font-size: 35px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Noto Sans Japanese', sans-serif;
-    }
-  
-    .footnote h2{
-      font-size: 29px;
-      letter-spacing: -1.8px;
-      font-weight: 100;
-      letter-spacing: -3px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      
-    }
-  }
-  
-  @media screen and (max-width: 360px) {
-    .title h1 {
-      font-size: 30px;
-    }
-  
-    .arrows {
-      gap: 2px;
-    }
-  
-    .left-arrow,
-    .right-arrow {
-      width: 40px;
-    }
-  
-    .slider-container {
-      /* display: flex; */
-      /* flex-direction: column; */
-      align-items: flex-start;
-    }
-  
-    .image-card {
-      width: 2%;
-      height: 350px;
-      margin-right: -6px;
-      
-    }
-  
-    .image-card.active {
-      width: 150%;
-      /* height: 300px; */
-    }
-    /* .image{
+@media screen and (max-width: 768px) {
+	.main {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		width: 100%;
+		/* border: 1px solid black; */
+		padding: 20px 40px;
+	}
+	.title h1 {
+		font-size: 35px;
+	}
+	.descriptionn {
+		display: flex;
+		/* flex-direction: row-reverse; */
+		align-items: flex-start;
+		/* justify-content: space-between; */
+		margin-top: 30px;
+	}
+	.description {
+		width: 250px;
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: flex-start;
+		border-radius: 0 0 10px 10px;
+	}
+
+	.description p {
+		width: 100%;
+	}
+	.description h3 {
+		width: 100%;
+		font-size: 18px;
+		font-weight: 700;
+		font-family: "Plus Jakarta Sans", sans-serif;
+	}
+	.image-card {
+		width: 12%; /* Initial width of non-active images */
+		height: 450px;
+		transition: all 0.4s ease;
+		cursor: pointer;
+		position: relative;
+		display: inline-block;
+	}
+	.image-card.active {
+		width: 90%;
+	}
+	.image {
+		width: 100%;
+		height: 100%;
+		border-radius: 15px;
+		width: 100%;
+		/* aspect-ratio: 1/5; */
+		object-fit: cover;
+		transition: all 0.3s ease;
+		cursor: pointer;
+		padding: 5px;
+	}
+	.left-arrow {
+		cursor: pointer;
+		width: 60px;
+	}
+	.right-arrow {
+		cursor: pointer;
+		width: 60px;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.main {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		width: 100%;
+		/* border: 1px solid black; */
+		padding: 20px 20px;
+	}
+	.title {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+	.title h1 {
+		font-size: 45px;
+	}
+
+	.arrows {
+		gap: 5px;
+	}
+
+	.left-arrow,
+	.right-arrow {
+		width: 50px;
+		cursor: pointer;
+	}
+	.slider-container {
+		/* width: 100%; */
+		position: relative;
+		overflow: hidden;
+		margin: auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		/* border: 1px solid black; */
+		/* padding: 20px; */
+	}
+
+	.image-card {
+		width: 10%;
+		height: 400px;
+	}
+
+	.image-card.active {
+		width: 90%;
+	}
+
+	.image {
+		width: 100%;
+		height: 100%;
+		border-radius: 10px;
+		width: 100%;
+		object-fit: cover;
+		transition: all 0.3s ease;
+		cursor: pointer;
+		padding: 5px;
+	}
+
+	.descriptionn {
+		margin-top: 12px;
+		bottom: 75%;
+		display: flex;
+		align-items: flex-start;
+	}
+	.description {
+		width: 180px;
+	}
+
+	.description p {
+		font-size: 12px;
+		width: 100%;
+	}
+
+	.description h3 {
+		font-size: 16px;
+		width: 100%;
+	}
+
+	.linkedin {
+		width: 40px;
+	}
+	.footnote {
+		display: flex;
+		gap: 5px;
+	}
+
+	.n1 {
+		width: 30px;
+		height: 60px;
+		border: 0.5px solid #ff6f43;
+		padding: 2px;
+		display: flex;
+	}
+	.n1 h1 {
+		margin-top: 10px;
+		font-weight: 400;
+		font-weight: 100;
+		font-size: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-family: "Noto Sans Japanese", sans-serif;
+	}
+
+	.footnote h2 {
+		font-size: 35px;
+		letter-spacing: -1.8px;
+		font-weight: 100;
+		letter-spacing: -3px;
+		font-family: "Plus Jakarta Sans", sans-serif;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.main {
+		display: flex;
+		flex-direction: column;
+		gap: 25px;
+		width: 100%;
+		/* border: 1px solid black; */
+		padding: 20px 20px;
+		/* overflow: hidden; */
+	}
+	.title h1 {
+		font-size: 60px;
+	}
+
+	.arrows {
+		gap: 5px;
+	}
+
+	.left-arrow,
+	.right-arrow {
+		width: 50px;
+		cursor: pointer;
+	}
+	.slider-container {
+		width: 100%;
+		position: relative;
+		overflow: hidden;
+		margin: auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		/* border: 1px solid black; */
+		/* padding: 20px; */
+	}
+
+	.image-card {
+		width: 0%;
+		height: 350px;
+	}
+
+	.image-card.active {
+		width: 100%;
+	}
+
+	.image {
+		width: 100%;
+		height: 100%;
+		border-radius: 10px;
+		width: 100%;
+		/* aspect-ratio: 1/5; */
+		object-fit: cover;
+		transition: all 0.3s ease;
+		cursor: pointer;
+		padding: 4px;
+	}
+
+	.descriptionn {
+		/* bottom: 75%; */
+		display: flex;
+		align-items: flex-start;
+		/* margin-top: -10px; */
+	}
+	.description {
+		width: 400px;
+		display: flex;
+		align-items: flex-start;
+		padding: 0 5px;
+	}
+
+	.description p {
+		font-size: 10px;
+		width: 100%;
+		line-height: 12px;
+		font-weight: 100;
+	}
+
+	.description h3 {
+		font-size: 14px;
+		width: 100%;
+	}
+
+	.linkedin {
+		width: 30px;
+		margin-top: -10px;
+	}
+	.n1 {
+		width: 25px;
+		height: 45px;
+		border: 0.5px solid #ff6f43;
+		padding: 2px;
+		display: flex;
+	}
+	.n1 h1 {
+		margin-top: 1px;
+		font-weight: 400;
+		font-weight: 100;
+		font-size: 35px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-family: "Noto Sans Japanese", sans-serif;
+	}
+
+	.footnote h2 {
+		font-size: 29px;
+		letter-spacing: -1.8px;
+		font-weight: 100;
+		letter-spacing: -3px;
+		font-family: "Plus Jakarta Sans", sans-serif;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	.title h1 {
+		font-size: 30px;
+	}
+
+	.arrows {
+		gap: 2px;
+	}
+
+	.left-arrow,
+	.right-arrow {
+		width: 40px;
+	}
+
+	.slider-container {
+		/* display: flex; */
+		/* flex-direction: column; */
+		align-items: flex-start;
+	}
+
+	.image-card {
+		width: 2%;
+		height: 350px;
+		margin-right: -6px;
+	}
+
+	.image-card.active {
+		width: 150%;
+		/* height: 300px; */
+	}
+	/* .image{
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
    */
-    .descriptionn {
-      width: 100%;
-      bottom: 90%;
-    }
-  
-    .description p {
-      font-size: 10px;
-    }
-  
-    .description h3 {
-      font-size: 15px;
-    }
-  
-    .linkedin {
-      width: 25px;
-    }
-    .footnote{
-      position: relative;
-      width: 100%;
-      display: flex;
-      /* flex-direction: row; */
-      justify-content: center;
-      gap: 10px;
-      align-items: center;
-      color: #4F4F4F;
-      /* border: 1px solid black; */
-    }
-    .number-holder{
-      display: flex;
-      gap: 5px;
-      margin-left: 15px;
-    }
+	.descriptionn {
+		width: 100%;
+		bottom: 90%;
+	}
 
-    .n1{
-      width: 20px;
-      height: 40px;
-      border: .5px solid #FF6F43;
-      padding: 2px;
-      display: flex;
-    }
-    .n1 h1{
-      margin-top: 10px;
-      font-weight: 400;
-      font-weight: 100;
-      font-size: 25px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Noto Sans Japanese', sans-serif;
-    }
-  
-    .footnote h2{
-      text-align: center;
-      font-size: 22px;
-      font-weight: 100;
-      letter-spacing: -2px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      line-height: 30px;
-      width: 100%;
-    }
-  }
-  
-  /* Add more media queries as needed for other screen sizes */
-  
-  
+	.description p {
+		font-size: 10px;
+	}
+
+	.description h3 {
+		font-size: 15px;
+	}
+
+	.linkedin {
+		width: 25px;
+	}
+	.footnote {
+		position: relative;
+		width: 100%;
+		display: flex;
+		/* flex-direction: row; */
+		justify-content: center;
+		gap: 10px;
+		align-items: center;
+		color: #4f4f4f;
+		/* border: 1px solid black; */
+	}
+	.number-holder {
+		display: flex;
+		gap: 5px;
+		margin-left: 15px;
+	}
+
+	.n1 {
+		width: 20px;
+		height: 40px;
+		border: 0.5px solid #ff6f43;
+		padding: 2px;
+		display: flex;
+	}
+	.n1 h1 {
+		margin-top: 10px;
+		font-weight: 400;
+		font-weight: 100;
+		font-size: 25px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-family: "Noto Sans Japanese", sans-serif;
+	}
+
+	.footnote h2 {
+		text-align: center;
+		font-size: 22px;
+		font-weight: 100;
+		letter-spacing: -2px;
+		font-family: "Plus Jakarta Sans", sans-serif;
+		line-height: 30px;
+		width: 100%;
+	}
+}
+
+/* Add more media queries as needed for other screen sizes */

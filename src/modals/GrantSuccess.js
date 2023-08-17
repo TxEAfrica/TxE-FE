@@ -28,7 +28,7 @@ const GrantSuccess = () => {
 							/>
 							<p>Information</p>
 						</div>
-						<span onClick={handleCloseOverlay}>
+						<span onClick={handleNavigate}>
 							<img
 								src={close}
 								alt=""
@@ -84,7 +84,7 @@ const GrantSuccess = () => {
 					<div className="modal-cta">
 						<button
 							className="btn1"
-							onClick={handleCloseOverlay}>
+							onClick={handleNavigate}>
 							Close
 						</button>
 						<button

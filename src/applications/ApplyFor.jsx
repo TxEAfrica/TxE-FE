@@ -8,8 +8,9 @@ import { useEffect, useState } from "react";
 import ScholarshipRegistrants from "./category/validated-applicants/ScholarshipRegistrants";
 import TechSupport from "./tech-support/TechSupport";
 import FailedModal from "../modals/FailedModal";
+import Sponsors from "../landingPage/sections/Sponsors";
 
-const ApplyFor = ({ category, applicantMessage }) => {
+const ApplyFor = ({ category, applicantMessage, onSuccess, onUserData }) => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [data, setData] = useState("");
 	const [verifiedData, setVerifiedData] = useState("");
@@ -34,12 +35,16 @@ const ApplyFor = ({ category, applicantMessage }) => {
 	const [showUp4Intvw, setShowUp4Intvw] = useState("");
 	const [whyNotShowUp4Intvw, setWhyNotShowUp4Intvw] = useState("");
 	const [aboutYou, setAboutYou] = useState("");
+
+	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 	// impliment validation here
 	const handleValidEmail = (e) => {
 		setValidEmail(e.target.value);
 	};
 	const handleValidation = (e) => {
 		e.preventDefault();
+
 		setIsLoading(true);
 		// console.log(validEmail)
 		fetchValidEmail();
@@ -172,7 +177,7 @@ const ApplyFor = ({ category, applicantMessage }) => {
 		</div>
 	) : (
 		<>
-			<Navbar />
+			{/* <Navbar /> */}
 			<div
 				id="top"
 				className="relative bg-black py-60 flex flex-col justify-center items-center mx-auto relative" // Add 'relative' positioning
@@ -274,7 +279,9 @@ const ApplyFor = ({ category, applicantMessage }) => {
 					</form>
 				)}
 			</div>
-			<div className="bg-gray-200 h-32 w-full"></div>
+			<div className="bg-gray-200 h-fit w-full">
+				<Sponsors />
+			</div>
 			<Footer />
 		</>
 	);

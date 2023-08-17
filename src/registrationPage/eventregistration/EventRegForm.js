@@ -207,7 +207,7 @@ const EventRegForm = () => {
 
 	return (
 		<div>
-			<Navbar />
+			{/* <Navbar /> */}
 			<div className={EventRegCSS.main}>
 				<div className={EventRegCSS.decor}>
 					<FormVector position={"left-10 top-100"} />
@@ -345,7 +345,10 @@ const EventRegForm = () => {
 			<Footer />
 
 			{showRegSuccess && (
-				<RegSuccess onClose={() => setShowInvalidEmail(false)} />
+				<RegSuccess
+					email={email}
+					onClose={() => setShowRegSuccess(false)}
+				/>
 			)}
 			{showAlreadyRegistered && (
 				<AlreadyRegistered onClose={() => setShowAlreadyRegistered(false)} />
