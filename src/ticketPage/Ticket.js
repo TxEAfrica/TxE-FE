@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
+import JsBarcode from "jsbarcode";
 import TicketPageCSS from "./TicketPage.module.css";
 
-export default function Ticket() {
+export default function Ticket({ userData }) {
 	return (
 		<div className={TicketPageCSS.mainticket}>
 			<div className={TicketPageCSS.ticketTitle}>
@@ -15,7 +16,7 @@ export default function Ticket() {
 					<div className={TicketPageCSS.partHolder}>
 						<p>Name:</p>
 						<div className={TicketPageCSS.partInner}>
-							<p>M.O Nwoke</p>
+							<p>{userData?.firstName + " " + userData?.lastName}</p>
 						</div>
 					</div>
 					<div className={TicketPageCSS.partHolder}>
@@ -29,7 +30,7 @@ export default function Ticket() {
 					<div className={TicketPageCSS.partHolder}>
 						<p>Event Type:</p>
 						<div className={TicketPageCSS.partInner}>
-							<p>Entrepreneurship summit </p>
+							<p>{userData?.trackInterest} summit </p>
 						</div>
 					</div>
 				</div>
