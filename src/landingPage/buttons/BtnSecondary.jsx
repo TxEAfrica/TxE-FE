@@ -1,8 +1,10 @@
 import "../Landing.css";
 
-const BtnSecondary = ({ btnName }) => {
+const BtnSecondary = ({ btnName, onClick }) => {
 	return (
-		<div className="p-3 w-full flex justify-center items-center text-center border-2 border-white text-white rounded-md">
+		<div
+			onClick={onClick}
+			className="p-3 w-full flex justify-center items-center text-center border-2 border-white text-white rounded-md">
 			{btnName}
 		</div>
 	);

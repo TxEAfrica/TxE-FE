@@ -67,8 +67,11 @@ const Home = () => {
 	return (
 		<>
 			<div className="main-container overflow-hidden">
-				<Navbar />
+				<div className="px-16 sticky nav-holder">
+					<Navbar />
+				</div>
 				<Banner />
+
 				<div className=" py-2 md:mt-36 md:space-y-10">
 					<Highlight />
 					<EventSchedule />

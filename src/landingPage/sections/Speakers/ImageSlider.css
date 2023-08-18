@@ -7,6 +7,7 @@
 }
 
 .main {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	gap: 40px;
@@ -25,13 +26,6 @@
 	align-items: center;
 	color: #fff;
 	/* border: 1px solid black; */
-}
-
-.title h1 {
-	font-size: 60px;
-
-	letter-spacing: -1.8px;
-	font-weight: 700;
 }
 
 .arrows {
@@ -183,9 +177,7 @@
 		/* border: 1px solid black; */
 		padding: 20px 60px;
 	}
-	.title h1 {
-		font-size: 50px;
-	}
+
 	.descriptionn {
 		display: flex;
 		align-items: flex-start;
@@ -269,9 +261,6 @@
 		/* border: 1px solid black; */
 		padding: 20px 50px;
 	}
-	.title h1 {
-		font-size: 40px;
-	}
 	.descriptionn {
 		display: flex;
 		align-items: flex-start;
@@ -353,16 +342,26 @@
 
 @media screen and (max-width: 768px) {
 	.main {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		gap: 30px;
 		width: 100%;
 		/* border: 1px solid black; */
 		padding: 20px 40px;
+		margin-bottom: 150px;
 	}
-	.title h1 {
-		font-size: 35px;
+	.title {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
 	}
+	.title .arrows {
+		position: absolute;
+		margin: auto;
+		bottom: -650%;
+	}
+
 	.descriptionn {
 		display: flex;
 		/* flex-direction: row-reverse; */
@@ -374,7 +373,7 @@
 		width: 250px;
 		display: flex;
 		flex-direction: column-reverse;
-		align-items: flex-start;
+		align-items: center;
 		border-radius: 0 0 10px 10px;
 	}
 
@@ -434,11 +433,11 @@
 		align-items: center;
 		text-align: center;
 	}
-	.title h1 {
-		font-size: 45px;
-	}
 
-	.arrows {
+	.title .arrows {
+		position: absolute;
+		margin: auto;
+		bottom: -570%;
 		gap: 5px;
 	}
 
@@ -460,12 +459,12 @@
 	}
 
 	.image-card {
-		width: 10%;
+		width: 5%;
 		height: 400px;
 	}
 
 	.image-card.active {
-		width: 90%;
+		width: 80%;
 	}
 
 	.image {
@@ -480,7 +479,8 @@
 	}
 
 	.descriptionn {
-		margin-top: 12px;
+		width: 100%;
+		margin-top: 10px;
 		bottom: 75%;
 		display: flex;
 		align-items: flex-start;
@@ -502,36 +502,6 @@
 	.linkedin {
 		width: 40px;
 	}
-	.footnote {
-		display: flex;
-		gap: 5px;
-	}
-
-	.n1 {
-		width: 30px;
-		height: 60px;
-		border: 0.5px solid #ff6f43;
-		padding: 2px;
-		display: flex;
-	}
-	.n1 h1 {
-		margin-top: 10px;
-		font-weight: 400;
-		font-weight: 100;
-		font-size: 40px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		font-family: "Noto Sans Japanese", sans-serif;
-	}
-
-	.footnote h2 {
-		font-size: 35px;
-		letter-spacing: -1.8px;
-		font-weight: 100;
-		letter-spacing: -3px;
-		font-family: "Plus Jakarta Sans", sans-serif;
-	}
 }
 
 @media screen and (max-width: 480px) {
@@ -544,11 +514,10 @@
 		padding: 20px 20px;
 		/* overflow: hidden; */
 	}
-	.title h1 {
-		font-size: 60px;
-	}
-
-	.arrows {
+	.title .arrows {
+		position: absolute;
+		margin: auto;
+		bottom: -570%;
 		gap: 5px;
 	}
 
@@ -571,7 +540,7 @@
 
 	.image-card {
 		width: 0%;
-		height: 350px;
+		height: 400px;
 	}
 
 	.image-card.active {
@@ -594,7 +563,8 @@
 		/* bottom: 75%; */
 		display: flex;
 		align-items: flex-start;
-		/* margin-top: -10px; */
+		margin-top: 20px;
+		padding: 10px 25px;
 	}
 	.description {
 		width: 400px;
@@ -619,40 +589,14 @@
 		width: 30px;
 		margin-top: -10px;
 	}
-	.n1 {
-		width: 25px;
-		height: 45px;
-		border: 0.5px solid #ff6f43;
-		padding: 2px;
-		display: flex;
-	}
-	.n1 h1 {
-		margin-top: 1px;
-		font-weight: 400;
-		font-weight: 100;
-		font-size: 35px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		font-family: "Noto Sans Japanese", sans-serif;
-	}
-
-	.footnote h2 {
-		font-size: 29px;
-		letter-spacing: -1.8px;
-		font-weight: 100;
-		letter-spacing: -3px;
-		font-family: "Plus Jakarta Sans", sans-serif;
-	}
 }
 
 @media screen and (max-width: 360px) {
-	.title h1 {
-		font-size: 30px;
-	}
-
-	.arrows {
-		gap: 2px;
+	.title .arrows {
+		position: absolute;
+		margin: auto;
+		bottom: -500%;
+		gap: 5px;
 	}
 
 	.left-arrow,

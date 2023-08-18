@@ -18,10 +18,13 @@
 }
 /* --------------------------navbar ---------------------------- */
 
+.nav-holder {
+	position: sticky;
+}
 .navbar {
 	background-color: #000;
 	width: 100%;
-	/* padding: 20px 80px; */
+	padding: 20px 20px;
 	/* justify-content: space-between;
 	z-index: 1000; */
 }
@@ -41,6 +44,91 @@
 	font-size: 16px;
 	font-weight: 500;
 }
+/* For screens up to 1440px */
+@media screen and (max-width: 1440px) {
+	.nav-holder {
+		position: sticky;
+	}
+	.navbar {
+		background-color: #000;
+		width: 100%;
+		padding: 20px 20px;
+		/* justify-content: space-between;
+	z-index: 1000; */
+	}
+}
+@media screen and (max-width: 1200px) {
+	.nav-holder {
+		position: sticky;
+	}
+	.navbar {
+		background-color: #000;
+		width: 100%;
+		padding: 10px 20px;
+		/* justify-content: space-between;
+	z-index: 1000; */
+	}
+}
+@media screen and (max-width: 1024px) {
+	.nav-holder {
+		position: sticky;
+	}
+	.navbar {
+		background-color: #000;
+		width: 100%;
+		padding: 10px 20px;
+		/* justify-content: space-between;
+	z-index: 1000; */
+	}
+}
+@media screen and (max-width: 996px) {
+	.nav-holder {
+		position: sticky;
+	}
+	.navbar {
+		background-color: #000;
+		width: 100%;
+		padding: 10px 20px;
+		/* justify-content: space-between;
+	z-index: 1000; */
+	}
+}
+@media screen and (max-width: 575px) {
+	.nav-holder {
+		position: sticky;
+	}
+	.navbar {
+		background-color: #000;
+		width: 100%;
+		padding: 10px 0;
+		/* justify-content: space-between;
+	z-index: 1000; */
+	}
+}
+@media screen and (max-width: 480px) {
+	.nav-holder {
+		padding: 0px 20px;
+	}
+	.navbar {
+		background-color: #000;
+		width: 100%;
+		padding: 10px 10px;
+		/* justify-content: space-between;
+	z-index: 1000; */
+	}
+}
+@media screen and (max-width: 360px) {
+	.nav-holder {
+		padding: 0px 15px;
+	}
+	.navbar {
+		background-color: #000;
+		width: 100%;
+		padding: 10px 10px;
+		/* justify-content: space-between;
+	z-index: 1000; */
+	}
+}
 
 /* ------------------------banner ------------------------ */
 
@@ -48,9 +136,9 @@
 	position: relative;
 	padding-left: 80px;
 	width: 100%;
-	overflow: hidden !important;
+	overflow: hidden;
 	height: 75vh;
-	flex-shrink: 0;
+	/* flex-shrink: 0; */
 	/* z-index: 1000; */
 	background: url(../assets/Subtract.svg);
 	background-repeat: no-repeat;
@@ -60,14 +148,14 @@
 }
 
 .banner-text {
-	/* margin-top: -3%;
-	width: 70%; */
+	margin-top: 10%;
+	/* width: 70%; */
 	/* display: flex;
 	flex-direction: column;
 	gap: 15px;
 	justify-content: center;
 	align-items: flex-start; */
-	/* z-index: 200; */
+	z-index: 200;
 	animation: slideFromLeft 1s ease-out;
 }
 .banner-text h1 {
@@ -99,7 +187,7 @@
 	cursor: pointer;
 	user-select: none;
 }
-@keyframes clickAnimation {
+/* @keyframes clickAnimation {
 	0%,
 	100% {
 		transform: scale(1);
@@ -108,7 +196,7 @@
 	50% {
 		transform: scale(0.8);
 	}
-}
+} */
 
 .animate-click {
 	animation: clickAnimation 2s ease-in-out infinite; /* Adjust duration and timing as needed */
@@ -141,7 +229,7 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 	background-color: rgba(0, 0, 0, 1);
 	pointer-events: none;
 	margin-left: 100px;
@@ -192,10 +280,18 @@
 /* For screens up to 1200px */
 @media screen and (max-width: 1200px) {
 	.banner-container {
-		padding-left: 3%;
+		height: 100vh;
+		padding-left: 7%;
 	}
 	.animation-container {
-		margin-left: 3%;
+		margin-left: 7%;
+	}
+	.banner-text {
+		margin-top: 60px;
+		width: 100%;
+	}
+	.banner-text h1 {
+		font-size: 50px;
 	}
 }
 
@@ -209,7 +305,7 @@
 /* For screens up to 996px */
 @media screen and (max-width: 996px) {
 	.banner-container {
-		height: 80vh;
+		height: 100vh;
 	}
 	.animation-container {
 		margin-left: 0;
@@ -220,7 +316,11 @@
 /* For screens up to 768px */
 @media screen and (max-width: 768px) {
 	.banner-container {
-		padding-left: 3%;
+		padding-left: 9%;
+	}
+	.banner-text {
+		margin-top: 60px !important;
+		width: 80%;
 	}
 	.animation-container {
 		transform: rotate(0);
@@ -248,9 +348,16 @@
 /* For screens up to 480px */
 @media screen and (max-width: 480px) {
 	.banner-container {
-		height: 90vh;
+		height: 100vh;
 		padding-left: 2%;
 		overflow-x: hidden;
+	}
+	.banner-text {
+		margin-top: 20px;
+	}
+	.banner-text h1 {
+		font-size: 42px;
+		line-height: 40px;
 	}
 	.partnership {
 		background: #fff;
@@ -275,10 +382,28 @@
 	}
 }
 
-/* For screens up to 340px */
-@media screen and (max-width: 320px) {
+/* For screens up to 360px */
+@media screen and (max-width: 360px) {
 	.banner-container {
-		height: 120vh;
+		height: 100vh;
+	}
+	.banner-text h1 {
+		font-size: 38px;
+	}
+	.banner-text p {
+		font-size: 12px;
+		line-height: 24px;
+	}
+}
+@media screen and (max-width: 359px) {
+	.banner-container {
+		height: 100vh;
+	}
+	.banner-text {
+		width: 90%;
+	}
+	.banner-text h1 {
+		font-size: 35px;
 	}
 	.banner-text p {
 		font-size: 12px;
@@ -314,9 +439,11 @@
 /* For screens up to 768px */
 @media screen and (max-width: 768px) {
 	.highlight-container {
+		padding: 0 15%;
+		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 20px;
+		gap: 30px;
 	}
 }
 
@@ -414,5 +541,10 @@
 @media screen and (max-width: 480px) {
 	#footer {
 		padding: 40px 2%;
+	}
+}
+@media screen and (max-width: 360px) {
+	#footer {
+		padding: 40px 5%;
 	}
 }
