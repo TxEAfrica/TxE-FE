@@ -10,7 +10,7 @@ export default function Ticket({ userData }) {
 			</div>
 			<div className={TicketPageCSS.ticketBody}>
 				<div className={TicketPageCSS.part}>
-					<h2>TxE SUMMIT 2023</h2>
+					<h2 className="text-center">TxE SUMMIT 2023</h2>
 				</div>
 				<div className={TicketPageCSS.part}>
 					<div className={TicketPageCSS.partHolder}>
@@ -136,7 +136,7 @@ export default function Ticket({ userData }) {
 						</clipPath>
 					</defs>
 				</svg>
-				<p>ID: 56789535675</p>
+				<small className="text-center">{userData?.id}</small>
 			</div>
 		</div>
 	);

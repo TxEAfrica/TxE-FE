@@ -73,9 +73,8 @@ const Testimonials = () => {
 							/>
 							<h3>How TXE Africa caused a shift in my tech career</h3>
 							<p>
-								The comprehensive training and guidance I received were pivotal
-								in honing my skills. My portfolio boasts of robust web
-								applications, a testament to the quality and expertise fostered
+								It is through a Scholarship program I then got comprehensive training and guidance that were pivotal
+								in honing my skills. A testament to the quality and expertise fostered
 								by TxE Africa.
 							</p>
 							<small>

@@ -8,23 +8,22 @@ import { NavLink } from "react-router-dom";
 import TicketPage from "../ticketPage/TicketPage";
 import { useNavigate } from "react-router-dom";
 
-const RegSuccess = ({ email }) => {
+const RegSuccess = ({ email, userId }) => {
 	const navigate = useNavigate();
 
 	const handleViewTicket = async () => {
-		console.log("clicked");
-		try {
-			// Fetch user data using the email...
-			const response = await fetch(
-				`https://txe-africa.onrender.com/api/v1/${email}`
-			); // Replace with your API endpoint
-			const userData = await response.json();
-			console.log(userData);
-
-			navigate(`/ticket/${userData.data.email}`);
-		} catch (error) {
-			console.error("Error fetching user data:", error);
-		}
+		// console.log("clicked");
+		navigate(`/ticket/${userId}`);
+		// try {
+		// 	// Fetch user data using the email...
+		// 	const response = await fetch(
+		// 		`https://txe-africa.onrender.com/api/v1/${userId}`
+		// 	); // Replace with your API endpoint
+		// 	const userData = await response.json();
+		// 	console.log(userData);
+		// } catch (error) {
+		// 	console.error("Error fetching user data:", error);
+		// }
 	};
 
 	const [showOverlay, setShowOverlay] = useState(true);
@@ -105,8 +104,8 @@ const RegSuccess = ({ email }) => {
 				</div>
 
 				<div className="modal-links">
-					<a
-						href=""
+					<NavLink
+						to="/grant"
 						className="link1">
 						Apply for Grant
 						<span>
@@ -115,9 +114,9 @@ const RegSuccess = ({ email }) => {
 								alt=""
 							/>
 						</span>
-					</a>
-					<a
-						href=""
+					</NavLink>
+					<NavLink
+						to="/techsupport"
 						className="link2">
 						Apply for Scholarship
 						<span>
@@ -126,7 +125,7 @@ const RegSuccess = ({ email }) => {
 								alt=""
 							/>
 						</span>
-					</a>
+					</NavLink>
 				</div>
 			</div>
 		</div>

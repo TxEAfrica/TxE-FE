@@ -31,7 +31,7 @@ const ImageSlider = ({ images, activeIndex, setActiveIndex }) => {
 			className="main">
 			<div className="title">
 				<div>
-					<h1 className="slider-title">Speakers</h1>
+					<h1 className="text-5xl font-bold mb-4 md:mb-0">Speakers</h1>
 					<p>TxE Summit 2023</p>
 				</div>
 				<div className="arrows">

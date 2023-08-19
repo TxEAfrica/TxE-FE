@@ -39,7 +39,7 @@ const Banner = () => {
 	return (
 		<div
 			id="top"
-			className="h-screen w-full overflow-hidden banner-container mx-3 mt-10 lg:mx-0 lg:mt-20">
+			className="h-screen w-full overflow-hidden banner-container mx-3 lg:mx-0 ">
 			<CSSTransition
 				in={true}
 				appear={true}

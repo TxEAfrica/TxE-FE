@@ -74,7 +74,9 @@
 	gap: 10px;
 	background-color: #fff;
 }
-.part h2 {
+.part > h2 {
+	margin: auto;
+	text-align: center;
 	font-family: "Roboto Mono", sans-serif;
 	font-weight: 700;
 	font-size: 30px;
@@ -118,10 +120,11 @@
 @media (max-width: 1440px) {
 	.container {
 		height: 100vh;
-		padding: 0 15px;
+		padding: 0 35px;
 		display: flex;
 	}
 	.ticketContainer {
+		margin-top: 80px;
 		max-width: 100%;
 		padding: 0 25px;
 	}
@@ -195,7 +198,7 @@
 /* For screens with max-width 1028px and above */
 @media (max-width: 1028px) {
 	.container {
-		height: 100vh;
+		height: 120vh;
 		padding: 0 15px;
 		display: flex;
 	}
@@ -228,19 +231,20 @@
 	}
 	.buttons {
 		width: 80%;
+		margin-bottom: 60px;
 	}
 }
 
 /* For screens with max-width 996px and above */
 @media (max-width: 996px) {
 	.container {
-		height: 100vh;
-		padding: 0 15px;
+		height: 110vh;
+		padding: 0 0px;
 		display: flex;
 	}
 	.ticketContainer {
 		max-width: 100%;
-		padding: 0 25px;
+		padding: 0 45px;
 	}
 	.ticketMessage {
 		width: 100%;
@@ -250,7 +254,7 @@
 		width: 80%;
 	}
 	.mainticket {
-		width: 100%;
+		width: 90%;
 		max-height: 60vh;
 	}
 	.ticketTitle {
@@ -279,13 +283,13 @@
 /* For screens with max-width 767px and above */
 @media (max-width: 767px) {
 	.container {
-		height: 100vh;
-		padding: 0 15px;
+		height: fit-content;
+		padding: 0 5px;
 		display: flex;
 	}
 	.ticketContainer {
 		max-width: 100%;
-		padding: 0 20px;
+		padding: 0 25px;
 	}
 	.ticketContainer h2 {
 		font-size: 30px;
@@ -445,7 +449,7 @@
 @media (max-width: 480px) {
 	.container {
 		height: fit-content;
-		padding: 0 15px;
+		padding: 0 0px;
 		display: flex;
 		justify-content: center;
 	}
@@ -560,7 +564,7 @@
 		flex-direction: column;
 		gap: 5px;
 		justify-content: space-around;
-		width: 90%;
+		width: 100%;
 	}
 }
 
