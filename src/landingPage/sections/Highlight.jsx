@@ -28,7 +28,7 @@ const Highlight = () => {
 			</div>
 
 			<div className="lg:flex highlight-container mt-10 lg:mt-0 space-y-5 md:space-y-0 lg:space-x-5 text-gray-400 ">
-				<div className=" flex flex-col justify-center items-center highlight-box">
+				<div className="flex flex-col justify-center items-center highlight-box">
 					<div className="px-4 py-8 rounded-md h-fit  space-y-4 flex flex-col justify-center items-center text-center lg:text-center lg:justify-center lg:items-center">
 						<div className="w-fit h-fit rounded-md overflow-none">
 							<img
@@ -49,7 +49,7 @@ const Highlight = () => {
 						</div>
 					</div>
 				</div>
-				<div className=" flex flex-col justify-center items-center highlight-box">
+				<div className="flex flex-col justify-center items-center highlight-box">
 					<div className="px-4 py-8 rounded-md h-fit  space-y-4 flex flex-col justify-center items-center text-center lg:text-center lg:justify-center lg:items-center">
 						<div className="w-fit h-fit rounded-md overflow-none">
 							<img
@@ -71,7 +71,7 @@ const Highlight = () => {
 					</div>
 				</div>
 
-				<div className=" flex flex-col justify-center items-center highlight-box">
+				<div className="flex flex-col justify-center items-center highlight-box">
 					<div className="h-fit px-4 py-8 rounded-md space-y-4 flex flex-col justify-center items-center text-center lg:text-center lg:justify-center lg:items-center">
 						<div className="w-fit h-fit rounded-md overflow-none">
 							<img

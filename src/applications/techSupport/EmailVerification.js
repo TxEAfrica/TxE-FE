@@ -32,7 +32,7 @@ const EmailVerification = ({ onSuccess, onUserData }) => {
 		}
 		setLoading(true);
 
-		fetch(`https://txe-africa.onrender.com/api/v1/${email}`)
+		fetch(`https://txe-africa.onrender.com/api/v1/verify/${email}`)
 			.then((response) => {
 				return response.json();
 			})

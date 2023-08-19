@@ -28,7 +28,7 @@ const App = () => {
 					element={<ApplyForGrant />}
 				/>
 				<Route
-					path="/ticket/:email"
+					path="/ticket/:userId"
 					element={<TicketPage />}
 				/>
 			</Routes>
