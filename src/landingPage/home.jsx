@@ -72,7 +72,7 @@ const Home = () => {
 				</div>
 				<Banner />
 
-				<div className=" py-2 md:mt-36 md:space-y-10">
+				<div className=" py-2 md:mt-24 md:space-y-10 sm:mt-32">
 					<Highlight />
 					<EventSchedule />
 					<CountUpAnimation />

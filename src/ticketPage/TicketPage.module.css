@@ -102,8 +102,8 @@
 	padding: 20px 50px;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-around;
 	align-items: center;
-	justify-content: center;
 }
 
 .buttons {
@@ -641,6 +641,7 @@
 	.part {
 		width: 100%;
 		display: flex;
+		flex-direction: column;
 		gap: 10px;
 		background-color: #fff;
 	}
@@ -649,6 +650,11 @@
 		font-weight: 700;
 		font-size: 20px;
 		text-align: center;
+	}
+	.partHolder {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
 	}
 	.partHolder p {
 		font-family: "Roboto Mono", sans-serif;

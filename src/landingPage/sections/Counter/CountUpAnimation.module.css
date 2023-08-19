@@ -74,11 +74,12 @@
 @media screen and (max-width: 575px) {
 	.counterUp {
 		padding: 15px 80px;
-		column-gap: 40px;
-		row-gap: 10px;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
 		align-items: center;
 		justify-content: center;
 		width: 100%;
+		margin: 40px 0;
 	}
 
 	.countItem {
@@ -87,7 +88,7 @@
 	}
 
 	.countItem h1 {
-		font-size: 25px;
+		font-size: 45px;
 	}
 	.countItem p {
 		font-size: 14px;

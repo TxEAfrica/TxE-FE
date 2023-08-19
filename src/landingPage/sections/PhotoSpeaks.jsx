@@ -20,17 +20,33 @@ const PhotoSpeaks = () => {
 	};
 
 	return (
-		<div id="achievements">
-			<div className="achievements-heading">
-				<div className="text-5xl text-white text-left font-bold md:mb-0">
+		<div
+			id="achievements"
+			className="flex flex-col space-y-5 items-center">
+			{/* <div className="achievements-heading flex flex-col justify-center items-center text-center mt-10 md:mb-20">
+				<div className="text-5xl text-white text-center font-bold md:mb-0">
 					Gallery
 				</div>
-				<div className="text-lg text-white flex flex-col justify-center items-start">
+				<div className="text-lg text-white flex flex-col justify-center items-center">
 					TxE Summit 2023
+					<div className="flex space-x-2 mt-2">
+						<div className="w-56 h-1 rounded-full bg-orange"></div>
+						<div className="w-56 h-1 rounded-full bg-white"></div>
+					</div>
 				</div>
-				<div className="flex space-x-2 mb-3">
-					<div className="w-12 h-1 rounded-full bg-orange"></div>
-					<div className="w-12 h-1 rounded-full bg-white"></div>
+			</div> */}
+			<div className="flex flex-col space-y-5 items-center mt-10 md:mb-10">
+				<h1
+					id="section-heading"
+					className="text-5xl text-white font-bold mb-4 md:mb-0">
+					Gallery
+				</h1>
+				<div className="text-lg text-white mt-6 flex flex-col justify-center items-center">
+					TxE Summit 2023
+					<div className="flex space-x-2 mt-2 lines">
+						<div className="w-56 h-1 rounded-full bg-orange"></div>
+						<div className="w-56 h-1 rounded-full bg-white"></div>
+					</div>
 				</div>
 			</div>
 			<div className="grid grid-cols-2 gap-2 px-8 md:px-20">
