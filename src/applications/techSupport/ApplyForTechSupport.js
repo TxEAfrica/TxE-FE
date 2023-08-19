@@ -29,7 +29,7 @@ export default function ApplyForTechSupport() {
 	const [supportInterest, setSupportInterest] = useState("");
 	const [track, setTrack] = useState("");
 	const [sixMonthsAvailable, setSixMonthsAvailable] = useState("");
-	const [haveLaptop, setHaveLaptop] = useState("");
+	const [haveALaptop, setHaveALaptop] = useState("");
 	const [whyLaptop, setWhyLaptop] = useState("");
 	const [pictureEvidence, setPictureEvidence] = useState("");
 	const [showUpForInterview, setShowUpForInterview] = useState("");
@@ -56,11 +56,11 @@ export default function ApplyForTechSupport() {
 			// If supportInterest is empty
 			return false;
 		}
-		// Additional validation based on the "isBusinessRegistered" value
+
 		if (supportInterest === "Laptop") {
 			if (
-				whyLaptop.trim() === "" ||
-				whyNotShowUpForInterview.trim() === "" ||
+				(whyLaptop.trim() === "" && imageChange === "") ||
+				(whyNotShowUpForInterview.trim() === "" && showUpForInterview === "") ||
 				aboutYou.trim() === ""
 			) {
 				return false;
@@ -96,7 +96,7 @@ export default function ApplyForTechSupport() {
 			track,
 			sixMonthsAvailable,
 			whyParticipateInScholarship,
-			haveLaptop,
+			haveALaptop,
 			didYouParticipateInFirstScholarship,
 			whyLaptop,
 			pictureEvidence,
@@ -122,7 +122,7 @@ export default function ApplyForTechSupport() {
 		try {
 			// Make the POST request to the API
 			const response = await fetch(
-				"https://txe-africa.onrender.com/api/v1/register/grant",
+				"https://txe-africa.onrender.com/api/v1/register/tech",
 				{
 					method: "POST",
 					headers: {
@@ -133,9 +133,10 @@ export default function ApplyForTechSupport() {
 			);
 			// console.log(response);
 
-			console.log(techSupportFormData);
+			setLoading(false);
 
 			if (response.status === 200) {
+				console.log("Form data sent:", techSupportFormData);
 				setShowTechSuccess(true);
 			}
 		} catch (error) {
@@ -162,7 +163,7 @@ export default function ApplyForTechSupport() {
 				className={`relative bg-orange-50 h-fit flex flex-col justify-center items-center mx-auto relative py-20 ${ApplyForTechSupportCSS.heading}`}>
 				<div className={ApplyForTechSupportCSS.decor}>
 					{/* <FormVector position={"left-10 top-10"} /> */}
-					<FormVector position={"top-10"} />
+					{/* <FormVector position={"top-10"} /> */}
 					<FormVector position={"right-10 top-30"} />
 					<FormVector position={"left-10"} />
 					{/* <FormVector position={'right-10'} /> */}
@@ -329,8 +330,8 @@ export default function ApplyForTechSupport() {
 													{ label: "Yes", value: "yes" },
 													{ label: "No", value: "no" },
 												]}
-												initialSelection={haveLaptop}
-												updatedSelection={setHaveLaptop}
+												initialSelection={haveALaptop}
+												updatedSelection={setHaveALaptop}
 											/>
 										</div>
 									)}
@@ -350,7 +351,7 @@ export default function ApplyForTechSupport() {
 
 											<div className={ApplyForTechSupportCSS.inputholder}>
 												<label
-													htmlFor="uploader"
+													htmlFor="pictureEvidence"
 													className={ApplyForTechSupportCSS.label}>
 													<p>
 														Upload picture evidence of what you have been
@@ -360,7 +361,11 @@ export default function ApplyForTechSupport() {
 														</span>
 													</p>
 
-													<ImageUploader onImageChange={setImageChange} />
+													<ImageUploader
+														onImageChange={(base64Image) =>
+															setPictureEvidence(base64Image)
+														}
+													/>
 												</label>
 											</div>
 

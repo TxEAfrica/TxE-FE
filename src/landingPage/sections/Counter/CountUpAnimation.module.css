@@ -6,13 +6,13 @@
 	align-items: flex-end;
 	justify-content: space-between;
 	gap: 20px;
+	margin-bottom: 30px;
 }
 
 .countItem {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	color: #3b3a3a;
 }
 
 .countItem p {
@@ -38,6 +38,9 @@
 	.countItem h1 {
 		font-size: 50px;
 	}
+	.countItem p {
+		color: #007bb8;
+	}
 }
 
 @media screen and (max-width: 991px) {
@@ -46,7 +49,11 @@
 	}
 
 	.countItem h1 {
-		font-size: 40px;
+		font-size: 50px;
+	}
+	.countItem p {
+		font-size: 16px;
+		color: #007bb8;
 	}
 }
 
@@ -57,6 +64,10 @@
 
 	.countItem h1 {
 		font-size: 35px;
+	}
+	.countItem p {
+		font-size: 16px;
+		color: #007bb8;
 	}
 }
 
@@ -82,16 +93,15 @@
 		font-size: 14px;
 		font-weight: 500;
 		font-family: "Alata", sans-serif;
-		color: #3b3a3a;
+		color: #007bb8;
 	}
 }
 
 @media screen and (max-width: 480px) {
 	.counterUp {
 		padding: 15px 30px;
-		display: flex;
-		flex-wrap: wrap;
-		/* flex-shrink: 1; */
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
 		column-gap: 80px;
 		row-gap: 10px;
 		justify-content: center;
@@ -99,27 +109,28 @@
 	}
 
 	.countItem {
-		align-items: center;
-		text-align: center;
+		align-items: flex-start;
+		text-align: left;
 	}
 
 	.countItem h1 {
-		font-size: 30px;
+		font-size: 45px;
+		text-align: left;
 	}
 	.countItem p {
+		text-align: left;
 		font-size: 12px;
 		font-weight: 500;
 		font-family: "Alata", sans-serif;
-		color: #3b3a3a;
+		color: #007bb8;
 	}
 }
 
 @media screen and (max-width: 360px) {
 	.counterUp {
 		padding: 15px 30px;
-		display: flex;
-		flex-wrap: wrap;
-		/* flex-shrink: 1; */
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
 		column-gap: 60px;
 		row-gap: 10px;
 		justify-content: center;
@@ -127,27 +138,27 @@
 	}
 
 	.countItem {
-		align-items: center;
-		text-align: center;
+		align-items: flex-start;
+		text-align: right;
 	}
 
 	.countItem h1 {
 		font-size: 30px;
+		text-align: right;
 	}
 	.countItem p {
 		font-size: 12px;
 		font-weight: 500;
 		font-family: "Alata", sans-serif;
-		color: #3b3a3a;
+		color: #007bb8;
 	}
 }
 
 @media screen and (max-width: 320px) {
 	.counterUp {
 		padding: 15px 30px;
-		display: flex;
-		flex-wrap: wrap;
-		/* flex-shrink: 1; */
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
 		column-gap: 30px;
 		row-gap: 10px;
 		justify-content: center;
@@ -168,6 +179,6 @@
 		font-size: 10px;
 		font-weight: 500;
 		font-family: "Alata", sans-serif;
-		color: #3b3a3a;
+		color: #007bb8;
 	}
 }

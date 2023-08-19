@@ -1,19 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../modals/Modals.css";
 import info from "../assets/info.svg";
 import linkarrow1 from "../assets/link-arrow1.svg";
 import linkarrow2 from "../assets/link-arrow2.svg";
 import close from "../assets/close.svg";
 import { NavLink } from "react-router-dom";
+import TicketPage from "../ticketPage/TicketPage";
+import { useNavigate } from "react-router-dom";
 
-const RegSuccess = () => {
+const RegSuccess = ({ email }) => {
+	const navigate = useNavigate();
+
+	const handleViewTicket = async () => {
+		console.log("clicked");
+		try {
+			// Fetch user data using the email...
+			const response = await fetch(
+				`https://txe-africa.onrender.com/api/v1/${email}`
+			); // Replace with your API endpoint
+			const userData = await response.json();
+			console.log(userData);
+
+			navigate(`/ticket/${userData.data.email}`);
+		} catch (error) {
+			console.error("Error fetching user data:", error);
+		}
+	};
+
 	const [showOverlay, setShowOverlay] = useState(true);
 
 	const handleCloseOverlay = () => {
 		setShowOverlay(false);
-	};
-	const handleNavigate = () => {
-		window.location.href = "/";
 	};
 	return (
 		<div className="modal-overlay">
@@ -80,7 +97,11 @@ const RegSuccess = () => {
 				</div>
 
 				<div className="modal-cta">
-					<button className="btn2">Download ticket</button>
+					<button
+						onClick={handleViewTicket}
+						className="btn2">
+						View Ticket
+					</button>
 				</div>
 
 				<div className="modal-links">
