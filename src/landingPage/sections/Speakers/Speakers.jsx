@@ -30,7 +30,7 @@ const Speakers = () => {
 
 
   return (
-    <div className="px-8 mb-20 relative flex items-center bg-black justify-center">
+    <div className="px-8 mt-10 relative flex items-center bg-black justify-center">
       <button
         className="p-3 lg:mx-8 hover:bg-bgColor border-2 border-white rounded-full text-white absolute top-0 left-0"
         onClick={() => handleSwap('left')}

@@ -20,14 +20,14 @@ const PhotoSpeaks = () => {
 	};
 
 	return (
-		<div id="achievements">
+		<div id="achievements" className="px-4 lg:px-20">
 			<div className="flex flex-col justify-center items-center md:mb-10">
 				<h1
 					id="section-heading"
-					className="text-5xl text-white text-center lg:text-left font-bold">
+					className="text-5xl text-white mt-20 text-center font-bold">
 					Gallery
 				</h1>
-				<div className="text-lg text-white mt-6 flex flex-col justify-center items-center">
+				<div className="text-lg text-white mt-6 mb-8 flex flex-col justify-center items-center">
 					TxE Summit 2023
 					<div className="flex space-x-2 mt-2 lines">
 						<div className="w-56 h-1 rounded-full bg-orange"></div>
@@ -35,7 +35,7 @@ const PhotoSpeaks = () => {
 					</div>
 				</div>
 			</div>
-			<div className="grid grid-cols-2 gap-2 md:px-20">
+			<div className="grid grid-cols-2 gap-2">
 				<div
 					className="aspect-w-3 aspect-h-2 rounded-md overflow-hidden cursor-pointer"
 					onClick={() => handleImageClick(photo1)}>
@@ -78,7 +78,7 @@ const PhotoSpeaks = () => {
 				</div>
 			</div>
 
-			<div className="grid grid-cols-3 gap-2 md:px-20 mt-2">
+			<div className="grid grid-cols-3 gap-2 mt-2">
 				<div
 					className="aspect-w-3 aspect-h-2 rounded-md overflow-hidden cursor-pointer"
 					onClick={() => handleImageClick(photo5)}>
