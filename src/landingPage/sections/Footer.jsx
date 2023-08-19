@@ -1,5 +1,6 @@
 import { Icon } from "../../icons/Icons";
 import txeLogo from "../../assets/txeLogo.svg";
+import txe from "../../assets/TxE Africa.png";
 import ScrollToContainerLink from "../scroll/ScrollToContainerLink";
 import "../Landing.css";
 
@@ -51,7 +52,7 @@ const Footer = () => {
 				</ScrollToContainerLink>
 			</div>
 
-			<div className="md:flex justify-between items-end space-y-2 mt-3 md:space-y-0 md:mt-0">
+			<div className="md:flex w-3/10 justify-between  items-end space-y-2 mt-3 md:space-y-0 md:mt-0">
 				{/* <img
 					src={txeLogo}
 					alt=""
@@ -202,8 +203,14 @@ const Footer = () => {
 						</clipPath>
 					</defs>
 				</svg>
+
 				<p>A Williams Uchemba Foundation Initiative.</p>
 				<p>© Enugu Tech Summit 2023</p>
+				{/* <img
+					className="absolute right-10 top-10 bottom-0 h-fit text-2xl p-2"
+					src={txe}
+					alt="txe"
+				/> */}
 			</div>
 		</div>
 	);

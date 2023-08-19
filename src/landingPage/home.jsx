@@ -12,7 +12,7 @@ import CountUpAnimation from "./sections/Counter/CountUpAnimation";
 import image1 from "../assets/Speaker-1.svg";
 import Footer from "./sections/Footer";
 import "./Home.css";
-import Speakers from "./sections/Speakers/Speakers";
+import Speakers from "../landingPage/sections/Speakers/Speakers";
 
 const Home = () => {
 	const images = [
@@ -73,7 +73,7 @@ const Home = () => {
 				</div>
 				<Banner />
 
-				<div className=" py-2 md:mt-36 md:space-y-10">
+				<div className=" py-2 md:mt-24 md:space-y-10 sm:mt-32">
 					<Highlight />
 					<EventSchedule />
 					<CountUpAnimation />
