@@ -27,17 +27,10 @@ const App = () => {
 					path="/grant"
 					element={<ApplyForGrant />}
 				/>
-<<<<<<< HEAD
-				{/* <Route
-					path="/speak"
-					element={<Speakers />}
-				/> */}
-=======
 				<Route
 					path="/ticket/:email"
 					element={<TicketPage />}
 				/>
->>>>>>> f3718aa1da17891580ac694cabbdcca963738e3e
 			</Routes>
 		</BrowserRouter>
 	);
