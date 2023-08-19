@@ -27,15 +27,19 @@ const Testimonials = () => {
 			id="testimonials"
 			className="test-container">
 			<div className="carousel">
-				<div className="heading">
-					<h1 className="text-3xl font-bold">Past attendees testimonials</h1>
-					<p className="text-lg mt-1 flex flex-col justify-center items-center">
-						TxE Summit 2022
-					</p>
-				</div>
-				<div className="flex space-x-2 mt-2 flex justify-center items-center lg:justify-center">
-					<div className="w-12 h-1 rounded-full bg-orange"></div>
-					<div className="w-12 h-1 rounded-full bg-orange-50"></div>
+				<div className="flex flex-col space-y-5 items-center mt-20 md:mb-10">
+					<h1
+						id="section-heading"
+						className="text-5xl text-white text-center font-bold mb-4 md:mb-0">
+						Past attendees testimonials
+					</h1>
+					<div className="text-lg text-white mt-6 flex flex-col justify-center items-center">
+						TxE Summit 2023
+						<div className="flex space-x-2 mt-2 lines">
+							<div className="w-56 h-1 rounded-full bg-orange"></div>
+							<div className="w-56 h-1 rounded-full bg-white"></div>
+						</div>
+					</div>
 				</div>
 
 				<div className="indicators">
@@ -170,10 +174,7 @@ const Testimonials = () => {
 								loading="lazy"
 								alt=""
 							/>
-							<h3>
-								Charting New Horizons: TxE Africa's Scholarship Paved My Path to
-								Success
-							</h3>
+							<h3>Charting New Horizons:</h3>
 							<p>
 								TxE Africa's scholarship propelled me to chart new horizons in
 								the tech world. Their support has paved the path to success,

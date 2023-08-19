@@ -1,10 +1,12 @@
 import React, { useRef, useEffect } from "react";
-import JsBarcode from "jsbarcode";
+import QRCode from "qrcode.react";
 import TicketPageCSS from "./TicketPage.module.css";
 
-export default function Ticket({ userData }) {
+export default function Ticket({ userData, ticketContainerRef }) {
 	return (
-		<div className={TicketPageCSS.mainticket}>
+		<div
+			ref={ticketContainerRef}
+			className={TicketPageCSS.mainticket}>
 			<div className={TicketPageCSS.ticketTitle}>
 				<p>SUMMIT TICKET</p>
 			</div>
@@ -45,7 +47,11 @@ export default function Ticket({ userData }) {
 			</div>
 			<div className={TicketPageCSS.ticketStub}>
 				<small>Scan to check in</small>
-				<svg
+				<QRCode
+					value={userData?.id}
+					size={100}
+				/>
+				{/* <svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="198"
 					height="198"
@@ -135,7 +141,7 @@ export default function Ticket({ userData }) {
 							/>
 						</clipPath>
 					</defs>
-				</svg>
+				</svg> */}
 				<small className="text-center">{userData?.id}</small>
 			</div>
 		</div>

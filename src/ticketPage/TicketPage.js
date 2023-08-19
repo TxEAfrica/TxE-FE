@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import html2canvas from "html2canvas";
 import ReactDOM from "react-dom";
 import TicketPageCSS from "./TicketPage.module.css";
@@ -11,9 +11,9 @@ import Sponsors from "../landingPage/sections/Sponsors";
 import Footer from "../landingPage/sections/Footer";
 
 export default function TicketPage({}) {
-	const { email } = useParams();
 	const { userId } = useParams();
 	const [userData, setUserData] = useState(null);
+	const ticketContainerRef = useRef(null);
 
 	useEffect(() => {
 		const fetchUserData = async () => {
@@ -31,7 +31,21 @@ export default function TicketPage({}) {
 		};
 
 		fetchUserData();
-	}, [email]);
+	}, [userId]);
+
+	const handleDownloadTicket = () => {
+		if (ticketContainerRef.current) {
+			html2canvas(ticketContainerRef.current).then((canvas) => {
+				const ticketImageURL = canvas.toDataURL("image/png");
+
+				// Create a download link
+				const link = document.createElement("a");
+				link.href = ticketImageURL;
+				link.download = "ticket.png";
+				link.click();
+			});
+		}
+	};
 
 	return (
 		<div>
@@ -50,11 +64,17 @@ export default function TicketPage({}) {
 						</p>
 					</div>
 					<div id="ticket-container">
-						<Ticket userData={userData} />
+						<Ticket
+							ticketContainerRef={ticketContainerRef}
+							userData={userData}
+						/>
 					</div>
 
 					<div className={TicketPageCSS.buttons}>
-						<BtnPrimary btnName={"Download Ticket"} />
+						<BtnPrimary
+							btnName={"Download Ticket"}
+							onClick={handleDownloadTicket}
+						/>
 						<BtnSecondary btnName={"Go to Website"} />
 					</div>
 				</div>

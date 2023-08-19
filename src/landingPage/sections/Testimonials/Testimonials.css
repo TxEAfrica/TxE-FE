@@ -115,11 +115,11 @@
 }
 
 .arrow.left {
-	left: 10px;
+	left: 50px;
 }
 
 .arrow.right {
-	right: 10px;
+	right: 50px;
 }
 
 .indicators {
@@ -147,6 +147,26 @@
 @media screen and (max-width: 1200px) {
 	.quote {
 		max-width: 500px;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.quote {
+		max-width: 500px;
+	}
+	.arrow.left {
+		left: 20px;
+	}
+
+	.arrow.right {
+		right: 20px;
+	}
+	.arrow {
+		width: 50px;
+		top: 60% !important;
+	}
+	.quote-mark {
+		width: 50px;
 	}
 }
 
@@ -214,23 +234,23 @@
 	}
 	.test-1 {
 		width: 300px;
-		margin-top: 50px;
+		margin-top: 20px;
 	}
 	.quote {
-		margin-bottom: 80px;
+		margin-bottom: 40px;
 	}
 	.quote img {
 		width: 30px;
 	}
 	.quote h3 {
 		text-transform: uppercase;
-		font-size: 22px;
+		font-size: 25px;
 		font-weight: 700;
 	}
 
 	.quote p {
 		line-height: 30px;
-		font-size: 14px;
+		font-size: 18px;
 		font-weight: 500;
 	}
 
@@ -266,11 +286,18 @@
 		align-items: center;
 	}
 	.control .arrow {
-		bottom: 10px; /* Adjust the distance from the bottom as needed */
+		bottom: 10px;
+	}
+	.arrow.left {
+		left: 50px;
+	}
+
+	.arrow.right {
+		right: 50px;
 	}
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 575px) {
 	.carousel {
 		height: auto;
 	}
@@ -289,11 +316,18 @@
 	}
 
 	.quote {
-		max-width: 400px;
+		max-width: 500px;
 	}
 
 	.control .arrow {
 		position: absolute;
+	}
+	.arrow.left {
+		left: 420px;
+	}
+
+	.arrow.right {
+		right: 50px;
 	}
 }
 

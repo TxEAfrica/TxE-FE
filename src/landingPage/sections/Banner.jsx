@@ -57,12 +57,12 @@ const Banner = () => {
 						growth and position Enugu as a leading tech hub in South East,
 						Nigeria.{" "}
 					</p>
-					<div className="banner-buttons space-y-5 mt-10">
+					<div className="banner-buttons mt-10">
 						<div className="cursor-pointer h-fit w-full">
 							<BtnSecondary btnName={"Partner With Us"} />
 						</div>
 						<div
-							className="cursor-pointer w-full h-fit"
+							className="cursor-pointer  w-full h-fit"
 							onClick={() => navigate("/register")}>
 							<BtnPrimary btnName={"Register"} />
 						</div>

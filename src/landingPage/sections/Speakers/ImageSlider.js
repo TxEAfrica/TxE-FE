@@ -30,11 +30,21 @@ const ImageSlider = ({ images, activeIndex, setActiveIndex }) => {
 			id="speakers"
 			className="main">
 			<div className="title">
-				<div>
-					<h1 className="text-5xl font-bold mb-4 md:mb-0">Speakers</h1>
-					<p>TxE Summit 2023</p>
+				<div className="flex flex-col space-y-5 items-center">
+					<h1
+						id="section-heading"
+						className="text-5xl text-center font-bold mb-4 md:mb-0">
+						Meet our speakers
+					</h1>
+					<div className="text-lg text-white mt-6 flex flex-col justify-center items-center">
+						TxE Summit 2023
+						<div className="flex space-x-2 mt-2 lines">
+							<div className="w-56 h-1 rounded-full bg-orange"></div>
+							<div className="w-56 h-1 rounded-full bg-white"></div>
+						</div>
+					</div>
 				</div>
-				<div className="arrows">
+				{/* <div className="arrows">
 					<img
 						src={leftarrow}
 						loading="lazy"
@@ -49,7 +59,7 @@ const ImageSlider = ({ images, activeIndex, setActiveIndex }) => {
 						onClick={handleNext}
 						alt=""
 					/>
-				</div>
+				</div> */}
 			</div>
 			<div
 				className="slider-container"

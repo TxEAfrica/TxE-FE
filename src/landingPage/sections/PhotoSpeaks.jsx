@@ -21,16 +21,18 @@ const PhotoSpeaks = () => {
 
 	return (
 		<div id="achievements">
-			<div className="achievements-heading text-center lg:text-start w-full lg:w-fit">
-				<div className="text-5xl text-white w-full font-bold md:mb-0">
+			<div className="flex flex-col justify-center items-center md:mb-10">
+				<h1
+					id="section-heading"
+					className="text-5xl text-white text-center lg:text-left font-bold">
 					Gallery
-				</div>
-				<div className="text-lg text-white w-full">
+				</h1>
+				<div className="text-lg text-white mt-6 flex flex-col justify-center items-center">
 					TxE Summit 2023
-				</div>
-				<div className="flex space-x-2 mb-3 justify-center lg:justify-start w-full lg:w-fit">
-					<div className="w-12 h-1 rounded-full bg-orange"></div>
-					<div className="w-12 h-1 rounded-full bg-white"></div>
+					<div className="flex space-x-2 mt-2 lines">
+						<div className="w-56 h-1 rounded-full bg-orange"></div>
+						<div className="w-56 h-1 rounded-full bg-white"></div>
+					</div>
 				</div>
 			</div>
 			<div className="grid grid-cols-2 gap-2 md:px-20">
