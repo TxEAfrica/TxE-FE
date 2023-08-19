@@ -26,6 +26,10 @@ const App = () => {
 					path="/grant"
 					element={<ApplyForGrant />}
 				/>
+				{/* <Route
+					path="/speak"
+					element={<Speakers />}
+				/> */}
 			</Routes>
 		</BrowserRouter>
 	);

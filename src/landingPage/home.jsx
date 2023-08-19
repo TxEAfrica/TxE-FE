@@ -12,6 +12,7 @@ import CountUpAnimation from "./sections/Counter/CountUpAnimation";
 import image1 from "../assets/Speaker-1.svg";
 import Footer from "./sections/Footer";
 import "./Home.css";
+import Speakers from "./sections/Speakers/Speakers";
 
 const Home = () => {
 	const images = [
@@ -73,13 +74,7 @@ const Home = () => {
 					<Highlight />
 					<EventSchedule />
 					<CountUpAnimation />
-					<ImageSlider
-						images={images}
-						activeIndex={activeIndex}
-						setActiveIndex={setActiveIndex}
-						handleNext={handleNext}
-						handlePrev={handlePrev}
-					/>
+					<Speakers />
 					<PhotoSpeaks />
 				</div>
 				<Testimonials />

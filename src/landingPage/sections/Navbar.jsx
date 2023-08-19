@@ -86,7 +86,7 @@ const Navbar = () => {
 				)}
 			</div>
 			<div
-				className="cursor-pointer w-1/2 lg:w-1/6 h-fit"
+				className="hidden md:flex cursor-pointer w-1/2 lg:w-1/6 h-fit"
 				onClick={() => navigate("/register")}>
 				<BtnPrimary btnName={"Register"} />
 			</div>
