@@ -68,7 +68,7 @@ const Home = () => {
 	return (
 		<>
 			<div className="main-container overflow-hidden">
-				<div className="px-16 sticky nav-holder">
+				<div className="px-16 sticky nav-holder z-50">
 					<Navbar />
 				</div>
 				<Banner />
@@ -78,6 +78,8 @@ const Home = () => {
 					<EventSchedule />
 					<CountUpAnimation />
 					<Speakers />
+				</div>
+				<div className="z-50">
 					<PhotoSpeaks />
 				</div>
 				<Testimonials />

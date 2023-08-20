@@ -4,6 +4,9 @@
 	text-align: center;
 	background-color: #130909;
 }
+.nav img {
+	width: 150px;
+}
 .container {
 	width: 100%;
 	background-color: #000;
@@ -75,6 +78,13 @@
 	.buttons {
 		width: 60%;
 	}
+	.nav {
+		text-align: center;
+		background-color: #130909;
+	}
+	.nav img {
+		width: 150px;
+	}
 }
 
 /* For screens with max-width 1200px and above */
@@ -98,6 +108,13 @@
 	.buttons {
 		width: 70%;
 	}
+	.nav {
+		text-align: center;
+		background-color: #130909;
+	}
+	.nav img {
+		width: 140px;
+	}
 }
 
 /* For screens with max-width 1028px and above */
@@ -119,6 +136,13 @@
 		width: 80%;
 		margin-bottom: 60px;
 	}
+	.nav {
+		text-align: center;
+		background-color: #130909;
+	}
+	.nav img {
+		width: 130px;
+	}
 }
 
 /* For screens with max-width 996px and above */
@@ -136,6 +160,13 @@
 	}
 	.buttons {
 		width: 70%;
+	}
+	.nav {
+		text-align: center;
+		background-color: #130909;
+	}
+	.nav img {
+		width: 130px;
 	}
 }
 
@@ -162,6 +193,13 @@
 	}
 	.buttons {
 		width: 80%;
+	}
+	.nav {
+		text-align: center;
+		background-color: #130909;
+	}
+	.nav img {
+		width: 120px;
 	}
 }
 
@@ -204,6 +242,13 @@
 		gap: 5px;
 		justify-content: space-around;
 		width: 90%;
+	}
+	.nav {
+		text-align: center;
+		background-color: #130909;
+	}
+	.nav img {
+		width: 120px;
 	}
 }
 
@@ -252,6 +297,13 @@
 		justify-content: space-around;
 		width: 90%;
 	}
+	.nav {
+		text-align: center;
+		background-color: #130909;
+	}
+	.nav img {
+		width: 120px;
+	}
 }
 
 /* For screens with max-width 360px and above */
@@ -296,6 +348,13 @@
 		width: 90%;
 		margin-bottom: 40px;
 	}
+	.nav {
+		text-align: center;
+		background-color: #130909;
+	}
+	.nav img {
+		width: 120px;
+	}
 }
 
 /* For screens with max-width 320px and above */
@@ -308,5 +367,12 @@
 	}
 	.ticketContainer {
 		margin-top: 10px;
+	}
+	.nav {
+		text-align: center;
+		background-color: #130909;
+	}
+	.nav img {
+		width: 80px;
 	}
 }

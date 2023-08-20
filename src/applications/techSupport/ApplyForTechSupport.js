@@ -16,6 +16,7 @@ import { NetworkError } from "../../modals/NetworkError";
 import Sponsors from "../../landingPage/sections/Sponsors";
 import ImageUploader from "../category/validated-applicants/uploader/ImageUploader";
 import { RequiredFields } from "../../modals/RequiredFields";
+import Nav from "../../emailTemplate/Nav";
 
 export default function ApplyForTechSupport() {
 	const [isEmailVerified, setIsEmailVerified] = useState(false);
@@ -166,6 +167,7 @@ export default function ApplyForTechSupport() {
 	return (
 		<div>
 			{/* <Navbar /> */}
+			<Nav />
 
 			<div
 				id="top"
@@ -173,8 +175,8 @@ export default function ApplyForTechSupport() {
 				<div className={ApplyForTechSupportCSS.decor}>
 					{/* <FormVector position={"left-10 top-10"} /> */}
 					{/* <FormVector position={"top-10"} /> */}
-					<FormVector position={"right-10 top-30"} />
-					<FormVector position={"left-10"} />
+					{/* <FormVector position={"right-10 top-30"} /> */}
+					{/* <FormVector position={"left-10"} /> */}
 					{/* <FormVector position={'right-10'} /> */}
 				</div>
 

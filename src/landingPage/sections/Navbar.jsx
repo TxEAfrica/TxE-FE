@@ -21,7 +21,7 @@ const Navbar = () => {
 			<div onClick={() => location.pathname !== "/" && navigate("/")}>
 				<img
 					src={TxELogo}
-					className="w-24 "
+					className="w-24"
 					alt=""
 				/>
 			</div>
@@ -50,7 +50,7 @@ const Navbar = () => {
 				{/* small devices */}
 				{!showMenu && (
 					<div
-						className="p-3 text-white z-50"
+						className="p-3 text-white z-50 small-nav"
 						onClick={toggleMenu}>
 						<Icon.BarMenu className="lg:hidden text-2xl font-semibold cursor-pointer text-white" />
 					</div>
@@ -77,7 +77,7 @@ const Navbar = () => {
 						<div className="absolute h-full justify-center items-center w-full">
 							<img
 								src={TxELogo}
-								className="absolute bottom-10 w-3/5 animate-bounce"
+								className="absolute bottom-10 w-2/5 animate-bounce"
 								alt=""
 							/>
 						</div>

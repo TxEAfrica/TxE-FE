@@ -14,6 +14,7 @@ import GrantSuccess from "../../modals/GrantSuccess";
 import "../../landingPage/Landing.css";
 import { NetworkError } from "../../modals/NetworkError";
 import Sponsors from "../../landingPage/sections/Sponsors";
+import Nav from "../../emailTemplate/Nav";
 
 const ApplyForGrant = () => {
 	const [isEmailVerified, setIsEmailVerified] = useState(false);
@@ -157,20 +158,13 @@ const ApplyForGrant = () => {
 	return (
 		<div>
 			{/* <Navbar /> */}
+			<Nav />
 
 			<div
 				id="top"
-				className={`relative bg-orange-50 h-fit flex flex-col justify-center items-center mx-auto relative py-20 ${ApplyForGrantCSS.heading}`}>
-				<div className={ApplyForGrantCSS.decor}>
-					{/* <FormVector position={"left-10 top-10"} /> */}
-					<FormVector position={"top-10"} />
-					<FormVector position={"right-10 top-30"} />
-					<FormVector position={"left-10"} />
-					{/* <FormVector position={'right-10'} /> */}
-				</div>
-
+				className={`relative bg-orange-50 h-fit flex flex-col justify-center items-center mx-auto relative  ${ApplyForGrantCSS.heading}`}>
 				<div
-					className={`text-center w-1/2 mt-15 space-y-3 ${ApplyForGrantCSS.title}`}>
+					className={`text-center h-fit w-1/2 space-y-3 ${ApplyForGrantCSS.title}`}>
 					<h1 className="text-5xl text-orange-500 font-semibold">
 						Apply For {"Grant"}
 					</h1>

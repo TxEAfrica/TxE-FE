@@ -17,7 +17,6 @@ const Nav = () => {
 			<div onClick={() => location.pathname !== "/" && navigate("/")}>
 				<img
 					src={TxELogo}
-					className="w-48"
 					alt=""
 				/>
 			</div>

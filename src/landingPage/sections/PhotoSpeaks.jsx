@@ -114,7 +114,7 @@ const PhotoSpeaks = () => {
 			</div>
 
 			<Modal
-				className={"h-1/2 md:h-4/5 md:w-4/5 md:mx-auto my-48 md:my-24"}
+				className={"h-1/2 md:h-4/5 md:w-4/5 md:mx-auto my-48 md:my-24 z-50"}
 				isOpen={selectedImage !== null}
 				onRequestClose={handleCloseModal}
 				contentLabel="Larger Image"
