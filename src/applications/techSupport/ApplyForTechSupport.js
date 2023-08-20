@@ -41,6 +41,8 @@ export default function ApplyForTechSupport() {
 		setDidYouParticipateInFirstScholarship,
 	] = useState("");
 	const [aboutYou, setAboutYou] = useState("");
+	const [isSubmitting, setIsSubmitting] = useState(false);
+
 	const { firstName, lastName, email, phoneNumber, country, state, gender } =
 		userData || {};
 
@@ -119,6 +121,11 @@ export default function ApplyForTechSupport() {
 
 		setLoading(true);
 
+		if (isSubmitting) {
+			return; // Don't execute the function if it's already submitting
+		}
+		setIsSubmitting(true);
+
 		try {
 			// Make the POST request to the API
 			const response = await fetch(
@@ -151,6 +158,8 @@ export default function ApplyForTechSupport() {
 				// Show the NetworkError modal
 				setShowNetworkError(true);
 			}
+		} finally {
+			setIsSubmitting(false); // Re-enable the button
 		}
 	};
 
@@ -421,7 +430,10 @@ export default function ApplyForTechSupport() {
 							{loading ? (
 								<button className="btn3">Please wait...</button>
 							) : (
-								<FormBtn btnFor="Submit" />
+								<FormBtn
+									btnFor="Submit"
+									disabled={isSubmitting}
+								/>
 							)}
 						</form>
 					) : (

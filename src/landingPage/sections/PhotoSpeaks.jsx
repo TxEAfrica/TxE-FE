@@ -21,10 +21,10 @@ const PhotoSpeaks = () => {
 
 	return (
 		<div id="achievements">
-			<div className="flex flex-col justify-center items-center md:mb-10">
+			<div className="flex flex-col space-y-5 items-center mt-20 md:mb-10">
 				<h1
 					id="section-heading"
-					className="text-5xl text-white text-center lg:text-left font-bold">
+					className="text-5xl text-white text-center font-bold mb-4 md:mb-0">
 					Gallery
 				</h1>
 				<div className="text-lg text-white mt-6 flex flex-col justify-center items-center">

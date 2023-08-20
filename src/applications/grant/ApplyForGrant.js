@@ -30,6 +30,7 @@ const ApplyForGrant = () => {
 	const [showGrantSuccess, setShowGrantSuccess] = useState(false);
 	const [showNetworkError, setShowNetworkError] = useState(false);
 	const [loading, setLoading] = useState(false);
+	const [isSubmitting, setIsSubmitting] = useState(false);
 
 	const { firstName, lastName, email, phoneNumber, country, state, gender } =
 		userData || {};
@@ -111,6 +112,12 @@ const ApplyForGrant = () => {
 
 		setLoading(true);
 
+		if (isSubmitting) {
+			return; // Don't execute the function if it's already submitting
+		}
+
+		setIsSubmitting(true);
+
 		try {
 			// Make the POST request to the API
 			const response = await fetch(
@@ -125,7 +132,7 @@ const ApplyForGrant = () => {
 			);
 			// console.log(response)
 
-			console.log(grantFormData);
+			setLoading(false);
 
 			if (response.status === 200) {
 				setShowGrantSuccess(true);
@@ -142,6 +149,8 @@ const ApplyForGrant = () => {
 				// Show the NetworkError modal
 				setShowNetworkError(true);
 			}
+		} finally {
+			setIsSubmitting(false); // Re-enable the button
 		}
 	};
 
@@ -366,7 +375,10 @@ const ApplyForGrant = () => {
 							{loading ? (
 								<button className="btn2">Please wait...</button>
 							) : (
-								<FormBtn btnFor="Submit" />
+								<FormBtn
+									btnFor="Submit"
+									disabled={isSubmitting}
+								/>
 							)}
 						</form>
 					) : (

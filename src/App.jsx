@@ -6,6 +6,7 @@ import ApplyForTechSupport from "./applications/techSupport/ApplyForTechSupport"
 import TechSupportApplication from "./applications/category/TechSupportApplication";
 import ApplyForGrant from "./applications/grant/ApplyForGrant";
 import TicketPage from "./ticketPage/TicketPage";
+import EmailTemplate from "./emailTemplate/EmailTemplate";
 
 const App = () => {
 	return (
@@ -30,6 +31,10 @@ const App = () => {
 				<Route
 					path="/ticket/:userId"
 					element={<TicketPage />}
+				/>
+				<Route
+					path="/email-template"
+					element={<EmailTemplate />}
 				/>
 			</Routes>
 		</BrowserRouter>

@@ -38,6 +38,7 @@ const EventRegForm = () => {
 	const [showInvalidEmail, setShowInvalidEmail] = useState(false);
 	const [showAlreadyRegistered, setShowAlreadyRegistered] = useState(false);
 	const [loading, setLoading] = useState(false);
+	const [isSubmitting, setIsSubmitting] = useState(false);
 
 	const [countryOptions, setCountryOptions] = useState([]);
 
@@ -119,6 +120,12 @@ const EventRegForm = () => {
 		e.preventDefault();
 		setLoading(true);
 
+		if (isSubmitting) {
+			return;
+		}
+
+		setIsSubmitting(true);
+
 		try {
 			// Check if the email exists in the database
 			const emailExists = await checkEmailAvailability();
@@ -178,6 +185,8 @@ const EventRegForm = () => {
 			// console.error('Error submitting form data:', error);
 			setLoading(false);
 			setShowNetworkError(true);
+		} finally {
+			setIsSubmitting(false); // Re-enable the button
 		}
 	};
 
@@ -492,7 +501,10 @@ const EventRegForm = () => {
 						{loading ? (
 							<button className="btn3">Please wait...</button>
 						) : (
-							<FormBtn btnFor="Register" />
+							<FormBtn
+								btnFor="Register"
+								disabled={isSubmitting}
+							/>
 						)}
 					</div>
 				</form>
