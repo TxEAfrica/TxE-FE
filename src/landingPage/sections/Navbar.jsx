@@ -17,28 +17,33 @@ const Navbar = () => {
 	};
 
 	return (
-		<div className="flex flex-row-reverse lg:flex-row justify-between items-center py-4 px-4 md:px-8 lg:px-4 sticky top-0 z-50 navbar">
-			<div 
-				className="hidden lg:flex"
-				onClick={() => location.pathname !== "/" && navigate("/")}>
+		<div className="flex justify-between items-center py-4 px-4 md:px-8 lg:px-4 sticky top-0 z-50 navbar">
+			<div onClick={() => location.pathname !== "/" && navigate("/")}>
 				<img
 					src={TxELogo}
-					className="w-32 "
+					className="w-24 "
 					alt=""
 				/>
 			</div>
 			<div className="relative h-14 flex justify-between">
 				<ul
-					className={`hidden lg:flex flex-row-reverse h-full items-end font-bold ${
-						showMenu ? "lg:hidden" : ""}`}>
+					className={`hidden lg:flex flex-row-reverse h-full items-center font-bold ${
+						showMenu ? "lg:hidden" : ""
+					}`}>
 					<ScrollToContainerLink to={"testimonials"}>
-						<li className="p-2 mx-5 cursor-pointer hover:border-b-2 border-orange-400 rounded-lg text-gray-100 font-normal">Testimonials</li>
+						<li className="p-2 mx-5 cursor-pointer hover:border-b-2 border-orange-400 rounded-lg text-gray-100 font-normal">
+							Testimonials
+						</li>
 					</ScrollToContainerLink>
 					<ScrollToContainerLink to={"speakers"}>
-						<li className="p-2 mx-5 cursor-pointer hover:border-b-2 border-orange-400 rounded-lg text-gray-100 font-normal">Speakers</li>
+						<li className="p-2 mx-5 cursor-pointer hover:border-b-2 border-orange-400 rounded-lg text-gray-100 font-normal">
+							Speakers
+						</li>
 					</ScrollToContainerLink>
 					<ScrollToContainerLink to={"event-schedule"}>
-						<li className="p-2 mx-5 cursor-pointer hover:border-b-2 border-orange-400 rounded-lg text-gray-100 font-normal">Event Schedule</li>
+						<li className="p-2 mx-5 cursor-pointer hover:border-b-2 border-orange-400 rounded-lg text-gray-100 font-normal">
+							Event Schedule
+						</li>
 					</ScrollToContainerLink>
 				</ul>
 
@@ -47,7 +52,7 @@ const Navbar = () => {
 					<div
 						className="p-3 text-white z-50"
 						onClick={toggleMenu}>
-						<Icon.BarMenu className="lg:hidden text-2xl font-semibold cursor-pointer" />
+						<Icon.BarMenu className="lg:hidden text-2xl font-semibold cursor-pointer text-white" />
 					</div>
 				)}
 				{showMenu && (
@@ -80,7 +85,7 @@ const Navbar = () => {
 				)}
 			</div>
 			<div
-				className="cursor-pointer w-1/2 lg:w-1/6 h-fit"
+				className="hidden lg:flex cursor-pointer w-1/2 lg:w-1/6 h-fit"
 				onClick={() => navigate("/register")}>
 				<BtnPrimary btnName={"Register"} />
 			</div>

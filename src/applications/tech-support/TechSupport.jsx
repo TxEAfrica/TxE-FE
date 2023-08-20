@@ -1,4 +1,5 @@
 import InputField from "../../registrationPage/eventregistration/components/InputField/InputField";
+import InputFieldNon from "../../registrationPage/eventregistration/components/InputFieldNon/InputFieldNon";
 import InputOption from "../../registrationPage/eventregistration/components/InputOption/InputOption";
 import InputSelect from "../../registrationPage/eventregistration/components/InputSelect/InputSelect";
 

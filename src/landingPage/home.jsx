@@ -12,6 +12,7 @@ import CountUpAnimation from "./sections/Counter/CountUpAnimation";
 import image1 from "../assets/Speaker-1.svg";
 import Footer from "./sections/Footer";
 import "./Home.css";
+import Speakers from "../landingPage/sections/Speakers/Speakers";
 
 const Home = () => {
 	const images = [
@@ -67,19 +68,16 @@ const Home = () => {
 	return (
 		<>
 			<div className="main-container overflow-hidden">
-				<Navbar />
+				<div className="px-16 sticky nav-holder">
+					<Navbar />
+				</div>
 				<Banner />
-				<div className=" py-2 md:mt-36 md:space-y-10">
+
+				<div className=" py-2 md:mt-24 md:space-y-10 sm:mt-32">
 					<Highlight />
 					<EventSchedule />
 					<CountUpAnimation />
-					<ImageSlider
-						images={images}
-						activeIndex={activeIndex}
-						setActiveIndex={setActiveIndex}
-						handleNext={handleNext}
-						handlePrev={handlePrev}
-					/>
+					<Speakers />
 					<PhotoSpeaks />
 				</div>
 				<Testimonials />

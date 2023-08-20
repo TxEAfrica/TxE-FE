@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import InputField from "../../registrationPage/eventregistration/components/InputField/InputField";
 import FormBtn from "../../registrationPage/eventregistration/components/Buttons/FormButton";
-import ApplyForGrantCSS from "../grant/ApplyForGrant.module.css";
+import ApplyForTechSupportCSS from "../techSupport/ApplyForTechSupport.module.css";
 import FailedModal from "../../modals/FailedModal";
 import { GrantIneligible } from "../../modals/GrantIneligible";
 import { useNavigate, Navigate } from "react-router-dom";
@@ -43,10 +43,10 @@ const EmailVerification = ({ onSuccess, onUserData }) => {
 				} else {
 					const trackInterest = data.data.trackInterest;
 
-					if (trackInterest === "entrepreneurship") {
+					if (trackInterest === "technology") {
 						setVerificationFailed(false);
 						onSuccess(data, true);
-					} else if (trackInterest === "technology") {
+					} else if (trackInterest === "entrepreneurship") {
 						setVerificationFailed(true);
 						setShowGrantIneligible(true);
 					} else {
@@ -75,7 +75,7 @@ const EmailVerification = ({ onSuccess, onUserData }) => {
 	};
 
 	return (
-		<div className={ApplyForGrantCSS.mainn}>
+		<div className={ApplyForTechSupportCSS.mainn}>
 			<form>
 				<InputField
 					labelText="Email Address"
