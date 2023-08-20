@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./landingPage/home";
 import EventRegForm from "./registrationPage/eventregistration/EventRegForm";
 import ApplyForTechSupport from "./applications/techSupport/ApplyForTechSupport";
@@ -7,6 +7,7 @@ import TechSupportApplication from "./applications/category/TechSupportApplicati
 import ApplyForGrant from "./applications/grant/ApplyForGrant";
 import TicketPage from "./ticketPage/TicketPage";
 import EmailTemplate from "./emailTemplate/EmailTemplate";
+import NotFoundPage from "./landingPage/sections/404";
 
 const App = () => {
 	return (
@@ -31,6 +32,10 @@ const App = () => {
 				<Route
 					path="/ticket/:userId"
 					element={<TicketPage />}
+				/>
+				<Route
+					path="*"
+					element={<NotFoundPage />}
 				/>
 				<Route
 					path="/email-template"

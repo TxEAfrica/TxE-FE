@@ -31,6 +31,32 @@ const Speakers = () => {
 	};
 
 	return (
+		<div className="px-8 mt-10 relative flex items-center bg-black justify-center">
+			<button
+				className="p-3 lg:mx-8 hover:bg-bgColor border-2 border-white rounded-full text-white absolute top-0 left-0"
+				onClick={() => handleSwap("left")}>
+				<IoIosArrowBack size={24} />
+			</button>
+			<div className="flex mt-20 center-card items-center justify-center -space-x-14">
+				{displaySpeakers.map((speaker, index) => (
+					<SpeakerCard
+						key={speaker.name}
+						speaker={speaker}
+						position={index}
+						animationDirection={
+							index === 3 ? "current" : index < 3 ? "left" : "right"
+						}
+					/>
+				))}
+			</div>
+			<button
+				className="p-3 lg:mx-8 hover:bg-bgColor border-2 border-white rounded-full text-white absolute top-0 right-0"
+				onClick={() => handleSwap("right")}>
+				<IoIosArrowForward size={24} />
+			</button>
+		</div>
+	);
+	return (
 		<div
 			id="speakers"
 			className="px-8 mb-20 relative flex flex-col items-center bg-black justify-center">

@@ -27,7 +27,7 @@ const PhotoSpeaks = () => {
 					className="text-5xl text-white text-center font-bold mb-4 md:mb-0">
 					Gallery
 				</h1>
-				<div className="text-lg text-white mt-6 flex flex-col justify-center items-center">
+				<div className="text-lg text-white mt-6 mb-8 flex flex-col justify-center items-center">
 					TxE Summit 2023
 					<div className="flex space-x-2 mt-2 lines">
 						<div className="w-56 h-1 rounded-full bg-orange"></div>
@@ -80,7 +80,7 @@ const PhotoSpeaks = () => {
 				</div>
 			</div>
 
-			<div className="grid grid-cols-3 gap-2 md:px-20 mt-2">
+			<div className="grid grid-cols-3 gap-2 mt-2">
 				<div
 					className="aspect-w-3 aspect-h-2 rounded-md overflow-hidden cursor-pointer"
 					onClick={() => handleImageClick(photo5)}>

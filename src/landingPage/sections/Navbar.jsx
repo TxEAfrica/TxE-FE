@@ -57,7 +57,7 @@ const Navbar = () => {
 				)}
 				{showMenu && (
 					<div
-						className="fixed flex justify-between bg-black text-white top-0 left-0 right-0 bottom-0 shadow-md p-4 z-10"
+						className="fixed flex justify-between bg-black text-white top-0 left-0 right-0 bottom-0 shadow-md p-4 z-40"
 						onClick={toggleMenu}
 						style={{ opacity: 0.95, transition: "opacity 1s ease" }}>
 						<ul
