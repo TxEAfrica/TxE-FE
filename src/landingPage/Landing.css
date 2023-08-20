@@ -16,6 +16,7 @@
 .orange {
 	color: #ff6e4a;
 }
+
 /* --------------------------navbar ---------------------------- */
 
 .nav-holder {
@@ -683,6 +684,9 @@
 	.event-container {
 		margin: 20px auto;
 	}
+	#event-schedule {
+		margin-top: 40px;
+	}
 	#schedule {
 		display: flex;
 		flex-direction: column;
@@ -739,7 +743,10 @@
 	}
 
 	#schedule-split h1 {
-		font-size: 18px;
+		font-size: 16px;
+	}
+	#schedule-split p {
+		font-size: 14px;
 	}
 	#date {
 		display: flex;
