@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import SpeakerCard from './SpeakerCard';
-import image from '../../../assets/speakerImg.png'
-import image2 from '../../../assets/speakerImg2.png'
-import image3 from '../../../assets/speakerImg3.png'
+import image from '../../../assets/speakerImg.png';
+import image2 from '../../../assets/speakerImg2.png';
+import image3 from '../../../assets/speakerImg3.png';
 
 const Speakers = () => {
   const initialSpeakers = [
@@ -28,9 +28,8 @@ const Speakers = () => {
     setDisplaySpeakers(newDisplaySpeakers);
   };
 
-
   return (
-    <div className="px-8 mb-20 relative flex items-center bg-black justify-center">
+    <div className="px-8 mt-10 relative flex items-center bg-black justify-center">
       <button
         className="p-3 lg:mx-8 hover:bg-bgColor border-2 border-white rounded-full text-white absolute top-0 left-0"
         onClick={() => handleSwap('left')}
@@ -43,7 +42,7 @@ const Speakers = () => {
             key={speaker.name}
             speaker={speaker}
             position={index}
-            currentIndex={2} 
+            animationDirection={index === 3 ? 'current' : index < 3 ? 'left' : 'right'}
           />
         ))}
       </div>
