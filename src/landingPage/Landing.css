@@ -57,6 +57,14 @@
 		/* justify-content: space-between;
 	z-index: 1000; */
 	}
+	.line-holder {
+		display: flex;
+		flex-direction: column;
+		align-items: end;
+	}
+	.lines {
+		width: 300px;
+	}
 }
 @media screen and (max-width: 1200px) {
 	.nav-holder {
@@ -68,6 +76,14 @@
 		padding: 10px 20px;
 		/* justify-content: space-between;
 	z-index: 1000; */
+	}
+	.line-holder {
+		display: flex;
+		flex-direction: column;
+		align-items: end;
+	}
+	.lines {
+		width: 300px;
 	}
 }
 @media screen and (max-width: 1024px) {
@@ -81,6 +97,14 @@
 		/* justify-content: space-between;
 	z-index: 1000; */
 	}
+	.line-holder {
+		display: flex;
+		flex-direction: column;
+		align-items: end;
+	}
+	.lines {
+		width: 250px;
+	}
 }
 @media screen and (max-width: 996px) {
 	.nav-holder {
@@ -92,6 +116,16 @@
 		padding: 10px 20px;
 		/* justify-content: space-between;
 	z-index: 1000; */
+	}
+}
+@media screen and (max-width: 767px) {
+	.line-holder {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.lines {
+		width: 250px;
 	}
 }
 @media screen and (max-width: 575px) {
@@ -511,11 +545,12 @@
 }
 @media screen and (max-width: 768px) {
 	.highlight-container {
+		margin-top: 50px;
 		padding: 0 5%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 30px;
+		gap: 20px;
 	}
 	.highlight-box {
 		padding: 0;
@@ -628,7 +663,9 @@
 		padding: 0 3%;
 		align-items: center;
 	}
-
+	#event-schedule {
+		margin-top: 60px;
+	}
 	#event-schedule {
 		padding: 40px 0;
 	}
@@ -679,6 +716,9 @@
 	.event-container {
 		margin: 20px auto;
 	}
+	#event-schedule {
+		margin-top: 40px;
+	}
 }
 @media screen and (max-width: 480px) {
 	.event-container {
@@ -707,7 +747,7 @@
 	}
 
 	#schedule-split h1 {
-		font-size: 20px;
+		font-size: 18px;
 	}
 	#date {
 		display: flex;
@@ -771,6 +811,14 @@
 @media screen and (max-width: 768px) {
 	.sponsors {
 		align-items: center;
+	}
+}
+
+/* -----------------------photos---------------------------- */
+
+@media screen and (max-width: 768px) {
+	#photos {
+		margin-top: 40px;
 	}
 }
 

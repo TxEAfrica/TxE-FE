@@ -35,7 +35,9 @@ const PhotoSpeaks = () => {
 					</div>
 				</div>
 			</div>
-			<div className="grid grid-cols-2 gap-2 md:px-20">
+			<div
+				id="photos"
+				className="grid grid-cols-2 gap-2 md:px-20">
 				<div
 					className="aspect-w-3 aspect-h-2 rounded-md overflow-hidden cursor-pointer"
 					onClick={() => handleImageClick(photo1)}>
