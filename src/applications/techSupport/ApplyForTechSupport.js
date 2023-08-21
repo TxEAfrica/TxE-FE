@@ -137,12 +137,12 @@ export default function ApplyForTechSupport() {
 			setLoading(false);
 
 			if (response.status === 200) {
-				console.log("Form data sent:", techSupportFormData);
+				// console.log("Form data sent:", techSupportFormData);
 				setShowTechSuccess(true);
 			}
 		} catch (error) {
 			setLoading(false);
-			console.log("API Fetch Error:", error);
+			// console.log("API Fetch Error:", error);
 
 			// Check if the error is network-related
 			if (

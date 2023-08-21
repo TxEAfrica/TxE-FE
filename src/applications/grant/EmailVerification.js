@@ -59,7 +59,7 @@ const EmailVerification = ({ onSuccess, onUserData }) => {
 			})
 			.catch((error) => {
 				setLoading(false);
-				console.log("API Fetch Error:", error);
+				// console.log("API Fetch Error:", error);
 
 				// Check if the error is network-related
 				if (

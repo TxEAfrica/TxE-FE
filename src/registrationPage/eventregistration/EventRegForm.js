@@ -54,7 +54,7 @@ const EventRegForm = () => {
 				countries.sort((a, b) => a.label.localeCompare(b.label));
 				setCountryOptions([defaultOption, ...countries]);
 			} catch (error) {
-				console.error("Error fetching country data:", error);
+				// console.error("Error fetching country data:", error);
 			}
 		};
 
@@ -107,7 +107,7 @@ const EventRegForm = () => {
 
 			return false; // Email does not exist
 		} catch (error) {
-			console.log("Error checking email availability:", error);
+			// console.log("Error checking email availability:", error);
 			return false;
 		}
 	};
@@ -165,8 +165,8 @@ const EventRegForm = () => {
 			const data = await response.json();
 
 			if ((data.success = true)) {
-				console.log(data.message);
-				console.log(data.data);
+				// console.log(data.message);
+				// console.log(data.data);
 				setLoading(false);
 				setUserId(data.data._id);
 				setShowRegSuccess(true);

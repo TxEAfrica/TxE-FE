@@ -14,7 +14,6 @@ import Speakers from "../landingPage/sections/Speakers/Speakers";
 import { baseUrl } from "../api/BaseURL";
 
 const Home = () => {
-	console.log(baseUrl.url)
 	return (
 		<>
 			<div className="main-container">

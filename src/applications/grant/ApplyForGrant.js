@@ -125,14 +125,14 @@ const ApplyForGrant = () => {
 			);
 			// console.log(response)
 
-			console.log(grantFormData);
+			// console.log(grantFormData);
 
 			if (response.status === 200) {
 				setShowGrantSuccess(true);
 			}
 		} catch (error) {
 			setLoading(false);
-			console.log("API Fetch Error:", error);
+			// console.log("API Fetch Error:", error);
 
 			// Check if the error is network-related
 			if (
