@@ -9,6 +9,7 @@ import { useNavigate, Navigate } from "react-router-dom";
 import { NotRegistered } from "../../modals/NotRegistered";
 import { InvalidEmail } from "../../modals/InvalidEmail";
 import { NetworkError } from "../../modals/NetworkError";
+import { baseUrl } from "../../api/BaseURL";
 
 const EmailVerification = ({ onSuccess, onUserData }) => {
 	const [email, setEmail] = useState("");
@@ -32,7 +33,7 @@ const EmailVerification = ({ onSuccess, onUserData }) => {
 		}
 		setLoading(true);
 
-		fetch(`https://txe-africa.onrender.com/api/v1/verify/${email}`)
+		fetch(`${baseUrl.url}/api/v1/verify/${email}`)
 			.then((response) => {
 				return response.json();
 			})
@@ -58,7 +59,7 @@ const EmailVerification = ({ onSuccess, onUserData }) => {
 			})
 			.catch((error) => {
 				setLoading(false);
-				console.log("API Fetch Error:", error);
+				// console.log("API Fetch Error:", error);
 
 				// Check if the error is network-related
 				if (
@@ -76,7 +77,7 @@ const EmailVerification = ({ onSuccess, onUserData }) => {
 
 	return (
 		<div className={ApplyForGrantCSS.mainn}>
-			<form>
+			<form method="GET" onSubmit={handleVerifyEmail}>
 				<InputField
 					labelText="Email Address"
 					placeholder="Verify email address"
@@ -86,15 +87,7 @@ const EmailVerification = ({ onSuccess, onUserData }) => {
 					value={email}
 					onChange={(e) => setEmail(e.target.value)}
 				/>
-
-				{loading ? (
-					<button className="btn3">Please wait...</button>
-				) : (
-					<FormBtn
-						btnFor="Next"
-						onClick={handleVerifyEmail}
-					/>
-				)}
+							<FormBtn btnFor={loading?'Please wait...':'Next'} isLoading={loading} />
 			</form>
 
 			{showGrantIneligible && (

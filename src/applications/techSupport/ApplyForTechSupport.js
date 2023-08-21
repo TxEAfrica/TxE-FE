@@ -17,6 +17,7 @@ import { NetworkError } from "../../modals/NetworkError";
 import Sponsors from "../../landingPage/sections/Sponsors";
 import ImageUploader from "../category/validated-applicants/uploader/ImageUploader";
 import { RequiredFields } from "../../modals/RequiredFields";
+import { baseUrl } from "../../api/BaseURL";
 import Nav from "../../emailTemplate/Nav";
 
 export default function ApplyForTechSupport() {
@@ -131,16 +132,13 @@ export default function ApplyForTechSupport() {
 
 		try {
 			// Make the POST request to the API
-			const response = await fetch(
-				"https://txe-africa.onrender.com/api/v1/register/tech",
-				{
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-					},
-					body: JSON.stringify(techSupportFormData),
-				}
-			);
+			const response = await fetch(`${baseUrl.url}/api/v1/register/tech`, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(techSupportFormData),
+			});
 			const data = await response.json();
 			console.log(data);
 
@@ -160,7 +158,7 @@ export default function ApplyForTechSupport() {
 			// }
 		} catch (error) {
 			setLoading(false);
-			console.log("API Fetch Error:", error);
+			// console.log("API Fetch Error:", error);
 
 			// Check if the error is network-related
 			if (

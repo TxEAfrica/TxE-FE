@@ -17,7 +17,7 @@ const Navbar = () => {
 	};
 
 	return (
-		<div className="flex justify-between items-center py-4 px-4 md:px-8 lg:px-4 sticky top-0 z-50 navbar">
+		<div className="flex bg-black justify-between items-center py-4 px-4 md:px-8 lg:px-6 sticky top-0 z-50">
 			<div onClick={() => location.pathname !== "/" && navigate("/")}>
 				<img
 					src={TxELogo}
@@ -57,7 +57,7 @@ const Navbar = () => {
 				)}
 				{showMenu && (
 					<div
-						className="fixed flex justify-between bg-black text-white top-0 left-0 right-0 bottom-0 shadow-md p-4 z-40"
+						className="fixed flex justify-between h-screen bg-black text-white top-0 left-0 right-0 bottom-0 shadow-md p-4 z-50"
 						onClick={toggleMenu}
 						style={{ opacity: 0.95, transition: "opacity 1s ease" }}>
 						<ul

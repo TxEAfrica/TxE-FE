@@ -17,7 +17,7 @@ const RegSuccess = ({ email, userId }) => {
 		// try {
 		// 	// Fetch user data using the email...
 		// 	const response = await fetch(
-		// 		`https://txe-africa.onrender.com/api/v1/${userId}`
+				// `${baseUrl.url}/api/v1/${userId}`
 		// 	); // Replace with your API endpoint
 		// 	const userData = await response.json();
 		// 	console.log(userData);
@@ -101,31 +101,6 @@ const RegSuccess = ({ email, userId }) => {
 						className="btn2">
 						View Ticket
 					</button>
-				</div>
-
-				<div className="modal-links">
-					<NavLink
-						to="/grant"
-						className="link1">
-						Apply for Grant
-						<span>
-							<img
-								src={linkarrow1}
-								alt=""
-							/>
-						</span>
-					</NavLink>
-					<NavLink
-						to="/techsupport"
-						className="link2">
-						Apply for Scholarship
-						<span>
-							<img
-								src={linkarrow2}
-								alt=""
-							/>
-						</span>
-					</NavLink>
 				</div>
 			</div>
 		</div>

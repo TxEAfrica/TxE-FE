@@ -10,7 +10,7 @@ const EventSchedule = () => {
 				<div className="md:w-3/4">
 					<h1
 						id="section-heading"
-						className="text-5xl font-bold mb-4 md:mb-0">
+						className="text-5xl mt-10 lg:mt-0 font-bold mb-4 md:mb-0">
 						Event Schedule
 					</h1>
 					<p className="md:w-2/3 lg:w-1/2 mt-4">

@@ -1,10 +1,6 @@
-import React, { useState } from "react";
 import "../modals/Modals.css";
 import info from "../assets/info.svg";
-import linkarrow1 from "../assets/link-arrow1.svg";
-import linkarrow2 from "../assets/link-arrow2.svg";
 import close from "../assets/close.svg";
-import { NavLink } from "react-router-dom";
 
 export const InvalidEmail = ({ onClose }) => {
 	return (

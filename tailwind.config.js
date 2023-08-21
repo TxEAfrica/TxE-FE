@@ -6,6 +6,10 @@ module.exports = {
 			backgroundColor: {
 				bgColor: '#4F4F4F',
 			},
+			textColor: {
+				speakerTextBrown: '#FF6E4A',
+				speakerTextBlue: '#007BB8'
+			}
 		},
 	},
 	plugins: [],
