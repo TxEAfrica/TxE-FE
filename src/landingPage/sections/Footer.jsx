@@ -51,17 +51,13 @@ const Footer = () => {
 			</div>
 
 			<div className="md:flex w-3/10 justify-between  items-end space-y-2 mt-3 md:space-y-0 md:mt-0">
-				{/* <img
-					src={txeLogo}
-					alt=""
-				/> */}
 				<svg
 					width="131"
 					height="58"
 					viewBox="0 0 131 58"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg">
-					<g clip-path="url(#clip0_489_2656)">
+					<g clipPath="url(#clip0_489_2656)">
 						<path
 							d="M61.8067 36.7034V23.4749H56.7596V20.8938H69.8729V23.4749H64.8028V36.7034H61.8067Z"
 							fill="white"
