@@ -11,6 +11,8 @@ import Navbar from "../../landingPage/sections/Navbar";
 import Footer from "../../landingPage/sections/Footer";
 import ApplyForGrantCSS from "../grant/ApplyForGrant.module.css";
 import GrantSuccess from "../../modals/GrantSuccess";
+import { AlreadyGrant } from "../../modals/AlreadyGrant";
+import { RequiredFields } from "../../modals/RequiredFields";
 import "../../landingPage/Landing.css";
 import { NetworkError } from "../../modals/NetworkError";
 import Sponsors from "../../landingPage/sections/Sponsors";
@@ -30,6 +32,8 @@ const ApplyForGrant = () => {
 	const [errorMessage, setErrorMessage] = useState("");
 	const [showGrantSuccess, setShowGrantSuccess] = useState(false);
 	const [showNetworkError, setShowNetworkError] = useState(false);
+	const [showAlreadyGrant, setShowAlreadyGrant] = useState(false);
+	const [showRequiredFields, setShowRequiredFields] = useState(false);
 	const [loading, setLoading] = useState(false);
 	const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -104,7 +108,7 @@ const ApplyForGrant = () => {
 
 		// Check if all visible fields are not empty
 		if (!validateFields(editableData)) {
-			setErrorMessage("Please fill in all required fields.");
+			setShowRequiredFields(true);
 			return;
 		}
 
@@ -131,13 +135,21 @@ const ApplyForGrant = () => {
 					body: JSON.stringify(grantFormData),
 				}
 			);
-			// console.log(response)
+			const data = await response.json();
+			console.log(data);
+
+			if ((data.status = "fail")) {
+				setShowAlreadyGrant(true);
+				setLoading(false);
+			} else if ((data.status = "success")) {
+				setShowGrantSuccess(true);
+			}
 
 			setLoading(false);
 
-			if (response.status === 200) {
-				setShowGrantSuccess(true);
-			}
+			// if (response.status === 200) {
+			// 	setShowGrantSuccess(true);
+			// }
 		} catch (error) {
 			setLoading(false);
 			console.log("API Fetch Error:", error);
@@ -395,6 +407,12 @@ const ApplyForGrant = () => {
 			{showGrantSuccess && <GrantSuccess />}
 			{showNetworkError && (
 				<NetworkError onClose={() => setShowNetworkError(false)} />
+			)}
+			{showRequiredFields && (
+				<RequiredFields onClose={() => setShowRequiredFields(false)} />
+			)}
+			{showAlreadyGrant && (
+				<AlreadyGrant onClose={() => setShowAlreadyGrant(false)} />
 			)}
 		</div>
 	);

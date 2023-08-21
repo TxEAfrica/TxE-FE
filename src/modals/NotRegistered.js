@@ -5,8 +5,15 @@ import linkarrow1 from "../assets/link-arrow1.svg";
 import linkarrow2 from "../assets/link-arrow2.svg";
 import close from "../assets/close.svg";
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const NotRegistered = ({ onClose }) => {
+	const navigate = useNavigate();
+
+	const handleNavigate = () => {
+		navigate("/register");
+	};
+
 	return (
 		<div
 			className="modal-overlay"
@@ -70,7 +77,11 @@ export const NotRegistered = ({ onClose }) => {
 						onClick={onClose}>
 						Close
 					</button>
-					<button className="btn2">Register</button>
+					<button
+						onClick={handleNavigate}
+						className="btn2">
+						Register
+					</button>
 				</div>
 			</div>
 		</div>
