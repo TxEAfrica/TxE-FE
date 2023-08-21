@@ -47,14 +47,26 @@ const Speakers = () => {
   };
 
   return (
-    <div id='speakers' className="px-8 mt-10 relative flex items-center bg-black justify-center">
+    <div id='speakers' className="px-8 mt-20 relative flex items-center bg-black justify-center">
+      <div className=' absolute -top-9 lg:top-5'>
+        <h1 className='text-4xl lg:text-5xl text-white font-bold text-center'>
+          Meet our speakers
+        </h1>
+        <div className="text-lg text-white mt-6 mb-8 flex flex-col justify-center items-center">
+          Well seasoned
+					<div className="flex space-x-2 mt-2 lines">
+						<div className="w-56 h-1 rounded-full bg-orange"></div>
+						<div className="w-56 h-1 rounded-full bg-white"></div>
+					</div>
+				</div>
+      </div>
       <button
-        className="p-3 lg:mx-8 hover:bg-bgColor border-2 border-white rounded-full text-white absolute top-0 left-0"
+        className="p-3 mt-24 lg:mx-8 hover:bg-bgColor border-2 border-white rounded-full text-white absolute top-0 left-0"
         onClick={() => handleSwap('left')}
       >
         <IoIosArrowBack size={24} />
       </button>
-      <div className="flex mt-20 center-card items-center justify-center -space-x-14">
+      <div className="flex mt-44 center-card items-center justify-center -space-x-14">
         {displaySpeakers.map((speaker, index) => (
           <SpeakerCard
             key={speaker.name}
@@ -65,7 +77,7 @@ const Speakers = () => {
         ))}
       </div>
       <button
-        className="p-3 lg:mx-8 hover:bg-bgColor border-2 border-white rounded-full text-white absolute top-0 right-0"
+        className="p-3 mt-24 lg:mx-8 hover:bg-bgColor border-2 border-white rounded-full text-white absolute top-0 right-0"
         onClick={() => handleSwap('right')}
       >
         <IoIosArrowForward size={24} />

@@ -1,6 +1,4 @@
-import React, { useState } from "react";
 import Banner from "./sections/Banner";
-import Event from "./sections/Event";
 import EventSchedule from "./sections/EventSchedule";
 import Highlight from "./sections/Highlight";
 import Navbar from "./sections/Navbar";
@@ -11,7 +9,6 @@ import CountUpAnimation from "./sections/Counter/CountUpAnimation";
 import Footer from "./sections/Footer";
 import "./Home.css";
 import Speakers from "../landingPage/sections/Speakers/Speakers";
-import { baseUrl } from "../api/BaseURL";
 
 const Home = () => {
 	return (

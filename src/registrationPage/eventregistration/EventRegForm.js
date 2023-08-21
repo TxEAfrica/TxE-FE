@@ -211,17 +211,10 @@ const EventRegForm = () => {
 
 	return (
 		<div>
-			{/* <Navbar /> */}
 			<div className={EventRegCSS.main}>
 				<div className={EventRegCSS.decor}>
 					<FormVector position={"left-10 top-100"} />
-					{/* <FormVector position={"left-10 bottom-100"} /> */}
-					{/* <FormVector position={"left-20 top-40"} /> */}
-					{/* <FormVector position={"top-6"} /> */}
-					{/* <FormVector position={'bottom-3'} /> */}
 					<FormVector position={"right-10 top-100"} />
-					{/* <FormVector position={"right-10 bottom-100"} />
-					<FormVector position={"right-20 top-10"} /> */}
 				</div>
 				<div
 					className="cursor-pointer"
@@ -486,11 +479,7 @@ const EventRegForm = () => {
 					/>
 
 					<div>
-						{loading ? (
-							<button className="btn3">Please wait...</button>
-						) : (
-							<FormBtn btnFor="Register" />
-						)}
+							<FormBtn btnFor={loading?'Please wait...':'Register'} isLoading={loading} />
 					</div>
 				</form>
 			</div>

@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import html2canvas from "html2canvas";
-import ReactDOM from "react-dom";
 import TicketPageCSS from "./TicketPage.module.css";
 import Navbar from "../landingPage/sections/Navbar";
 import BtnPrimary from "../landingPage/buttons/BtnPrimary";
@@ -19,7 +18,6 @@ export default function TicketPage({}) {
 	useEffect(() => {
 		const fetchUserData = async () => {
 			try {
-				// Fetch user data using the email...
 				const response = await fetch(
 					`${baseUrl.url}/api/v1/${userId}`
 				);
@@ -46,11 +44,11 @@ export default function TicketPage({}) {
 			});
 		}
 	};
-
 	return (
-		<div>
+		<div className="bg-black">
+			<Navbar />
 			<div className={TicketPageCSS.container}>
-				<Navbar />
+				{/* <Navbar /> */}
 				<div
 					id="ticket-container"
 					className={TicketPageCSS.ticketContainer}>
@@ -58,9 +56,9 @@ export default function TicketPage({}) {
 					<div className={TicketPageCSS.ticketMessage}>
 						<h1>Registration successful</h1>
 						<p>
-							You have successfully registered for TXE Africa Tech and
-							Entrepreneurship program scheduled to hold on the 29th and 30th of
-							July 2023. Click on the link below to download your event ticket.
+							You have successfully registered for Enugu Tech and
+							Entrepreneurship summit scheduled to hold on the 29th
+							September 2023. Click on the link below to download your event ticket.
 						</p>
 					</div>
 					<div id="ticket-container">
@@ -75,7 +73,8 @@ export default function TicketPage({}) {
 							btnName={"Download Ticket"}
 							onClick={handleDownloadTicket}
 						/>
-						<BtnSecondary btnName={"Go to Website"} />
+						<BtnSecondary 
+						btnName={`${userData?.trackInterest==='entrepreneurship' ? 'Apply for Grant': userData?.trackInterest==='technology'? 'Apply for Tech Support':'Please Register'}`} />
 					</div>
 				</div>
 			</div>

@@ -17,12 +17,12 @@ const SpeakerCard = ({ speaker, position, animationDirection }) => {
                transition: 'transform 0.8s ease-in-out' }}
     >
       <div className={` ${position === 2 ? 'text-white' : 'text-white'} h-full`}>
-        <div className={`relative ${position === 2 ? 'text-orange-600' : 'text-blue-600'}`}>
+        <div className={`relative ${position === 2 ? 'text-speakerTextBrown' : 'text-speakerTextBlue'}`}>
         <p>{speaker.position}</p>
         </div>
-        <h2 className="text-lg font-semibold">{speaker.name}</h2>
+        <h2 className={`font-semibold w-5 mt-2 ${position === 2 ? 'text-4xl':'text-lg'}`}>{speaker.name}</h2>
       </div>
-      <div className={`absolute right-0 ${position === 2 ? '-bottom-3 w-56 h-56 lg:w-72 lg:h-72' : '-bottom-5 w-48 h-48'}`}>
+      <div className={`absolute right-0 ${position === 2 ? '-bottom-16 w-56 h-56 lg:w-72 lg:h-72' : '-bottom-5 w-48 h-48'}`}>
         <div className={`absolute inset-0 bg-gradient-to-l from-transparent  ${position === 2 ? 'via-orange-600/40' : 'via-blue-600/40'} to-transparent rounded-full`} />
       </div>
       <img src={speaker.imageURL} alt={speaker.name} loading="lazy" className={`${position === 2 ? 'w-4/6' : 'w-4/5'} absolute bottom-0 right-0`} />
