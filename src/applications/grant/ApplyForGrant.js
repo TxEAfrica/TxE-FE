@@ -163,7 +163,7 @@ const ApplyForGrant = () => {
 				<div
 					className={`text-center w-1/2 mt-15 space-y-3 ${ApplyForGrantCSS.title}`}>
 					<h1 className="text-5xl text-orange-500 font-semibold">
-						Apply For {"Grant"}
+						Apply For Grant
 					</h1>
 					<p>Need it? Go for it!</p>
 					<h3 className="text-xl font-semibold">
@@ -362,12 +362,7 @@ const ApplyForGrant = () => {
 							{errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
 
 							{/* Submit button */}
-
-							{loading ? (
-								<button className="btn2">Please wait...</button>
-							) : (
-								<FormBtn btnFor="Submit" />
-							)}
+							<FormBtn btnFor={loading?'Please wait...':'Register'} isLoading={loading} />
 						</form>
 					) : (
 						// Render the EmailVerification component if email is not verified
