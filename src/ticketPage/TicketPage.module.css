@@ -35,6 +35,10 @@
 	width: 100%;
 }
 
+.ticketMessage p span {
+	color: #ff6f43;
+}
+
 .mainticket {
 	width: 80%;
 	height: 100%;

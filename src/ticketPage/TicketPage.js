@@ -5,7 +5,7 @@ import Navbar from "../landingPage/sections/Navbar";
 import BtnPrimary from "../landingPage/buttons/BtnPrimary";
 import BtnSecondary from "../landingPage/buttons/BtnSecondary";
 import Ticket from "./Ticket";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Sponsors from "../landingPage/sections/Sponsors";
 import Footer from "../landingPage/sections/Footer";
 import { baseUrl } from "../api/BaseURL";
@@ -14,6 +14,7 @@ export default function TicketPage({}) {
 	const { userId } = useParams();
 	const [userData, setUserData] = useState(null);
 	const ticketContainerRef = useRef(null);
+	const navigate = useNavigate()
 
 	useEffect(() => {
 		const fetchUserData = async () => {
@@ -74,7 +75,8 @@ export default function TicketPage({}) {
 							onClick={handleDownloadTicket}
 						/>
 						<BtnSecondary 
-						btnName={`${userData?.trackInterest==='entrepreneurship' ? 'Apply for Grant': userData?.trackInterest==='technology'? 'Apply for Tech Support':'Please Register'}`} />
+						btnName={`${userData?.trackInterest==='entrepreneurship' ? 'Apply for Grant': userData?.trackInterest==='technology'? 'Apply for Tech Support':'Please Register'}`} 
+						onClick={()=>navigate(`/${userData?.trackInterest==='entrepreneurship' ? 'grant': userData?.trackInterest==='technology'? 'techsupport':'Please Register'}`)}/>
 					</div>
 				</div>
 			</div>

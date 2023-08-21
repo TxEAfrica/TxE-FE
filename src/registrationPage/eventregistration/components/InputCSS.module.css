@@ -120,7 +120,7 @@ form {
 	color: #fff;
 }
 .inputholder textarea::placeholder {
-	color: #b7b7b7;
+	color: #757575;
 	font-size: 14px;
 }
 .labelholder {

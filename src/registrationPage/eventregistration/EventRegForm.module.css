@@ -7,7 +7,7 @@
 }
 
 .main {
-	padding: 100px 0;
+	padding: 50px 0;
 	position: relative;
 	background-color: #000000;
 	width: 100%;
@@ -40,7 +40,7 @@
 	gap: 5px;
 }
 .formtitle h1 {
-	color: #ffffff;
+	color: #ff6f43;
 	font-size: 45px;
 	font-weight: 600;
 	letter-spacing: -1.5px;

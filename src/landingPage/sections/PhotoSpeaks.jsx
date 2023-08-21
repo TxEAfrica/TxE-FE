@@ -20,11 +20,11 @@ const PhotoSpeaks = () => {
 	};
 
 	return (
-		<div id="achievements" className="px-4 lg:px-20">
-			<div className="flex flex-col justify-center items-center md:mb-10">
+		<div id="achievements">
+			<div className="flex flex-col space-y-5 items-center mt-20 md:mb-10">
 				<h1
 					id="section-heading"
-					className="text-5xl text-white mt-20 text-center font-bold">
+					className="text-5xl text-white text-center font-bold mb-4 md:mb-0">
 					Gallery
 				</h1>
 				<div className="text-lg text-white mt-6 mb-8 flex flex-col justify-center items-center">
@@ -35,7 +35,9 @@ const PhotoSpeaks = () => {
 					</div>
 				</div>
 			</div>
-			<div className="grid grid-cols-2 gap-2">
+			<div
+				id="photos"
+				className="grid grid-cols-2 gap-2 md:px-20">
 				<div
 					className="aspect-w-3 aspect-h-2 rounded-md overflow-hidden cursor-pointer"
 					onClick={() => handleImageClick(photo1)}>
@@ -112,7 +114,7 @@ const PhotoSpeaks = () => {
 			</div>
 
 			<Modal
-				className={"h-1/2 md:h-4/5 md:w-4/5 md:mx-auto my-48 md:my-24"}
+				className={"h-1/2 md:h-4/5 md:w-4/5 md:mx-auto my-48 md:my-24 z-50"}
 				isOpen={selectedImage !== null}
 				onRequestClose={handleCloseModal}
 				contentLabel="Larger Image"

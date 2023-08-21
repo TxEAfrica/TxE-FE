@@ -14,21 +14,22 @@ const Home = () => {
 	return (
 		<>
 			<div className="main-container">
-			
-					<Navbar />
+				<Navbar />
 
 				<div className=" py-2 md:space-y-10 overflow-x-hidden">
-				<Banner />
+					<Banner />
 					<Highlight />
 					<EventSchedule />
 					<CountUpAnimation />
 					<Speakers />
-					<PhotoSpeaks />
-				
-				<Testimonials />
-				<div className="flex justify-center items-center bottom-0 md:-bottom-20 left-0 right-0 z-30 mt-3 mb-3">
-					<Sponsors />
 				</div>
+				<div className="z-50">
+					<PhotoSpeaks />
+
+					<Testimonials />
+					<div className="flex justify-center items-center bottom-0 md:-bottom-20 left-0 right-0 z-30 mt-3 mb-3">
+						<Sponsors />
+					</div>
 				</div>
 				<Footer />
 			</div>
