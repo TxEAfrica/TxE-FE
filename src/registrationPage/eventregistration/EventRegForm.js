@@ -327,7 +327,7 @@ const EventRegForm = () => {
 						updatedSelection={setTrackInterest}
 					/>
 
-					<div>
+					<div className="mb-20">
 						<FormBtn
 							btnFor={loading ? "Please wait..." : "Register"}
 							isLoading={loading}
