@@ -10,7 +10,7 @@ const EventSchedule = () => {
 				<div className="md:w-3/4">
 					<h1
 						id="section-heading"
-						className="text-5xl font-bold mb-4 md:mb-0">
+						className="text-5xl mt-10 lg:mt-0 font-bold mb-4 md:mb-0">
 						Event Schedule
 					</h1>
 					<p className="md:w-2/3 lg:w-1/2 mt-4">
@@ -19,13 +19,11 @@ const EventSchedule = () => {
 					</p>
 				</div>
 				<div>
-					<div
-						id="date"
-						className="text-lg text-right font-normal mt-5">
-						September 29th, 2023
-						<div className="flex space-x-2 mt-2 flex justify-center items-center lg:justify-start lines">
-							<div className="w-72 h-1 rounded-full bg-orange"></div>
-							<div className="w-72 h-1 rounded-full bg-orange-50"></div>
+					<div className="text-lg text-white mt-6 flex flex-col justify-center items-center line-holder">
+						29th September, 2023
+						<div className="flex space-x-2 mt-2 lines">
+							<div className="w-56 h-1 rounded-full bg-orange"></div>
+							<div className="w-56 h-1 rounded-full bg-white"></div>
 						</div>
 					</div>
 				</div>

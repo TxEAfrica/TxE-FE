@@ -19,7 +19,8 @@ const ImageUploader = ({ onImageChange }) => {
 				setImage(base64String);
 				onImageChange(base64String);
 			} else {
-				console.log("Invalid base64 format");
+				// console.log("Invalid base64 format");
+				return 
 			}
 		};
 	};

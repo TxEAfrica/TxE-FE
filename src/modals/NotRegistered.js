@@ -2,8 +2,15 @@ import React from "react";
 import "../modals/Modals.css";
 import info from "../assets/info.svg";
 import close from "../assets/close.svg";
+import { useNavigate } from "react-router-dom";
 
 export const NotRegistered = ({ onClose }) => {
+	const navigate = useNavigate();
+
+	const handleNavigate = () => {
+		navigate("/register");
+	};
+
 	return (
 		<div
 			className="modal-overlay"
@@ -67,7 +74,11 @@ export const NotRegistered = ({ onClose }) => {
 						onClick={onClose}>
 						Close
 					</button>
-					<button className="btn2">Register</button>
+					<button
+						onClick={handleNavigate}
+						className="btn2">
+						Register
+					</button>
 				</div>
 			</div>
 		</div>

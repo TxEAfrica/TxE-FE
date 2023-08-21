@@ -59,7 +59,7 @@ const EmailVerification = ({ onSuccess, onUserData }) => {
 			})
 			.catch((error) => {
 				setLoading(false);
-				console.log("API Fetch Error:", error);
+				// console.log("API Fetch Error:", error);
 
 				// Check if the error is network-related
 				if (
@@ -77,7 +77,7 @@ const EmailVerification = ({ onSuccess, onUserData }) => {
 
 	return (
 		<div className={ApplyForGrantCSS.mainn}>
-			<form>
+			<form method="GET" onSubmit={handleVerifyEmail}>
 				<InputField
 					labelText="Email Address"
 					placeholder="Verify email address"
@@ -87,15 +87,7 @@ const EmailVerification = ({ onSuccess, onUserData }) => {
 					value={email}
 					onChange={(e) => setEmail(e.target.value)}
 				/>
-
-				{loading ? (
-					<button className="btn3">Please wait...</button>
-				) : (
-					<FormBtn
-						btnFor="Next"
-						onClick={handleVerifyEmail}
-					/>
-				)}
+							<FormBtn btnFor={loading?'Please wait...':'Next'} isLoading={loading} />
 			</form>
 
 			{showGrantIneligible && (

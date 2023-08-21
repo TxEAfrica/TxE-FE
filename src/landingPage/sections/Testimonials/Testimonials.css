@@ -322,8 +322,6 @@
 	/* .arrow.left {
 		left: 10px;
 	} */
-
-	
 }
 
 @media screen and (max-width: 480px) {
@@ -357,7 +355,6 @@
 	.quote-mark {
 		display: none;
 	}
-	
 }
 
 @media screen and (max-width: 360px) {
@@ -386,6 +383,4 @@
 	.quote p {
 		font-size: 14px;
 	}
-
-	
 }

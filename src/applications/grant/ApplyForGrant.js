@@ -11,9 +11,12 @@ import Navbar from "../../landingPage/sections/Navbar";
 import Footer from "../../landingPage/sections/Footer";
 import ApplyForGrantCSS from "../grant/ApplyForGrant.module.css";
 import GrantSuccess from "../../modals/GrantSuccess";
+import { AlreadyGrant } from "../../modals/AlreadyGrant";
+import { RequiredFields } from "../../modals/RequiredFields";
 import "../../landingPage/Landing.css";
 import { NetworkError } from "../../modals/NetworkError";
 import Sponsors from "../../landingPage/sections/Sponsors";
+import Nav from "../../emailTemplate/Nav";
 
 const ApplyForGrant = () => {
 	const [isEmailVerified, setIsEmailVerified] = useState(false);
@@ -29,7 +32,10 @@ const ApplyForGrant = () => {
 	const [errorMessage, setErrorMessage] = useState("");
 	const [showGrantSuccess, setShowGrantSuccess] = useState(false);
 	const [showNetworkError, setShowNetworkError] = useState(false);
+	const [showAlreadyGrant, setShowAlreadyGrant] = useState(false);
+	const [showRequiredFields, setShowRequiredFields] = useState(false);
 	const [loading, setLoading] = useState(false);
+	const [isSubmitting, setIsSubmitting] = useState(false);
 
 	const { firstName, lastName, email, phoneNumber, country, state, gender } =
 		userData || {};
@@ -102,7 +108,7 @@ const ApplyForGrant = () => {
 
 		// Check if all visible fields are not empty
 		if (!validateFields(editableData)) {
-			setErrorMessage("Please fill in all required fields.");
+			setShowRequiredFields(true);
 			return;
 		}
 
@@ -110,6 +116,12 @@ const ApplyForGrant = () => {
 		setErrorMessage("");
 
 		setLoading(true);
+
+		if (isSubmitting) {
+			return; // Don't execute the function if it's already submitting
+		}
+
+		setIsSubmitting(true);
 
 		try {
 			// Make the POST request to the API
@@ -123,16 +135,24 @@ const ApplyForGrant = () => {
 					body: JSON.stringify(grantFormData),
 				}
 			);
-			// console.log(response)
+			const data = await response.json();
+			console.log(data);
 
-			console.log(grantFormData);
-
-			if (response.status === 200) {
+			if ((data.status = "fail")) {
+				setShowAlreadyGrant(true);
+				setLoading(false);
+			} else if ((data.status = "success")) {
 				setShowGrantSuccess(true);
 			}
+
+			setLoading(false);
+
+			// if (response.status === 200) {
+			// 	setShowGrantSuccess(true);
+			// }
 		} catch (error) {
 			setLoading(false);
-			console.log("API Fetch Error:", error);
+			// console.log("API Fetch Error:", error);
 
 			// Check if the error is network-related
 			if (
@@ -142,28 +162,23 @@ const ApplyForGrant = () => {
 				// Show the NetworkError modal
 				setShowNetworkError(true);
 			}
+		} finally {
+			setIsSubmitting(false); // Re-enable the button
 		}
 	};
 
 	return (
 		<div>
 			{/* <Navbar /> */}
+			<Nav />
 
 			<div
 				id="top"
-				className={`relative bg-orange-50 h-fit flex flex-col justify-center items-center mx-auto relative py-20 ${ApplyForGrantCSS.heading}`}>
-				<div className={ApplyForGrantCSS.decor}>
-					{/* <FormVector position={"left-10 top-10"} /> */}
-					<FormVector position={"top-10"} />
-					<FormVector position={"right-10 top-30"} />
-					<FormVector position={"left-10"} />
-					{/* <FormVector position={'right-10'} /> */}
-				</div>
-
+				className={`relative bg-orange-50 h-fit flex flex-col justify-center items-center mx-auto relative  ${ApplyForGrantCSS.heading}`}>
 				<div
-					className={`text-center w-1/2 mt-15 space-y-3 ${ApplyForGrantCSS.title}`}>
+					className={`text-center h-fit w-1/2 space-y-3 ${ApplyForGrantCSS.title}`}>
 					<h1 className="text-5xl text-orange-500 font-semibold">
-						Apply For {"Grant"}
+						Apply For Grant
 					</h1>
 					<p>Need it? Go for it!</p>
 					<h3 className="text-xl font-semibold">
@@ -362,12 +377,10 @@ const ApplyForGrant = () => {
 							{errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
 
 							{/* Submit button */}
-
-							{loading ? (
-								<button className="btn2">Please wait...</button>
-							) : (
-								<FormBtn btnFor="Submit" />
-							)}
+							<FormBtn
+								btnFor={loading ? "Please wait..." : "Register"}
+								isLoading={loading}
+							/>
 						</form>
 					) : (
 						// Render the EmailVerification component if email is not verified
@@ -389,6 +402,12 @@ const ApplyForGrant = () => {
 			{showGrantSuccess && <GrantSuccess />}
 			{showNetworkError && (
 				<NetworkError onClose={() => setShowNetworkError(false)} />
+			)}
+			{showRequiredFields && (
+				<RequiredFields onClose={() => setShowRequiredFields(false)} />
+			)}
+			{showAlreadyGrant && (
+				<AlreadyGrant onClose={() => setShowAlreadyGrant(false)} />
 			)}
 		</div>
 	);

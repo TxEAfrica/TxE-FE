@@ -34,7 +34,7 @@ const Testimonials = () => {
 						Past attendees testimonials
 					</h1>
 					<div className="text-lg text-white mt-6 flex flex-col justify-center items-center">
-						TxE Summit 2023
+						TxE Summit 2022
 						<div className="flex space-x-2 mt-2 lines">
 							<div className="w-56 h-1 rounded-full bg-orange"></div>
 							<div className="w-56 h-1 rounded-full bg-white"></div>
@@ -77,9 +77,9 @@ const Testimonials = () => {
 							/>
 							<h3>How TXE Africa caused a shift in my tech career</h3>
 							<p>
-								It is through a Scholarship program I then got comprehensive training and guidance that were pivotal
-								in honing my skills. A testament to the quality and expertise fostered
-								by TxE Africa.
+								It is through a Scholarship program I then got comprehensive
+								training and guidance that were pivotal in honing my skills. A
+								testament to the quality and expertise fostered by TxE Africa.
 							</p>
 							<small>
 								Arnold Ngowi, <span>Senior. Frontend Developer.</span>

@@ -1,6 +1,4 @@
-import React, { useState } from "react";
 import Banner from "./sections/Banner";
-import Event from "./sections/Event";
 import EventSchedule from "./sections/EventSchedule";
 import Highlight from "./sections/Highlight";
 import Navbar from "./sections/Navbar";
@@ -11,28 +9,27 @@ import CountUpAnimation from "./sections/Counter/CountUpAnimation";
 import Footer from "./sections/Footer";
 import "./Home.css";
 import Speakers from "../landingPage/sections/Speakers/Speakers";
-import { baseUrl } from "../api/BaseURL";
 
 const Home = () => {
-	console.log(baseUrl.url)
 	return (
 		<>
 			<div className="main-container">
-			
-					<Navbar />
+				<Navbar />
 
 				<div className=" py-2 md:space-y-10 overflow-x-hidden">
-				<Banner />
+					<Banner />
 					<Highlight />
 					<EventSchedule />
 					<CountUpAnimation />
 					<Speakers />
-					<PhotoSpeaks />
-				
-				<Testimonials />
-				<div className="flex justify-center items-center bottom-0 md:-bottom-20 left-0 right-0 z-30 mt-3 mb-3">
-					<Sponsors />
 				</div>
+				<div className="z-50">
+					<PhotoSpeaks />
+
+					<Testimonials />
+					<div className="flex justify-center items-center bottom-0 md:-bottom-20 left-0 right-0 z-30 mt-3 mb-3">
+						<Sponsors />
+					</div>
 				</div>
 				<Footer />
 			</div>

@@ -102,31 +102,6 @@ const RegSuccess = ({ email, userId }) => {
 						View Ticket
 					</button>
 				</div>
-
-				<div className="modal-links">
-					<NavLink
-						to="/grant"
-						className="link1">
-						Apply for Grant
-						<span>
-							<img
-								src={linkarrow1}
-								alt=""
-							/>
-						</span>
-					</NavLink>
-					<NavLink
-						to="/techsupport"
-						className="link2">
-						Apply for Scholarship
-						<span>
-							<img
-								src={linkarrow2}
-								alt=""
-							/>
-						</span>
-					</NavLink>
-				</div>
 			</div>
 		</div>
 	);
