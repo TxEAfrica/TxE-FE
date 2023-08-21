@@ -2,6 +2,7 @@ import React from "react";
 import "../modals/Modals.css";
 import info from "../assets/info.svg";
 import close from "../assets/close.svg";
+import { useNavigate } from "react-router-dom";
 
 export const NotRegistered = ({ onClose }) => {
 	const navigate = useNavigate();

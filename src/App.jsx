@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./landingPage/home";
 import EventRegForm from "./registrationPage/eventregistration/EventRegForm";
 import ApplyForTechSupport from "./applications/techSupport/ApplyForTechSupport";
-import TechSupportApplication from "./applications/category/TechSupportApplication";
 import ApplyForGrant from "./applications/grant/ApplyForGrant";
 import TicketPage from "./ticketPage/TicketPage";
 import EmailTemplate from "./emailTemplate/EmailTemplate";
