@@ -192,7 +192,7 @@ export default function ApplyForTechSupport() {
 				<div
 					className={`text-center w-1/2 mt-15 space-y-3 ${ApplyForTechSupportCSS.title}`}>
 					<h1 className="text-5xl text-orange-500 font-semibold">
-						Apply For {"Tech Support"}
+						Apply For Tech Support
 					</h1>
 					<p>Need it? Go for it!</p>
 					<h3 className="text-xl font-semibold">
@@ -437,15 +437,7 @@ export default function ApplyForTechSupport() {
 							{errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
 
 							{/* Submit button */}
-
-							{loading ? (
-								<button className="btn3">Please wait...</button>
-							) : (
-								<FormBtn
-									btnFor="Submit"
-									disabled={isSubmitting}
-								/>
-							)}
+							<FormBtn btnFor={loading?'Please wait...':'Submit'} isLoading={loading} />
 						</form>
 					) : (
 						// Render the EmailVerification component if email is not verified
