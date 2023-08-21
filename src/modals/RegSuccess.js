@@ -17,7 +17,7 @@ const RegSuccess = ({ email, userId }) => {
 		// try {
 		// 	// Fetch user data using the email...
 		// 	const response = await fetch(
-				// `${baseUrl.url}/api/v1/${userId}`
+		// `${baseUrl.url}/api/v1/${userId}`
 		// 	); // Replace with your API endpoint
 		// 	const userData = await response.json();
 		// 	console.log(userData);
@@ -69,7 +69,7 @@ const RegSuccess = ({ email, userId }) => {
 								/>
 								<g
 									id="tick"
-									clip-path="url(#clip0_1217_1066)">
+									clipPath="url(#clip0_1217_1066)">
 									<path
 										id="Vector"
 										d="M71.1268 124.651L50.3647 103.889L55.6012 98.7443L71.2187 114.362L76.3632 119.506L71.1268 124.651ZM91.8888 124.651L71.1268 103.889L76.2714 98.6524L91.8888 114.27L125.696 80.4626L130.841 85.6991L91.8888 124.651ZM91.8888 103.889L86.6524 98.7443L104.842 80.5545L110.079 85.6991L91.8888 103.889Z"
