@@ -13,7 +13,7 @@ const Nav = () => {
 	};
 
 	return (
-		<div className="flex justify-center py-8 text-center  sticky top-0 z-50 nav">
+		<div className="flex justify-center py-6 text-center  sticky top-0 z-50 nav">
 			<div onClick={() => location.pathname !== "/" && navigate("/")}>
 				<img
 					src={TxELogo}
