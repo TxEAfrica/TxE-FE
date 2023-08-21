@@ -16,6 +16,7 @@
 .orange {
 	color: #ff6e4a;
 }
+
 /* --------------------------navbar ---------------------------- */
 
 .nav-holder {
@@ -25,8 +26,9 @@
 	background-color: #000;
 	width: 100%;
 	padding: 20px 20px;
-	/* justify-content: space-between;
-	z-index: 1000; */
+}
+.navbar > img {
+	width: 120px;
 }
 
 .navlink {
@@ -56,6 +58,14 @@
 		/* justify-content: space-between;
 	z-index: 1000; */
 	}
+	.line-holder {
+		display: flex;
+		flex-direction: column;
+		align-items: end;
+	}
+	.lines {
+		width: 300px;
+	}
 }
 @media screen and (max-width: 1200px) {
 	.nav-holder {
@@ -67,6 +77,14 @@
 		padding: 10px 20px;
 		/* justify-content: space-between;
 	z-index: 1000; */
+	}
+	.line-holder {
+		display: flex;
+		flex-direction: column;
+		align-items: end;
+	}
+	.lines {
+		width: 300px;
 	}
 }
 @media screen and (max-width: 1024px) {
@@ -80,6 +98,14 @@
 		/* justify-content: space-between;
 	z-index: 1000; */
 	}
+	.line-holder {
+		display: flex;
+		flex-direction: column;
+		align-items: end;
+	}
+	.lines {
+		width: 250px;
+	}
 }
 @media screen and (max-width: 996px) {
 	.nav-holder {
@@ -91,6 +117,16 @@
 		padding: 10px 20px;
 		/* justify-content: space-between;
 	z-index: 1000; */
+	}
+}
+@media screen and (max-width: 767px) {
+	.line-holder {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.lines {
+		width: 250px;
 	}
 }
 @media screen and (max-width: 575px) {
@@ -113,8 +149,9 @@
 		background-color: #000;
 		width: 100%;
 		padding: 10px 10px;
-		/* justify-content: space-between;
-	z-index: 1000; */
+	}
+	.small-nav {
+		z-index: 500 !important;
 	}
 }
 @media screen and (max-width: 360px) {
@@ -139,11 +176,11 @@
 	overflow: hidden;
 	height: 800px;
 	/* flex-shrink: 0; */
-	/* z-index: 1000; */
 	background: url(../assets/Subtract.svg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
+	z-index: 0 !important;
 	/* align-items: center; */
 }
 
@@ -155,7 +192,6 @@
 	gap: 15px;
 	justify-content: center;
 	align-items: flex-start; */
-	z-index: 200;
 	animation: slideFromLeft 1s ease-out;
 }
 .banner-text h1 {
@@ -279,6 +315,7 @@
 		margin-left: 5%;
 	}
 	.banner-text {
+		z-index: 20;
 		width: 100%;
 	}
 	.banner-buttons {
@@ -297,6 +334,7 @@
 		margin-left: 7%;
 	}
 	.banner-text {
+		z-index: 20;
 		width: 100%;
 	}
 	.banner-text h1 {
@@ -311,6 +349,7 @@
 /* For screens up to 1024px */
 @media screen and (max-width: 1024px) {
 	.banner-text {
+		z-index: 20;
 		width: 70%;
 	}
 	.animation-container {
@@ -326,10 +365,13 @@
 @media screen and (max-width: 996px) {
 	.banner-container {
 		height: 700px;
+		z-index: 0 !important;
 	}
 	.banner-text {
+		z-index: 20;
 	}
 	.animation-container {
+		z-index: 0 !important;
 		margin-left: 0;
 		margin-top: 0;
 	}
@@ -342,6 +384,7 @@
 		height: 800px;
 	}
 	.banner-text {
+		z-index: 20;
 		width: 90%;
 	}
 	.animation-container {
@@ -370,7 +413,7 @@
 @media screen and (max-width: 480px) {
 	.banner-container {
 		height: 800px;
-		padding-left: 2%;
+		padding-left: 3%;
 		overflow-x: hidden;
 	}
 	.banner-text {
@@ -389,7 +432,7 @@
 		align-items: center;
 		min-width: 200px;
 		max-width: 100%;
-		padding: 10px;
+		padding: 20px;
 		justify-content: space-between;
 	}
 	.partnership p {
@@ -502,11 +545,12 @@
 }
 @media screen and (max-width: 768px) {
 	.highlight-container {
+		margin-top: 50px;
 		padding: 0 5%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 30px;
+		gap: 20px;
 	}
 	.highlight-box {
 		padding: 0;
@@ -619,7 +663,9 @@
 		padding: 0 3%;
 		align-items: center;
 	}
-
+	#event-schedule {
+		margin-top: 60px;
+	}
 	#event-schedule {
 		padding: 40px 0;
 	}
@@ -670,10 +716,16 @@
 	.event-container {
 		margin: 20px auto;
 	}
+	#event-schedule {
+		margin-top: 40px;
+	}
 }
 @media screen and (max-width: 480px) {
 	.event-container {
 		margin: 20px auto;
+	}
+	#event-schedule {
+		margin-top: 40px;
 	}
 	#schedule {
 		display: flex;
@@ -695,7 +747,7 @@
 	}
 
 	#schedule-split h1 {
-		font-size: 20px;
+		font-size: 18px;
 	}
 	#date {
 		display: flex;
@@ -731,7 +783,10 @@
 	}
 
 	#schedule-split h1 {
-		font-size: 18px;
+		font-size: 16px;
+	}
+	#schedule-split p {
+		font-size: 14px;
 	}
 	#date {
 		display: flex;
@@ -759,6 +814,14 @@
 	}
 }
 
+/* -----------------------photos---------------------------- */
+
+@media screen and (max-width: 768px) {
+	#photos {
+		margin-top: 40px;
+	}
+}
+
 /* --------------------footer-------------------------- */
 
 #footer {
@@ -783,7 +846,7 @@
 /* For screens up to 480px */
 @media screen and (max-width: 480px) {
 	#footer {
-		padding: 40px 2%;
+		padding: 40px 6%;
 	}
 }
 @media screen and (max-width: 360px) {
