@@ -4,8 +4,6 @@ import Lottie from "react-lottie";
 import "./Modals.css";
 import FormBtn from "../registrationPage/eventregistration/components/Buttons/FormButton";
 import { NavLink } from "react-router-dom";
-import arrowlink1 from "../assets/link-arrow-1.svg";
-import arrowlink2 from "../assets/link-arrow-2.svg";
 import { useNavigate } from "react-router-dom";
 
 const FailedModal = ({ onClose, message, secondMessage, btnFor }) => {

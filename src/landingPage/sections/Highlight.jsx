@@ -1,12 +1,8 @@
-import { Icon } from "../../icons/Icons";
-import win from "../../assets/txe-win1.png";
-import scholarship from "../../assets/scholarship.png";
+import win from "../../assets/winPC.jpg";
+import scholarship from "../../assets/scholarship-min.png";
 import win1 from "../../assets/txe-win2.png";
 import "../Landing.css";
 import { useNavigate } from "react-router-dom";
-import FormBtn from "../../registrationPage/eventregistration/components/Buttons/FormButton";
-import BtnPrimary from "../buttons/BtnPrimary";
-import BtnSecondary from "../buttons/BtnSecondary";
 
 const Highlight = () => {
 	const navigate = useNavigate();

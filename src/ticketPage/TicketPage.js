@@ -9,6 +9,7 @@ import Ticket from "./Ticket";
 import { useParams } from "react-router-dom";
 import Sponsors from "../landingPage/sections/Sponsors";
 import Footer from "../landingPage/sections/Footer";
+import { baseUrl } from "../api/BaseURL";
 
 export default function TicketPage({}) {
 	const { userId } = useParams();
@@ -20,13 +21,12 @@ export default function TicketPage({}) {
 			try {
 				// Fetch user data using the email...
 				const response = await fetch(
-					`https://txe-africa.onrender.com/api/v1/${userId}`
+					`${baseUrl.url}/api/v1/${userId}`
 				);
 				const registrantData = await response.json();
-				console.log("Fetched user data:", registrantData);
 				setUserData(registrantData.data);
 			} catch (error) {
-				console.error("Error fetching user data:", error);
+				throw error
 			}
 		};
 

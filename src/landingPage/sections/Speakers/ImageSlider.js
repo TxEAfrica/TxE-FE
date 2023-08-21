@@ -1,8 +1,6 @@
 import React from "react";
 import { useSwipeable } from "react-swipeable";
 import linkedin from "../../../assets/linkedin-icon.svg";
-import leftarrow from "../../../assets/left-arrow.svg";
-import rightarrow from "../../../assets/right-arrow.svg";
 import "./ImageSlider.css";
 
 const ImageSlider = ({ images, activeIndex, setActiveIndex }) => {

@@ -1,22 +1,19 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import EventRegCSS from "./EventRegForm.module.css";
 import InputField from "./components/InputField/InputField";
 import InputSelect from "./components/InputSelect/InputSelect";
 import InputOption from "./components/InputOption/InputOption";
-import decor from "../../assets/decor.svg";
-import TxELogo from "../../assets/txelogo-orange.svg";
 import FormBtn from "./components/Buttons/FormButton";
-import Navbar from "../../landingPage/sections/Navbar";
 import Footer from "../../landingPage/sections/Footer";
 import FormVector from "../../applications/FormVector";
-import FailedModal from "../../modals/FailedModal";
 import RegSuccess from "../../modals/RegSuccess";
 import Sponsors from "../../landingPage/sections/Sponsors";
 import "../../landingPage/Landing.css";
 import { AlreadyRegistered } from "../../modals/AlreadyRegistered";
 import { InvalidEmail } from "../../modals/InvalidEmail";
 import { NetworkError } from "../../modals/NetworkError";
+import { baseUrl } from "../../api/BaseURL";
 
 const EventRegForm = () => {
 	const navigate = useNavigate();
@@ -91,7 +88,7 @@ const EventRegForm = () => {
 	const checkEmailAvailability = async () => {
 		try {
 			const response = await fetch(
-				"https://txe-africa.onrender.com/api/v1/register/event",
+				`${baseUrl.url}/api/v1/register/event`,
 				{
 					method: "POST",
 					headers: {
@@ -155,7 +152,7 @@ const EventRegForm = () => {
 			};
 
 			const response = await fetch(
-				"https://txe-africa.onrender.com/api/v1/register/event",
+				`${baseUrl.url}/api/v1/register/event`,
 				{
 					method: "POST",
 					headers: {

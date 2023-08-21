@@ -1,6 +1,6 @@
 import BtnPrimary from "../buttons/BtnPrimary";
 import BtnSecondary from "../buttons/BtnSecondary";
-import event from '../../assets/photo5.png'
+import event from '../../assets/photo5-min.png'
 import { useNavigate } from "react-router-dom";
 
 const Event = () => {

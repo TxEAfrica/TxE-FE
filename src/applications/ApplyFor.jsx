@@ -9,6 +9,7 @@ import ScholarshipRegistrants from "./category/validated-applicants/ScholarshipR
 import TechSupport from "./tech-support/TechSupport";
 import FailedModal from "../modals/FailedModal";
 import Sponsors from "../landingPage/sections/Sponsors";
+import { baseUrl } from "../api/BaseURL";
 
 const ApplyFor = ({ category, applicantMessage, onSuccess, onUserData }) => {
 	const [isLoading, setIsLoading] = useState(false);
@@ -52,7 +53,7 @@ const ApplyFor = ({ category, applicantMessage, onSuccess, onUserData }) => {
 	const fetchValidEmail = async () => {
 		try {
 			const response = await fetch(
-				`https://txe-africa.onrender.com/api/v1/${validEmail}`
+				`${baseUrl.url}/api/v1/${validEmail}`
 			);
 			if (!response.ok) {
 				setIsLoading(false);
@@ -131,7 +132,7 @@ const ApplyFor = ({ category, applicantMessage, onSuccess, onUserData }) => {
 	const fetchTechSupportData = async (value) => {
 		try {
 			const response = await fetch(
-				"https://txe-africa.onrender.com/api/v1/register/tech",
+				`${baseUrl.url}/api/v1/register/tech`,
 				{
 					method: "POST",
 					headers: {
