@@ -16,6 +16,7 @@ import { NetworkError } from "../../modals/NetworkError";
 import Sponsors from "../../landingPage/sections/Sponsors";
 import ImageUploader from "../category/validated-applicants/uploader/ImageUploader";
 import { RequiredFields } from "../../modals/RequiredFields";
+import { baseUrl } from "../../api/BaseURL";
 
 export default function ApplyForTechSupport() {
 	const [isEmailVerified, setIsEmailVerified] = useState(false);
@@ -122,7 +123,7 @@ export default function ApplyForTechSupport() {
 		try {
 			// Make the POST request to the API
 			const response = await fetch(
-				"https://txe-africa.onrender.com/api/v1/register/tech",
+				`${baseUrl.url}/api/v1/register/tech`,
 				{
 					method: "POST",
 					headers: {

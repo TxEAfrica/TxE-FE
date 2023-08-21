@@ -1,6 +1,4 @@
 import { Icon } from "../../icons/Icons";
-import txeLogo from "../../assets/txeLogo.svg";
-import txe from "../../assets/TxE Africa.png";
 import ScrollToContainerLink from "../scroll/ScrollToContainerLink";
 import "../Landing.css";
 

@@ -2,9 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import BtnPrimary from "../buttons/BtnPrimary";
 import BtnSecondary from "../buttons/BtnSecondary";
-import animation1 from "../../assets/animation-img-1.jpeg";
-import animation2 from "../../assets/animation-img-2.svg";
-import animation3 from "../../assets/animation-img-3.svg";
+import animation1 from "../../assets/animation-img-1-min.jpeg";
 import animation4 from "../../assets/animation-img-4.svg";
 import enugu from "../../assets/esg-logo.svg";
 import { CSSTransition } from "react-transition-group";
@@ -39,13 +37,13 @@ const Banner = () => {
 	return (
 		<div
 			id="top"
-			className="h-screen w-full overflow-hidden banner-container mx-3 lg:mx-0 ">
+			className="h-screen w-full overflow-hidden banner-container z-10 mx-3 lg:mx-0 ">
 			<CSSTransition
 				in={true}
 				appear={true}
 				timeout={1000}
 				classNames="slide">
-				<div className="banner-text">
+				<div className="mt-10 banner-text">
 					<h1 className="text-4xl md:text-6xl text-white font-bold">
 						<span className="orange">ENUGU</span> Tech & Entrepreneurship Summit
 						2023

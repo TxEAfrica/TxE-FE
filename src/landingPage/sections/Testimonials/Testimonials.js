@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Testimonials.css";
 import arrowleft from "../../../assets/arrow-left.svg";
 import arrowright from "../../../assets/arrow-right.svg";
-import arnold from "../../../assets/arnold.png";
+import arnold from "../../../assets/arnold-min.png";
 import test1 from "../../../assets/testimonial 1.svg";
 import test2 from "../../../assets/test2.svg";
 import q1 from "../../../assets/q1.svg";
@@ -195,7 +195,7 @@ const Testimonials = () => {
 				</div>
 				<div className="control">
 					<img
-						className="arrow left"
+						className="arrow left z-50 absolute"
 						onClick={prevSlide}
 						src={arrowleft}
 						loading="lazy"

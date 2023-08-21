@@ -289,11 +289,11 @@
 		bottom: 10px;
 	}
 	.arrow.left {
-		left: 50px;
+		left: 10px;
 	}
 
 	.arrow.right {
-		right: 50px;
+		right: 10px;
 	}
 }
 
@@ -319,16 +319,11 @@
 		max-width: 500px;
 	}
 
-	.control .arrow {
-		position: absolute;
-	}
-	.arrow.left {
-		left: 420px;
-	}
+	/* .arrow.left {
+		left: 10px;
+	} */
 
-	.arrow.right {
-		right: 50px;
-	}
+	
 }
 
 @media screen and (max-width: 480px) {
@@ -362,13 +357,7 @@
 	.quote-mark {
 		display: none;
 	}
-	.control {
-		top: 10%;
-	}
-
-	.control .arrow {
-		bottom: 5px;
-	}
+	
 }
 
 @media screen and (max-width: 360px) {
@@ -398,9 +387,5 @@
 		font-size: 14px;
 	}
 
-	.control .arrow {
-		position: absolute;
-		width: 40px;
-		top: 59%;
-	}
+	
 }

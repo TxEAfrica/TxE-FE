@@ -17,7 +17,7 @@ const RegSuccess = ({ email, userId }) => {
 		// try {
 		// 	// Fetch user data using the email...
 		// 	const response = await fetch(
-		// 		`https://txe-africa.onrender.com/api/v1/${userId}`
+				// `${baseUrl.url}/api/v1/${userId}`
 		// 	); // Replace with your API endpoint
 		// 	const userData = await response.json();
 		// 	console.log(userData);
