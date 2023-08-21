@@ -1,53 +1,83 @@
 import React, { useState } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import SpeakerCard from './SpeakerCard';
-import image from '../../../assets/speakerImg.png';
-import image2 from '../../../assets/speakerImg2.png';
-import image3 from '../../../assets/speakerImg3.png';
+import williams from '../../../assets/williams 1-min.png';
+import ifeanyi from '../../../assets/ifeanyi 1-min.png';
+import joyce from '../../../assets/joyce 1-min.png';
+import jduren from '../../../assets/j-duren 1-min.png';
+import collins from '../../../assets/collins 1-min.png';
+import nnamdi from '../../../assets/nnamdi 2-min.png';
+import moj from '../../../assets/moj 1-min.png';
+import afigbo from '../../../assets/image_15 1-min.png';
 
 const Speakers = () => {
-  const initialSpeakers = [
-    { name: 'Speaker 1', position: 'CEO', imageURL: image },
-    { name: 'Speaker 2', position: 'CTO', imageURL: image2 },
-    { name: 'Speaker 3', position: 'COO', imageURL: image },
-    { name: 'Speaker 4', position: 'Designer', imageURL: image2 },
-    { name: 'Speaker 5', position: 'Engineer', imageURL: image3 },
+  const allSpeakers = [
+    { position: 'Co-Founder The BWPW "Hinge of Career Mentorship', name: 'Joyce Agbanobi', imageURL: joyce },
+    { position: 'Senior Program Manager, Global Business Operations at Google', name: 'Justin Duren', imageURL: jduren },
+    { position: 'Actor, Filmaker, Humanitarian Founder, WUF', name: 'Williams Uchembah', imageURL: williams },
+    { position: 'Tech Business Leader', name: 'Mojolaoluwa Aderemi-Makinde', imageURL: moj },
+    { position: 'Senior Engineering Program Manager Google', name: 'Collins Ndukwe', imageURL: collins },
+    { position: 'Digital Product Leader', name: 'Ifeanyi Akosionu', imageURL: ifeanyi },
+    { position: 'Developer Success at Okta', name: 'Chukwuemeka Afigbo', imageURL: afigbo },
+    { position: 'Director, Global Network Operations at Google', name: 'Nnamdi Abraham-Igwe', imageURL: nnamdi },
   ];
 
-  const [displaySpeakers, setDisplaySpeakers] = useState(initialSpeakers);
+  const speakersPerPage = 5;
+  const [displaySpeakers, setDisplaySpeakers] = useState(allSpeakers.slice(0, speakersPerPage));
+  const [startIndex, setStartIndex] = useState(0);
 
   const handleSwap = (direction) => {
-    const newDisplaySpeakers = [...displaySpeakers];
+    let newStartIndex = startIndex;
+
     if (direction === 'left') {
-      const lastSpeaker = newDisplaySpeakers.pop();
-      newDisplaySpeakers.unshift(lastSpeaker);
+      newStartIndex = (startIndex - 1 + allSpeakers.length) % allSpeakers.length;
     } else if (direction === 'right') {
-      const firstSpeaker = newDisplaySpeakers.shift();
-      newDisplaySpeakers.push(firstSpeaker);
+      newStartIndex = (startIndex + 1) % allSpeakers.length;
     }
+
+    const newDisplaySpeakers = [];
+
+    for (let i = 0; i < speakersPerPage; i++) {
+      const index = (newStartIndex + i) % allSpeakers.length;
+      newDisplaySpeakers.push(allSpeakers[index]);
+    }
+
+    setStartIndex(newStartIndex);
     setDisplaySpeakers(newDisplaySpeakers);
   };
 
   return (
-    <div className="px-8 mt-10 relative flex items-center bg-black justify-center">
+    <div id='speakers' className="px-8 mt-20 relative flex items-center bg-black justify-center">
+      <div className=' absolute -top-9 lg:top-5'>
+        <h1 className='text-4xl lg:text-5xl text-white font-bold text-center'>
+          Meet our speakers
+        </h1>
+        <div className="text-lg text-white mt-6 mb-8 flex flex-col justify-center items-center">
+          Well seasoned
+					<div className="flex space-x-2 mt-2 lines">
+						<div className="w-56 h-1 rounded-full bg-orange"></div>
+						<div className="w-56 h-1 rounded-full bg-white"></div>
+					</div>
+				</div>
+      </div>
       <button
-        className="p-3 lg:mx-8 hover:bg-bgColor border-2 border-white rounded-full text-white absolute top-0 left-0"
+        className="p-3 mt-24 lg:mx-8 hover:bg-bgColor border-2 border-white rounded-full text-white absolute top-0 left-0"
         onClick={() => handleSwap('left')}
       >
         <IoIosArrowBack size={24} />
       </button>
-      <div className="flex mt-20 center-card items-center justify-center -space-x-14">
+      <div className="flex mt-44 center-card items-center justify-center -space-x-14">
         {displaySpeakers.map((speaker, index) => (
           <SpeakerCard
             key={speaker.name}
             speaker={speaker}
             position={index}
-            animationDirection={index === 3 ? 'current' : index < 3 ? 'left' : 'right'}
+            animationDirection={index === 2 ? 'current' : index < 4 ? 'left' : 'right'}
           />
         ))}
       </div>
       <button
-        className="p-3 lg:mx-8 hover:bg-bgColor border-2 border-white rounded-full text-white absolute top-0 right-0"
+        className="p-3 mt-24 lg:mx-8 hover:bg-bgColor border-2 border-white rounded-full text-white absolute top-0 right-0"
         onClick={() => handleSwap('right')}
       >
         <IoIosArrowForward size={24} />

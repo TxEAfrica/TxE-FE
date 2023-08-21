@@ -1,22 +1,19 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import EventRegCSS from "./EventRegForm.module.css";
 import InputField from "./components/InputField/InputField";
 import InputSelect from "./components/InputSelect/InputSelect";
 import InputOption from "./components/InputOption/InputOption";
-import decor from "../../assets/decor.svg";
-import TxELogo from "../../assets/txelogo-orange.svg";
 import FormBtn from "./components/Buttons/FormButton";
-import Navbar from "../../landingPage/sections/Navbar";
 import Footer from "../../landingPage/sections/Footer";
 import FormVector from "../../applications/FormVector";
-import FailedModal from "../../modals/FailedModal";
 import RegSuccess from "../../modals/RegSuccess";
 import Sponsors from "../../landingPage/sections/Sponsors";
 import "../../landingPage/Landing.css";
 import { AlreadyRegistered } from "../../modals/AlreadyRegistered";
 import { InvalidEmail } from "../../modals/InvalidEmail";
 import { NetworkError } from "../../modals/NetworkError";
+import { baseUrl } from "../../api/BaseURL";
 
 const EventRegForm = () => {
 	const navigate = useNavigate();
@@ -57,7 +54,7 @@ const EventRegForm = () => {
 				countries.sort((a, b) => a.label.localeCompare(b.label));
 				setCountryOptions([defaultOption, ...countries]);
 			} catch (error) {
-				console.error("Error fetching country data:", error);
+				// console.error("Error fetching country data:", error);
 			}
 		};
 
@@ -91,7 +88,7 @@ const EventRegForm = () => {
 	const checkEmailAvailability = async () => {
 		try {
 			const response = await fetch(
-				"https://txe-africa.onrender.com/api/v1/register/event",
+				`${baseUrl.url}/api/v1/register/event`,
 				{
 					method: "POST",
 					headers: {
@@ -110,7 +107,7 @@ const EventRegForm = () => {
 
 			return false; // Email does not exist
 		} catch (error) {
-			console.log("Error checking email availability:", error);
+			// console.log("Error checking email availability:", error);
 			return false;
 		}
 	};
@@ -155,7 +152,7 @@ const EventRegForm = () => {
 			};
 
 			const response = await fetch(
-				"https://txe-africa.onrender.com/api/v1/register/event",
+				`${baseUrl.url}/api/v1/register/event`,
 				{
 					method: "POST",
 					headers: {
@@ -168,8 +165,8 @@ const EventRegForm = () => {
 			const data = await response.json();
 
 			if ((data.success = true)) {
-				console.log(data.message);
-				console.log(data.data);
+				// console.log(data.message);
+				// console.log(data.data);
 				setLoading(false);
 				setUserId(data.data._id);
 				setShowRegSuccess(true);
@@ -214,17 +211,10 @@ const EventRegForm = () => {
 
 	return (
 		<div>
-			{/* <Navbar /> */}
 			<div className={EventRegCSS.main}>
 				<div className={EventRegCSS.decor}>
 					<FormVector position={"left-10 top-100"} />
-					{/* <FormVector position={"left-10 bottom-100"} /> */}
-					{/* <FormVector position={"left-20 top-40"} /> */}
-					{/* <FormVector position={"top-6"} /> */}
-					{/* <FormVector position={'bottom-3'} /> */}
 					<FormVector position={"right-10 top-100"} />
-					{/* <FormVector position={"right-10 bottom-100"} />
-					<FormVector position={"right-20 top-10"} /> */}
 				</div>
 				<div
 					className="cursor-pointer"
@@ -489,11 +479,7 @@ const EventRegForm = () => {
 					/>
 
 					<div>
-						{loading ? (
-							<button className="btn3">Please wait...</button>
-						) : (
-							<FormBtn btnFor="Register" />
-						)}
+							<FormBtn btnFor={loading?'Please wait...':'Register'} isLoading={loading} />
 					</div>
 				</form>
 			</div>

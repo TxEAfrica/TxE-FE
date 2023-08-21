@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Testimonials.css";
 import arrowleft from "../../../assets/arrow-left.svg";
 import arrowright from "../../../assets/arrow-right.svg";
-import arnold from "../../../assets/arnold.png";
+import arnold from "../../../assets/arnold-min.png";
 import test1 from "../../../assets/testimonial 1.svg";
 import test2 from "../../../assets/test2.svg";
 import q1 from "../../../assets/q1.svg";
@@ -34,7 +34,7 @@ const Testimonials = () => {
 						Past attendees testimonials
 					</h1>
 					<div className="text-lg text-white mt-6 flex flex-col justify-center items-center">
-						TxE Summit 2023
+						TxE Summit 2022
 						<div className="flex space-x-2 mt-2 lines">
 							<div className="w-56 h-1 rounded-full bg-orange"></div>
 							<div className="w-56 h-1 rounded-full bg-white"></div>
@@ -195,7 +195,7 @@ const Testimonials = () => {
 				</div>
 				<div className="control">
 					<img
-						className="arrow left"
+						className="arrow left z-50 absolute"
 						onClick={prevSlide}
 						src={arrowleft}
 						loading="lazy"
