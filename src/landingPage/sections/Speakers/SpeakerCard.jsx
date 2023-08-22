@@ -1,5 +1,3 @@
-import React from 'react';
-
 const SpeakerCard = ({ speaker, position, animationDirection }) => {
   const cardHeightClass =
     position === 2

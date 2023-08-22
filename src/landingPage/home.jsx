@@ -13,16 +13,15 @@ import Speakers from "../landingPage/sections/Speakers/Speakers";
 const Home = () => {
 	return (
 		<>
+		<Navbar /> 
 			<div className="main-container">
-				<Navbar />
-
 				<div className=" py-2 md:space-y-10 overflow-x-hidden">
 					<Banner />
 					<Highlight />
 					<EventSchedule />
 					<CountUpAnimation />
 					<Speakers />
-				</div>
+				
 				<div className="z-50">
 					<PhotoSpeaks />
 
@@ -31,8 +30,9 @@ const Home = () => {
 						<Sponsors />
 					</div>
 				</div>
-				<Footer />
+				</div>
 			</div>
+			<Footer />
 		</>
 	);
 };
