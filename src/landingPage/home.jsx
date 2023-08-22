@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Banner from "./sections/Banner";
 import EventSchedule from "./sections/EventSchedule";
 import Highlight from "./sections/Highlight";
@@ -13,9 +14,8 @@ import Speakers from "../landingPage/sections/Speakers/Speakers";
 const Home = () => {
 	return (
 		<>
+			<Navbar />
 			<div className="main-container">
-				<Navbar />
-
 				<div className=" py-2 md:space-y-10 overflow-x-hidden">
 					<Banner />
 					<Highlight />
