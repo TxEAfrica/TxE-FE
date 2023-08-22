@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import QRCode from "qrcode.react";
 import TicketPageCSS from "./TicketPage.module.css";
+import fadeLogo from "../assets/fadelogo.svg";
 
 export default function Ticket({ userData, ticketContainerRef }) {
 	return (
@@ -8,7 +9,10 @@ export default function Ticket({ userData, ticketContainerRef }) {
 			ref={ticketContainerRef}
 			className={TicketPageCSS.mainticket}>
 			<div className={TicketPageCSS.ticketTitle}>
-				<p>SUMMIT TICKET</p>
+				<img
+					src={fadeLogo}
+					alt="logo"
+				/>
 			</div>
 			<div className={TicketPageCSS.ticketBody}>
 				<div className={TicketPageCSS.part}>
@@ -16,13 +20,15 @@ export default function Ticket({ userData, ticketContainerRef }) {
 				</div>
 				<div className={TicketPageCSS.part}>
 					<div className={TicketPageCSS.partHolder}>
-						<p>Name:</p>
+						{/* <p>Name:</p> */}
 						<div className={TicketPageCSS.partInner}>
 							<p>{userData?.firstName + " " + userData?.lastName}</p>
 						</div>
 					</div>
+				</div>
+				<div className={TicketPageCSS.part}>
 					<div className={TicketPageCSS.partHolder}>
-						<p>Date:</p>
+						{/* <p>Date:</p> */}
 						<div className={TicketPageCSS.partInner}>
 							<p>29•09•2023</p>
 						</div>
@@ -30,15 +36,15 @@ export default function Ticket({ userData, ticketContainerRef }) {
 				</div>
 				<div className={TicketPageCSS.part}>
 					<div className={TicketPageCSS.partHolder}>
-						<p>Event Type:</p>
+						{/* <p>Event Type:</p> */}
 						<div className={TicketPageCSS.partInner}>
-							<p>{userData?.trackInterest} summit </p>
+							<p>{userData?.trackInterest.toUpperCase()} SUMMIT </p>
 						</div>
 					</div>
 				</div>
 				<div className={TicketPageCSS.part}>
 					<div className={TicketPageCSS.partHolder}>
-						<p>Event Address:</p>
+						{/* <p>Event Address:</p> */}
 						<div className={TicketPageCSS.partInner}>
 							<p>Golden Heart Event centre, Emene</p>
 						</div>

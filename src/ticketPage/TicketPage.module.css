@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Alata&family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap");
 
 .container {
+	height: fit-content;
 	background-color: #000;
 	padding: 0 80px;
-	margin-bottom:100px;
+	margin-bottom: 100px;
 	display: flex;
 	flex-direction: column;
 	padding-bottom: 50px;
@@ -16,7 +17,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
-	max-width: 80%;
+	max-width: 100%;
 }
 
 .ticketContainer > h2 {
@@ -48,14 +49,15 @@
 }
 
 .ticketTitle {
+	pointer-events: none;
 	background: #ff6f43;
 	width: 20%;
 	height: auto;
 	display: flex;
 	justify-content: center;
-	align-items: center; /* Center the text vertically */
-	writing-mode: vertical-lr; /* Set vertical writing mode */
-	text-orientation: sideways; /* Set upright text orientation */
+	align-items: center;
+	writing-mode: vertical-lr;
+	text-orientation: sideways;
 }
 
 .ticketTitle p {
@@ -66,14 +68,15 @@
 .ticketBody {
 	background: #fff;
 	color: #000;
-	padding: 10px 60px;
 	width: 100%;
 	border-right: 5px dashed #ff6f43;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	gap: 5px;
 }
 .part {
+	text-align: center;
 	width: 100%;
 	display: flex;
 	gap: 10px;
@@ -102,12 +105,14 @@
 	font-family: "Roboto Mono", sans-serif;
 }
 .ticketStub {
+	pointer-events: none;
 	color: #000;
 	background: #fff;
 	padding: 20px 50px;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
+	justify-content: center;
+	gap: 20px;
 	align-items: center;
 }
 
@@ -122,14 +127,16 @@
 /* Responsive styles for specific screen sizes */
 
 /* For screens with max-width 1440px and above */
-@media (max-width: 1440px) {
+@media screen and (min-width: 1440px) {
 	.container {
-		height: 100vh;
+		width: 100%;
+		height: fit-content;
 		padding: 0 35px;
 		display: flex;
 	}
 	.ticketContainer {
 		margin-top: 80px;
+		width: 100%;
 		max-width: 100%;
 		padding: 0 25px;
 	}
@@ -138,23 +145,101 @@
 		margin: auto;
 	}
 	.ticketMessage p {
-		width: 80%;
+		width: 60%;
 	}
 	.mainticket {
-		width: 60%;
+		width: 70%;
 		max-height: 60vh;
 	}
 	.ticketTitle {
 		width: 30%;
+		padding: 30px;
 	}
+
 	.ticketBody {
-		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 15px;
+		padding: 20px 0;
+		width: 100%;
+	}
+	.part {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		padding: 0 20px;
+		/* text-align: center; */
 	}
 	.partInner {
+		max-width: 100%;
+		padding: 5px;
+	}
+	.partHolder {
+		width: 100%;
+	}
+	.ticketStub {
+		padding: 45px 75px;
+	}
+	.buttons {
+		width: 60%;
+	}
+}
+@media screen and (max-width: 1440px) {
+	.container {
+		width: 100%;
+		height: fit-content;
+		padding: 0 35px;
+		display: flex;
+	}
+	.ticketContainer {
+		margin-top: 80px;
+		width: 100%;
+		max-width: 100%;
+		padding: 0 25px;
+	}
+	.ticketMessage {
+		width: 100%;
+		margin: auto;
+	}
+	.ticketMessage p {
+		width: 60%;
+	}
+	.mainticket {
+		width: 70%;
+		max-height: 60vh;
+	}
+	.ticketTitle {
+		padding: 30px;
+		width: 30%;
+	}
+
+	.ticketBody {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 15px;
+		padding: 20px 0;
+		width: 100%;
+	}
+	.part {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		padding: 0 20px;
+		/* text-align: center; */
+	}
+	.partHolder {
+		width: 100%;
+	}
+	.partInner {
+		max-width: 100%;
 		padding: 5px;
 	}
 	.ticketStub {
-		padding: 15px;
+		padding: 45px 75px;
 	}
 	.buttons {
 		width: 60%;
@@ -162,9 +247,9 @@
 }
 
 /* For screens with max-width 1200px and above */
-@media (max-width: 1200px) {
+@media (max-width: 1280px) {
 	.container {
-		height: 100vh;
+		height: fit-content;
 		padding: 0 15px;
 		display: flex;
 	}
@@ -189,11 +274,22 @@
 	.ticketBody {
 		padding: 20px;
 	}
+	.part {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		padding: 0 20px;
+		/* text-align: center; */
+	}
+	.partHolder {
+		width: 100%;
+	}
 	.partInner {
+		max-width: 100%;
 		padding: 5px;
 	}
 	.ticketStub {
-		padding: 15px;
+		padding: 20px 60px;
 	}
 	.buttons {
 		width: 70%;
@@ -201,9 +297,9 @@
 }
 
 /* For screens with max-width 1028px and above */
-@media (max-width: 1028px) {
+@media (max-width: 1024px) {
 	.container {
-		height: 120vh;
+		height: fit-content;
 		padding: 0 15px;
 		display: flex;
 	}
@@ -228,11 +324,23 @@
 	.ticketBody {
 		padding: 20px;
 	}
+	.part {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		padding: 0 20px;
+		/* text-align: center; */
+	}
+	.partHolder {
+		width: 100%;
+	}
 	.partInner {
+		/* min-width: 400px; */
+		max-width: 100%;
 		padding: 5px;
 	}
 	.ticketStub {
-		padding: 15px;
+		padding: 20px 55px;
 	}
 	.buttons {
 		width: 80%;
@@ -243,7 +351,7 @@
 /* For screens with max-width 996px and above */
 @media (max-width: 996px) {
 	.container {
-		height: 110vh;
+		height: fit-content;
 		padding: 0 0px;
 		display: flex;
 	}
@@ -259,14 +367,14 @@
 		width: 80%;
 	}
 	.mainticket {
-		width: 90%;
+		width: 100%;
 		max-height: 60vh;
 	}
 	.ticketTitle {
-		width: 30%;
+		width: 20%;
 	}
 	.ticketBody {
-		padding: 25px 20px;
+		padding: 25px 10px;
 	}
 	.part {
 		width: 100%;
@@ -278,7 +386,7 @@
 		padding: 5px;
 	}
 	.ticketStub {
-		padding: 15px;
+		padding: 15px 55px;
 	}
 	.buttons {
 		width: 70%;
@@ -320,7 +428,7 @@
 		padding: 5px;
 	}
 	.ticketStub {
-		padding: 15px;
+		padding: 15px 40px;
 	}
 	.buttons {
 		width: 80%;
@@ -361,7 +469,7 @@
 	}
 	.mainticket {
 		margin: 30px auto;
-		width: 90%;
+		width: 70%;
 		height: fit-content;
 		max-height: fit-content;
 		border: 1px solid #fff;
@@ -389,7 +497,7 @@
 	.ticketBody {
 		background: #fff;
 		color: #000;
-		padding: 20px;
+		padding: 20px 10px;
 		width: 100%;
 		border-right: none;
 		border-top: 5px dashed #ff6f43;
@@ -578,7 +686,7 @@
 @media (max-width: 360px) {
 	.container {
 		height: fit-content;
-		padding: 0 15px;
+		padding: 0 5px;
 		display: flex;
 		justify-content: center;
 	}
@@ -695,13 +803,13 @@
 		flex-direction: column;
 		gap: 5px;
 		justify-content: space-around;
-		width: 90%;
+		width: 100%;
 		margin-bottom: 40px;
 	}
 }
 
 /* For screens with max-width 320px and above */
-@media (max-width: 320px) {
+@media (max-width: 300px) {
 	.container {
 		padding: 0 5px;
 	}

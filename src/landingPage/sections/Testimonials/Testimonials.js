@@ -179,7 +179,7 @@ const Testimonials = () => {
 								TxE Africa's scholarship propelled me to chart new horizons in
 								the tech world. Their support has paved the path to success,
 								ensuring that I'm well-equipped to make my mark in the tech
-								industry.
+								industry, taking as many people along with me.
 							</p>
 							<small>
 								Seyi Peters, <span>Sr. Frontend Developer.</span>

@@ -14,18 +14,16 @@ export default function TicketPage({}) {
 	const { userId } = useParams();
 	const [userData, setUserData] = useState(null);
 	const ticketContainerRef = useRef(null);
-	const navigate = useNavigate()
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		const fetchUserData = async () => {
 			try {
-				const response = await fetch(
-					`${baseUrl.url}/api/v1/${userId}`
-				);
+				const response = await fetch(`${baseUrl.url}/api/v1/${userId}`);
 				const registrantData = await response.json();
 				setUserData(registrantData.data);
 			} catch (error) {
-				throw error
+				throw error;
 			}
 		};
 
@@ -58,8 +56,9 @@ export default function TicketPage({}) {
 						<h1>Registration successful</h1>
 						<p>
 							You have successfully registered for Enugu Tech and
-							Entrepreneurship summit scheduled to hold on the 29th
-							September 2023. Click on the link below to download your event ticket.
+							Entrepreneurship summit scheduled to hold on the{" "}
+							<span>29th September 2023.</span> Click on the link below to
+							download your event ticket.
 						</p>
 					</div>
 					<div id="ticket-container">
@@ -74,9 +73,26 @@ export default function TicketPage({}) {
 							btnName={"Download Ticket"}
 							onClick={handleDownloadTicket}
 						/>
-						<BtnSecondary 
-						btnName={`${userData?.trackInterest==='entrepreneurship' ? 'Apply for Grant': userData?.trackInterest==='technology'? 'Apply for Tech Support':'Please Register'}`} 
-						onClick={()=>navigate(`/${userData?.trackInterest==='entrepreneurship' ? 'grant': userData?.trackInterest==='technology'? 'techsupport':'Please Register'}`)}/>
+						<BtnSecondary
+							btnName={`${
+								userData?.trackInterest === "entrepreneurship"
+									? "Apply for Grant"
+									: userData?.trackInterest === "technology"
+									? "Apply for Tech Support"
+									: "Please Register"
+							}`}
+							onClick={() =>
+								navigate(
+									`/${
+										userData?.trackInterest === "entrepreneurship"
+											? "grant"
+											: userData?.trackInterest === "technology"
+											? "techsupport"
+											: "Please Register"
+									}`
+								)
+							}
+						/>
 					</div>
 				</div>
 			</div>

@@ -36,10 +36,6 @@ const App = () => {
 					path="*"
 					element={<NotFoundPage />}
 				/>
-				<Route
-					path="/email-template"
-					element={<EmailTemplate />}
-				/>
 			</Routes>
 		</BrowserRouter>
 	);
