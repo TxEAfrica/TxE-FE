@@ -78,7 +78,7 @@ export const GrantIneligible = ({ onClose }) => {
 					<button
 						onClick={handleNavigate}
 						className="btn2">
-						Register for Tech Support
+						Apply for Tech Support
 					</button>
 				</div>
 			</div>
