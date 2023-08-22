@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Banner from "./sections/Banner";
 import EventSchedule from "./sections/EventSchedule";
 import Highlight from "./sections/Highlight";
@@ -13,7 +14,7 @@ import Speakers from "../landingPage/sections/Speakers/Speakers";
 const Home = () => {
 	return (
 		<>
-		<Navbar /> 
+			<Navbar />
 			<div className="main-container">
 				<div className=" py-2 md:space-y-10 overflow-x-hidden">
 					<Banner />
@@ -21,15 +22,15 @@ const Home = () => {
 					<EventSchedule />
 					<CountUpAnimation />
 					<Speakers />
-				
-				<div className="z-50">
-					<PhotoSpeaks />
 
-					<Testimonials />
-					<div className="flex justify-center items-center bottom-0 md:-bottom-20 left-0 right-0 z-30 mt-3 mb-3">
-						<Sponsors />
+					<div className="z-50">
+						<PhotoSpeaks />
+
+						<Testimonials />
+						<div className="flex justify-center items-center bottom-0 md:-bottom-20 left-0 right-0 z-30 mt-3 mb-3">
+							<Sponsors />
+						</div>
 					</div>
-				</div>
 				</div>
 			</div>
 			<Footer />

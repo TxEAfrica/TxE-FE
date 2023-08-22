@@ -17,7 +17,7 @@ const EmailVerification = ({ onSuccess, onUserData }) => {
 	const [showTechIneligible, setShowTechIneligible] = useState(false);
 	const [showNotRegistered, setShowNotRegistered] = useState(false);
 	const [showInvalidEmail, setShowInvalidEmail] = useState(false);
-	const [showNetworkError, setShowNetworkError] = useState(true);
+	const [showNetworkError, setShowNetworkError] = useState(false);
 	const [loading, setLoading] = useState(false);
 
 	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
