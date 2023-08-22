@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import InputField from "../../registrationPage/eventregistration/components/InputField/InputField";
 import FormBtn from "../../registrationPage/eventregistration/components/Buttons/FormButton";
 import ApplyForGrantCSS from "../grant/ApplyForGrant.module.css";
-import FailedModal from "../../modals/FailedModal";
+
 import { GrantIneligible } from "../../modals/GrantIneligible";
 import { useNavigate, Navigate } from "react-router-dom";
 import { NotRegistered } from "../../modals/NotRegistered";
@@ -19,8 +19,6 @@ const EmailVerification = ({ onSuccess, onUserData }) => {
 	const [showInvalidEmail, setShowInvalidEmail] = useState(false);
 	const [showNetworkError, setShowNetworkError] = useState(false);
 	const [loading, setLoading] = useState(false);
-
-	// const { handleNavigate, setHandleNavigate } = useState({});
 
 	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -53,23 +51,18 @@ const EmailVerification = ({ onSuccess, onUserData }) => {
 					} else {
 						setVerificationFailed(true);
 						setShowNetworkError(true);
-						// Handle other cases here
 					}
 				}
 			})
 			.catch((error) => {
 				setLoading(false);
-				// console.log("API Fetch Error:", error);
 
-				// Check if the error is network-related
 				if (
 					error instanceof TypeError &&
 					error.message.includes("Failed to fetch")
 				) {
-					// Show the NetworkError modal
 					setShowNetworkError(true);
 				} else {
-					// Handle other types of errors here
 					onSuccess(null, false);
 				}
 			});
@@ -77,7 +70,9 @@ const EmailVerification = ({ onSuccess, onUserData }) => {
 
 	return (
 		<div className={ApplyForGrantCSS.mainn}>
-			<form method="GET" onSubmit={handleVerifyEmail}>
+			<form
+				method="GET"
+				onSubmit={handleVerifyEmail}>
 				<InputField
 					labelText="Email Address"
 					placeholder="Verify email address"
@@ -87,7 +82,10 @@ const EmailVerification = ({ onSuccess, onUserData }) => {
 					value={email}
 					onChange={(e) => setEmail(e.target.value)}
 				/>
-							<FormBtn btnFor={loading?'Please wait...':'Next'} isLoading={loading} />
+				<FormBtn
+					btnFor={loading ? "Please wait..." : "Next"}
+					isLoading={loading}
+				/>
 			</form>
 
 			{showGrantIneligible && (
