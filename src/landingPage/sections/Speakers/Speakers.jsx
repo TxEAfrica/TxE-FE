@@ -102,7 +102,7 @@ const Speakers = () => {
 				onClick={() => handleSwap("left")}>
 				<IoIosArrowBack size={24} />
 			</button>
-			<div className="flex mt-44 center-card items-center justify-center -space-x-14">
+			<div className="flex mt-44 items-center justify-center -space-x-14">
 				{displaySpeakers.map((speaker, index) => (
 					<SpeakerCard
 						key={speaker.name}

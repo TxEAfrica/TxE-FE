@@ -16,6 +16,10 @@ const Navbar = () => {
 		setShowMenu((prevShowMenu) => !prevShowMenu);
 	};
 
+	const closeMenu = () => {
+		setShowMenu(false);
+	};
+
 	return (
 		<div className="flex bg-black justify-between items-center py-4 px-4 md:px-8 lg:px-6 sticky top-0 z-50">
 			<div onClick={() => location.pathname !== "/" && navigate("/")}>
@@ -31,17 +35,17 @@ const Navbar = () => {
 						showMenu ? "lg:hidden" : ""
 					}`}>
 					<ScrollToContainerLink to={"testimonials"}>
-						<li className="p-2 mx-5 cursor-pointer hover:border-b-2 border-orange-400 rounded-lg text-gray-100 font-normal">
+						<li className="p-2 mx-5 cursor-pointer hover:border-b-2 border-orange-400 rounded-lg text-gray-100 font-normal" onClick={closeMenu}>
 							Testimonials
 						</li>
 					</ScrollToContainerLink>
 					<ScrollToContainerLink to={"speakers"}>
-						<li className="p-2 mx-5 cursor-pointer hover:border-b-2 border-orange-400 rounded-lg text-gray-100 font-normal">
+						<li className="p-2 mx-5 cursor-pointer hover:border-b-2 border-orange-400 rounded-lg text-gray-100 font-normal" onClick={closeMenu}>
 							Speakers
 						</li>
 					</ScrollToContainerLink>
 					<ScrollToContainerLink to={"event-schedule"}>
-						<li className="p-2 mx-5 cursor-pointer hover:border-b-2 border-orange-400 rounded-lg text-gray-100 font-normal">
+						<li className="p-2 mx-5 cursor-pointer hover:border-b-2 border-orange-400 rounded-lg text-gray-100 font-normal" onClick={closeMenu}>
 							Event Schedule
 						</li>
 					</ScrollToContainerLink>
@@ -61,16 +65,15 @@ const Navbar = () => {
 						onClick={toggleMenu}
 						style={{ opacity: 0.95, transition: "opacity 1s ease" }}>
 						<ul
-							className="w-full h-fit flex flex-col font-bold mt-16 p-4 space-y-6 z-50"
-							onClick={() => setShowMenu(!showMenu)}>
+							className="w-full h-fit flex flex-col font-bold mt-16 p-4 space-y-6 z-50">
 							<ScrollToContainerLink to={"testimonials"}>
-								<li className="p-2 cursor-pointer">Testimonials</li>
+								<li className="p-2 cursor-pointer" onClick={closeMenu}>Testimonials</li>
 							</ScrollToContainerLink>
 							<ScrollToContainerLink to={"speakers"}>
-								<li className="p-2 cursor-pointer">Speakers</li>
+								<li className="p-2 cursor-pointer" onClick={closeMenu}>Speakers</li>
 							</ScrollToContainerLink>
 							<ScrollToContainerLink to={"event-schedule"}>
-								<li className="p-2 cursor-pointer">Event Schedule</li>
+								<li className="p-2 cursor-pointer" onClick={closeMenu}>Event Schedule</li>
 							</ScrollToContainerLink>
 						</ul>
 						<Icon.CancelMenu className="lg:hidden text-2xl mt-4 font-semibold cursor-pointer" />
@@ -78,7 +81,7 @@ const Navbar = () => {
 							<img
 								src={TxELogo}
 								className="absolute bottom-10 w-2/5 animate-bounce"
-								alt=""
+								alt="logo"
 							/>
 						</div>
 					</div>
