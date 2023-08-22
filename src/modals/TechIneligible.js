@@ -2,7 +2,10 @@ import "../modals/Modals.css";
 import info from "../assets/info.svg";
 import close from "../assets/close.svg";
 
-export const TechIneligible = () => {
+export const TechIneligible = ({ onClose }) => {
+	const handleNavigate = () => {
+		window.location.href = "/techsupport";
+	};
 	return (
 		<div className="modal-overlay">
 			<div className="modal">
@@ -14,7 +17,7 @@ export const TechIneligible = () => {
 						/>
 						<p>Information</p>
 					</div>
-					<span>
+					<span onClick={onClose}>
 						<img
 							src={close}
 							alt=""
@@ -71,8 +74,11 @@ export const TechIneligible = () => {
 				</div>
 
 				<div className="modal-cta">
-					<button className="btn1">Close</button>
-					<button className="btn2">Register</button>
+					<button
+						onClick={handleNavigate}
+						className="btn2">
+						Apply for Business Grant
+					</button>
 				</div>
 			</div>
 		</div>

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import InputField from "../../registrationPage/eventregistration/components/InputField/InputField";
 import FormBtn from "../../registrationPage/eventregistration/components/Buttons/FormButton";
 import ApplyForTechSupportCSS from "../techSupport/ApplyForTechSupport.module.css";
-import FailedModal from "../../modals/FailedModal";
+
 import { TechIneligible } from "../../modals/TechIneligible";
 import { useNavigate, Navigate } from "react-router-dom";
 import { NotRegistered } from "../../modals/NotRegistered";
@@ -60,7 +60,6 @@ const EmailVerification = ({ onSuccess, onUserData }) => {
 			.catch((error) => {
 				setLoading(false);
 
-				// Check if the error is network-related
 				if (
 					error instanceof TypeError &&
 					error.message.includes("Failed to fetch")
