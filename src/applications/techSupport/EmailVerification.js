@@ -4,7 +4,7 @@ import InputField from "../../registrationPage/eventregistration/components/Inpu
 import FormBtn from "../../registrationPage/eventregistration/components/Buttons/FormButton";
 import ApplyForTechSupportCSS from "../techSupport/ApplyForTechSupport.module.css";
 import FailedModal from "../../modals/FailedModal";
-import { GrantIneligible } from "../../modals/GrantIneligible";
+import { TechIneligible } from "../../modals/TechIneligible";
 import { useNavigate, Navigate } from "react-router-dom";
 import { NotRegistered } from "../../modals/NotRegistered";
 import { InvalidEmail } from "../../modals/InvalidEmail";
@@ -14,24 +14,25 @@ import { baseUrl } from "../../api/BaseURL";
 const EmailVerification = ({ onSuccess, onUserData }) => {
 	const [email, setEmail] = useState("");
 	const [verificationFailed, setVerificationFailed] = useState(false);
-	const [showGrantIneligible, setShowGrantIneligible] = useState(false);
+	const [showTechIneligible, setShowTechIneligible] = useState(false);
 	const [showNotRegistered, setShowNotRegistered] = useState(false);
 	const [showInvalidEmail, setShowInvalidEmail] = useState(false);
-	const [showNetworkError, setShowNetworkError] = useState(false);
+	const [showNetworkError, setShowNetworkError] = useState(true);
 	const [loading, setLoading] = useState(false);
-
-	// const { handleNavigate, setHandleNavigate } = useState({});
 
 	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 	const handleVerifyEmail = (e) => {
 		e.preventDefault();
+
+		setLoading(true);
+
 		if (!emailRegex.test(email)) {
 			setVerificationFailed(true);
 			setShowInvalidEmail(true);
+			setLoading(false);
 			return;
 		}
-		setLoading(true);
 
 		fetch(`${baseUrl.url}/api/v1/verify/${email}`)
 			.then((response) => {
@@ -49,27 +50,23 @@ const EmailVerification = ({ onSuccess, onUserData }) => {
 						onSuccess(data, true);
 					} else if (trackInterest === "entrepreneurship") {
 						setVerificationFailed(true);
-						setShowGrantIneligible(true);
+						setShowTechIneligible(true);
 					} else {
 						setVerificationFailed(true);
 						setShowNetworkError(true);
-						// Handle other cases here
 					}
 				}
 			})
 			.catch((error) => {
 				setLoading(false);
-				// console.log("API Fetch Error:", error);
 
 				// Check if the error is network-related
 				if (
 					error instanceof TypeError &&
 					error.message.includes("Failed to fetch")
 				) {
-					// Show the NetworkError modal
 					setShowNetworkError(true);
 				} else {
-					// Handle other types of errors here
 					onSuccess(null, false);
 				}
 			});
@@ -77,7 +74,9 @@ const EmailVerification = ({ onSuccess, onUserData }) => {
 
 	return (
 		<div className={ApplyForTechSupportCSS.mainn}>
-			<form method="GET" onSubmit={handleVerifyEmail}>
+			<form
+				method="GET"
+				onSubmit={handleVerifyEmail}>
 				<InputField
 					labelText="Email Address"
 					placeholder="Verify email address"
@@ -87,12 +86,15 @@ const EmailVerification = ({ onSuccess, onUserData }) => {
 					value={email}
 					onChange={(e) => setEmail(e.target.value)}
 				/>
-							<FormBtn btnFor={loading?'Please wait...':'Next'} isLoading={loading} />
+				<FormBtn
+					btnFor={loading ? "Please wait..." : "Next"}
+					isLoading={loading}
+				/>
 			</form>
 
-			{showGrantIneligible && (
+			{showTechIneligible && (
 				<div>
-					<GrantIneligible onClose={() => setShowGrantIneligible(false)} />
+					<TechIneligible onClose={() => setShowTechIneligible(false)} />
 				</div>
 			)}
 			{showNotRegistered && (

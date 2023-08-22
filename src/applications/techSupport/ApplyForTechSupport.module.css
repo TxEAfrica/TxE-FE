@@ -29,24 +29,21 @@
 	gap: 50px;
 	justify-content: center;
 	align-items: center;
-	height: fit-content;
-	margin-top: -30px;
 }
 .heading {
 	background: #000;
 	height: fit-content;
-	min-height: 100vh;
+	min-height: 80vh !important;
 }
 
 .title {
 	width: 100%;
-	/* margin-bottom: 40px; */
-	margin-top: -40px;
+	height: fit-content !important;
 }
 .title h1 {
-	color: #fff;
+	color: #ff6f43 !important;
 	font-size: 40px;
-	margin-top: 50px;
+	margin-top: 0px !important;
 }
 .title p {
 	color: #fff;
@@ -140,7 +137,7 @@
 	color: #8d9396;
 	background: #ff6f43;
 }
-/* Add these styles for the uploaded image */
+
 .uploadedImg {
 	display: flex;
 	flex-direction: column;
@@ -157,20 +154,18 @@
 	object-fit: contain;
 }
 
-/* Adjust these styles for the uploader container */
 .uploader {
 	width: 100%;
 	border: 2px dashed #2c2323;
 	background-color: transparent;
-	height: auto; /* Allow the container to grow with content */
+	height: auto;
 	display: flex;
-	flex-direction: column; /* Adjust for the new layout */
-	justify-content: center; /* Adjust for the new layout */
+	flex-direction: column;
+	justify-content: center;
 	align-items: center;
-	padding: 20px; /* Add some padding for spacing */
+	padding: 20px;
 }
 
-/* Keep the rest of the styles the same */
 .uploadercontent {
 	display: flex;
 	flex-direction: column;
