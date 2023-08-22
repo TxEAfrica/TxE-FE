@@ -1,5 +1,3 @@
-import React from 'react';
-
 const SpeakerCard = ({ speaker, position, animationDirection }) => {
   const cardHeightClass =
     position === 2
@@ -25,7 +23,7 @@ const SpeakerCard = ({ speaker, position, animationDirection }) => {
       <div className={`absolute right-0 ${position === 2 ? '-bottom-16 w-56 h-56 lg:w-72 lg:h-72' : '-bottom-5 w-48 h-48'}`}>
         <div className={`absolute inset-0 bg-gradient-to-l from-transparent  ${position === 2 ? 'via-orange-600/40' : 'via-blue-600/40'} to-transparent rounded-full`} />
       </div>
-      <img src={speaker.imageURL} alt={speaker.name} loading="lazy" className={`${position === 2 ? 'w-4/6' : 'w-4/5'} absolute bottom-0 right-0`} />
+      <img src={speaker.imageURL} alt={speaker.name} loading="lazy" className={`${position === 2 ? 'w-4/6' : 'w-2/3 md:w-4/5'} absolute bottom-0 right-0`} />
     </div>
   );
 };
