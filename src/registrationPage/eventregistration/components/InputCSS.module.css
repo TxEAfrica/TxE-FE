@@ -299,6 +299,11 @@ form {
 		font-size: 14px;
 		height: 80px;
 	}
+	.inputholder label {
+		font-size: 12px;
+		font-weight: 500;
+		color: #007bb8;
+	}
 
 	.labelholder label {
 		height: 40px;
@@ -312,6 +317,28 @@ form {
 	.formbutton {
 		font-size: 13px;
 		padding: 8px 18px;
+	}
+	.labelholder p {
+		color: #007bb8;
+		font-weight: 500;
+		font-size: 12px;
+	}
+	.labelholder > label {
+		background: #2c2223;
+		padding: 10px;
+		display: flex;
+		gap: 20px;
+		align-items: center;
+		height: 50px;
+		color: #fff;
+		font-size: 12px;
+		transition: all 0.2s ease;
+		cursor: pointer;
+		border-radius: 10px;
+	}
+	.labelholder label:hover {
+		border: 0.8px solid #ff6f43;
+		font-size: 12px;
 	}
 }
 
@@ -340,8 +367,13 @@ form {
 
 	.inputholder input,
 	.inputholder select {
-		font-size: 14px;
+		font-size: 12px;
 		height: 40px;
+	}
+	.inputholder label {
+		font-size: 12px;
+		font-weight: 500;
+		color: #007bb8;
 	}
 	.inputholder textarea {
 		font-size: 14px;
@@ -350,7 +382,7 @@ form {
 
 	.labelholder label {
 		height: 40px;
-		font-size: 14px;
+		font-size: 12px;
 	}
 	.labelholder label:hover {
 		border: 3px solid #ffe3db;
@@ -360,6 +392,28 @@ form {
 	.formbutton {
 		font-size: 12px;
 		padding: 8px 15px;
+	}
+	.labelholder p {
+		color: #007bb8;
+		font-weight: 500;
+		font-size: 12px;
+	}
+	.labelholder > label {
+		background: #2c2223;
+		padding: 10px;
+		display: flex;
+		gap: 20px;
+		align-items: center;
+		height: 50px;
+		color: #fff;
+		font-size: 12px;
+		transition: all 0.2s ease;
+		cursor: pointer;
+		border-radius: 10px;
+	}
+	.labelholder label:hover {
+		border: 0.8px solid #ff6f43;
+		font-size: 12px;
 	}
 }
 

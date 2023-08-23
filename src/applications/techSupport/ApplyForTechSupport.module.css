@@ -7,9 +7,9 @@
 }
 
 .main {
-	/* padding: 100px 0; */
+	padding: 50px 0;
 	position: relative;
-	background-color: #000;
+	background-color: transparent;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -17,10 +17,9 @@
 	justify-content: center;
 	align-items: center;
 	height: fit-content;
-	margin-top: 60px;
 }
 .mainn {
-	padding: 20px 0;
+	padding: 0px 0 !important;
 	position: relative;
 	background-color: #000;
 	width: 100%;
@@ -29,21 +28,26 @@
 	gap: 50px;
 	justify-content: center;
 	align-items: center;
+	height: fit-content;
+	margin-top: -30px !important;
 }
 .heading {
+	padding: 50px 0 !important;
 	background: #000;
-	height: fit-content;
-	min-height: 80vh !important;
+	height: fit-content !important;
+	min-height: 600px !important;
+	display: flex;
+	flex-direction: column;
 }
 
 .title {
 	width: 100%;
-	height: fit-content !important;
+	margin-top: -40px !important;
 }
 .title h1 {
 	color: #ff6f43 !important;
 	font-size: 40px;
-	margin-top: 0px !important;
+	margin-top: 50px !important;
 }
 .title p {
 	color: #fff;
@@ -337,10 +341,13 @@
 }
 
 /* Mobile Devices (up to 576px) */
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 575px) {
 	.main {
 		padding: 20px 10px;
 		gap: 15px;
+	}
+	.mainn {
+		margin-top: -20px !important;
 	}
 
 	form {
@@ -385,14 +392,25 @@
 		padding: 20px 10px;
 		gap: 15px;
 	}
+	.mainn {
+		margin-top: -30px !important;
+	}
 
 	form {
 		width: 95%;
 	}
 
 	.formtitle h1 {
-		font-size: 22px;
+		font-size: 30px;
 	}
+	.title h1 {
+		font-size: 28px !important;
+	}
+	.title h3 {
+		font-size: 14px;
+		font-weight: 500;
+	}
+
 	.smallinputholder {
 		display: flex;
 		flex-wrap: wrap;
@@ -421,6 +439,10 @@
 	.decor {
 		display: none;
 	}
+	.label > p {
+		font-size: 12px;
+		color: #007bb8;
+	}
 }
 
 /* Mobile Devices (up to 360px) */
@@ -428,6 +450,9 @@
 	.main {
 		padding: 15px 5px;
 		gap: 10px;
+	}
+	.mainn {
+		margin-top: -30px !important;
 	}
 	.main form {
 		width: 85%;
@@ -444,8 +469,12 @@
 	.formtitle h1 {
 		font-size: 20px;
 	}
+
+	.title h1 {
+		font-size: 28px !important;
+	}
 	.title h3 {
-		font-size: 16px;
+		font-size: 14px;
 		font-weight: 500;
 	}
 	.smallinputholder {
@@ -472,6 +501,10 @@
 	.formbutton {
 		font-size: 12px;
 		padding: 8px 15px;
+	}
+	.label > p {
+		font-size: 12px;
+		color: #007bb8;
 	}
 }
 

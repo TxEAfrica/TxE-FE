@@ -257,10 +257,14 @@
 
 	form {
 		width: 95%;
+		margin-top: 20px !important;
 	}
 
 	.formtitle h1 {
-		font-size: 22px;
+		font-size: 35px;
+	}
+	.formtitle p {
+		font-size: 14px;
 	}
 	.smallinputholder {
 		display: flex;
@@ -298,10 +302,14 @@
 
 	form {
 		width: 95%;
+		margin-top: 20px !important;
 	}
 
 	.formtitle h1 {
-		font-size: 20px;
+		font-size: 30px;
+	}
+	.formtitle p {
+		font-size: 14px;
 	}
 	.smallinputholder {
 		display: flex;
@@ -332,7 +340,3 @@
 		display: none;
 	}
 }
-
-/* Additional Styles for All Screen Sizes */
-
-/* You can add any other responsive styles here */
