@@ -69,7 +69,7 @@ export const TechIneligible = ({ onClose }) => {
 							You are not eligible for the tech scholarship, as you already
 							registered for the business track.
 						</p>
-						<small>Click the link below to apply for business grant.</small>
+						<small>Only available for Technology Applicants</small>
 					</div>
 				</div>
 

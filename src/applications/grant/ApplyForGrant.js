@@ -1,4 +1,3 @@
-// MainForm.js
 import React, { useState } from "react";
 import EmailVerification from "./EmailVerification";
 import InputOption from "../../registrationPage/eventregistration/components/InputOption/InputOption";
@@ -16,6 +15,7 @@ import { RequiredFields } from "../../modals/RequiredFields";
 import "../../landingPage/Landing.css";
 import { NetworkError } from "../../modals/NetworkError";
 import Sponsors from "../../landingPage/sections/Sponsors";
+import { baseUrl } from "../../api/BaseURL";
 import Nav from "../../emailTemplate/Nav";
 
 const ApplyForGrant = () => {
@@ -35,7 +35,6 @@ const ApplyForGrant = () => {
 	const [showAlreadyGrant, setShowAlreadyGrant] = useState(false);
 	const [showRequiredFields, setShowRequiredFields] = useState(false);
 	const [loading, setLoading] = useState(false);
-	const [isSubmitting, setIsSubmitting] = useState(false);
 
 	const { firstName, lastName, email, phoneNumber, country, state, gender } =
 		userData || {};
@@ -117,24 +116,15 @@ const ApplyForGrant = () => {
 
 		setLoading(true);
 
-		if (isSubmitting) {
-			return; // Don't execute the function if it's already submitting
-		}
-
-		setIsSubmitting(true);
-
 		try {
 			// Make the POST request to the API
-			const response = await fetch(
-				"https://txe-africa.onrender.com/api/v1/register/grant",
-				{
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-					},
-					body: JSON.stringify(grantFormData),
-				}
-			);
+			const response = await fetch(`${baseUrl.url}/api/v1/register/grant`, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(grantFormData),
+			});
 			const data = await response.json();
 			console.log(data);
 
@@ -146,15 +136,9 @@ const ApplyForGrant = () => {
 			}
 
 			setLoading(false);
-
-			// if (response.status === 200) {
-			// 	setShowGrantSuccess(true);
-			// }
 		} catch (error) {
 			setLoading(false);
-			// console.log("API Fetch Error:", error);
 
-			// Check if the error is network-related
 			if (
 				error instanceof TypeError &&
 				error.message.includes("Failed to fetch")
@@ -162,14 +146,11 @@ const ApplyForGrant = () => {
 				// Show the NetworkError modal
 				setShowNetworkError(true);
 			}
-		} finally {
-			setIsSubmitting(false); // Re-enable the button
 		}
 	};
 
 	return (
 		<div>
-			{/* <Navbar /> */}
 			<Nav />
 
 			<div
@@ -185,11 +166,9 @@ const ApplyForGrant = () => {
 						{"Only available for Grant Applicants"}
 					</h3>
 				</div>
-				{/* ... (other JSX content) */}
+
 				<div className={ApplyForGrantCSS.main}>
 					{isEmailVerified ? (
-						// Render the main form if email is verified
-						// Use the received userData for the non-editable fields
 						<form onSubmit={handleSubmit}>
 							{/* Non-editable fields */}
 
@@ -216,7 +195,6 @@ const ApplyForGrant = () => {
 								inputId="email" //
 								type="email"
 								value={userData.data.email || ""}
-								// onChange={(e) => setEmail(e.target.value)}
 							/>
 
 							<div className={ApplyForGrantCSS.smallinputholder}>

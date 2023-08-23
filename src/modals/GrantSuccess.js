@@ -73,7 +73,9 @@ const GrantSuccess = () => {
 						</div>
 						<div className="modal-message">
 							<h2>Congratulations!</h2>
-							<p>You have successfully submitted your Grant application.</p>
+							<p>
+								You have successfully submitted your Business Grant application.
+							</p>
 							<small>Keep an eye out for our email.</small>
 						</div>
 					</div>

@@ -132,8 +132,10 @@
 }
 
 .modal-cta {
+	width: 100%;
 	display: flex;
-	gap: 40px;
+	justify-content: space-between;
+	gap: 15px;
 }
 .btn1 {
 	width: 100%;
@@ -202,18 +204,96 @@
 
 @media screen and (max-width: 480px) {
 	.modal {
-		width: 300px;
+		width: 350px;
 		height: fit-content;
 		display: flex;
 		flex-direction: column;
-		gap: 15px;
-		padding: 20px;
+		gap: 5px;
+		padding: 15px;
+	}
+	.info p {
+		font-size: 12px;
 	}
 	.success-animation {
 		display: flex;
 		justify-content: center;
-		margin-bottom: 10px;
-		height: 70%;
+		/* margin-bottom: 10px; */
+		width: 40%;
+		margin: auto;
 		align-items: center;
+	}
+	.modal-message {
+		text-align: center;
+		width: 100%;
+		margin: auto;
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+		color: #000;
+	}
+	.modal-message h2 {
+		font-size: 30px;
+	}
+	.modal-message p {
+		font-size: 14px;
+		line-height: 15px;
+	}
+	.modal-message small {
+		font-size: 10px;
+		line-height: 15px;
+	}
+	.modal-cta {
+		margin-top: 20px;
+	}
+	.modal-cta button {
+		font-size: 10px;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	.modal {
+		width: 320px;
+		height: fit-content;
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+		padding: 15px;
+	}
+	.info p {
+		font-size: 12px;
+	}
+	.success-animation {
+		display: flex;
+		justify-content: center;
+		/* margin-bottom: 10px; */
+		width: 40%;
+		margin: auto;
+		align-items: center;
+	}
+	.modal-message {
+		text-align: center;
+		width: 100%;
+		margin: auto;
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+		color: #000;
+	}
+	.modal-message h2 {
+		font-size: 30px;
+	}
+	.modal-message p {
+		font-size: 14px;
+		line-height: 15px;
+	}
+	.modal-message small {
+		font-size: 10px;
+		line-height: 15px;
+	}
+	.modal-cta {
+		margin-top: 20px;
+	}
+	.modal-cta button {
+		font-size: 10px;
 	}
 }

@@ -38,7 +38,7 @@ export default function Ticket({ userData, ticketContainerRef }) {
 					<div className={TicketPageCSS.partHolder}>
 						{/* <p>Event Type:</p> */}
 						<div className={TicketPageCSS.partInner}>
-							<p>{userData?.trackInterest.toUpperCase()} SUMMIT </p>
+							<p>{userData?.trackInterest.toUpperCase()} </p>
 						</div>
 					</div>
 				</div>
@@ -57,7 +57,7 @@ export default function Ticket({ userData, ticketContainerRef }) {
 					value={userData?.id}
 					size={100}
 				/>
-				<small className="text-center">{userData?.id}</small>
+				{/* <small className="text-center">{userData?.id}</small> */}
 			</div>
 		</div>
 	);

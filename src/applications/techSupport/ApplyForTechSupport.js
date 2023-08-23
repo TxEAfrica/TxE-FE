@@ -38,11 +38,10 @@ export default function ApplyForTechSupport() {
 	const [whyParticipateInScholarship, setWhyParticipateInScholarship] =
 		useState("");
 	const [
-		didYouParticipateInFirstScholarship,
-		setDidYouParticipateInFirstScholarship,
+		didParticipateInFirstScholarship,
+		setDidParticipateInFirstScholarship,
 	] = useState("");
 	const [aboutYou, setAboutYou] = useState("");
-	const [isSubmitting, setIsSubmitting] = useState(false);
 
 	const { firstName, lastName, email, phoneNumber, country, state, gender } =
 		userData || {};
@@ -100,7 +99,7 @@ export default function ApplyForTechSupport() {
 			sixMonthsAvailable,
 			whyParticipateInScholarship,
 			haveALaptop,
-			didYouParticipateInFirstScholarship,
+			didParticipateInFirstScholarship,
 			whyLaptop,
 			pictureEvidence,
 			showUpForInterview,
@@ -276,10 +275,8 @@ export default function ApplyForTechSupport() {
 													{ label: "Yes", value: "yes" },
 													{ label: "No", value: "no" },
 												]}
-												initialSelection={didYouParticipateInFirstScholarship}
-												updatedSelection={
-													setDidYouParticipateInFirstScholarship
-												}
+												initialSelection={didParticipateInFirstScholarship}
+												updatedSelection={setDidParticipateInFirstScholarship}
 											/>
 											<InputOption
 												descriptionLabelText={

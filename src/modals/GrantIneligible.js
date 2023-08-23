@@ -66,11 +66,11 @@ export const GrantIneligible = ({ onClose }) => {
 					</div>
 					<div className="modal-message">
 						<h2>Hello there!</h2>
-						<small>Only available for Entreprenuership Applicants</small>
 						<p>
 							You are not eligible for the business grant, as you already
 							registered for the tech track.
 						</p>
+						<small>Only available for Entreprenuership Applicants</small>
 					</div>
 				</div>
 
