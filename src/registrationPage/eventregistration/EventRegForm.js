@@ -126,17 +126,6 @@ const EventRegForm = () => {
 			const emailExists = await checkEmailAvailability();
 
 			if (emailExists) {
-				// setFirstName("");
-				// setLastName("");
-				// setCountry("");
-				// setState("");
-				// setGender("");
-				// setPhoneNumber("");
-				// setEmail("");
-				// setBestDescription("");
-				// setAttended2022(false);
-				// setJoiningMode("");
-				// setTrackInterest("");
 				setShowAlreadyRegistered(true);
 				return;
 			}
@@ -167,18 +156,15 @@ const EventRegForm = () => {
 			const data = await response.json();
 
 			if ((data.success = true)) {
-				// console.log(data.message);
-				// console.log(data.data);
 				setLoading(false);
 				setUserId(data.data._id);
 				setShowRegSuccess(true);
 			}
 		} catch (error) {
-			// console.error('Error submitting form data:', error);
 			setLoading(false);
 			setShowNetworkError(true);
 		} finally {
-			setIsSubmitting(false); // Re-enable the button
+			setIsSubmitting(false);
 		}
 	};
 
@@ -226,7 +212,6 @@ const EventRegForm = () => {
 				<form onSubmit={handleSubmit}>
 					<div className={EventRegCSS.smallinputholder}>
 						<InputField
-							// className={"className"}
 							placeholder={"Enter your first name"}
 							labelText="First Name"
 							htmlFor="firstName"
@@ -327,11 +312,10 @@ const EventRegForm = () => {
 						updatedSelection={setTrackInterest}
 					/>
 
-					
-						<FormBtn
-							btnFor={loading ? "Please wait..." : "Register"}
-							isLoading={loading}
-						/>
+					<FormBtn
+						btnFor={loading ? "Please wait..." : "Register"}
+						isLoading={loading}
+					/>
 				</form>
 			</div>
 			<div className="bg-gray-200 h-fit w-full">

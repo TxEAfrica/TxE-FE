@@ -10,6 +10,7 @@ import CountUpAnimation from "./sections/Counter/CountUpAnimation";
 import Footer from "./sections/Footer";
 import "./Home.css";
 import Speakers from "../landingPage/sections/Speakers/Speakers";
+import Speakerz from "./sections/Speakers/Speakerz";
 
 const Home = () => {
 	return (
@@ -21,7 +22,8 @@ const Home = () => {
 					<Highlight />
 					<EventSchedule />
 					<CountUpAnimation />
-					<Speakers />
+					{/* <Speakers /> */}
+					<Speakerz />
 
 					<div className="z-50">
 						<PhotoSpeaks />
