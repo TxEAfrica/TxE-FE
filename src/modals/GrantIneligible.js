@@ -5,7 +5,7 @@ import close from "../assets/close.svg";
 
 export const GrantIneligible = ({ onClose }) => {
 	const handleNavigate = () => {
-		window.location.href = "/techsupport";
+		window.open("https://forms.gle/wvnbwGtwGCAqSiBh7", "_blank");
 	};
 	return (
 		<div className="modal-overlay">

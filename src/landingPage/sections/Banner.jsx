@@ -13,6 +13,10 @@ const Banner = () => {
 	const bannerRef = useRef(null);
 	const [isAnimating, setIsAnimating] = useState(false);
 
+	const goToLink = () => {
+		window.open("https://forms.gle/bFTp54crgGH6J2288", "_blank");
+	};
+
 	useEffect(() => {
 		const interval = setInterval(() => {
 			setIsAnimating((prevState) => !prevState);
@@ -61,8 +65,10 @@ const Banner = () => {
 						Nigeria.{" "}
 					</p>
 					<div className="banner-buttons mt-10">
-						<div className="cursor-pointer h-fit w-full">
-							<BtnSecondary btnName={"Partner With Us"} />
+						<div
+							onClick={goToLink}
+							className="cursor-pointer h-fit w-full">
+							<BtnSecondary btnName={"Get a Booth"} />
 						</div>
 						<div
 							className="cursor-pointer  w-full h-fit"

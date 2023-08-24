@@ -30,7 +30,7 @@ export default function Ticket({ userData, ticketContainerRef }) {
 					<div className={TicketPageCSS.partHolder}>
 						{/* <p>Date:</p> */}
 						<div className={TicketPageCSS.partInner}>
-							<p>29•09•2023</p>
+							<p>30•09•2023</p>
 						</div>
 					</div>
 				</div>
