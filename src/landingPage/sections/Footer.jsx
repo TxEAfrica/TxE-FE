@@ -26,8 +26,8 @@ const Footer = () => {
 					<h2>
 						Golden Heart Centre, <br /> Emene.
 					</h2>
-					<h3 className="font-bold mt-2 md:mt-0">Event Dates</h3>
-					<p className="text-lg">Sept. 28th & 29th, 2023</p>
+					<h3 className="font-bold mt-2 md:mt-0">Event Date</h3>
+					<p className="text-lg">Sept. 30th, 2023</p>
 				</div>
 
 				<div>
@@ -200,11 +200,6 @@ const Footer = () => {
 
 				<p>A Williams Uchemba Foundation Initiative.</p>
 				<p>© Enugu Tech Summit 2023</p>
-				{/* <img
-					className="absolute right-10 top-10 bottom-0 h-fit text-2xl p-2"
-					src={txe}
-					alt="txe"
-				/> */}
 			</div>
 		</div>
 	);

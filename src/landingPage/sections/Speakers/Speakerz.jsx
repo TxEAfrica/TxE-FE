@@ -25,9 +25,9 @@ const Speakerz = () => {
 			imageURL: user,
 		},
 		{
-			position: "Actor, Filmaker, Humanitarian Founder, WUF",
+			position: "Founder, TxE Africa",
 			name: "Williams Uchembah",
-			imageURL: user2,
+			imageURL: williams,
 		},
 		{
 			position: "Tech Business Leader",

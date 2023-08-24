@@ -130,11 +130,12 @@ export default function ApplyForTechSupport() {
 				body: JSON.stringify(techSupportFormData),
 			});
 			const data = await response.json();
+			console.log(data);
 
-			if ((data.status = "fail")) {
+			if ((data.message = "You have already applied")) {
 				setShowAlreadyTech(true);
 				setLoading(false);
-			} else if ((data.status = "success")) {
+			} else if ((data.message = "registered successfully")) {
 				setShowTechSuccess(true);
 			}
 

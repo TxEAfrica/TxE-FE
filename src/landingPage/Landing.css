@@ -9,8 +9,11 @@
 .border-l-orange {
 	border-left: 1px solid #ff6e4a;
 }
-.border-b {
+.border-b-2 {
 	border-bottom: 2px solid #ff6e4a;
+}
+.text-orange {
+	color: #ff6e4a;
 }
 
 .orange {
@@ -34,6 +37,11 @@
 .navlink {
 	color: #fff;
 	font-weight: 400;
+	transition: all 0.4s ease-in-out;
+}
+.navlink:hover {
+	color: #ff6e4a;
+	margin-bottom: 5px;
 }
 .img-logo {
 	cursor: pointer;
