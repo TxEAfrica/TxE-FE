@@ -128,10 +128,10 @@ const ApplyForGrant = () => {
 			const data = await response.json();
 			console.log(data);
 
-			if ((data.status = "fail")) {
+			if ((data.message = "You have appplied for grant")) {
 				setShowAlreadyGrant(true);
 				setLoading(false);
-			} else if ((data.status = "success")) {
+			} else if ((data.message = "registered successfully")) {
 				setShowGrantSuccess(true);
 			}
 

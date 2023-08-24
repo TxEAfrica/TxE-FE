@@ -37,27 +37,34 @@ const Navbar = () => {
 					<Link
 						to={"https://chat.whatsapp.com/JG3Wc5uiNtSKdLqUK2z6Dt"}
 						target="_blank"
-						className="p-2 cursor-pointer text-white"
+						className="p-2 mx-3 cursor-pointer  rounded-lg text-gray-100 navlink font-normal"
 						onClick={closeMenu}>
-						Join Our Community
+						Apply to Exhibit
+					</Link>
+					<Link
+						to={"https://chat.whatsapp.com/JG3Wc5uiNtSKdLqUK2z6Dt"}
+						target="_blank"
+						className="p-2 mx-3 cursor-pointer  rounded-lg text-gray-100 navlink font-normal"
+						onClick={closeMenu}>
+						Community
 					</Link>
 					<ScrollToContainerLink to={"testimonials"}>
 						<li
-							className="p-2 mx-5 cursor-pointer hover:border-b-2 border-orange-400 rounded-lg text-gray-100 font-normal"
+							className="p-2 mx-3 cursor-pointer  rounded-lg text-gray-100  navlink font-normal"
 							onClick={closeMenu}>
 							Testimonials
 						</li>
 					</ScrollToContainerLink>
 					<ScrollToContainerLink to={"speakers"}>
 						<li
-							className="p-2 mx-5 cursor-pointer hover:border-b-2 border-orange-400 rounded-lg text-gray-100 font-normal"
+							className="p-2 mx-3 cursor-pointer rounded-lg text-gray-100 navlink font-normal"
 							onClick={closeMenu}>
 							Speakers
 						</li>
 					</ScrollToContainerLink>
 					<ScrollToContainerLink to={"event-schedule"}>
 						<li
-							className="p-2 mx-5 cursor-pointer hover:border-b-2 border-orange-400 rounded-lg text-gray-100 font-normal"
+							className="p-2 mx-3 cursor-pointer rounded-lg text-gray-100 navlink font-normal"
 							onClick={closeMenu}>
 							Event Schedule
 						</li>
@@ -101,9 +108,16 @@ const Navbar = () => {
 							</ScrollToContainerLink>
 							<Link
 								to={"https://chat.whatsapp.com/JG3Wc5uiNtSKdLqUK2z6Dt"}
+								target="_blank"
 								className="p-2 cursor-pointer text-white"
 								onClick={closeMenu}>
-								Join Our Community
+								Apply to Exhibit
+							</Link>
+							<Link
+								to={"https://chat.whatsapp.com/JG3Wc5uiNtSKdLqUK2z6Dt"}
+								className="p-2 cursor-pointer text-white"
+								onClick={closeMenu}>
+								Community
 							</Link>
 						</ul>
 						<Icon.CancelMenu className="lg:hidden text-2xl mt-4 font-semibold cursor-pointer" />
