@@ -4,7 +4,7 @@ import close from "../assets/close.svg";
 
 export const TechIneligible = ({ onClose }) => {
 	const handleNavigate = () => {
-		window.location.href = "/techsupport";
+		window.open = ("https://forms.gle/h6reLGjNLYi7hC7E9", "_blank");
 	};
 	return (
 		<div className="modal-overlay">

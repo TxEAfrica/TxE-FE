@@ -39,13 +39,6 @@ const Navbar = () => {
 						target="_blank"
 						className="p-2 mx-3 cursor-pointer  rounded-lg text-gray-100 navlink font-normal"
 						onClick={closeMenu}>
-						Apply to Exhibit
-					</Link>
-					<Link
-						to={"https://chat.whatsapp.com/JG3Wc5uiNtSKdLqUK2z6Dt"}
-						target="_blank"
-						className="p-2 mx-3 cursor-pointer  rounded-lg text-gray-100 navlink font-normal"
-						onClick={closeMenu}>
 						Community
 					</Link>
 					<ScrollToContainerLink to={"testimonials"}>
@@ -106,13 +99,7 @@ const Navbar = () => {
 									Event Schedule
 								</li>
 							</ScrollToContainerLink>
-							<Link
-								to={"https://chat.whatsapp.com/JG3Wc5uiNtSKdLqUK2z6Dt"}
-								target="_blank"
-								className="p-2 cursor-pointer text-white"
-								onClick={closeMenu}>
-								Apply to Exhibit
-							</Link>
+
 							<Link
 								to={"https://chat.whatsapp.com/JG3Wc5uiNtSKdLqUK2z6Dt"}
 								className="p-2 cursor-pointer text-white"
