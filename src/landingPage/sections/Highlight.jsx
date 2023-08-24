@@ -5,6 +5,15 @@ import "../Landing.css";
 import { useNavigate } from "react-router-dom";
 
 const Highlight = () => {
+	const goToGrant = () => {
+		window.open("https://forms.gle/h6reLGjNLYi7hC7E9", "_blank");
+	};
+	const goToLaptop = () => {
+		window.open("https://forms.gle/wvnbwGtwGCAqSiBh7", "_blank");
+	};
+	const goToTechSupport = () => {
+		window.open("https://forms.gle/xUwowPbsNtE6DvbPA", "_blank");
+	};
 	const navigate = useNavigate();
 	return (
 		<div
@@ -42,7 +51,7 @@ const Highlight = () => {
 						</p>
 						<div
 							className="text-orange-500 bg-orange flex justify-center items-center text-center text-white rounded-md w-64 py-3 cursor-pointer"
-							onClick={() => navigate("/grant")}>
+							onClick={goToGrant}>
 							Apply
 						</div>
 					</div>
@@ -63,7 +72,7 @@ const Highlight = () => {
 						</p>
 						<div
 							className="text-orange-500 bg-orange flex justify-center items-center text-center text-white rounded-md w-64 py-3 cursor-pointer"
-							onClick={() => navigate("/techsupport")}>
+							onClick={goToLaptop}>
 							Apply
 						</div>
 					</div>
@@ -86,7 +95,7 @@ const Highlight = () => {
 						</p>
 						<div
 							className="text-orange-500 bg-orange flex justify-center items-center text-center text-white rounded-md w-64 py-3 cursor-pointer"
-							onClick={() => navigate("/techsupport")}>
+							onClick={goToTechSupport}>
 							Apply
 						</div>
 					</div>

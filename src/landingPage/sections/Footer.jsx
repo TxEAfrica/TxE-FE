@@ -32,7 +32,7 @@ const Footer = () => {
 
 				<div>
 					<h1 className="font-bold">Event Time</h1>
-					<p className="mt-2 mb-4">10:00 am</p>
+					<p className="mt-2 mb-4">9:00 am</p>
 					<div className="text-sm">
 						<ul className=" space-y-4">
 							<li>About</li>

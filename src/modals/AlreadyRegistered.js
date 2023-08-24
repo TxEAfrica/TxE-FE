@@ -1,11 +1,19 @@
+import React from "react";
 import "../modals/Modals.css";
 import info from "../assets/info.svg";
 import close from "../assets/close.svg";
+import { useNavigate } from "react-router-dom";
 
 export const AlreadyRegistered = () => {
+	const navigate = useNavigate();
+
 	const handleRefresh = () => {
-		window.location.reload(); // Refresh the page
+		window.location.reload();
 	};
+	const handleNavigate = () => {
+		navigate("/");
+	};
+
 	return (
 		<div className="modal-overlay">
 			<div className="modal">
@@ -55,8 +63,12 @@ export const AlreadyRegistered = () => {
 				</div>
 
 				<div className="modal-cta">
-					<button className="btn1">Contact us</button>
-					<button className="btn2">Event Schedule</button>
+					{/* <button className="btn1">Contact us</button> */}
+					<button
+						onClick={handleNavigate}
+						className="btn2">
+						Back to home
+					</button>
 				</div>
 			</div>
 		</div>

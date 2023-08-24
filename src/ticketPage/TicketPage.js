@@ -57,7 +57,7 @@ export default function TicketPage({}) {
 						<p>
 							You have successfully registered for Enugu Tech and
 							Entrepreneurship summit scheduled to hold on the{" "}
-							<span>29th September 2023.</span> Click on the link below to
+							<span>30th September 2023.</span> Click on the link below to
 							download your event ticket.
 						</p>
 					</div>
@@ -81,17 +81,15 @@ export default function TicketPage({}) {
 									? "Apply for Tech Support"
 									: "Please Register"
 							}`}
-							onClick={() =>
-								navigate(
-									`/${
-										userData?.trackInterest === "entrepreneurship"
-											? "grant"
-											: userData?.trackInterest === "technology"
-											? "techsupport"
-											: "Please Register"
-									}`
-								)
-							}
+							onClick={() => {
+								if (userData?.trackInterest === "entrepreneurship") {
+									window.open("https://forms.gle/h6reLGjNLYi7hC7E9", "_blank");
+								} else if (userData?.trackInterest === "technology") {
+									window.open("https://forms.gle/wvnbwGtwGCAqSiBh7", "_blank");
+								} else {
+									navigate("/register");
+								}
+							}}
 						/>
 					</div>
 				</div>
