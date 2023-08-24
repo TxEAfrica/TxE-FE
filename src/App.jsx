@@ -20,14 +20,7 @@ const App = () => {
 					path="/register"
 					element={<EventRegForm />}
 				/>
-				<Route
-					path="/techsupport"
-					element={<ApplyForTechSupport />}
-				/>
-				<Route
-					path="/grant"
-					element={<ApplyForGrant />}
-				/>
+
 				<Route
 					path="/ticket/:userId"
 					element={<TicketPage />}
