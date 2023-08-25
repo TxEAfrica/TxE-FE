@@ -196,7 +196,6 @@ const EventRegForm = () => {
 		{ label: "Select your gender", value: null },
 		{ label: "Male", value: "male" },
 		{ label: "Female", value: "female" },
-		{ label: "Other", value: "Other" },
 	];
 
 	return (
