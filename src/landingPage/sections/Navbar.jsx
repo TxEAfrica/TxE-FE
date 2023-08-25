@@ -39,7 +39,7 @@ const Navbar = () => {
 						target="_blank"
 						className="p-2 mx-3 cursor-pointer  rounded-lg text-gray-100 navlink font-normal"
 						onClick={closeMenu}>
-						Community
+						Join Our Community
 					</Link>
 					<ScrollToContainerLink to={"testimonials"}>
 						<li
@@ -104,7 +104,7 @@ const Navbar = () => {
 								to={"https://chat.whatsapp.com/JG3Wc5uiNtSKdLqUK2z6Dt"}
 								className="p-2 cursor-pointer text-white"
 								onClick={closeMenu}>
-								Community
+								Join Our Community
 							</Link>
 						</ul>
 						<Icon.CancelMenu className="lg:hidden text-2xl mt-4 font-semibold cursor-pointer" />

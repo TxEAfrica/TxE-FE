@@ -21,14 +21,13 @@ const SpeakerzCard = ({ speaker, position, animationDirection }) => {
 					className={`relative ${
 						position === 2 ? "text-speakerTextBrown" : "text-speakerTextBlue"
 					}`}>
-					{/* <p>{speaker.position}</p> */}
-					<p>Speaker</p>
+					<p>{speaker.position || "Speaker"}</p>
 				</div>
 				<h2
 					className={`font-semibold w-5 mt-2 ${
 						position === 2 ? "text-4xl" : "text-lg"
 					}`}>
-					{/* {speaker.name} */}
+					{speaker.name || ""}
 				</h2>
 			</div>
 			<div
@@ -44,7 +43,7 @@ const SpeakerzCard = ({ speaker, position, animationDirection }) => {
 				/>
 			</div>
 			<img
-				src={speaker.imageURL}
+				src={speaker.imageURL || ""}
 				alt={speaker.name}
 				loading="lazy"
 				className={`${
