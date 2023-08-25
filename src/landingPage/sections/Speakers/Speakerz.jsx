@@ -9,20 +9,26 @@ import collins from "../../../assets/collins 1-min.png";
 import nnamdi from "../../../assets/nnamdi 2-min.png";
 import moj from "../../../assets/moj 1-min.png";
 import afigbo from "../../../assets/image_15 1-min.png";
+import nkem from "../../../assets/nkem.png";
 import user from "../../../assets/user.svg";
 import user2 from "../../../assets/user2.svg";
 
 const Speakerz = () => {
 	const allSpeakers = [
-		{
-			// position: "Senior Program Manager, Global Business Operations at Google",
-			// name: "Justin Duren",
-			imageURL: user,
-		},
+		// {
+		// 	position: "Senior Program Manager, Global Business Operations at Google",
+		// 	name: "Justin Duren",
+		// 	imageURL: user,
+		// },
 		{
 			position: 'Co-Founder The BWPW "Hinge of Career Mentorship',
 			name: "Joyce Agbanobi",
 			imageURL: joyce,
+		},
+		{
+			position: "Tech Business Leader",
+			name: "Mojolaoluwa Aderemi-Makinde",
+			imageURL: moj,
 		},
 
 		{
@@ -30,32 +36,33 @@ const Speakerz = () => {
 			name: "Williams Uchembah",
 			imageURL: williams,
 		},
-		{
-			position: "Tech Business Leader",
-			name: "Mojolaoluwa Aderemi-Makinde",
-			imageURL: moj,
-		},
+
 		{
 			position: "Digital Product Leader",
 			name: "Ifeanyi Akosionu",
 			imageURL: ifeanyi,
 		},
 		{
-			// position: "Senior Engineering Program Manager Google",
-			// name: "Collins Ndukwe",
-			imageURL: user2,
+			position: "PM Engineering Innovation, Microsoft",
+			name: "Nkem Nweke",
+			imageURL: nkem,
 		},
+		// {
+		// 	position: "Senior Engineering Program Manager, Google",
+		// 	name: "Collins Ndukwe",
+		// 	imageURL: user2,
+		// },
 
-		{
-			// position: "Developer Success at Okta",
-			// name: "Chukwuemeka Afigbo",
-			imageURL: user2,
-		},
-		{
-			// position: "Director, Global Network Operations at Google",
-			// name: "Nnamdi Abraham-Igwe",
-			imageURL: user,
-		},
+		// {
+		// 	position: "Developer Success at Okta",
+		// 	name: "Chukwuemeka Afigbo",
+		// 	imageURL: user2,
+		// },
+		// {
+		// 	position: "Director, Global Network Operations at Google",
+		// 	name: "Nnamdi Abraham-Igwe",
+		// 	imageURL: user,
+		// },
 	];
 
 	const speakersPerPage = 5;
