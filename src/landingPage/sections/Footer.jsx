@@ -14,10 +14,32 @@ const Footer = () => {
 						Contact Us <Icon.Arrow className="-rotate-45 my-auto" />
 					</h1>
 					<div className="flex md:justify-between my-5 text-2xl text-white">
-						<Icon.Instagram className="mr-6 md:mr-0" />
-						<Icon.LinkedIn className="mr-6 md:mr-0" />
-						<Icon.Twitter className="mr-6 md:mr-0" />
-						<Icon.Email className="mr-6 md:mr-0" />
+						<Icon.Instagram
+							onClick={() => {
+								window.open("https://www.instagram.com/txe_africa/");
+							}}
+							className="mr-6 md:mr-0 cursor-pointer"
+						/>
+						<Icon.LinkedIn
+							onClick={() => {
+								window.open(
+									"https://www.linkedin.com/company/enugu-tech-summit/"
+								);
+							}}
+							className="mr-6 md:mr-0 cursor-pointer"
+						/>
+						<Icon.Twitter
+							onClick={() => {
+								window.open("https://twitter.com/TxE_Africa");
+							}}
+							className="mr-6 md:mr-0 cursor-pointer"
+						/>
+						<Icon.Email
+							onClick={() => {
+								window.open(`mailto:enugutechsummit@gmail.com`);
+							}}
+							className="mr-6 md:mr-0 cursor-pointer"
+						/>
 					</div>
 				</div>
 
