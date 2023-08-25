@@ -15,43 +15,45 @@ import user2 from "../../../assets/user2.svg";
 const Speakerz = () => {
 	const allSpeakers = [
 		{
-			position: 'Co-Founder The BWPW "Hinge of Career Mentorship',
-			name: "Joyce Agbanobi",
-			imageURL: user2,
-		},
-		{
-			position: "Senior Program Manager, Global Business Operations at Google",
-			name: "Justin Duren",
+			// position: "Senior Program Manager, Global Business Operations at Google",
+			// name: "Justin Duren",
 			imageURL: user,
 		},
 		{
+			position: 'Co-Founder The BWPW "Hinge of Career Mentorship',
+			name: "Joyce Agbanobi",
+			imageURL: joyce,
+		},
+
+		{
 			position: "Founder, TxE Africa",
 			name: "Williams Uchembah",
-			imageURL: user2,
+			imageURL: williams,
 		},
 		{
 			position: "Tech Business Leader",
 			name: "Mojolaoluwa Aderemi-Makinde",
-			imageURL: user,
-		},
-		{
-			position: "Senior Engineering Program Manager Google",
-			name: "Collins Ndukwe",
-			imageURL: user2,
+			imageURL: moj,
 		},
 		{
 			position: "Digital Product Leader",
 			name: "Ifeanyi Akosionu",
-			imageURL: user,
+			imageURL: ifeanyi,
 		},
 		{
-			position: "Developer Success at Okta",
-			name: "Chukwuemeka Afigbo",
+			// position: "Senior Engineering Program Manager Google",
+			// name: "Collins Ndukwe",
+			imageURL: user2,
+		},
+
+		{
+			// position: "Developer Success at Okta",
+			// name: "Chukwuemeka Afigbo",
 			imageURL: user2,
 		},
 		{
-			position: "Director, Global Network Operations at Google",
-			name: "Nnamdi Abraham-Igwe",
+			// position: "Director, Global Network Operations at Google",
+			// name: "Nnamdi Abraham-Igwe",
 			imageURL: user,
 		},
 	];
