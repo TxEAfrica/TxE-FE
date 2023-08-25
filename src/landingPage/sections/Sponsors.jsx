@@ -23,14 +23,14 @@ const Sponsors = () => {
 			<h1 className="text-lg font-semibold">
 				<b>Proudly Sponsored By</b>
 			</h1>
-			{/* <div className="slide-container">
+			<div className="slide-container">
 				<div className="slide-wrapper">
 					{images.map((src, index) => (
 						<img
 							key={index}
 							src={src}
 							loading="lazy"
-							className="mx-8 md:mx-16"
+							className="mx-8 md:mx-16 sponsor"
 							alt=""
 						/>
 					))}
@@ -40,12 +40,12 @@ const Sponsors = () => {
 							key={index + images.length}
 							src={src}
 							loading="lazy"
-							className="mx-8 md:mx-16"
+							className="mx-8 md:mx-16 sponsor"
 							alt=""
 						/>
 					))}
 				</div>
-			</div> */}
+			</div>
 		</div>
 	);
 };
