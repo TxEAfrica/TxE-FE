@@ -72,7 +72,10 @@ const Banner = () => {
 						</div>
 						<div
 							className="cursor-pointer  w-full h-fit"
-							onClick={() => navigate("/register")}>
+							// onClick={() => navigate("/register")}
+							onClick={() => {
+								window.open("https://bit.ly/TxE2023");
+							}}>
 							<BtnPrimary btnName={"Register"} />
 						</div>
 					</div>

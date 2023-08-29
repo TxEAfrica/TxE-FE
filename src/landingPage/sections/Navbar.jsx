@@ -122,7 +122,10 @@ const Navbar = () => {
 			<div className="hidden lg:flex cursor-pointer w-1/2 lg:w-1/6 h-fit">
 				<BtnPrimary
 					btnName={"Register"}
-					onClick={() => navigate("/register")}
+					// onClick={() => navigate("/register")}
+					onClick={() => {
+						window.open("https://bit.ly/TxE2023");
+					}}
 				/>
 			</div>
 		</div>
