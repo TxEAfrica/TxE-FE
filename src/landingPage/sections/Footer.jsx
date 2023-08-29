@@ -222,8 +222,8 @@ const Footer = () => {
 					</svg>
 
 					<p>
-						The TxE Summit aims to drive economic growth and position Enugu as a
-						leading tech hub in South East, Nigeria.
+						The summit aims to drive economic growth and position Enugu as a
+						leading center for innovation in South East, Nigeria.
 					</p>
 				</div>
 				<p>© Enugu Tech Summit 2023</p>

@@ -4,6 +4,8 @@ import SpeakerzCard from "./SpeakerzCard";
 import williams from "../../../assets/williams 1-min.png";
 import ifeanyi from "../../../assets/ifeanyi 1-min.png";
 import joyce from "../../../assets/joyce 1-min.png";
+import hack from "../../../assets/hack.png";
+import napa from "../../../assets/napa.png";
 import jduren from "../../../assets/j-duren 1-min.png";
 import collins from "../../../assets/collins 1-min.png";
 import nnamdi from "../../../assets/nnamdi 2-min.png";
@@ -21,14 +23,14 @@ const Speakerz = () => {
 		// 	imageURL: user,
 		// },
 		{
-			position: 'Co-Founder The BWPW "Hinge of Career Mentorship',
-			name: "Joyce Agbanobi",
-			imageURL: joyce,
+			position: "Startups Leader, Amazon Web Services",
+			name: "Napa Onwusah",
+			imageURL: napa,
 		},
 		{
-			position: "Tech Business Leader",
-			name: "Mojolaoluwa Aderemi-Makinde",
-			imageURL: moj,
+			position: "Co-Founder, AltSchool Africa",
+			name: "Hack Sultan",
+			imageURL: hack,
 		},
 
 		{
@@ -38,20 +40,31 @@ const Speakerz = () => {
 		},
 
 		{
-			position: "Digital Product Leader",
-			name: "Ifeanyi Akosionu",
-			imageURL: ifeanyi,
+			position: "Tech Business Leader",
+			name: "Mojolaoluwa Aderemi-Makinde",
+			imageURL: moj,
 		},
+
 		{
 			position: "PM Engineering Innovation, Microsoft",
 			name: "Nkem Nweke",
 			imageURL: nkem,
 		},
-		// {
-		// 	position: "Senior Engineering Program Manager, Google",
-		// 	name: "Collins Ndukwe",
-		// 	imageURL: user2,
-		// },
+		{
+			position: "Senior Engineering Program Manager, Google",
+			name: "Collins Ndukwe",
+			imageURL: collins,
+		},
+		{
+			position: "Digital Product Leader",
+			name: "Ifeanyi Akosionu",
+			imageURL: ifeanyi,
+		},
+		{
+			position: 'Co-Founder The BWPW "Hinge of Career Mentorship',
+			name: "Joyce Agbanobi",
+			imageURL: joyce,
+		},
 
 		// {
 		// 	position: "Developer Success at Okta",
