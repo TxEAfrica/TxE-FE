@@ -3,6 +3,7 @@ import "./Testimonials.css";
 import arrowleft from "../../../assets/arrow-left.svg";
 import arrowright from "../../../assets/arrow-right.svg";
 import arnold from "../../../assets/arnold-min.png";
+import solo from "../../../assets/solo.png";
 import test1 from "../../../assets/testimonial 1.svg";
 import test2 from "../../../assets/test2.svg";
 import test3 from "../../../assets/ojumoola.png";
@@ -10,7 +11,7 @@ import q1 from "../../../assets/q1.svg";
 import q2 from "../../../assets/q2.svg";
 
 const Testimonials = () => {
-	const totalSlides = 4; // Update this number according to the total number of slides
+	const totalSlides = 5; // Update this number according to the total number of slides
 	const [currentSlide, setCurrentSlide] = useState(0);
 
 	// Function to handle moving to the next slide
@@ -83,7 +84,7 @@ const Testimonials = () => {
 								testament to the quality and expertise fostered by TxE Africa.
 							</p>
 							<small>
-								Arnold Ngowi, <span>Senior. Frontend Developer.</span>
+								Arnold Ngowi, <span>Sr. Frontend Developer.</span>
 							</small>
 							<img
 								className="quote-mark q2"
@@ -117,7 +118,7 @@ const Testimonials = () => {
 								startups in Lagos to work remotely from Enugu State.
 							</p>
 							<small>
-								Vivian Nnoka, <span>Product Designer</span>
+								Vivian Nwoke, <span>Product Designer</span>
 							</small>
 							<img
 								className="quote-mark q2"
@@ -184,6 +185,38 @@ const Testimonials = () => {
 							</p>
 							<small>
 								Seyi Peters, <span>Sr. Frontend Developer.</span>
+							</small>
+							<img
+								className="quote-mark q2"
+								src={q2}
+								loading="lazy"
+								alt=""
+							/>
+						</div>
+					</section>
+					<section>
+						<div className="test-image">
+							<img
+								className="test-1"
+								src={solo}
+								alt="test-2"
+							/>
+						</div>
+						<div className="quote">
+							<img
+								className="quote-mark q1"
+								src={q1}
+								loading="lazy"
+								alt=""
+							/>
+							<h3>Support and Mentorship:</h3>
+							<p>
+								Being a beneficiary of TxE2022 Summit has actually paved the way
+								and brought a lot of opportunities for my tech career. I really
+								appreciate the support and coaching I have got from my mentors.
+							</p>
+							<small>
+								Solomon Joboson, <span>Backend Developer.</span>
 							</small>
 							<img
 								className="quote-mark q2"

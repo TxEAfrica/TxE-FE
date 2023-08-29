@@ -61,8 +61,8 @@ const Banner = () => {
 						The Enugu Tech and Entrepreneurship (TxE) Summit 2nd edition. Enugu
 						TxE aims to ignite innovation, foster collaboration, and empower the
 						local entrepreneurial community. The summit aims to drive economic
-						growth and position Enugu as a leading tech hub in South East,
-						Nigeria.{" "}
+						growth and position Enugu as a leading center for innovation in
+						South East, Nigeria.
 					</p>
 					<div className="banner-buttons mt-10">
 						<div
