@@ -1,5 +1,6 @@
 import win from "../../assets/winPC.png";
 import scholarship from "../../assets/scholarship-min.png";
+import certificate from "../../assets/photo4.png";
 import win1 from "../../assets/txe-win2.png";
 import "../Landing.css";
 import { useNavigate } from "react-router-dom";
@@ -99,6 +100,31 @@ const Highlight = () => {
 							Apply
 						</div>
 					</div>
+
+					<div className="flex flex-col justify-center items-center highlight-box">
+  <div className="px-4 py-8 rounded-md h-fit space-y-4 flex flex-col justify-center items-center text-center lg:text-center lg:justify-center lg:items-center">
+    <div className="w-fit h-fit rounded-md overflow-none">
+      <img
+        src={certificate}
+        alt="Certificate"
+        loading="lazy"
+      />
+    </div>
+    <h1 className="text-3xl font-bold w-full">Get Certificate</h1>
+    <p className="md:w-2/3 lg:w-full">
+      Earn a certificate of participation for joining our incredible tech event!
+    </p>
+    <div
+      className="text-orange-500 bg-orange flex justify-center items-center text-center text-white rounded-md w-64 py-3 cursor-pointer"
+      onClick={() => {
+        window.open("https://forms.gle/ihiVFjT6eKt3yvKG9", "_blank");
+      }}
+    >
+      Apply
+    </div>
+  </div>
+</div>
+
 				</div>
 			</div>
 		</div>
