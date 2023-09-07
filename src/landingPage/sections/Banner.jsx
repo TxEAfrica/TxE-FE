@@ -52,7 +52,7 @@ const Banner = () => {
 				nodeRef={bannerRef}>
 				<div
 					ref={bannerRef}
-					className="mt-10 banner-text">
+					className="mt-10 lg:mt-24 banner-text">
 					<h1 className="text-4xl md:text-6xl text-white font-bold">
 						<span className="orange">ENUGU</span> Tech & Entrepreneurship Summit
 						2023
