@@ -68,7 +68,7 @@ const Highlight = () => {
             className="flex flex-col justify-center items-center highlight-box"
           >
             <div className="px-4 py-8 rounded-md h-fit space-y-4 flex flex-col justify-center items-center text-center lg:text-center lg:justify-center lg:items-center">
-              <div className="w-fit h-fit rounded-md overflow-none">
+              <div className="h-fit rounded-md overflow-none">
                 <img src={card.image} alt={card.title} loading="lazy" />
               </div>
               <h1 className="text-3xl font-bold w-full">{card.title}</h1>
