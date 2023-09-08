@@ -49,7 +49,7 @@ const Footer = () => {
 						Golden Heart Centre, <br /> Emene.
 					</h2>
 					<h3 className="font-bold mt-2 md:mt-0">Event Date</h3>
-					<p className="text-lg">Sept. 30th, 2023</p>
+{/* 					<p className="text-lg">Sept. 30th, 2023</p> */}
 				</div>
 
 				<div>
