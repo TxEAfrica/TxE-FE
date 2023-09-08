@@ -18,7 +18,7 @@ const EventSchedule = () => {
 						on a different theme.
 					</p>
 				</div>
-				<div>
+{/* 				<div>
 					<div className="text-lg text-white mt-6 flex flex-col justify-center items-center line-holder">
 						30th September, 2023
 						<div className="flex space-x-2 mt-2 lines">
@@ -26,7 +26,7 @@ const EventSchedule = () => {
 							<div className="w-56 h-1 rounded-full bg-white"></div>
 						</div>
 					</div>
-				</div>
+				</div> */}
 			</div>
 
 			<div
