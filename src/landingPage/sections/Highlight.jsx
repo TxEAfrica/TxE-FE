@@ -20,7 +20,7 @@ const Highlight = () => {
       image: win1,
       title: "Free Laptops",
       description:
-        "Lucky participants will be going home with valuable scholarships from our incredible tech event! 🎉🏆",
+        "Lucky participants will be going home with Laptops from our incredible tech event! 🎉🏆",
       formLink: "https://forms.gle/wvnbwGtwGCAqSiBh7",
     },
     {
