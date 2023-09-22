@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import certificate from "../../assets/photo4.png";
 import grantPic from "../../assets/photo4.png";
 import win from "../../assets/winPC.png";
-import win1 from "../../assets/txe-win2.png";
+import win1 from "../../assets/winPC.jpg";
 import scholarship from "../../assets/scholarship-min.png";
 import "../Landing.css";
 
