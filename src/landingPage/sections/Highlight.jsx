@@ -3,7 +3,7 @@ import certificate from "../../assets/photo4.png";
 import grantPic from "../../assets/photo4.png";
 import win from "../../assets/winPC.png";
 import win1 from "../../assets/winPC.jpg";
-import scholarship from "../../assets/scholarship-min.png";
+import scholarship from "../../assets/event-min.png";
 import "../Landing.css";
 
 const Highlight = () => {
