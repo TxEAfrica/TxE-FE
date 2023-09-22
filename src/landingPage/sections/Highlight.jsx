@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import certificate from "../../assets/photo4.png";
+import grantPic from "../../assets/photo4.png";
 import win from "../../assets/winPC.png";
 import win1 from "../../assets/txe-win2.png";
 import scholarship from "../../assets/scholarship-min.png";
@@ -10,10 +11,10 @@ const Highlight = () => {
 
   const cards = [
     {
-      image: win,
+      image: grantPic,
       title: "Business Grant",
       description:
-        "Lucky participants will be going home with valuable scholarships from our incredible tech event! 🎉🏆",
+        "Lucky participants will be going home with a Business Grants 🎉🏆",
       formLink: "https://forms.gle/h6reLGjNLYi7hC7E9",
     },
     {
