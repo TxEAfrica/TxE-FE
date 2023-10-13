@@ -101,6 +101,13 @@ const Navbar = () => {
 							</ScrollToContainerLink>
 
 							<Link
+								to={"https://docs.google.com/forms/d/e/1FAIpQLScU7DjD_tw3aKC6i_l7W_ihkGXCZ_0CD1eTNNszsk4EbDRimA/viewform?pli=1"}
+								className="p-2 cursor-pointer text-white"
+								onClick={closeMenu}>
+								Become a Volunteer
+							</Link>
+
+							<Link
 								to={"https://chat.whatsapp.com/JG3Wc5uiNtSKdLqUK2z6Dt"}
 								className="p-2 cursor-pointer text-white"
 								onClick={closeMenu}>
