@@ -121,11 +121,11 @@ const Navbar = () => {
 
 			<div className="hidden lg:flex cursor-pointer w-1/2 lg:w-1/6 h-fit">
 				<BtnPrimary
-					btnName={"Register"}
+					btnName={"Become a Volunteer"}
 					// onClick={() => navigate("/register")}
 					onClick={() => {
 						// window.open("https://forms.gle/H3VvW1Ky71KFWMSCA");
-						window.open("https://bit.ly/TxE2023")
+						window.open("https://docs.google.com/forms/d/e/1FAIpQLScU7DjD_tw3aKC6i_l7W_ihkGXCZ_0CD1eTNNszsk4EbDRimA/viewform")
 						// window.open("https://bit.ly/TxE2023");
 					}}
 				/>
