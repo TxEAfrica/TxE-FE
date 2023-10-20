@@ -12,23 +12,23 @@ const Highlight = () => {
   const cards = [
     {
       image: grantPic,
-      title: "Top Qualified Applicants & Participants",
+      title: "Business Grant",
       description:
-        "Lucky participants will be going home with a Business Grants 🎉🏆",
+        "Top Qualified Applicants & Participants will be going home with a Business Grants 🎉🏆",
       formLink: "https://forms.gle/h6reLGjNLYi7hC7E9",
     },
     {
       image: win1,
       title: "Free Laptops",
       description:
-        "Lucky participants will be going home with Laptops from our incredible tech event! 🎉🏆",
+        "Top Qualified Applicants & Participants will be going home with Laptops from our incredible tech event! 🎉🏆",
       formLink: "https://forms.gle/wvnbwGtwGCAqSiBh7",
     },
     {
       image: scholarship,
       title: "Tech Scholarships",
       description:
-        "Lucky participants will be going home with valuable scholarships from our incredible tech event! 🎉🏆",
+        "Top Qualified Applicants & Participants will be going home with valuable scholarships from our incredible tech event! 🎉🏆",
       formLink: "https://forms.gle/xUwowPbsNtE6DvbPA",
     },
     {
