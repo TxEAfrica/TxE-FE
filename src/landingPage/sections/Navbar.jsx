@@ -35,7 +35,7 @@ const Navbar = () => {
 						showMenu ? "lg:hidden" : ""
 					}`}>
 					<Link
-						to={"https://chat.whatsapp.com/JG3Wc5uiNtSKdLqUK2z6Dt"}
+						to={"https://chat.whatsapp.com/GKcp82Pjs1jKEsVNOtGRaK"}
 						target="_blank"
 						className="p-2 mx-3 cursor-pointer  rounded-lg text-gray-100 navlink font-normal"
 						onClick={closeMenu}>
