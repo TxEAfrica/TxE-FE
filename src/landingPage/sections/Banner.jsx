@@ -74,7 +74,8 @@ const Banner = () => {
 							className="cursor-pointer  w-full h-fit"
 							// onClick={() => navigate("/register")}
 							onClick={() => {
-								window.open("https://forms.gle/H3VvW1Ky71KFWMSCA");
+								// window.open("https://forms.gle/H3VvW1Ky71KFWMSCA");
+								window.open("https://bit.ly/TxE2023");
 							}}>
 							<BtnPrimary btnName={"Register"} />
 						</div>
