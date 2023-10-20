@@ -12,7 +12,7 @@ const Highlight = () => {
   const cards = [
     {
       image: grantPic,
-      title: "Business Grant",
+      title: "Top Qualified Applicants & Participants",
       description:
         "Lucky participants will be going home with a Business Grants 🎉🏆",
       formLink: "https://forms.gle/h6reLGjNLYi7hC7E9",
