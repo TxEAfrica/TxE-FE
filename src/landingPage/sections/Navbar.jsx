@@ -108,7 +108,7 @@ const Navbar = () => {
 							</Link>
 
 							<Link
-								to={"https://chat.whatsapp.com/JG3Wc5uiNtSKdLqUK2z6Dt"}
+								to={"https://chat.whatsapp.com/GKcp82Pjs1jKEsVNOtGRaK"}
 								className="p-2 cursor-pointer text-white"
 								onClick={closeMenu}>
 								Join Our Community
