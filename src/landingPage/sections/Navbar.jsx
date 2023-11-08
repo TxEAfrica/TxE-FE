@@ -35,7 +35,7 @@ const Navbar = () => {
 						showMenu ? "lg:hidden" : ""
 					}`}>
 					<Link
-						to={"https://chat.whatsapp.com/JG3Wc5uiNtSKdLqUK2z6Dt"}
+						to={"https://chat.whatsapp.com/GKcp82Pjs1jKEsVNOtGRaK"}
 						target="_blank"
 						className="p-2 mx-3 cursor-pointer  rounded-lg text-gray-100 navlink font-normal"
 						onClick={closeMenu}>
@@ -101,6 +101,13 @@ const Navbar = () => {
 							</ScrollToContainerLink>
 
 							<Link
+								to={"https://docs.google.com/forms/d/e/1FAIpQLScU7DjD_tw3aKC6i_l7W_ihkGXCZ_0CD1eTNNszsk4EbDRimA/viewform?pli=1"}
+								className="p-2 cursor-pointer text-white"
+								onClick={closeMenu}>
+								Become a Volunteer
+							</Link>
+
+							<Link
 								to={"https://chat.whatsapp.com/JG3Wc5uiNtSKdLqUK2z6Dt"}
 								className="p-2 cursor-pointer text-white"
 								onClick={closeMenu}>
@@ -146,10 +153,12 @@ const Navbar = () => {
 
 			<div className="hidden lg:flex cursor-pointer w-1/2 lg:w-1/6 h-fit">
 				<BtnPrimary
-					btnName={"Register"}
+					btnName={"Become a Volunteer"}
 					// onClick={() => navigate("/register")}
 					onClick={() => {
-						window.open("https://bit.ly/TxE2023");
+						// window.open("https://forms.gle/H3VvW1Ky71KFWMSCA");
+						window.open("https://docs.google.com/forms/d/e/1FAIpQLScU7DjD_tw3aKC6i_l7W_ihkGXCZ_0CD1eTNNszsk4EbDRimA/viewform")
+						// window.open("https://bit.ly/TxE2023");
 					}}
 				/>
 			</div>

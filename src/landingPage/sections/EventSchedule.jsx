@@ -14,13 +14,13 @@ const EventSchedule = () => {
 						Event Schedule
 					</h1>
 					<p className="md:w-2/3 lg:w-1/2 mt-4">
-						The Enugu TxE Summit 2023 will be a two day event each day focusing
-						on a different theme.
+						The Enugu TxE Summit 2023 will be a one day event focusing
+						on variety of different themes.
 					</p>
 				</div>
 				<div>
 					<div className="text-lg text-white mt-6 flex flex-col justify-center items-center line-holder">
-						30th September, 2023
+						18th November, 2023
 						<div className="flex space-x-2 mt-2 lines">
 							<div className="w-56 h-1 rounded-full bg-orange"></div>
 							<div className="w-56 h-1 rounded-full bg-white"></div>
