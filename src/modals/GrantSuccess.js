@@ -18,13 +18,13 @@ const GrantSuccess = () => {
 			<div className="modal-overlay">
 				<div className="modal">
 					<div className="modal-header">
-						<div className="info">
+						{/* <div className="info">
 							<img
 								src={info}
 								alt=""
 							/>
 							<p>Information</p>
-						</div>
+						</div> */}
 						<span onClick={handleNavigate}>
 							<img
 								src={close}
@@ -78,19 +78,6 @@ const GrantSuccess = () => {
 							</p>
 							<small>Keep an eye out for our email.</small>
 						</div>
-					</div>
-
-					<div className="modal-cta">
-						<button
-							className="btn1"
-							onClick={handleNavigate}>
-							Close
-						</button>
-						<button
-							className="btn2"
-							onClick={handleNavigate}>
-							Back to Home
-						</button>
 					</div>
 				</div>
 			</div>
