@@ -20,7 +20,7 @@
 	color: #ff6e4a;
 }
 .sponsor {
-	filter: blur(15px);
+	/* filter: blur(15px); */
 	pointer-events: none;
 }
 /* --------------------------navbar ---------------------------- */
