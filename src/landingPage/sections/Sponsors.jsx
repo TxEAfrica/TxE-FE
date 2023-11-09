@@ -18,7 +18,7 @@ import "../Landing.css";
 
 const Sponsors = () => {
 	const images = [
-		airtel,
+		zenith,
 		moniepoint,
 		rite,
 		fidelity,
