@@ -12,16 +12,12 @@ import nnamdi from "../../../assets/nnamdi 2-min.png";
 import moj from "../../../assets/moj 1-min.png";
 import afigbo from "../../../assets/image_15 1-min.png";
 import nkem from "../../../assets/nkem.png";
+import cynthia from "../../../assets/cynthia.svg";
 import user from "../../../assets/user.svg";
 import user2 from "../../../assets/user2.svg";
 
 const Speakerz = () => {
 	const allSpeakers = [
-		// {
-		// 	position: "Senior Program Manager, Global Business Operations at Google",
-		// 	name: "Justin Duren",
-		// 	imageURL: user,
-		// },
 		{
 			position: "Startups Leader, Amazon Web Services",
 			name: "Napa Onwusah",
@@ -64,6 +60,11 @@ const Speakerz = () => {
 			position: 'Co-Founder The BWPW "Hinge of Career Mentorship',
 			name: "Joyce Agbanobi",
 			imageURL: joyce,
+		},
+		{
+			position: "Startup Advisor | Entrepreneur Podcast Host",
+			name: "Cynthia E. Chisom",
+			imageURL: cynthia,
 		},
 
 		// {
