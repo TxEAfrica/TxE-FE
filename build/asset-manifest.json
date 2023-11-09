@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.cf499911.css",
-    "main.js": "/static/js/main.22b4d7a4.js",
+    "main.js": "/static/js/main.6721a44c.js",
     "static/js/787.4e99f8e6.chunk.js": "/static/js/787.4e99f8e6.chunk.js",
     "static/media/photo4.png": "/static/media/photo4.3035458bd5ebd157d8aa.png",
     "static/media/testimonial 1.svg": "/static/media/testimonial 1.610fd05a13fa1e13276a0a6f04ccd8ed.svg",
@@ -13,6 +13,7 @@
     "static/media/event-min.jpg": "/static/media/event-min.feeb9de2bd9e40aa4311.jpg",
     "static/media/Subtract.svg": "/static/media/Subtract.bfe5195198a4d1ce128f.svg",
     "static/media/speaker2-min.jpg": "/static/media/speaker2-min.047de21821ba5039174f.jpg",
+    "static/media/wakanow.svg": "/static/media/wakanow.a17d267e496f59c995eb5f2836e217c9.svg",
     "static/media/test2.svg": "/static/media/test2.278d67c936ff8a29dfc091846c03a7ac.svg",
     "static/media/animation-img-1-min.jpeg": "/static/media/animation-img-1-min.178b4f2d21bf1b04f8f3.jpeg",
     "static/media/Moniepoint Logo 1.svg": "/static/media/Moniepoint Logo 1.a244b0fbe53f5840f697d4a178728b55.svg",
@@ -26,10 +27,14 @@
     "static/media/XendFinance.svg": "/static/media/XendFinance.c40471443a41e6efdde834c46d149fb9.svg",
     "static/media/buildspace.svg": "/static/media/buildspace.aebb832d403c2f9fc546735bd24e05ce.svg",
     "static/media/nkem.png": "/static/media/nkem.0b37290b939af35c000b.png",
+    "static/media/zenith.svg": "/static/media/zenith.9b5e820d2c978aaef3ca1a02c58f9212.svg",
+    "static/media/sterling.svg": "/static/media/sterling.358508c5c9f5d08a5ef282bc3abf77a9.svg",
     "static/media/Rite.svg": "/static/media/Rite.694c9fb75a6abc6ff2c2ea2fd7114208.svg",
     "static/media/Williams Uchemba Foundation.svg": "/static/media/Williams Uchemba Foundation.ef4aff22b1ae295edc6a5257b7fcc769.svg",
     "static/media/arnold-min.png": "/static/media/arnold-min.4abda7eb723f03790a14.png",
     "static/media/spaceInAfrica.svg": "/static/media/spaceInAfrica.b4aaf5fbb1eb91b40b68d034103d21e0.svg",
+    "static/media/fidelity.svg": "/static/media/fidelity.f929dacfe5c409d95d88cc6fdf9d804b.svg",
+    "static/media/interswitch.svg": "/static/media/interswitch.850d1133891b60f3e969214ae0ce534e.svg",
     "static/media/txe-logo-white.svg": "/static/media/txe-logo-white.85f0cb60a513874a58031383922c62e3.svg",
     "static/media/txelogo-orange.svg": "/static/media/txelogo-orange.7af2a9aedf70963c60acdd8ad05ec54f.svg",
     "static/media/fadelogo.svg": "/static/media/fadelogo.d30d9aa3d041a97632599da96abe3331.svg",
@@ -59,11 +64,11 @@
     "static/media/link-arrow1.svg": "/static/media/link-arrow1.fc46f416bc41caf7deb6bd58644c1a41.svg",
     "static/media/link-arrow2.svg": "/static/media/link-arrow2.2a41ac69529dab8462c8912e6e7233b3.svg",
     "main.cf499911.css.map": "/static/css/main.cf499911.css.map",
-    "main.22b4d7a4.js.map": "/static/js/main.22b4d7a4.js.map",
+    "main.6721a44c.js.map": "/static/js/main.6721a44c.js.map",
     "787.4e99f8e6.chunk.js.map": "/static/js/787.4e99f8e6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cf499911.css",
-    "static/js/main.22b4d7a4.js"
+    "static/js/main.6721a44c.js"
   ]
 }

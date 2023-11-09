@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import airtel from "../../assets/sponsors/airtel.svg";
 import rite from "../../assets/sponsors/Rite.svg";
+import fidelity from "../../assets/sponsors/fidelity.svg";
 import veemost from "../../assets/sponsors/VeeMost.svg";
+import zenith from "../../assets/sponsors/zenith.svg";
+import wakanow from "../../assets/sponsors/wakanow.svg";
+import interswitch from "../../assets/sponsors/interswitch.svg";
+import sterling from "../../assets/sponsors/sterling.svg";
 import xend from "../../assets/sponsors/XendFinance.svg";
 import Williams from "../../assets/sponsors/Williams Uchemba Foundation.svg";
 import buildspace from "../../assets/sponsors/buildspace.svg";
@@ -16,11 +21,10 @@ const Sponsors = () => {
 		airtel,
 		moniepoint,
 		rite,
-		veemost,
-		xend,
-		Williams,
-		buildspace,
-		spaceInAfrica,
+		fidelity,
+		sterling,
+		interswitch,
+		wakanow,
 		vc4a,
 		lloydant,
 	];
